@@ -1,812 +1,277 @@
-<!-- Sticky Navbar -->		
-<section class="slider">
-    <div class="tp-banner">
+
+
+<section>
+    <div>
         <ul>
-            <li data-delay="7000" data-transition="fade" data-slotamount="7" data-masterspeed="2000">
-                <div class="elements">
-                    <div class="tp-caption tp-resizeme lfb" data-x="0" data-y="65" data-speed="1000" data-start="2040" data-easing="Power4.easeOut" data-endspeed="500" data-endeasing="Power1.easeIn" style="z-index: 4">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider1-img2.png" width="500" height="600" alt="" />
-                    </div>
-                    <h2 class="tp-caption tp-resizeme lft skewtotop title bold" data-x="502" data-y="161" data-speed="1000" data-start="1700" data-easing="Power4.easeOut" data-endspeed="500" data-endeasing="Power1.easeIn">
-                        <strong>Welcome To Mist
-                        <br />Multi-purpose Theme</strong>
-                    </h2>
-                    <h2 class="tp-caption tp-resizeme lft skewtotop title" data-x="502" data-y="321" data-speed="1000" data-start="1700" data-easing="Power4.easeOut" data-endspeed="500" data-endeasing="Power1.easeIn">
-                        <strong>Mobile Responsive</strong>
-                    </h2>
-                    <div class="tp-caption tp-resizeme lfr skewtoright description black" data-x="502" data-y="385" data-speed="1000" data-start="1500" data-easing="Power4.easeOut" data-endspeed="500" data-endeasing="Power1.easeIn" style="max-width: 600px">
-                        <p>Proin a velit aliquam vitae malesuada rutrum. Aenean ullamcorper placerat porttitor velit aliquam vitae. Aliquam a augue suscipit, bibendum luctus neque laoreet rhoncus ipsum, ullamcorper</p>
-                    </div>
-                    <a href="#" class="tp-caption tp-resizeme lfb btn btn-default" data-x="502" data-y="472" data-speed="1000" data-start="1700" data-easing="Power4.easeOut" data-endspeed="500" data-endeasing="Power1.easeIn">Read more</a>
-                </div>
-                <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider4-bg.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" />
+            <li>
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_05.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" />
             </li>
-            <!-- Slide -->
-            <li data-delay="7000" data-transition="fade" data-slotamount="7" data-masterspeed="2000">
-                <div class="elements">
-                    <h2 class="tp-caption tp-resizeme sft skewtotop title bold" data-x="240" data-y="151" data-speed="1000" data-start="500" data-easing="Power4.easeOut" data-endspeed="400" data-endeasing="Power1.easeIn">Used Latest frameworks</h2>
-                    <div class="tp-caption tp-resizeme lfr skewtoright description text-center" data-x="290" data-y="250" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-endspeed="500" data-endeasing="Power1.easeIn" style="max-width: 600px">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do usmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam dolore magna aliqua ut enim ad minim veniam.</p>
-                    </div>
-                    <h4 class="tp-caption tp-resizeme customin customout" data-x="350" data-y="360" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1200" data-start="1000" data-easing="Power3.easeInOut" data-endspeed="300" style="z-index: 5">HTML 5</h4>
-                    <div class="tp-caption tp-resizeme customin customout" data-x="337" data-y="418" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1200" data-start="1000" data-easing="Power3.easeInOut" data-endspeed="300" style="z-index: 5">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider1-html5.png" width="99" height="111" alt="" />
-                    </div>
-                    <h4 class="tp-caption tp-resizeme customin customout" data-x="560" data-y="360" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1200" data-start="1200" data-easing="Power3.easeInOut" data-endspeed="300" style="z-index: 5">CSS 3</h4>
-                    <div class="tp-caption tp-resizeme customin customout" data-x="537" data-y="418" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1200" data-start="1200" data-easing="Power3.easeInOut" data-endspeed="300" style="z-index: 5">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider1-css3.png" width="99" height="111" alt="" />
-                    </div>
-                    <h4 class="tp-caption tp-resizeme customin customout" data-x="725" data-y="360" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1200" data-start="1500" data-easing="Power3.easeInOut" data-endspeed="300" style="z-index: 5">Bootstrap 3.x</h4>
-                    <div class="tp-caption tp-resizeme customin customout" data-x="737" data-y="418" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1200" data-start="1500" data-easing="Power3.easeInOut" data-endspeed="300" style="z-index: 5">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider1-bootstrap.png" width="99" height="111" alt="" />
-                    </div>
-                </div>
-                <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider1-bg.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" />
-            </li>
-            <!-- Slide -->
-            <li data-delay="10300" data-transition="fade" data-slotamount="7" data-masterspeed="2000" class="slid2">
-                <div class="elements">
-                    <h2 class="tp-caption tp-resizeme sft skewtotop title bold" data-x="15" data-y="191" data-speed="1000" data-start="1100" data-easing="Power4.easeOut" data-endspeed="400" data-endeasing="Power1.easeIn">Different Variations</h2>
-                    <div class="tp-caption tp-resizeme lfl skewtoleft description col-xs-5" data-x="0" data-y="285" data-speed="1000" data-start="1000" data-easing="Power4.easeOut" data-endspeed="400" data-endeasing="Power1.easeIn" style="max-width: 520px;">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do usmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam dolore magna aliqua ut enim ad minim veniam.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit ad minim veniam sed do usmod tempor incididunt ut labore et dolore.</p>
-                    </div>
-                    <a href="#" class="btn btn-default tp-caption tp-resizeme customin" data-x="15" data-y="442" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1200" data-start="1000" data-easing="Power3.easeInOut" data-endspeed="300" style="z-index: 5">Read more</a>
-                    <div class="tp-caption tp-resizeme lfb skewtobottom customin" data-x="730" data-hoffset="150" data-y="170" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1000" data-start="1000" data-easing="Power4.easeOut" data-end="14000" data-endspeed="500" data-endeasing="Power1.easeIn" style="z-index: 3">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider2-img.png" width="500" height="315" alt="" />
-                    </div>
-                    <div class="tp-caption tp-resizeme customout" data-x="795" data-hoffset="-208" data-y="205" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1" data-start="1000" data-easing="Power0.easeOut" data-end="3800" data-endspeed="1" data-endeasing="Power0.easeIn" data-captionhidden="on" style="z-index: 4">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider2-one.png" width="372" height="232" alt="" />
-                    </div>
-                    <div class="tp-caption tp-resizeme customin customout" data-x="795" data-hoffset="-208" data-y="205" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1" data-start="3800" data-easing="Power0.easeOut" data-end="5300" data-endspeed="1" data-endeasing="Power0.easeIn" data-captionhidden="on" style="z-index: 4">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider2-two.png" width="372" height="232" alt="" />
-                    </div>
-                    <div class="tp-caption tp-resizeme customin customout" data-x="795" data-hoffset="-208" data-y="205" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1" data-start="5300" data-easing="Power0.easeOut" data-end="6800" data-endspeed="1" data-endeasing="Power0.easeIn" data-captionhidden="on" style="z-index: 4">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider2-three.png" width="372" height="232" alt="" />
-                    </div>
-                    <div class="tp-caption tp-resizeme customin customout" data-x="795" data-hoffset="-208" data-y="205" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:1;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="1" data-start="6800" data-easing="Power0.easeOut" data-end="14000" data-endspeed="1" data-endeasing="Power0.easeIn" data-captionhidden="on" style="z-index: 4">
-                        <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider2-four.png" width="372" height="232" alt="" />
-                    </div>
-                </div>
-                <img src="{{static-domain}}/dclight/img/sections/slider/rs-slider2-bg.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" />
-            </li>
-            <!-- Slide -->
         </ul>
-        <div class="tp-bannertimer"></div>
     </div>
 </section>
 <!-- slider -->
-<section id="about-us" class="page-section">
+
+<div id="fun-factor" class="page-section black-bg">
     <div class="container">
-        <div class="section-title" data-animation="fadeInUp">
-            <h1 class="title">Welcome to Mist</h1>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center" data-animation="fadeInUp">
-                <!-- Text -->
-                <p class="title-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae odit iste exercitationem praesentium deleniti nostrum laborum rem id nihil tempora. Adipisci ea commodi unde nam placeat cupiditate quasi a ducimus rem consequuntur ex eligendi minima voluptatem assumenda voluptas quidem sit maiores odio velit voluptate.</p>
-            </div>
-        </div>
-        <div class="row special-feature">
-            <!-- Special Feature Box 1 -->
-            <div class="col-md-3 col-sm-6" data-animation="fadeInUp">
-                <div class="s-feature-box text-center">
-                    <div class="mask-top">
-                    <!-- Icon -->
-                    <i class="fa fa-heart-o"></i> 
-                    <!-- Title -->
-                    <h4>Creative Design</h4></div>
-                    <div class="mask-bottom">
-                    <!-- Icon -->
-                    <i class="fa fa-heart-o"></i> 
-                    <!-- Title -->
-                    <h4>Creative Design</h4>
-                    <!-- Text -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.</p></div>
+        <div class="row text-center fact-counter white">
+            <div class="col-sm-4 col-md-3 bottom-xs-pad-30" data-animation="fadeInLeft">
+                <div class="count-number" data-count="550">
+                    <span class="counter"></span>
                 </div>
+                <!-- Icon -->
+                <i class="icon-heart2 fa-4x"></i>
             </div>
-            <!-- Special Feature Box 2 -->
-            <div class="col-md-3 col-sm-6" data-animation="fadeInRight">
-                <div class="s-feature-box text-center">
-                    <div class="mask-top">
-                    <!-- Icon -->
-                    <i class="fa fa-magic"></i> 
-                    <!-- Title -->
-                    <h4>Magical Animations</h4></div>
-                    <div class="mask-bottom">
-                    <!-- Icon -->
-                    <i class="fa fa-magic"></i> 
-                    <!-- Title -->
-                    <h4>Magical Animations</h4>
-                    <!-- Text -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.</p></div>
+            <div class="col-sm-4 col-md-3 bottom-xs-pad-30" data-animation="fadeInRight">
+                <div class="count-number" data-count="1223">
+                    <span class="counter"></span>
                 </div>
+                <!-- Icon -->
+                <i class="icon-star4 fa-4x"></i>
             </div>
-            <!-- Special Feature Box 3 -->
-            <div class="col-md-3 col-sm-6" data-animation="fadeInLeft">
-                <div class="s-feature-box text-center">
-                    <div class="mask-top">
-                    <!-- Icon -->
-                    <i class="fa fa-code"></i> 
-                    <!-- Title -->
-                    <h4>Clean Code</h4></div>
-                    <div class="mask-bottom">
-                    <!-- Icon -->
-                    <i class="fa fa-code"></i> 
-                    <!-- Title -->
-                    <h4>Clean Code</h4>
-                    <!-- Text -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.</p></div>
+            <div class="col-sm-4 col-md-3 bottom-xs-pad-30" data-animation="fadeInRight">
+                <div class="count-number" data-count="925">
+                    <span class="counter"></span>
                 </div>
+                <!-- Icon -->
+                <i class="icon-glass3 fa-4x"></i>
             </div>
-            <!-- Special Feature Box 3 -->
-            <div class="col-md-3 col-sm-6" data-animation="fadeInDown">
-                <div class="s-feature-box text-center">
-                    <div class="mask-top">
-                    <!-- Icon -->
-                    <i class="fa fa-paper-plane-o"></i> 
-                    <!-- Title -->
-                    <h4>24/7 Support</h4></div>
-                    <div class="mask-bottom">
-                    <!-- Icon -->
-                    <i class="fa fa-paper-plane-o"></i> 
-                    <!-- Title -->
-                    <h4>24/7 Support</h4>
-                    <!-- Text -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.</p></div>
+            <div class="col-sm-4 col-md-3 bottom-xs-pad-30" data-animation="fadeInLeft">
+                <div class="count-number" data-count="1910">
+                    <span class="counter"></span>
                 </div>
+                <!-- Icon -->
+                <i class="icon-plane3 fa-4x"></i>
             </div>
         </div>
     </div>
-</section>
-<!-- about-us -->
-<section id="who-we-are" class="page-section no-pad light-bg border-tb">
-    <div class="container-fluid who-we-are">
-        <div class="row">
-            <div class="col-md-6 pad-60" data-animation="fadeInLeft">
-                <div class="section-title text-left" data-animation="fadeInUp">
-                    <!-- Title -->
-                    <h2 class="title">Who We Are</h2>
-                </div>
-                <div class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-singleitem="true" data-animation="fadeInUp">
-                    <div class="item">
-                        <div class="about-us">
-                            <!-- Progress Bar 1 -->
-                            <h6>Graphic Design</h6>
-                            <div class="progress">
-                                <div data-percentage="60" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar">
-                                    <span class="progress-label" style="left: 60%">60%</span>
-                                </div>
-                            </div>
-                            <!-- Progress Bar 2 -->
-                            <h6>HTML 5</h6>
-                            <div class="progress">
-                                <div data-percentage="65" aria-valuemax="100" aria-valuemin="0" aria-valuenow="65" role="progressbar" class="progress-bar">
-                                    <span class="progress-label" style="left: 65%">65%</span>
-                                </div>
-                            </div>
-                            <!-- Progress Bar 3 -->
-                            <h6>CSS 3</h6>
-                            <div class="progress">
-                                <div data-percentage="80" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
-                                    <span class="progress-label" style="left: 80%">80%</span>
-                                </div>
-                            </div>
-                            <!-- Progress Bar 4 -->
-                            <h6>Wordpress</h6>
-                            <div class="progress">
-                                <div data-percentage="70" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar" class="progress-bar">
-                                    <span class="progress-label" style="left: 70%">70%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- Heading -->
-                        <h2 class="entry-title">
-                            <a href="#">Our philosophy</a>
-                        </h2>
-                        <!-- Content -->
-                        <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti.</p>
-                            <p>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- Heading -->
-                        <h2 class="entry-title">
-                            <a href="#">Our history</a>
-                        </h2>
-                        <!-- Content -->
-                        <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti.</p>
-                            <p>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 no-pad text-center" data-animation="fadeInRight">
-                <!-- Image -->
-                <div class="image-bg" data-background="{{static-domain}}/dclight/img/sections/bg/full-img1.jpg"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- who-we-are -->
+</div>
+<!-- fun-factor -->
+
 <section id="additional" class="page-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-center bottom-xs-pad-30" data-animation="fadeInLeft">
+            <div class="col-md-4 text-center bottom-xs-pad-30" data-animation="pulse">
                 <!-- Image -->
-                <img src="{{static-domain}}/dclight/img/sections/iphone-img.png" width="280" height="440" alt="" />
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_08.jpg" width="280" height="440" alt="" />
             </div>
-            <div class="col-md-8" data-animation="fadeInRight">
-                <div class="section-title text-left" data-animation="fadeInUp">
+            <div class="col-md-4" data-animation="fadeInUp">
+                <div class="section-title text-left" data-animation="fadeInRight">
                     <!-- Title -->
-                    <h2 class="title">Responsive &amp; Mobile Ready</h2>
+                    <h2 class="title">Fashion my passion.</h2>
                 </div>
                 <!-- Content -->
-                <div data-animation="fadeInUp">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. porttitor consecteturadipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur odio sed dolor tincidunt
+                porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor.</p>
                 <!-- Features -->
                 <div class="row responsive-features top-pad-20">
                     <!-- Features 1 -->
-                    <div class="col-md-4" data-animation="fadeInUp">
+                    <div class="col-md-6">
                         <!-- Title And Content -->
                         <span class="icon-refresh2 text-color"></span>
-                        <h5>updates</h5>
-                        <p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
+                        <h5>Modelling</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <!-- Features 1 -->
                     <!-- Features 2 -->
-                    <div class="col-md-4" data-animation="fadeInDown">
+                    <div class="col-md-6">
                         <!-- Title And Content -->
                         <span class="icon-settings3 text-color"></span>
-                        <h5>flexible</h5>
-                        <p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
+                        <h5>Party</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <!-- Features 2 -->
-                    <!-- Features 3 -->
-                    <div class="col-md-4" data-animation="fadeInUp">
-                        <!-- Title And Content -->
-                        <span class="icon-invert-colors text-color"></span>
-                        <h5>custom colors</h5>
-                        <p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
-                    </div>
-                    <!-- Features 3 -->
                 </div>
                 <!-- Features -->
             </div>
-        </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</section>
-<!-- additional -->
-<section id="fun-factor" class="page-section">
-    <div class="image-bg content-in fixed" data-background="{{static-domain}}/dclight/img/sections/bg/bg-11.jpg"  data-stellar-background-ratio="0.5"></div>
-    <div class="container">
-        <div class="row white top-pad-20">
-            <div class="col-md-6" data-animation="fadeInLeft">
-                <h3 class="text-uppercase bottom-margin-10">Unlimited <span class="text-color">Features !!</span></h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                <a href="#" class="btn btn-default">Read more..</a>
-            </div>
-            <div class="col-md-6">
-                <div class="row text-center fact-counter white">
-                    <div class="col-sm-4 col-md-4 bottom-xs-pad-30" data-animation="fadeInDown">
-                    <!-- Icon -->
-                    <i class="icon-download14 fa-3x"></i> 
-                    <!-- number -->
-                    <div class="count-number" data-count="9987">
-                        <span class="counter"></span>
-                    </div>
-                    <!-- Title -->
-                    <h5>Downloads</h5></div>
-                    <div class="col-sm-4 col-md-4 bottom-xs-pad-30" data-animation="fadeInUp">
-                    <!-- Icon -->
-                    <i class="icon-profile-male fa-3x"></i> 
-                    <!-- number -->
-                    <div class="count-number" data-count="9123">
-                        <span class="counter"></span>
-                    </div>
-                    <!-- Title -->
-                    <h5>Happy Client</h5></div>
-                    <div class="col-sm-4 col-md-4 bottom-xs-pad-30" data-animation="fadeInDown">
-                    <!-- Icon -->
-                    <i class="icon-trophy5 fa-3x"></i> 
-                    <!-- number -->
-                    <div class="count-number" data-count="925">
-                        <span class="counter"></span>
-                    </div>
-                    <!-- Title -->
-                    <h5>Awards</h5></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- fun-factor -->
-<section id="features" class="page-section">
-    <div class="container">
-        <div class="section-title" data-animation="fadeInUp">
-            <!-- Heading -->
-            <h2 class="title">Awesome Features</h2>
-        </div>
-        <div class="row">
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInLeft">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-perm-data-setting fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">Bootstrap 3.x</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
-            </div>
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInUp">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-mobile5 fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">100% Responsive</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
-            </div>
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInRight">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-html53 fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">HTML 5</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
-            </div>
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInLeft">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-css32 fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">CSS 3</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
-            </div>
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInDown">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-magic-wand fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">Great Animations</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
-            </div>
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInRight">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-add-shopping-cart fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">Shopping Cart</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
-            </div>
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInLeft">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-power-cord fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">Easy Options</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
-            </div>
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInUp">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-shrink fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">Multi-purpose</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
-            </div>
-            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInRight">
-                <a href="#">
-                <!-- Icon -->
-                <i class="icon-microphone6 fa-2x"></i> 
-                <!-- Title -->
-                <h5 class="title">Unlimited Support</h5>
-                <!-- Text -->
-                <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div></a>
+            <div class="col-md-4 text-center bottom-xs-pad-30" data-animation="pulse">
+                <!-- Image -->
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_10.jpg" width="280" height="440" alt="" />
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
 </section>
-<!-- Features -->
-<section id="works" class="page-section">
-    <div class="image-bg content-in fixed" data-background="{{static-domain}}/dclight/img/sections/bg/bg-13.jpg">
-        <div class="overlay"></div>
+<!-- additional -->
+
+<section id="who-we-are" class="page-section no-pad light-bg border-tb">
+    <div class="container-fluid who-we-are">
+        <div class="row">
+            <div class="col-md-6 no-pad" data-animation="fadeInLeft">
+                <section>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12 no-pad">
+                                <iframe id="cyogel-video" class="embed-responsive-item col-sm-12 no-pad"
+                                        src="//www.youtube.com/embed/jS3ZyfimiKc?rel=0&amp;autoplay=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;autohide=1"
+                                        allowfullscreen="" style="height: 560px; width: 100%;">
+                                </iframe>
+                            </div>
+                        </div>
+<!--                        <div class="clearfix">
+                            <div class="col-xs-6" style="text-align: center;margin-top: 10px;">
+                                <a href="https://www.youtube.com/watch?v=cl4Xrx4RPs0" onclick="event.preventDefault();
+                        $('#cyogel-video').attr('src', '//www.youtube.com/embed/cl4Xrx4RPs0?rel=0&amp;autoplay=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;autohide=1')"
+                                   style="color:#0ba4c6">
+                                    Portuguese Version
+                                </a>
+                            </div>
+                            <div class="col-xs-6" style="text-align: center;margin-top: 10px;">
+                                <a href="https://www.youtube.com/watch?v=dpZq8mfU4a0" onclick="event.preventDefault();
+                        $('#cyogel-video').attr('src', '//www.youtube.com/embed/dpZq8mfU4a0?rel=0&amp;autoplay=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;autohide=1')"
+                                   style="color:#0ba4c6">
+                                    Spanish Version
+                                </a>
+                            </div>
+                        </div>-->
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-6 no-pad text-center" data-animation="fadeInRight">
+                <div class="image-bg" data-background="{{static-domain}}/dc/imgs/Dreamau-Web_15.jpg"></div>
+            </div>
+        </div>
     </div>
+</section>
+<!-- who-we-are -->
+
+<section id="service" class="page-section">
+    <div class="container">
+        <div class="section-title" data-animation="fadeInUp">
+            <!-- Heading -->
+            <h2 class="title">What We Do?</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4" data-animation="fadeInLeft">
+                <ul class="features-list features-list-left">
+                    <li class="features-list-item" data-animation="fadeInLeft">
+                        <div class="features-content">
+                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_21.jpg" alt="" />
+                        </div>
+                    </li>
+                    <li class="features-list-item" data-animation="fadeInUp">
+                        <div class="features-content">
+                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_24.jpg" alt="" />
+                        </div>
+                    </li>
+                    <li class="features-list-item" data-animation="fadeInLeft">
+                        <div class="features-content">
+                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_28.jpg" alt="" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-center" data-animation="pulse">
+                <!-- Image -->
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_18.jpg" width="350" height="480" alt="" />
+            </div>
+            <div class="col-md-4" data-animation="fadeInRight">
+                <ul class="features-list features-list-right">
+                    <li class="features-list-item" data-animation="fadeInRight">
+                        <div class="features-content text-right">
+                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_22.jpg" alt="" />
+                        </div>
+                    </li>
+                    <li class="features-list-item" data-animation="fadeInUp">
+                        <div class="features-content text-right">
+                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_27.jpg" alt="" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- What-We-Do -->
+
+<section id="works" class="page-section light-bg">
     <div class="container work-section">
-        <div class="section-title white" data-animation="fadeInUp">
+        <div class="section-title" data-animation="fadeInUp">
             <!-- Heading -->
             <h2 class="title">Latest Works</h2>
         </div>
-        <div id="options" class="filter-menu" data-animation="fadeInDown">
-            <ul class="option-set nav nav-pills">
-                <li class="filter active" data-filter="all">Show All</li>
-                <li class="filter" data-filter=".web">web design</li>
-                <li class="filter" data-filter=".html">landing pages</li>
-                <li class="filter" data-filter=".wp">personal blog</li>
-            </ul>
-        </div>
     </div>
     <!-- filter -->
-    <div id="mix-container" class="portfolio-grid" data-animation="fadeInUp">
+    <div class="masonry-grid grid-col-5" data-gutter="0" data-animation="fadeInUp">
+        <div class="grid-sizer"></div>
         <!-- Item 1 -->
-        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web">
-            <div class="grid">
-                <img src="{{static-domain}}/dclight/img/sections/portfolio/1.jpg" width="400" height="273" alt="Recent Work" class="img-responsive" />
-                <div class="figcaption">
-                <div class="caption-block">
-                    <h4>Name Of Work</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <!-- Image Popup-->
-                <a href="{{static-domain}}/dclight/img/sections/portfolio/1.jpg" data-rel="prettyPhoto[portfolio]">
-                    <i class="fa fa-search"></i>
-                </a> 
-                <a href="portfolio-single.html">
-                    <i class="fa fa-link"></i>
-                </a></div>
-            </div>
+        <div class="grid-item all web">
+            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" width="340" height="274" alt="Recent Work" class="img-responsive" />
+                <!--<div class="portfolio-title">Fashion</div>-->
+            </a>
         </div>
         <!-- Item 1 Ends-->
         <!-- Item 2 -->
-        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web">
-            <div class="grid">
-                <img src="{{static-domain}}/dclight/img/sections/portfolio/2.jpg" width="400" height="273" alt="Recent Work" class="img-responsive" />
-                <div class="figcaption">
-                <div class="caption-block">
-                    <h4>Name Of Work</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <!-- Image Popup-->
-                <a href="{{static-domain}}/dclight/img/sections/portfolio/2.jpg" data-rel="prettyPhoto[portfolio]">
-                    <i class="fa fa-search"></i>
-                </a> 
-                <a href="portfolio-single.html">
-                    <i class="fa fa-link"></i>
-                </a></div>
-            </div>
+        <div class="grid-item all web">
+            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" width="340" height="548" alt="Recent Work" class="img-responsive" />
+                <!--<div class="portfolio-title">Style</div>-->
+            </a>
         </div>
         <!-- Item 2 Ends-->
         <!-- Item 3 -->
-        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web">
-            <div class="grid">
-                <img src="{{static-domain}}/dclight/img/sections/portfolio/3.jpg" width="400" height="273" alt="Recent Work" class="img-responsive" />
-                <div class="figcaption">
-                <div class="caption-block">
-                    <h4>Name Of Work</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <!-- Image Popup-->
-                <a href="{{static-domain}}/dclight/img/sections/portfolio/3.jpg" data-rel="prettyPhoto[portfolio]">
-                    <i class="fa fa-search"></i>
-                </a> 
-                <a href="portfolio-single.html">
-                    <i class="fa fa-link"></i>
-                </a></div>
-            </div>
+        <div class="grid-item all web">
+            <a href="http://placehold.it/340x548" data-rel="prettyPhoto[portfolio]">
+                <img src="http://placehold.it/340x548" width="340" height="548" alt="Recent Work" class="img-responsive" />
+                <!--<div class="portfolio-title">Ritto</div>-->
+            </a>
         </div>
         <!-- Item 3 Ends-->
         <!-- Item 4 -->
-        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all html">
-            <div class="grid">
-                <img src="{{static-domain}}/dclight/img/sections/portfolio/4.jpg" width="400" height="273" alt="Recent Work" class="img-responsive" />
-                <div class="figcaption">
-                <div class="caption-block">
-                    <h4>Name Of Work</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <!-- Image Popup-->
-                <a href="{{static-domain}}/dclight/img/sections/portfolio/4.jpg" data-rel="prettyPhoto[portfolio]">
-                    <i class="fa fa-search"></i>
-                </a> 
-                <a href="portfolio-single.html">
-                    <i class="fa fa-link"></i>
-                </a></div>
-            </div>
+        <div class="grid-item all web">
+            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" width="340" height="548" alt="Recent Work" class="img-responsive" />
+                <!--<div class="portfolio-title">Black &amp; White</div>-->
+            </a>
         </div>
         <!-- Item 4 Ends-->
         <!-- Item 5 -->
-        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all wp web">
-            <div class="grid">
-                <img src="{{static-domain}}/dclight/img/sections/portfolio/5.jpg" width="400" height="273" alt="Recent Work" class="img-responsive" />
-                <div class="figcaption">
-                <div class="caption-block">
-                    <h4>Name Of Work</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <!-- Image Popup-->
-                <a href="{{static-domain}}/dclight/img/sections/portfolio/5.jpg" data-rel="prettyPhoto[portfolio]">
-                    <i class="fa fa-search"></i>
-                </a> 
-                <a href="portfolio-single.html">
-                    <i class="fa fa-link"></i>
-                </a></div>
-            </div>
+        <div class="grid-item all web">
+            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" width="340" height="274" alt="Recent Work" class="img-responsive" />
+                <!--<div class="portfolio-title">walky</div>-->
+            </a>
         </div>
         <!-- Item 5 Ends-->
         <!-- Item 6 -->
-        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all html wp">
-            <div class="grid">
-                <img src="{{static-domain}}/dclight/img/sections/portfolio/6.jpg" width="400" height="273" alt="Recent Work" class="img-responsive" />
-                <div class="figcaption">
-                <div class="caption-block">
-                    <h4>Name Of Work</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <!-- Image Popup-->
-                <a href="{{static-domain}}/dclight/img/sections/portfolio/6.jpg" data-rel="prettyPhoto[portfolio]">
-                    <i class="fa fa-search"></i>
-                </a> 
-                <a href="portfolio-single.html">
-                    <i class="fa fa-link"></i>
-                </a></div>
-            </div>
+        <div class="grid-item all web">
+            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" width="340" height="274" alt="Recent Work" class="img-responsive" />
+                <!--<div class="portfolio-title">Style</div>-->
+            </a>
         </div>
         <!-- Item 6 Ends-->
         <!-- Item 7 -->
-        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web wp">
-            <div class="grid">
-                <img src="{{static-domain}}/dclight/img/sections/portfolio/1.jpg" width="400" height="273" alt="Recent Work" class="img-responsive" />
-                <div class="figcaption">
-                <div class="caption-block">
-                    <h4>Name Of Work</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <!-- Image Popup-->
-                <a href="{{static-domain}}/dclight/img/sections/portfolio/7.jpg" data-rel="prettyPhoto[portfolio]">
-                    <i class="fa fa-search"></i>
-                </a> 
-                <a href="portfolio-single.html">
-                    <i class="fa fa-link"></i>
-                </a></div>
-            </div>
+        <div class="grid-item all web">
+            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" width="340" height="274" alt="Recent Work" class="img-responsive" />
+                <!--<div class="portfolio-title">Superb</div>-->
+            </a>
         </div>
         <!-- Item 7 Ends-->
-        <!-- Item 8 -->
-        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web">
-            <div class="grid">
-                <img src="{{static-domain}}/dclight/img/sections/portfolio/8.jpg" width="400" height="273" alt="Recent Work" class="img-responsive" />
-                <div class="figcaption">
-                <div class="caption-block">
-                    <h4>Name Of Work</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <!-- Image Popup-->
-                <a href="{{static-domain}}/dclight/img/sections/portfolio/8.jpg" data-rel="prettyPhoto[portfolio]">
-                    <i class="fa fa-search"></i>
-                </a> 
-                <a href="portfolio-single.html">
-                    <i class="fa fa-link"></i>
-                </a></div>
-            </div>
-        </div>
-        <!-- Item 8 Ends-->
     </div>
     <!-- Mix Container -->
 </section>
 <!-- works -->
-<section id="call-to-action" class="page-section no-pad bg-color">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 top-pad-20 bottom-pad-20 text-center">
-                <h3 class="text-capitalize inline-block tb-margin-20 black" data-animation="fadeInUp">Powerful <span class="white">features</span> makes Mist standout from the crowd.</h3>
-                <div class="inline-block lr-pad-20"><a href="#" class="btn btn-transparent-black btn-lg" data-animation="fadeInDown">Check out Now!!</a></div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- call to action -->
-<section id="process" class="page-section">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-sm-12 col-md-12">
-                <div class="section-title" data-animation="fadeInUp">
-                    <!-- Heading -->
-                    <h2 class="title">Work Process</h2>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3" data-animation="fadeInUp">
-                <div class="work-process-box">
-                    <div class="process-content">
-                        <div class="item-number">1</div>
-                        <!-- Title -->
-                        <h4 class="title">Analysis</h4>
-                        <!-- Description -->
-                        <p>Requirement Gathering &amp; System Study</p>
-                    </div>
-                </div>
-            </div>
-            <!-- .process-box-two -->
-            <div class="col-sm-4 col-md-3" data-animation="fadeInDown">
-                <div class="work-process-box">
-                    <div class="process-content">
-                        <div class="item-number">2</div>
-                        <!-- Title -->
-                        <h4 class="title">Design</h4>
-                        <!-- Description -->
-                        <p>Design Wire-frame &amp; Layout Design</p>
-                    </div>
-                </div>
-            </div>
-            <!-- .process-box-two -->
-            <div class="col-sm-4 col-md-3" data-animation="fadeInUp">
-                <div class="work-process-box">
-                    <div class="process-content">
-                        <div class="item-number">3</div>
-                        <!-- Title -->
-                        <h4 class="title">Development</h4>
-                        <!-- Description -->
-                        <p>Product development &amp; Testing</p>
-                    </div>
-                </div>
-            </div>
-            <!-- .process-box-two -->
-            <div class="col-sm-4 col-md-3" data-animation="fadeInDown">
-                <div class="work-process-box">
-                    <div class="process-content">
-                        <div class="item-number">4</div>
-                        <!-- Title -->
-                        <h4 class="title">Support</h4>
-                        <!-- Description -->
-                        <p>Implementation &amp; Support</p>
-                    </div>
-                </div>
-            </div>
-            <!-- .process-box-two -->
-        </div>
-    </div>
-</section>
-<!-- process -->
-<section id="pricing" class="page-section">
-    <div class="image-bg content-in fixed" data-background="{{static-domain}}/dclight/img/sections/bg/bg-12.jpg">
-        <div class="overlay"></div>
-    </div>
-    <div class="container">
-        <div class="section-title white" data-animation="fadeInUp">
-            <!-- Heading -->
-            <h2 class="title">Price List</h2>
-        </div>
-        <div class="row text-center">
-            <div class="col-sm-6 col-md-4 col-lg-3" data-animation="fadeInUp">
-                <div class="pricing light-bg">
-                    <!-- Title -->
-                    <div class="title">
-                        <a href="#">Basic Plan</a>
-                    </div>
-                    <div class="price-box">
-                        <!-- Price -->
-                        <div class="starting">Starting at</div>
-                        <div class="price">$59.9
-                        <span>/month</span></div>
-                    </div>
-                    <ul class="options">
-                        <!-- Item List -->
-                        <li>Wordpress</li>
-                        <li class="active">HTML5 &amp; CSS 3</li>
-                        <li class="active">PSD Files</li>
-                        <li>Unlimited Support</li>
-                    </ul>
-                    <div class="btn-box">
-                        <div class="clearfix"></div>
-                        <button class="btn btn-default btn-block">Order Now</button>
-                    </div>
-                </div>
-                <!-- .pricing -->
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3" data-animation="fadeInLeft">
-                <div class="pricing light-bg">
-                    <!-- Title -->
-                    <div class="ribbon-wrapper">
-                        <div class="ribbon yellow">OFFER</div>
-                    </div>
-                    <div class="title">
-                        <a href="#">Standard</a>
-                    </div>
-                    <div class="price-box">
-                        <!-- Price -->
-                        <div class="starting">Starting at</div>
-                        <div class="price">$99.9
-                        <span>/month</span></div>
-                    </div>
-                    <ul class="options">
-                        <!-- Item List -->
-                        <li>Wordpress</li>
-                        <li class="active">HTML5 &amp; CSS 3</li>
-                        <li class="active">PSD Files</li>
-                        <li>Unlimited Support</li>
-                    </ul>
-                    <div class="btn-box">
-                        <div class="clearfix"></div>
-                        <button class="btn btn-default btn-block">Order Now</button>
-                    </div>
-                </div>
-                <!-- .pricing -->
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3" data-animation="fadeInRight">
-                <div class="pricing light-bg">
-                    <!-- Title -->
-                    <div class="title">
-                        <a href="#">Advanced</a>
-                    </div>
-                    <div class="price-box">
-                        <!-- Price -->
-                        <div class="starting">Starting at</div>
-                        <div class="price">$159.9
-                        <span>/month</span></div>
-                    </div>
-                    <ul class="options">
-                        <!-- Item List -->
-                        <li class="active">Wordpress</li>
-                        <li class="active">HTML5 &amp; CSS 3</li>
-                        <li class="active">PSD Files</li>
-                        <li>Unlimited Support</li>
-                    </ul>
-                    <div class="btn-box">
-                        <div class="clearfix"></div>
-                        <button class="btn btn-default btn-block">Order Now</button>
-                    </div>
-                </div>
-                <!-- .pricing -->
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3" data-animation="fadeInUp">
-                <div class="pricing light-bg">
-                    <!-- Title -->
-                    <div class="title">
-                        <a href="#">Premium</a>
-                    </div>
-                    <div class="price-box">
-                        <!-- Price -->
-                        <div class="starting">Starting at</div>
-                        <div class="price">$199.9
-                        <span>/month</span></div>
-                    </div>
-                    <ul class="options">
-                        <!-- Item List -->
-                        <li class="active">Wordpress</li>
-                        <li class="active">HTML5 &amp; CSS 3</li>
-                        <li class="active">PSD Files</li>
-                        <li class="active">Unlimited Support</li>
-                    </ul>
-                    <div class="btn-box">
-                        <div class="clearfix"></div>
-                        <button class="btn btn-default btn-block">Order Now</button>
-                    </div>
-                </div>
-                <!-- .pricing -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- pricing -->
+
 <section id="team" class="page-section">
-    <div class="container">
+    <div class="image-bg content-in fixed" data-background="img/sections/bg/bg-2.jpg"></div>
+    <div class="container text-center white">
         <div class="section-title" data-animation="fadeInUp">
-            <!-- Heading -->
-            <h2 class="title">Meet the Team</h2>
+            <h1 class="title">Meet the Team</h1>
         </div>
-        <div class="row text-center">
-            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInUp">
+        <div class="row">
+            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
                 <div class="image">
                     <!-- Image -->
-                    <img src="{{static-domain}}/dclight/img/sections/team-1.jpg" alt="" title="" width="270" height="270" />
+                    <img src="img/sections/fashion-team-1.jpg" alt="" title="" width="270" height="270" />
                 </div>
                 <div class="description">
                     <!-- Name -->
-                    <h4 class="name">Phillip Parisis</h4>
+                    <h4 class="name text-color">Phillip Parisis</h4>
                     <!-- Designation -->
-                    <div class="role">Founder</div>
+                    <div class="role">Hair Styler</div>
                     <!-- Text -->
                     <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
                 </div>
@@ -826,16 +291,16 @@
                 </a></div>
             </div>
             <!-- .employee  -->
-            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInDown">
+            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInRight">
                 <div class="image">
                     <!-- Image -->
-                    <img src="{{static-domain}}/dclight/img/sections/team-2.jpg" alt="" title="" width="270" height="270" />
+                    <img src="img/sections/fashion-team-2.jpg" alt="" title="" width="270" height="270" />
                 </div>
                 <div class="description">
                     <!-- Name -->
-                    <h4 class="name">Simo Kruyt</h4>
+                    <h4 class="name text-color">Simo Kruyt</h4>
                     <!-- Designation -->
-                    <div class="role">Analyst</div>
+                    <div class="role">Model Designer</div>
                     <!-- Text -->
                     <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
                 </div>
@@ -855,16 +320,16 @@
                 </a></div>
             </div>
             <!-- .employee -->
-            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInUp">
+            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
                 <div class="image">
                     <!-- Image -->
-                    <img src="{{static-domain}}/dclight/img/sections/team-3.jpg" alt="" title="" width="270" height="270" />
+                    <img src="img/sections/fashion-team-3.jpg" alt="" title="" width="270" height="270" />
                 </div>
                 <div class="description">
                     <!-- Name -->
-                    <h4 class="name">Jorge Canaveral</h4>
+                    <h4 class="name text-color">Jorge Canaveral</h4>
                     <!-- Designation -->
-                    <div class="role">Graphic designer</div>
+                    <div class="role">Event Manager</div>
                     <!-- Text -->
                     <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
                 </div>
@@ -884,16 +349,16 @@
                 </a></div>
             </div>
             <!-- .employee -->
-            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInDown">
+            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInRight">
                 <div class="image">
                     <!-- Image -->
-                    <img src="{{static-domain}}/dclight/img/sections/team-4.jpg" alt="" title="" width="270" height="270" />
+                    <img src="img/sections/fashion-team-4.jpg" alt="" title="" width="270" height="270" />
                 </div>
                 <div class="description">
                     <!-- Name -->
-                    <h4 class="name">Aimee Devlin</h4>
+                    <h4 class="name text-color">Aimee Devlin</h4>
                     <!-- Designation -->
-                    <div class="role">Developer</div>
+                    <div class="role">Fashion Consultant</div>
                     <!-- Text -->
                     <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
                 </div>
@@ -912,304 +377,13 @@
                     <i class="fa fa-pinterest"></i>
                 </a></div>
             </div>
-            <!-- .employee -->
         </div>
     </div>
 </section>
 <!-- team -->
-<section id="twitter" class="page-section light-bg">
-    <div class="image-bg content-in fixed" data-background="{{static-domain}}/dclight/img/sections/bg/bg-10.jpg">
-        <div class="overlay-half-dark"></div>
-    </div>
-    <div class="twitter-feed">
-        <div class="container" data-animation="fadeInUp">
-            <div class="row">
-                <div class="col-md-12 text-center icons-circle icons-bg-color fa-1x">
-                    <h2 class="section-title white">Follow us on Twitter</h2>
-                    <!-- Icon -->
-                    <i class="fa fa-twitter white-border border2-white"></i>
-                    <div class="tweet">
-                        <!-- Twitter Slider -->
-                        <div class="tweets_feed"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- twitter -->
-<section id="news" class="page-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <div class="section-title text-left" data-animation="fadeInLeft">
-                    <!-- Heading -->
-                    <h2 class="title">Latest Posts</h2>
-                </div>
-                <ul class="latest-posts">
-                    <li data-animation="fadeInLeft">
-                        <div class="post-thumb">
-                            <img class="img-rounded" src="{{static-domain}}/dclight/img/sections/blog/1.jpg" alt="" title="" width="84"
-                            height="84" />
-                        </div>
-                        <div class="post-details">
-                            <div class="description">
-                                <a href="#">
-                                <!-- Text -->
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                                intereste.</a>
-                            </div>
-                            <div class="meta">
-                            <!-- Meta Date -->
 
-                            <span class="time">
-                            <i class="fa fa-calendar"></i> 03.11.2014</span></div>
-                        </div>
-                    </li>
-                    <li data-animation="fadeInUp">
-                        <div class="post-thumb">
-                            <img class="img-rounded" src="{{static-domain}}/dclight/img/sections/blog/2.jpg" alt="" title="" width="84"
-                            height="84" />
-                        </div>
-                        <div class="post-details">
-                            <div class="description">
-                                <a href="#">
-                                <!-- Text -->
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                                intereste.</a>
-                            </div>
-                            <div class="meta">
-                            <!-- Meta Date -->
 
-                            <span class="time">
-                            <i class="fa fa-calendar"></i> 03.11.2014</span></div>
-                        </div>
-                    </li>
-                    <li data-animation="fadeInDown">
-                        <div class="post-thumb">
-                            <img class="img-rounded" src="{{static-domain}}/dclight/img/sections/blog/3.jpg" alt="" title="" width="84"
-                            height="84" />
-                        </div>
-                        <div class="post-details">
-                            <div class="description">
-                                <a href="#">
-                                <!-- Text -->
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                                intereste.</a>
-                            </div>
-                            <div class="meta">
-                            <!-- Meta Date -->
 
-                            <span class="time">
-                            <i class="fa fa-calendar"></i> 03.11.2014</span></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-6 testimonails">
-                <div class="section-title text-left" data-animation="fadeInRight">
-                    <!-- Heading -->
-                    <h2 class="title">Testimonials</h2>
-                </div>
-                <div class="owl-carousel pagination-1 dark-switch" data-effect="backSlide" data-pagination="true" data-autoplay="true" data-navigation="false" data-singleitem="true" data-animation="fadeInRight">
-                    <div class="item">
-                        <div class="desc-border bottom-arrow quote">
-                            <blockquote class="small-text">The standard chunk of Lorem Ipsum used since the 1500s is
-                            reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is
-                            reproduced below for those intereste.</blockquote>
-                            <div class="star-rating text-right">
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star-half-o text-color"></i></div>
-                        </div>
-                        <div class="client-details text-center">
-                            <div class="client-image">
-                                <!-- Image -->
-                                <img class="img-circle" src="{{static-domain}}/dclight/img/sections/testimonials/1.jpg" width="80" height="80"
-                                alt="" />
-                            </div>
-                            <div class="client-details">
-                            <!-- Name -->
-                            <strong class="text-color">John Doe</strong> 
-                            <!-- Company -->
-
-                            <span>Designer, zozothemes</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="desc-border bottom-arrow quote">
-                            <blockquote class="small-text">The standard chunk of Lorem Ipsum used since the 1500s is
-                            reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is
-                            reproduced below for those intereste.</blockquote>
-                            <div class="star-rating text-right">
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star-half-o text-color"></i></div>
-                        </div>
-                        <div class="client-details text-center">
-                            <div class="client-image">
-                                <!-- Image -->
-                                <img class="img-circle" src="{{static-domain}}/dclight/img/sections/testimonials/1.jpg" width="80" height="80"
-                                alt="" />
-                            </div>
-                            <div class="client-details">
-                            <!-- Name -->
-                            <strong class="text-color">John Doe</strong> 
-                            <!-- Company -->
-
-                            <span>Designer, zozothemes</span></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="desc-border bottom-arrow quote">
-                            <blockquote class="small-text">The standard chunk of Lorem Ipsum used since the 1500s is
-                            reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is
-                            reproduced below for those intereste.</blockquote>
-                            <div class="star-rating text-right">
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star text-color"></i> 
-                            <i class="fa fa-star-half-o text-color"></i></div>
-                        </div>
-                        <div class="client-details text-center">
-                            <div class="client-image">
-                                <!-- Image -->
-                                <img class="img-circle" src="{{static-domain}}/dclight/img/sections/testimonials/1.jpg" width="80" height="80"
-                                alt="" />
-                            </div>
-                            <div class="client-details">
-                            <!-- Name -->
-                            <strong class="text-color">John Doe</strong> 
-                            <!-- Company -->
-
-                            <span>Designer, zozothemes</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- news -->
-<section id="my-video">
-    <div class="image-bg content-in fixed" data-background="{{static-domain}}/dclight/img/sections/bg/full-img2.jpg">
-        <div class="overlay-strips"></div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 col-md-6 no-pad" data-animation="fadeInLeft">
-                <!-- Video -->
-                <div id="bg-video">
-                    <div class="player" data-property="{videoURL:&#39;https://www.youtube.com/watch?v=Y-OLlJUXwKU&#39;,containment:&#39;#my-video&#39;,startAt:0, mute:true, autoPlay:true, showControls:false}"></div>
-                </div>
-                <div id="video-controls" style="display: block;">
-                    <a class="fa fa-pause text-color color-border" id="video-play" href="#"></a>
-                    <br />
-                    <h6 class="text-color bold">Demo Video</h6>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 video-half-content light-bg pad-60 z-index-9" data-animation="fadeInRight">
-                <div class="section-title text-left">
-                    <!-- Heading -->
-                    <h2 class="title">Additional Info</h2>
-                </div>
-                <div class="panel-group no-list" id="accordion1" data-animation="fadeInLeft">
-                    <div class="panel panel-default active">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <!-- Tab -->
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#item1">
-                                <i class="icon-mobile9"></i> 100% Responsive</a>
-                            </div>
-                        </div>
-                        <div id="item1" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                            <!-- Image -->
-                            <img src="{{static-domain}}/dclight/img/sections/additional-img1.jpg" class="pull-right" width="120" height="90" alt="" /> 
-                            <!-- Tab Content-->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse obcaecati repudiandae veniam amet modi recusandae optio earum sequi accusantium culpa vitae iste sit commodi eaque voluptatem officia quam.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse obcaecati repudiandae veniam amet modi.</p></div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default active">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <!-- Tab -->
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#item2">
-                                <i class="icon-code"></i> Simple &amp; Clean Code</a>
-                            </div>
-                        </div>
-                        <div id="item2" class="panel-collapse collapse">
-                            <div class="panel-body">
-                            <!-- Tab Content-->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque natus quaerat voluptate? Asperiores hic dolore voluptate corporis obcaecati reiciendis sunt ipsam iste. Eligendi inventore voluptatibus quia saepe odit deserunt nam?
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <!-- Tab -->
-                                <a data-toggle="collapse" data-parent="#accordion1" href="#item3">
-                                <i class="icon-mic"></i> Unlimited Support</a>
-                            </div>
-                        </div>
-                        <div id="item3" class="panel-collapse collapse">
-                            <div class="panel-body">
-                            <!-- Image -->
-                            <img src="{{static-domain}}/dclight/img/sections/additional-img2.jpg" class="pull-right" width="120" height="82" alt="" /> 
-                            <!-- Tab Content-->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse obcaecati repudiandae veniam amet modi recusandae optio earum sequi accusantium culpa vitae iste sit commodi eaque voluptatem officia quam.</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- video -->
-<section id="clients" class="page-section tb-pad-30">
-    <div class="container">
-        <div class="section-title text-center" data-animation="fadeInUp">
-            <!-- Heading -->
-            <h2 class="title">Our Best Clients</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-center" data-animation="fadeInDown">
-                <div class="owl-carousel navigation-1" data-pagination="false" data-items="6" data-autoplay="true" data-navigation="true">
-                <a href="#">
-                    <img src="{{static-domain}}/dclight/img/sections/clients/1.png" width="150" height="150" alt="" />
-                </a> 
-                <a href="#">
-                    <img src="{{static-domain}}/dclight/img/sections/clients/2.png" width="150" height="150" alt="" />
-                </a> 
-                <a href="#">
-                    <img src="{{static-domain}}/dclight/img/sections/clients/3.png" width="150" height="150" alt="" />
-                </a> 
-                <a href="#">
-                    <img src="{{static-domain}}/dclight/img/sections/clients/4.png" width="150" height="150" alt="" />
-                </a> 
-                <a href="#">
-                    <img src="{{static-domain}}/dclight/img/sections/clients/5.png" width="150" height="150" alt="" />
-                </a> 
-                <a href="#">
-                    <img src="{{static-domain}}/dclight/img/sections/clients/6.png" width="150" height="150" alt="" />
-                </a> 
-                <a href="#">
-                    <img src="{{static-domain}}/dclight/img/sections/clients/1.png" width="150" height="150" alt="" />
-                </a> 
-                <a href="#">
-                    <img src="{{static-domain}}/dclight/img/sections/clients/2.png" width="150" height="150" alt="" />
-                </a></div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- clients -->
 <div id="get-quote" class="bg-color get-a-quote black text-center">
     <div class="container" data-animation="pulse">
         <div class="row">
