@@ -1,0 +1,172 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>CYOGEL - Order Confirmation</title>
+  </head>
+
+  <body style="margin: 0; padding: 0;">
+    <table width="100%" border="0" cellpadding="20" cellspacing="0" style="background-color: #ebe2df; font: 12px/18px &#39;Helvetica&#39;, sans-serif; color: #434343;">
+        <tr>
+            <td> <!-- Container table begins -->
+                <table width="800" cellpadding="20" cellspacing="0" border="0" style="background-color: #fff; margin: 0 auto; margin-bottom: 60px;">
+                    <tr>
+                        <td  width="100%" style="font: normal 30px/30px &#39;Helvetica&#39;, sans-serif; padding: 5px;" colspan="2">
+                            <img alt="logo" width="132" height="53" src="https://cyogel.com/cyogel/static/cyogel/img/vmind/logo.png"/> <span>{{DISCODE}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font: 16px/10px 'Oxygen', Helvetica, sans-serif; color: #655C5A">
+                            Thank you for your business, <span>{{NAME_CUSTOMER}}</span>!
+                        </td>
+                    </tr>
+                    <tr>   <!-- Order summary table -->
+                        <td width="100%" style="margin: 10px 0; padding: 10px; font: bold 18px/20px 'Oxygen', Helvetica, sans-serif; color: #4D90FE; float: left; display: block;" colspan="2">
+                            Order Summary
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;"> <!-- Order summary sub-table -->
+                            <table >
+                                <thead style="padding: 0 5px; text-align: center; font: bold 10px/10px Helvetica, sans-serif; text-transform: uppercase; color: #333; vertical-align: top;">
+                                    <tr>
+                                        <th style="border-bottom: dotted 1px #afafaf;" align="left">Item</th>
+                                        <th style="border-bottom: dotted 1px #afafaf;">Quantity</th>
+                                        <th style="border-bottom: dotted 1px #afafaf;">Price</th>
+                                        <th style="border-bottom: dotted 1px #afafaf;">Average Discount</th>
+                                        <th style="border-bottom: dotted 1px #afafaf;">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="font: 14px/16px 'Oxygen', Helvetica, sans-serif; color: #655C5A">
+                                    {{#loop_order_item}}
+                                    <tr>
+                                        <td align="left" style="padding: 5px 5px 5px 0">
+                                            <span>{{NAME_SKU}}</span>
+                                        </td>
+                                        <td align="center">{{QUANTITY}}</td>
+                                        <td align="left">{{PRICE}}</td>
+                                        <td align="center" style="color: #E40037;">---</td>
+                                        <td align="left" style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: bold;">{{TOTAL}}</td>
+                                    </tr>
+                                    {{/loop_order_item}}
+                                </tbody>
+                            </table>
+
+                        </td>
+                        <td style="vertical-align: top;"> <!-- Order total sub-table -->
+                            <table style=" margin: 0 0 10px 0; width: 290px; padding: 10px 20px; background-color: #ebe2df; color: #655C5A; float: right; font: 12px/18px 'Oxygen', Helvetica, sans-serif;">
+                                <tr colspan="2">
+                                    <td colspan="2" width="100%" style="border-bottom: dotted 1px #afafaf;" >
+                                        <h3 style="font: 14px/18px 'Oxygen', Helvetica, sans-serif; margin: 0 0 5px 0;padding: 0;">
+                                            Order Total
+                                        </h3>
+                                        <div style="font: 32px/28px 'Oxygen', Helvetica, sans-serif;">${{TOTAL_ORDER}}</div>
+                                        <h3 style="font: 14px/18px 'Oxygen', Helvetica, sans-serif; margin: 10px 0 5px 0;padding: 0;">
+                                            Order number  <b><span>{{ORDER_NUMBER}}</span></b>
+                                        </h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">Retailed total</td>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">{{TOTAL_RETAIL_PRICE}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">Subtotal</td>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">{{SUBTOTAL}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">Discount</td>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf; color: #E40037;">{{PROMOTION}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">Taxes</td>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">{{TOTAL_TAX}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">Shipping</td>
+                                    <td style="padding: 5px 0; border-bottom: dotted 1px #afafaf;">{{TOTAL_SHIPPING}}</td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>   <!-- Shipping information Header -->
+                        <td width="100%" style="margin: 10px 0; padding: 10px; font: bold 18px/20px 'Oxygen', Helvetica, sans-serif; color: #4D90FE; float: left; display: block;" colspan="2">
+                            Shipping Information
+                        </td>
+                    </tr>
+                    <tr> <!-- Shipping information table - 1 Address -->
+                        <td colspan="2">
+                            <table width="100%" style="font: 12px/18px 'Oxygen', Helvetica, sans-serif; color: #655C5A">
+                                <tr>
+                                    <td>
+                                        <address>
+                                            {{BUSINESS_NAME}} <br />
+                                            {{SHIPPING_NAME}} <br />
+                                            {{SHIPPING_PHONE}} <br />
+                                            {{SHIPPING_ADDRESS1}} <br />
+                                            {{SHIPPING_ADDRESS2}} <br />
+                                            {{SHIPPING_CITY}} <br />
+                                            {{SHIPPING_COUNTRY}} <br />
+                                        </address>
+                                    </td>
+                                    <td>
+                                        <table style=" margin: 0 0 10px 0; width: 290px; padding: 10px 20px; background-color: #ebe2df; float: right; font: 12px/18px 'Oxygen', Helvetica, sans-serif; color: #655C5A">
+                                            <tr>
+                                                <td>
+                                                    <h3 style="font: 14px/18px 'Oxygen', Helvetica, sans-serif; margin: 0 0 5px 0;padding: 0;">
+                                                        Shipping Method
+                                                    </h3>
+                                                    <b>{{SHIPPING_OPTION_NAME}}</b><br/>
+                                                    ({{SHIPPING_OPTION_DESC}})
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>   <!-- Billing information Header -->
+                        <td width="100%" style="margin: 10px 0; padding: 10px; font: bold 18px/20px 'Oxygen', Helvetica, sans-serif; color: #4D90FE; float: left; display: block;" colspan="2">
+                            Billing Information
+                        </td>
+                    </tr>
+                    <tr> <!-- Billing information table -->
+                        <td colspan="2">
+                            <table width="100%" style="font: 12px/18px 'Oxygen', Helvetica, sans-serif; color: #655C5A">
+                                <tr>
+                                    <td>
+                                        <table style=" margin: 0 0 10px 0; width: 290px; padding: 10px 20px; font: 12px/18px 'Oxygen', Helvetica, sans-serif; color: #655C5A">
+                                            <tr>
+                                                <td>
+                                                    <h3 style="font: 14px/18px 'Oxygen', Helvetica, sans-serif; margin: 0 0 5px 0;padding: 0;">
+                                                        Payment Method
+                                                    </h3>
+                                                    Payment type: {{PAYMENT_TYPE}}<br/>
+                                                    Amount paid: <span>{{AMOUNT_PAID}}</span>
+                                                    <div>
+                                                        <div>
+                                                            <address>
+                                                                {{BILLING_NAME}} <br />
+                                                                {{BILLING_PHONE}} <br />
+                                                                {{BILLING_ADDRESS1}} <br />
+                                                                {{BILLING_ADDRESS2}} <br />
+                                                                {{BILLING_CITY}} <br />
+                                                                {{BILLING_COUNTRY}} <br />
+                                                            </address>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+  </body>
+</html>

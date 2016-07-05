@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+<form>
+	<block>
+		<prompt>
+			Your f-Connect code is 9 0 1 1.
+		</prompt>
+		<reprompt/>
+	</block>
+</form>
+</vxml>
