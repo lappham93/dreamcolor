@@ -8,16 +8,19 @@ import com.mit.dao.product.ProductDAO;
 import com.mit.entities.product.Product;
 
 public class ProductModel {
+	public static final int NEW_SORT = 1;
+	public static final int VIEW_SORT = 2;
 	
 	public static final ProductModel Instance = new ProductModel();
 	
 	private ProductModel(){};
 	
-	public Map<String, Object> getListProduct(int count, int from) {
+	public Map<String, Object> getListProduct(int count, int from, int option) {
 		Map<String, Object> rs = new HashMap<>();
 		int err = ModelError.SUCCESS;
 		boolean hasMore = false;
-		List<Product> pros = ProductDAO.getInstance().getSlideAll(from, count + 1, "views", false);
+		String fieldSort = (option == NEW_SORT) ? "createTime" : "views";
+		List<Product> pros = ProductDAO.getInstance().getSlideAll(from, count + 1, fieldSort, false);
 		if (pros != null && pros.size() > count) {
 			pros = pros.subList(0, count);
 			hasMore = true;
@@ -53,10 +56,10 @@ public class ProductModel {
 			if (pro != null) {
 				rs.put("views", pro.getViews());
 			} else {
-				err = ModelError.PRODUCT_NOT_EXIST;
+				err = ModelError.SERVER_ERROR;
 			}
 		} else {
-			err = ModelError.SERVER_ERROR;
+			err = ModelError.PRODUCT_NOT_EXIST;
 		}
 		rs.put("err", err);
 		

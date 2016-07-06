@@ -56,10 +56,10 @@ public class ColorModel {
 			if (color != null) {
 				rs.put("views", color.getViews());
 			} else {
-				err = ModelError.COLOR_NOT_EXIST;
+				err = ModelError.SERVER_ERROR;
 			}
 		} else {
-			err = ModelError.SERVER_ERROR;
+			err = ModelError.COLOR_NOT_EXIST;
 		}
 		rs.put("err", err);
 		

@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mit.cyogel</groupId>
-	<artifactId>cyogel-upload</artifactId>
+	<groupId>com.mit.dreamcolor</groupId>
+	<artifactId>dreamcolor-upload</artifactId>
 	<version>0.0.1</version>
-	<name>cyogel-upload</name>
+	<name>dreamcolor-upload</name>
 	<properties>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -52,13 +52,13 @@
 			<version>${jettyVersion}</version>
 		</dependency>
         <dependency>
-			<groupId>com.mit.cyogel</groupId>
+			<groupId>com.mit.dreamcolor</groupId>
 			<artifactId>common</artifactId>
 		  	<version>0.0.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.mit.cyogel</groupId>
-			<artifactId>cyogel-models</artifactId>
+			<groupId>com.mit.dreamcolor</groupId>
+			<artifactId>dreamcolor-models</artifactId>
 			<version>0.0.1</version>
 		</dependency>
 		<dependency>
@@ -146,6 +146,12 @@
 		    <artifactId>commons-lang3</artifactId>
 		    <version>3.4</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.4</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}-${project.version}</finalName>

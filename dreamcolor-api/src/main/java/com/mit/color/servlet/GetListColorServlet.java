@@ -13,7 +13,7 @@ import org.apache.commons.lang.math.NumberUtils;
 import com.mit.api.ApiError;
 import com.mit.api.ApiMessage;
 import com.mit.models.ColorModel;
-import com.mit.user.servlet.ServletWrapper;
+import com.mit.servlet.ServletWrapper;
 
 public class GetListColorServlet extends ServletWrapper{
 	private final List<String> paramRequire = Arrays.asList("categoryId", "page", "count");

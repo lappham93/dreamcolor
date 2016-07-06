@@ -14,7 +14,7 @@ import com.mit.api.ApiError;
 import com.mit.api.ApiMessage;
 import com.mit.models.ModelError;
 import com.mit.models.ProductModel;
-import com.mit.user.servlet.ServletWrapper;
+import com.mit.servlet.ServletWrapper;
 
 public class ViewProductServlet extends ServletWrapper{
 	private final List<String> paramRequire = Arrays.asList("productId");

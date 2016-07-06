@@ -1,19 +1,3 @@
-/*
- * Copyright 2016 nghiatc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.mit.dao.photo;
 
 import com.mit.mphoto.thrift.MPhotoService;
@@ -29,32 +13,27 @@ import java.util.Map;
 import org.apache.thrift.TException;
 import org.apache.thrift.transport.TTransportException;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
- *
- * @author nghiatc
- * @since Jan 9, 2016
- */
-public class ProductPhotoClient {
-    private static final Class _ThisClass = ProductPhotoClient.class;
-	private static final Logger _Logger = LoggerFactory.getLogger(_ThisClass);
-	private static final String _name = "productphoto";
-	private TClientPool.BizzConfig _bizzCfg;
+
+public abstract class PhotoClient {
+	protected String _className;
+	protected Logger _Logger;
+	protected String _name;
+	protected TClientPool.BizzConfig _bizzCfg;
     
-    private static ProductPhotoClient instance = new ProductPhotoClient();
-    
-    private ProductPhotoClient(){
-        assert (_name != null && !_name.isEmpty());
+    protected PhotoClient(Logger _logger, String _name, String _className){
+    	childInit(_logger, _name, _className);
+    	assert (_name != null && !_name.isEmpty());
 		_initialize();
     }
     
-    public static ProductPhotoClient getInstance(){
-        return instance;
+    private void childInit(Logger _logger, String _name, String _className) {
+    	this._Logger = _logger;
+    	this._name = _name;
+    	this._className = _className;
     }
-
+    
 	private void _initialize() {
-        System.out.println("ProductPhotoClient._initialize");
 		MClientPoolUtil.setDefaultPoolProp(_name //instName
 				, null //host
 				, null //auth
@@ -102,11 +81,11 @@ public class ProductPhotoClient {
 			return MErrorDef.SUCCESS;
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.ping", ex);
+            _Logger.error(_className + ".ping", ex);
 			return MErrorDef.BAD_CONNECTION;
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.ping", ex);
+			_Logger.error(_className + ".ping", ex);
 			return MErrorDef.BAD_REQUEST;
 		}
 	}
@@ -127,11 +106,11 @@ public class ProductPhotoClient {
 			return err;
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.putMPhoto", ex);
+            _Logger.error(_className + ".putMPhoto", ex);
 			return MErrorDef.BAD_CONNECTION;
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.putMPhoto", ex);
+			_Logger.error(_className + ".putMPhoto", ex);
 			return MErrorDef.BAD_REQUEST;
 		}
     }
@@ -148,11 +127,11 @@ public class ProductPhotoClient {
 			return err;
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.multiPutMPhoto", ex);
+            _Logger.error(_className + ".multiPutMPhoto", ex);
 			return MErrorDef.BAD_CONNECTION;
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.multiPutMPhoto", ex);
+			_Logger.error(_className + ".multiPutMPhoto", ex);
 			return MErrorDef.BAD_REQUEST;
 		}
     }
@@ -168,10 +147,10 @@ public class ProductPhotoClient {
 			pool.returnClient(cli);
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.owPutMPhoto", ex);
+            _Logger.error(_className + ".owPutMPhoto", ex);
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.owPutMPhoto", ex);
+			_Logger.error(_className + ".owPutMPhoto", ex);
 		}
     }
     
@@ -186,10 +165,10 @@ public class ProductPhotoClient {
 			pool.returnClient(cli);
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.owPutMPhoto", ex);
+            _Logger.error(_className + ".owPutMPhoto", ex);
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.owPutMPhoto", ex);
+			_Logger.error(_className + ".owPutMPhoto", ex);
 		}
     }
     
@@ -208,15 +187,15 @@ public class ProductPhotoClient {
 				return ret;
 			} catch (TTransportException ex) {
 				pool.invalidateClient(cli, ex);
-                _Logger.error("ProductPhotoClient.getMPhoto", ex);
+                _Logger.error(_className + ".getMPhoto", ex);
 				continue;
 			} catch (TException ex) {
 				pool.invalidateClient(cli, ex);
-                _Logger.error("ProductPhotoClient.getMPhoto", ex);
+                _Logger.error(_className + ".getMPhoto", ex);
 				return TMPhotoResult_BAD_REQUEST;
 			} catch (Exception ex) {
 				pool.invalidateClient(cli, ex);
-                _Logger.error("ProductPhotoClient.getMPhoto", ex);
+                _Logger.error(_className + ".getMPhoto", ex);
 				return TMPhotoResult_BAD_REQUEST;
 			}
 		}
@@ -238,15 +217,15 @@ public class ProductPhotoClient {
 				return ret;
 			} catch (TTransportException ex) {
 				pool.invalidateClient(cli, ex);
-                _Logger.error("ProductPhotoClient.getMPhoto", ex);
+                _Logger.error(_className + ".getMPhoto", ex);
 				continue;
 			} catch (TException ex) {
 				pool.invalidateClient(cli, ex);
-                _Logger.error("ProductPhotoClient.getMPhoto", ex);
+                _Logger.error(_className + ".getMPhoto", ex);
 				return TMapMPhotoResult_BAD_REQUEST;
 			} catch (Exception ex) {
 				pool.invalidateClient(cli, ex);
-                _Logger.error("ProductPhotoClient.getMPhoto", ex);
+                _Logger.error(_className + ".getMPhoto", ex);
 				return TMapMPhotoResult_BAD_REQUEST;
 			}
 		}
@@ -265,11 +244,11 @@ public class ProductPhotoClient {
 			return err;
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.putMPhoto", ex);
+            _Logger.error(_className + ".updateMPhoto", ex);
 			return MErrorDef.BAD_CONNECTION;
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.putMPhoto", ex);
+			_Logger.error(_className + ".updateMPhoto", ex);
 			return MErrorDef.BAD_REQUEST;
 		}
     }
@@ -286,11 +265,11 @@ public class ProductPhotoClient {
 			return err;
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.putMPhoto", ex);
+            _Logger.error(_className + ".multiUpdateMPhoto", ex);
 			return MErrorDef.BAD_CONNECTION;
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.putMPhoto", ex);
+			_Logger.error(_className + ".multiUpdateMPhoto", ex);
 			return MErrorDef.BAD_REQUEST;
 		}
     }
@@ -307,11 +286,11 @@ public class ProductPhotoClient {
 			return err;
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.putMPhoto", ex);
+            _Logger.error(_className + ".deleteMPhoto", ex);
 			return MErrorDef.BAD_CONNECTION;
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.putMPhoto", ex);
+			_Logger.error(_className + ".deleteMPhoto", ex);
 			return MErrorDef.BAD_REQUEST;
 		}
     }
@@ -328,11 +307,11 @@ public class ProductPhotoClient {
 			return err;
 		} catch (TTransportException ex) {
 			pool.invalidateClient(cli, ex);
-            _Logger.error("ProductPhotoClient.putMPhoto", ex);
+            _Logger.error(_className + ".multiDeleteMPhoto", ex);
 			return MErrorDef.BAD_CONNECTION;
 		} catch (TException ex) {
 			pool.invalidateClient(cli, ex);
-			_Logger.error("ProductPhotoClient.putMPhoto", ex);
+			_Logger.error(_className + ".multiDeleteMPhoto", ex);
 			return MErrorDef.BAD_REQUEST;
 		}
     }

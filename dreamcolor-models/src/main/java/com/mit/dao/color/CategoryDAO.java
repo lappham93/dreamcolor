@@ -175,7 +175,7 @@ public class CategoryDAO extends CommonDAO {
 			Document doc = new Document("_id", obj.getId())
 					.append("name", obj.getName())
 					.append("desc", obj.getDescription())
-					.append("photo", obj.getPhoto())
+					.append("photo", obj.getPhotoNum())
 					.append("status", obj.getStatus());
 			return doc;
 		}

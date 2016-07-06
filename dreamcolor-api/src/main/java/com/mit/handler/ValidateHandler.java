@@ -1,4 +1,4 @@
-package com.mit.user.handler;
+package com.mit.handler;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -13,7 +13,7 @@ import org.apache.commons.lang.math.NumberUtils;
 import com.mit.api.ApiError;
 import com.mit.api.ApiMessage;
 import com.mit.models.ProductModel;
-import com.mit.user.servlet.ServletWrapper;
+import com.mit.servlet.ServletWrapper;
 
 public class GetListProductServlet extends ServletWrapper{
 	private final List<String> paramRequire = Arrays.asList("page", "count");
@@ -27,9 +27,10 @@ public class GetListProductServlet extends ServletWrapper{
 			try {
 				int page = NumberUtils.toInt(String.valueOf(params.get("page")));
 				int count = NumberUtils.toInt(String.valueOf(params.get("count")));
+				int sortOption = NumberUtils.toInt(String.valueOf(params.get("option")), ProductModel.VIEW_SORT);
 				int from = (page > 1) ? (page - 1)*count : 0; 
 					
-				Map<String, Object> rs = ProductModel.Instance.getListProduct(count, from);
+				Map<String, Object> rs = ProductModel.Instance.getListProduct(count, from, sortOption);
 				int err = (int)rs.get("err");
 				msg.setErr(err);
 				rs.remove("err");

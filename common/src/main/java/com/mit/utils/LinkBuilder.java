@@ -38,14 +38,23 @@ public class LinkBuilder {
     	return link;
 	}
 	
-	 public static String buildBannerThumbLink(long id) {
-	    	String link = "https://api.cyogel.com/statics/welcom_cyogel@2x.png";
-	    	if (id > 0) {
-				String idNoise = MIdNoise.enNoiseLId(id);
-		        link = Common.DOMAIN_FILE + "/dreamMau/load/bn/photo?p=" + idNoise;
-	    	}
-	    	return link;
-		}
+	public static String buildBannerThumbLink(long id) {
+    	String link = "https://api.cyogel.com/statics/welcom_cyogel@2x.png";
+    	if (id > 0) {
+			String idNoise = MIdNoise.enNoiseLId(id);
+	        link = Common.DOMAIN_FILE + "/dreamMau/load/bn/photo?p=" + idNoise;
+    	}
+    	return link;
+	}
+	 
+	public static String buildVideoThumbLink(long id) {
+    	String link = "https://api.cyogel.com/statics/welcom_cyogel@2x.png";
+    	if (id > 0) {
+			String idNoise = MIdNoise.enNoiseLId(id);
+	        link = Common.DOMAIN_FILE + "/dreamMau/load/video/photo?p=" + idNoise;
+    	}
+    	return link;
+	}
 
 	public static String buildAvatarLink(int uid, int avtVer, long tmpId, int size) {
 		//String noiseString = NoiseIdUtils.encryptString(System.currentTimeMillis() + "");

@@ -1,4 +1,4 @@
-package com.mit.user.handler;
+package com.mit.handler;
 ////
 ////  ========================================================================
 ////  Copyright (c) 1995-2014 Mort Bay Consulting Pty. Ltd.

@@ -8,7 +8,9 @@ import org.eclipse.jetty.server.handler.gzip.GzipHandler;
 import org.eclipse.jetty.servlet.ServletHandler;
 
 import com.mit.jetty.server.WebServers;
+import com.mit.upload.http.handler.MultiPartValidateHandler;
 import com.mit.upload.http.handler.NoFunctionHandler;
+import com.mit.upload.http.servlet.UploadPhotoServlet;
 import com.mit.utils.ConfigUtils;
 
 
@@ -50,14 +52,6 @@ public class MainApp {
 	}
 	
 	public static void addServlets(ServletHandler handler) {
-//		handler.addServletWithMapping(UploadUserAvatarServlet.class, "/cyog/upload/user/avt");
-//		handler.addServletWithMapping(UploadBizAvatarServlet.class, "/cyog/upload/biz/avt");
-//		handler.addServletWithMapping(UploadBizCoverServlet.class, "/cyog/upload/biz/cov");
-//		handler.addServletWithMapping(UploadTemplateVertServlet.class, "/cyog/upload/tml/v");
-//		handler.addServletWithMapping(UploadTemplateHorzServlet.class, "/cyog/upload/tml/h");
-//        //mmedia
-//        handler.addServletWithMapping(UploadMMediaServlet.class, "/cyog/upload/media");
-        //mphoto
-//        handler.addServletWithMapping(UploadMPhotoServlet.class, "/cyog/upload/photo");
+		handler.addServletWithMapping(UploadPhotoServlet.class, "/dreaMau/upload/photo");
 	}
 }

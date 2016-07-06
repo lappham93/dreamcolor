@@ -1,4 +1,4 @@
-package com.mit.user.servlet;
+package com.mit.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;

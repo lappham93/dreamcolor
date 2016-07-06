@@ -14,7 +14,7 @@ import org.apache.commons.lang.math.NumberUtils;
 import com.mit.api.ApiError;
 import com.mit.api.ApiMessage;
 import com.mit.models.BannerModel;
-import com.mit.user.servlet.ServletWrapper;
+import com.mit.servlet.ServletWrapper;
 import com.mit.utils.JsonUtils;
 
 public class GetListBannerServlet extends ServletWrapper {
