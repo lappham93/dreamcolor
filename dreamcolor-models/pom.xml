@@ -71,6 +71,11 @@
 		  <artifactId>jsoup</artifactId>
 		  <version>1.8.3</version>
 		</dependency>
+		<dependency>
+		    <groupId>com.mit</groupId>
+		    <artifactId>mit-configuration</artifactId>
+		    <version>1.0.0</version>
+		</dependency>
 		<!-- <dependency>
 			<groupId>commons-validator</groupId>
 			<artifactId>commons-validator</artifactId>

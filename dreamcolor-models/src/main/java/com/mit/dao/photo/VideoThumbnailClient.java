@@ -7,7 +7,7 @@ public class VideoThumbnailClient extends PhotoClient{
 	private static final VideoThumbnailClient instance = new VideoThumbnailClient();
 	
 	private VideoThumbnailClient() {
-		super(LoggerFactory.getLogger(VideoThumbnailClient.class), "videophoto", "VideoThumbnailClient");
+		super(LoggerFactory.getLogger(VideoThumbnailClient.class), PhotoCommon.videoPhotoName, "VideoThumbnailClient");
 	}
 	
 	public static VideoThumbnailClient getInstance() {

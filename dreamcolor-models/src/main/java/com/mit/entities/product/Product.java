@@ -3,12 +3,12 @@ package com.mit.entities.product;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mit.utils.LinkBuilder;
-
+import com.mit.entities.photo.PhotoType;
+import com.mit.entities.photo.PhotoView;
 
 public class Product {
 	public static final int ACTIVE = 1;
-	
+
 	private long id;
 	private int categoryId;
 	private String manufacturer;
@@ -21,12 +21,13 @@ public class Product {
 	private int status;
 	private long createTime;
 	private long updateTime;
-	
+
 	public Product() {
 		super();
 	}
-	
-	public Product(long id, int categoryId, String manufacturer, String model, String name, String desc, long primaryPhoto, List<Long> photos) {
+
+	public Product(long id, int categoryId, String manufacturer, String model, String name, String desc,
+			long primaryPhoto, List<Long> photos) {
 		this.id = id;
 		this.categoryId = categoryId;
 		this.manufacturer = manufacturer;
@@ -39,8 +40,8 @@ public class Product {
 		this.status = ACTIVE;
 	}
 
-	public Product(long id, int categoryId, String manufacturer, String model, String name, String desc, long primaryPhoto, List<Long> photos,
-			int views, int status, long createTime, long updateTime) {
+	public Product(long id, int categoryId, String manufacturer, String model, String name, String desc,
+			long primaryPhoto, List<Long> photos, int views, int status, long createTime, long updateTime) {
 		super();
 		this.id = id;
 		this.categoryId = categoryId;
@@ -119,11 +120,11 @@ public class Product {
 	public void setPhotos(List<Long> photos) {
 		this.photos = photos;
 	}
-	
+
 	public int getViews() {
 		return views;
 	}
-	
+
 	public void setViews(int views) {
 		this.views = views;
 	}
@@ -151,11 +152,11 @@ public class Product {
 	public void setUpdateTime(long updateTime) {
 		this.updateTime = updateTime;
 	}
-	
+
 	public ProductViewBasic buildProductViewBasic() {
 		return new ProductViewBasic(this);
 	}
-	
+
 	public static List<ProductViewBasic> buildListProductViewBasic(List<Product> pros) {
 		List<ProductViewBasic> rs = new ArrayList<ProductViewBasic>();
 		if (pros != null && pros.size() > 0) {
@@ -163,41 +164,42 @@ public class Product {
 				rs.add(pro.buildProductViewBasic());
 			}
 		}
-		
+
 		return rs;
 	}
-	
+
 	public ProductViewDetail buildProductViewDetail() {
 		return new ProductViewDetail(this);
 	}
-	
-//	public static List<ProductViewDetail> buildListProductViewDetail(List<Product> pros) {
-//		List<ProductViewDetail> rs = new ArrayList<ProductViewDetail>();
-//		if (pros != null && pros.size() > 0) {
-//			for (Product pro : pros) {
-//				rs.add(pro.buildProductViewDetail());
-//			}
-//		}
-//		
-//		return rs;
-//	}
-	
+
+	// public static List<ProductViewDetail>
+	// buildListProductViewDetail(List<Product> pros) {
+	// List<ProductViewDetail> rs = new ArrayList<ProductViewDetail>();
+	// if (pros != null && pros.size() > 0) {
+	// for (Product pro : pros) {
+	// rs.add(pro.buildProductViewDetail());
+	// }
+	// }
+	//
+	// return rs;
+	// }
+
 	public class ProductViewBasic {
 		private long id;
 		private String manufacturer;
 		private String model;
 		private String name;
 		private String desc;
-		private String primaryPhoto;
+		private PhotoView primaryPhoto;
 		private int views;
-		
+
 		public ProductViewBasic(Product pro) {
 			id = pro.getId();
 			manufacturer = pro.getManufacturer();
 			model = pro.getModel();
 			name = pro.getName();
 			desc = pro.getDesc();
-			primaryPhoto = LinkBuilder.buildProductPhotoLink(pro.getPrimaryPhoto());
+			primaryPhoto = new PhotoView(pro.getPrimaryPhoto(), PhotoType.PRODUCT.getValue());
 			views = pro.getViews();
 		}
 
@@ -221,16 +223,16 @@ public class Product {
 			return desc;
 		}
 
-		public String getPrimaryPhoto() {
+		public PhotoView getPrimaryPhoto() {
 			return primaryPhoto;
 		}
 
 		public int getViews() {
 			return views;
 		}
-		
+
 	}
-	
+
 	public class ProductViewDetail {
 		private long id;
 		private int categoryId;
@@ -238,12 +240,12 @@ public class Product {
 		private String model;
 		private String name;
 		private String desc;
-		private String primaryPhoto;
-		private List<String> photos;
+		private PhotoView primaryPhoto;
+		private List<PhotoView> photos;
 		private int views;
 		private long createTime;
 		private long updateTime;
-		
+
 		public ProductViewDetail(Product pro) {
 			id = pro.getId();
 			categoryId = pro.getCategoryId();
@@ -251,11 +253,11 @@ public class Product {
 			model = pro.getModel();
 			name = pro.getName();
 			desc = pro.getDesc();
-			primaryPhoto = LinkBuilder.buildProductPhotoLink(pro.getId());
+			primaryPhoto = new PhotoView(pro.getPrimaryPhoto(), PhotoType.PRODUCT.getValue());
 			if (pro.getPhotos() != null && pro.getPhotos().size() > 0) {
-				photos = new ArrayList<String>();
+				photos = new ArrayList<PhotoView>();
 				for (long photoId : pro.getPhotos()) {
-					photos.add(LinkBuilder.buildProductPhotoLink(photoId));
+					photos.add(new PhotoView(photoId, PhotoType.PRODUCT.getValue()));
 				}
 			}
 			views = pro.getViews();
@@ -287,14 +289,14 @@ public class Product {
 			return desc;
 		}
 
-		public String getPrimaryPhoto() {
+		public PhotoView getPrimaryPhoto() {
 			return primaryPhoto;
 		}
 
-		public List<String> getPhotos() {
+		public List<PhotoView> getPhotos() {
 			return photos;
 		}
-		
+
 		public int getViews() {
 			return views;
 		}
@@ -306,6 +308,6 @@ public class Product {
 		public long getUpdateTime() {
 			return updateTime;
 		}
-		
+
 	}
 }

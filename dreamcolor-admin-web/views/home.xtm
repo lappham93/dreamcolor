@@ -1,0 +1,198 @@
+
+<div class="row">
+    <div class="space-6"></div>
+    <div class="col-sm-12 infobox-container">
+        <div class="infobox infobox-blue">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-barcode"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">11 Products</span>
+                <!--<div class="infobox-content">new followers</div>-->
+            </div>
+            <!--<div class="badge badge-success">+32%<i class="ace-icon fa fa-arrow-up"></i></div>-->
+        </div>
+        
+        <div class="infobox infobox-green">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-users"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{NUM_USERS}} Users</span>
+                <!--<div class="infobox-content">comments + 2 reviews</div>-->
+            </div>
+            <!--<div class="stat stat-success">8%</div>-->
+        </div>
+
+        <div class="infobox infobox-purple">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-shopping-cart"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{DAY_ORDERS}} New orders</span>
+                <!--<div class="infobox-content">new orders</div>-->
+            </div>
+            <!--<div class="stat stat-important">4%</div>-->
+        </div>
+        
+        <div class="infobox infobox-pink">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-share"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{ON_HOLD}} On hold</span>
+                <!--<div class="infobox-content">new orders</div>-->
+            </div>
+            <!--<div class="stat stat-important">4%</div>-->
+        </div>
+
+        <div class="infobox infobox-red">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-square-o"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{PENDING_ORDERS}} Pending</span>
+                <!--<span class="infobox-text">{{PENDING_ORDERS}} Pending orders</span>-->
+                <!--<div class="infobox-content">experiments</div>-->
+            </div>
+        </div>
+        
+        <div class="infobox infobox-grey">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-trash-o"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{CANCELED_ORDERS}} Canceled</span>
+                <!--<span class="infobox-text">{{PENDING_ORDERS}} Pending orders</span>-->
+                <!--<div class="infobox-content">experiments</div>-->
+            </div>
+        </div>
+        
+        <div class="infobox infobox-orange">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-check-square-o"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{PAYMENT_RECEIVED}} Received</span>
+                <!--<span class="infobox-text">{{PENDING_ORDERS}} Pending orders</span>-->
+                <!--<div class="infobox-content">experiments</div>-->
+            </div>
+        </div>
+        
+        <div class="infobox infobox-green2">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-gift"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{PACKAGING}} Packaging</span>
+                <!--<span class="infobox-text">{{PENDING_ORDERS}} Pending orders</span>-->
+                <!--<div class="infobox-content">experiments</div>-->
+            </div>
+        </div>
+        
+        <div class="infobox infobox-blue2">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-fighter-jet"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{SHIPPING}} Shipping</span>
+                <!--<span class="infobox-text">{{PENDING_ORDERS}} Pending orders</span>-->
+                <!--<div class="infobox-content">experiments</div>-->
+            </div>
+        </div>
+        
+        <div class="infobox infobox-green2">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-home"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{ARCHIVE}} Archive</span>
+                <!--<span class="infobox-text">{{PENDING_ORDERS}} Pending orders</span>-->
+                <!--<div class="infobox-content">experiments</div>-->
+            </div>
+        </div>
+        
+        <div class="infobox infobox-black">
+            <div class="infobox-icon">
+                <i class="ace-icon fa fa-pencil-square-o"></i>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">{{TT_ORDERS}} Total Orders</span>
+                <!--<span class="infobox-text">{{PENDING_ORDERS}} Pending orders</span>-->
+                <!--<div class="infobox-content">experiments</div>-->
+            </div>
+        </div>
+        
+
+<!--        <div class="infobox infobox-orange2">
+            <div class="infobox-chart">
+                <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-data-number">6,251</span>
+                <div class="infobox-content">pageviews</div>
+            </div>
+            <div class="badge badge-success">
+                7.2%
+                <i class="ace-icon fa fa-arrow-up"></i>
+            </div>
+        </div>
+
+        <div class="infobox infobox-blue2">
+            <div class="infobox-progress">
+                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                    <span class="percent">42</span>%
+                </div>
+            </div>
+            <div class="infobox-data">
+                <span class="infobox-text">traffic used</span>
+                <div class="infobox-content">
+                    <span class="bigger-110">~</span>
+                    58GB remaining
+                </div>
+            </div>
+        </div>-->
+        
+        <div class="space-6"></div>
+        
+    </div>
+
+    <div class="vspace-12-sm"></div>
+
+</div>
+
+<!-- #section:custom/extra.hr -->
+<div class="hr hr32 hr-dotted"></div>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        /////////////////////////////////////
+        $(document).one('ajaxloadstart.page', function (e) {
+            $tooltip.remove();
+        });
+
+        $('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('.tab-content')
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            //var w2 = $source.width();
+
+            if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2))
+                return 'right';
+            return 'left';
+        }
+        
+    });
+    
+try{
+    
+    
+    
+    
+}catch(e){}
+</script>
+

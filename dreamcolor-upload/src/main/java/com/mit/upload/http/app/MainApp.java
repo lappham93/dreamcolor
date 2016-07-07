@@ -52,6 +52,6 @@ public class MainApp {
 	}
 	
 	public static void addServlets(ServletHandler handler) {
-		handler.addServletWithMapping(UploadPhotoServlet.class, "/dreaMau/upload/photo");
+		handler.addServletWithMapping(UploadPhotoServlet.class, "/dreamau/upload/photo");
 	}
 }

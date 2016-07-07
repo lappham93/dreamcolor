@@ -6,14 +6,6 @@
 
 package com.mit.file.servlet;
 
-import com.eclipsesource.json.JsonObject;
-import com.mit.file.common.Configuration;
-import hapax.Template;
-import hapax.TemplateCache;
-import hapax.TemplateDataDictionary;
-import hapax.TemplateDictionary;
-import hapax.TemplateException;
-import hapax.TemplateLoader;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -23,12 +15,35 @@ import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.io.FileUtils;
+import org.eclipse.jetty.http.HttpStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.eclipsesource.json.JsonObject;
+import com.mit.dao.photo.BannerPhotoClient;
+import com.mit.dao.photo.ColorPhotoClient;
+import com.mit.dao.photo.ProductPhotoClient;
+import com.mit.dao.photo.VideoThumbnailClient;
+import com.mit.entities.photo.PhotoType;
+import com.mit.file.common.Configuration;
+import com.mit.file.utils.ImageResize;
+import com.mit.midutil.MIdNoise;
+import com.mit.mphoto.thrift.TMPhoto;
+import com.mit.mphoto.thrift.TMPhotoResult;
+
+import hapax.Template;
+import hapax.TemplateCache;
+import hapax.TemplateDataDictionary;
+import hapax.TemplateDictionary;
+import hapax.TemplateException;
+import hapax.TemplateLoader;
 
 /**
  *
@@ -37,6 +52,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BaseHandler extends HttpServlet {
     private static Logger logger = LoggerFactory.getLogger(BaseHandler.class);
+    private final int minSize = 20;
     
     public static final TemplateLoader Loader = TemplateCache.create("./view");
     
@@ -56,6 +72,67 @@ public class BaseHandler extends HttpServlet {
             logger.error("BaseHandler: " + ex);
         }
     }
+    
+    protected void renderPhoto(HttpServletRequest req, HttpServletResponse resp, int type) {
+		try {
+			long t = System.nanoTime();
+			long fileSize = 0L;
+			String p = req.getParameter("p");
+			String ssize = req.getParameter("size");
+			int size = 0;
+			if (ssize != null && !ssize.isEmpty()) {
+				size = Integer.valueOf(ssize);
+			}
+			if (p != null && !p.isEmpty()) {
+				long pid = MIdNoise.deNoiseLId(p);
+				TMPhotoResult tptrs = null;
+				if (type == PhotoType.BANNER.getValue()) {
+					tptrs = BannerPhotoClient.getInstance().getMPhoto(pid);
+				} else if (type == PhotoType.COLOR.getValue()) {
+					tptrs = ColorPhotoClient.getInstance().getMPhoto(pid);
+				} else if (type == PhotoType.PRODUCT.getValue()) {
+					tptrs = ProductPhotoClient.getInstance().getMPhoto(pid);
+				} else if (type == PhotoType.VIDEO_THUMBNAIL.getValue()) {
+					tptrs = VideoThumbnailClient.getInstance().getMPhoto(pid);
+				}
+				
+				if (tptrs != null && tptrs.error >= 0 && tptrs.value != null) {
+					TMPhoto tmp = tptrs.getValue();
+					String fileName = tmp.getFilename();
+					String mimeType = tmp.getContentType();
+					byte[] data = tmp.getData();
+
+					logger.info("FeedPhotoServlet load from rockdb - pid: " + p + " Size: " + size + " FileSize: "
+							+ FileUtils.byteCountToDisplaySize(data.length));
+					if (data != null && size > 0) {
+						size = size > minSize ? size : minSize;
+						ByteArrayOutputStream out = ImageResize.resizeImage(data, size);
+						if (out != null) {
+							data = out.toByteArray();
+							out.close();
+						}
+					}
+					fileSize = data.length;
+					logger.info("FeedPhotoServlet after resizeImage - pid: " + p + " Size: " + size + " FileSize: "
+							+ FileUtils.byteCountToDisplaySize(fileSize));
+					ByteArrayOutputStream outData = new ByteArrayOutputStream(data.length);
+					outData.write(data, 0, data.length);
+					printBigFile(resp, outData, fileName, mimeType);
+				} else {
+					logger.info("FeedPhotoServlet load from rockdb - pid: " + p + " Size: " + size + " -------> NULL ");
+					resp.setStatus(HttpStatus.NOT_FOUND_404);
+					print("", resp);
+				}
+			} else {
+				resp.setStatus(HttpStatus.BAD_REQUEST_400);
+				print("", resp);
+			}
+			logger.info("FeedPhotoServlet - pid: " + p + " Size: " + size + " FileSize: "
+					+ FileUtils.byteCountToDisplaySize(fileSize) + " Time: " + (System.nanoTime() - t) + "ns ");
+		} catch (Exception e) {
+			logger.error("renderFeedPhoto " + e.getMessage(), e);
+		}
+	}
     
     protected void print(Object obj, HttpServletResponse response) {
         PrintWriter out = null;

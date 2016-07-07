@@ -41,9 +41,9 @@ public class Common {
     public static final Map<Integer, String> mapALLEDCT = new HashMap<Integer, String>();
     
     static{
-        DOMAIN_APP = ConfigUtils.getConfig().getString("system.domain", "http://cyogel.com");
-        DOMAIN_FILE = ConfigUtils.getConfig().getString("system.domain-file", "http://file.cyogel.com");
-        DOMAIN_ADMIN = ConfigUtils.getConfig().getString("system.domain-admin", "http://admin.cyogel.com");
+        DOMAIN_APP = ConfigUtils.getConfig().getString("system.domain", "http://115.79.45.86");
+        DOMAIN_FILE = ConfigUtils.getConfig().getString("system.domain-file", "http://115.79.45.86");
+        DOMAIN_ADMIN = ConfigUtils.getConfig().getString("system.domain-admin", "http://115.79.45.86");
         DOMAIN_STATIC_ADMIN = ConfigUtils.getConfig().getString("system.domain-static-admin", "http://admin.bconnectapp.com/web/admin/static");
         MEDIA_LOAD_SERV_PATH = ConfigUtils.getConfig().getString("mmedia.servletPath", "/cyog/load/media");
         PHOTO_LOAD_SERV_PATH = ConfigUtils.getConfig().getString("mphoto.servletPath", "/cyog/load/photo");

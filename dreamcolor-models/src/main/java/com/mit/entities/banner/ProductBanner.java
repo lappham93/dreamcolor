@@ -1,6 +1,7 @@
 package com.mit.entities.banner;
 
-import com.mit.utils.LinkBuilder;
+import com.mit.entities.photo.PhotoType;
+import com.mit.entities.photo.PhotoView;
 
 
 
@@ -51,13 +52,13 @@ public class ProductBanner extends Banner {
 	public static class UserView extends Banner.UserView {		
 		private long productId;
 		private String msg;
-		private String thumb;
+		private PhotoView thumb;
 
 		private UserView(ProductBanner productBanner) {
 			super(productBanner);
 			this.productId = productBanner.getProductId();
 			this.msg = productBanner.getMsg();
-			this.thumb = LinkBuilder.buildBannerThumbLink(productBanner.getThumb());
+			this.thumb = new PhotoView(productBanner.getThumb(), PhotoType.BANNER.getValue());
 		}
 
 		public long getProductId() {
@@ -68,7 +69,7 @@ public class ProductBanner extends Banner {
 			return msg;
 		}
 
-		public String getThumb() {
+		public PhotoView getThumb() {
 			return thumb;
 		}	
 	}

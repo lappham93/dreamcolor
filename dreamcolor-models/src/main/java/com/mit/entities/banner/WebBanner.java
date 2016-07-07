@@ -3,7 +3,8 @@ package com.mit.entities.banner;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
-import com.mit.utils.LinkBuilder;
+import com.mit.entities.photo.PhotoType;
+import com.mit.entities.photo.PhotoView;
 
 
 public class WebBanner extends Banner {	
@@ -53,7 +54,7 @@ public class WebBanner extends Banner {
 	public static class UserView extends Banner.UserView {		
 		private String id;
 		private String msg;
-		private String thumb;
+		private PhotoView thumb;
 
 		private UserView(WebBanner webBanner) {
 			super(webBanner);
@@ -63,7 +64,7 @@ public class WebBanner extends Banner {
 				this.id = webBanner.getId();
 			}
 			this.msg = webBanner.getMsg();
-			this.thumb = LinkBuilder.buildBannerThumbLink(webBanner.getThumb());
+			this.thumb = new PhotoView(webBanner.getThumb(), PhotoType.BANNER.getValue());
 		}
 		
 		public String getId() {
@@ -74,7 +75,7 @@ public class WebBanner extends Banner {
 			return msg;
 		}
 
-		public String getThumb() {
+		public PhotoView getThumb() {
 			return thumb;
 		}	
 	}

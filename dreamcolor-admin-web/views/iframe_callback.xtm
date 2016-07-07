@@ -1,0 +1,7 @@
+<div id="data">{{data}}</div>
+<script type="text/javascript">	
+	var data;
+	data = document.getElementById("data").innerHTML;	
+	data = eval('('+data+')');
+	window.top.window.{{callback}}(data);	
+</script>

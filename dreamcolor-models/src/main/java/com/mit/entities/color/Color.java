@@ -3,11 +3,12 @@ package com.mit.entities.color;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mit.utils.LinkBuilder;
+import com.mit.entities.photo.PhotoType;
+import com.mit.entities.photo.PhotoView;
 
 public class Color {
 	private static final int ACTIVE = 1;
-	
+
 	private long id;
 	private int categoryId;
 	private String code;
@@ -16,7 +17,7 @@ public class Color {
 	private int status;
 	private long createTime;
 	private long updateTime;
-	
+
 	public Color(long id, int categoryId, String code, long photo) {
 		this.id = id;
 		this.categoryId = categoryId;
@@ -25,8 +26,9 @@ public class Color {
 		this.photo = photo;
 		this.status = ACTIVE;
 	}
-	
-	public Color(long id, int categoryId, String code, int views, long photo, int status, long createTime, long updateTime) {
+
+	public Color(long id, int categoryId, String code, int views, long photo, int status, long createTime,
+			long updateTime) {
 		this.id = id;
 		this.categoryId = categoryId;
 		this.code = code;
@@ -68,11 +70,11 @@ public class Color {
 	public void setViews(int views) {
 		this.views = views;
 	}
-	
+
 	public long getPhoto() {
 		return photo;
 	}
-	
+
 	public void setPhoto(long photo) {
 		this.photo = photo;
 	}
@@ -100,7 +102,7 @@ public class Color {
 	public void setUpdateTime(long updateTime) {
 		this.updateTime = updateTime;
 	}
-	
+
 	public static List<ColorView> buildListColorView(List<Color> colors) {
 		List<ColorView> colorViews = new ArrayList<ColorView>();
 		if (colors != null && colors.size() > 0) {
@@ -108,29 +110,29 @@ public class Color {
 				colorViews.add(color.buildColorView());
 			}
 		}
-		
+
 		return colorViews;
 	}
-	
+
 	public ColorView buildColorView() {
 		return new ColorView(this);
 	}
-	
- 	public class ColorView {
+
+	public class ColorView {
 		private long id;
 		private int categoryId;
 		private String code;
 		private int views;
-		private String photo;
+		private PhotoView photo;
 		private long createTime;
 		private long updateTime;
-		
+
 		public ColorView(Color color) {
 			id = color.getId();
 			categoryId = color.getCategoryId();
 			code = color.getCode();
 			views = color.getViews();
-			photo = LinkBuilder.buildColorPhotoLink(color.getId());
+			photo = new PhotoView(color.getId(), PhotoType.COLOR.getValue());
 			createTime = color.getCreateTime();
 			updateTime = color.getUpdateTime();
 		}
@@ -167,11 +169,11 @@ public class Color {
 			this.views = views;
 		}
 
-		public String getPhoto() {
+		public PhotoView getPhoto() {
 			return photo;
 		}
 
-		public void setPhoto(String photo) {
+		public void setPhoto(PhotoView photo) {
 			this.photo = photo;
 		}
 
@@ -190,7 +192,7 @@ public class Color {
 		public void setUpdateTime(long updateTime) {
 			this.updateTime = updateTime;
 		}
-		
+
 	}
-	
+
 }

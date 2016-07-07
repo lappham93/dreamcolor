@@ -1,7 +1,8 @@
 package com.mit.entities.video;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mit.utils.LinkBuilder;
+import com.mit.entities.photo.PhotoType;
+import com.mit.entities.photo.PhotoView;
 
 public class Video {
 	private static final int ACTIVE = 1;
@@ -89,8 +90,8 @@ public class Video {
 		return thumbnail;
 	}
 	
-	public String getThumbnail() {
-		return LinkBuilder.buildVideoThumbLink(thumbnail);
+	public PhotoView getThumbnail() {
+		return new PhotoView(thumbnail, PhotoType.VIDEO_THUMBNAIL.getValue());
 	}
 
 	public void setThumbnail(long thumbnail) {

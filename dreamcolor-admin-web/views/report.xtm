@@ -1,0 +1,408 @@
+
+<script src="{{static-domain}}/mitassets/js/date-time/bootstrap-datepicker.js"></script>
+<script src="{{static-domain}}/mitassets/js/date-time/bootstrap-timepicker.js"></script>
+<script src="{{static-domain}}/mitassets/js/date-time/moment.js"></script>
+<script src="{{static-domain}}/mitassets/js/date-time/daterangepicker.js"></script>
+<script src="{{static-domain}}/mitassets/js/date-time/bootstrap-datetimepicker.js"></script>
+
+<div class="row">
+    <div class="col-xs-12" style="min-height: 1000px;">
+
+        <h3 class="header smaller lighter blue">Report Sale</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <iframe id="if_SM" name="if_SM" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmSR" class="form-horizontal" action="/web/admin/report" method="POST" target="if_SM" >
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="form-field-2"> Date Range: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <div class="input-group col-xs-12 col-sm-5">
+                                <span class="input-group-addon">
+                                    <i class="ace-icon fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control" name="drsale" id="drsale" />
+                                <span class="input-group-btn">
+                                    <button id="btncsvsale" type="button" class="btn btn-success btn-sm" onclick="submitExportCSV(); return false;">
+                                        <span class="ace-icon fa fa-arrow-circle-o-down icon-on-right bigger-110"></span> Export CSV
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="expcsv_sale"/>
+                </form>
+            </div>
+        </div>
+
+        <h3 class="header smaller lighter blue">Report Email - Discount Code </h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <iframe id="if_EDC" name="if_EDC" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmEDC" class="form-horizontal" action="/web/admin/report" method="POST" target="if_EDC" >
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label class="col-sm-4 control-label" for="form-field-2"> Email: <span class="orange">(*)</span> </label>
+                            <div class="input-group col-sm-8">
+                                <input class="form-control" type="email" name="email" id="email" placeholder="email..."/>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="col-sm-5 control-label" for="form-field-2"> Discount Code: </label>
+                            <div class="input-group col-sm-7">
+                                <input class="form-control" type="text" name="dc" id="dc" placeholder="discount code..."/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-sm-3 control-label" for="form-field-2"> Date Range: <span class="orange">(*)</span> </label>
+                            <div class="input-group col-xs-12 col-sm-6">
+                                <span class="input-group-addon">
+                                    <i class="ace-icon fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control" name="dredc" id="dredc" />
+                                <span class="input-group-btn">
+                                    <button id="btncsvedc" type="button" class="btn btn-success btn-sm" onclick="submitExportCSVEDC(); return false;">
+                                        <span class="ace-icon fa fa-arrow-circle-o-down icon-on-right bigger-110"></span> Export CSV
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="expcsv_edc"/>
+                </form>
+            </div>
+        </div>
+
+        <h3 class="header smaller lighter blue">Report Product Quantity Sold</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <iframe id="if_PQS" name="if_PQS" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmPQS" class="form-horizontal" action="/web/admin/report" method="POST" target="if_PQS" >
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="form-field-2"> Date Range: <span class="orange">(*)</span> </label>
+                        <div class="col-sm-9">
+                            <div class="input-group col-xs-12 col-sm-5">
+                                <span class="input-group-addon">
+                                    <i class="ace-icon fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control" name="drpqs" id="drpqs" />
+                                <span class="input-group-btn">
+                                    <button id="btncsvpqs" type="button" class="btn btn-success btn-sm" onclick="submitExportCSVPQS(); return false;">
+                                        <span class="ace-icon fa fa-arrow-circle-o-down icon-on-right bigger-110"></span> Export CSV
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="expcsv_pqs"/>
+                </form>
+            </div>
+        </div>
+
+        <h3 class="header smaller lighter blue">Report Product Quantity Sold T1 T2 T3</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <iframe id="if_T" name="if_T" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmT" class="form-horizontal" action="/web/admin/report" method="POST" target="if_T" >
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="form-field-2"> Date Range: <span class="orange">(*)</span> </label>
+                        <div class="col-sm-9">
+                            <div class="input-group col-xs-12 col-sm-5">
+                                <span class="input-group-addon">
+                                    <i class="ace-icon fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control" name="drt" id="drt" />
+                                <span class="input-group-btn">
+                                    <button id="btncsvt" type="button" class="btn btn-success btn-sm" onclick="submitExportCSVT(); return false;">
+                                        <span class="ace-icon fa fa-arrow-circle-o-down icon-on-right bigger-110"></span> Export CSV
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="expcsv_t"/>
+                </form>
+            </div>
+        </div>
+
+        <h3 class="header smaller lighter blue">Report Customer Register</h3>
+        <div class="row">
+            <div class="col-xs-12">
+                <iframe id="if_CR" name="if_CR" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmCR" class="form-horizontal" action="/web/admin/report" method="POST" target="if_CR" >
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="form-field-2"> Date Range: <span class="orange">(*)</span> </label>
+                        <div class="col-sm-9">
+                            <div class="input-group col-xs-12 col-sm-5">
+                                <span class="input-group-addon">
+                                    <i class="ace-icon fa fa-calendar"></i>
+                                </span>
+                                <input type="text" class="form-control" name="drcr" id="drcr" />
+                                <span class="input-group-btn">
+                                    <button id="btncsvcr" type="button" class="btn btn-success btn-sm" onclick="submitExportCSVCR(); return false;">
+                                        <span class="ace-icon fa fa-arrow-circle-o-down icon-on-right bigger-110"></span> Export CSV
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="expcsv_cr"/>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+try{
+    jQuery(function($) {
+        //http://www.daterangepicker.com/
+        var currentdate = new Date();
+        var lastWeek = new Date();
+        lastWeek.setDate(lastWeek.getDate() - 6);
+        
+        var smonth = (lastWeek.getMonth()+1);
+        smonth = ((''+smonth).length<2 ? '0' : '') + smonth;
+        var sday = lastWeek.getDate();
+        sday = ((''+sday).length<2 ? '0' : '') + sday;
+        var startDate = smonth + "/" + sday + "/" + lastWeek.getFullYear();
+        
+        var emonth = (currentdate.getMonth()+1);
+        emonth = ((''+emonth).length<2 ? '0' : '') + emonth;
+        var eday = currentdate.getDate();
+        eday = ((''+eday).length<2 ? '0' : '') + eday;
+        var endDate = emonth + "/" + eday + "/" + currentdate.getFullYear();
+        //console.log("startDate: " + startDate);
+        //console.log("endDate " + endDate);
+        
+        //to translate the daterange picker, please copy the "examples/daterange-fr.js" contents here before initialization
+        $('#drsale').daterangepicker({
+            startDate: startDate,
+            endDate: endDate,
+            maxDate: endDate,
+            'applyClass' : 'btn-sm btn-success',
+            'cancelClass' : 'btn-sm btn-default',
+            locale: {
+                applyLabel: 'Apply',
+                cancelLabel: 'Cancel',
+            }
+        }).prev().on(ace.click_event, function(){
+            $(this).next().focus();
+        });
+        $('#drsale').val(startDate + " - " + endDate);
+        
+        $('#dredc').daterangepicker({
+            startDate: startDate,
+            endDate: endDate,
+            maxDate: endDate,
+            'applyClass' : 'btn-sm btn-success',
+            'cancelClass' : 'btn-sm btn-default',
+            locale: {
+                applyLabel: 'Apply',
+                cancelLabel: 'Cancel',
+            }
+        }).prev().on(ace.click_event, function(){
+            $(this).next().focus();
+        });
+        $('#dredc').val(startDate + " - " + endDate);
+        
+        $('#drpqs').daterangepicker({
+            startDate: startDate,
+            endDate: endDate,
+            maxDate: endDate,
+            'applyClass' : 'btn-sm btn-success',
+            'cancelClass' : 'btn-sm btn-default',
+            locale: {
+                applyLabel: 'Apply',
+                cancelLabel: 'Cancel',
+            }
+        }).prev().on(ace.click_event, function(){
+            $(this).next().focus();
+        });
+        $('#drpqs').val(startDate + " - " + endDate);
+        
+        $('#drt').daterangepicker({
+            startDate: startDate,
+            endDate: endDate,
+            maxDate: endDate,
+            'applyClass' : 'btn-sm btn-success',
+            'cancelClass' : 'btn-sm btn-default',
+            locale: {
+                applyLabel: 'Apply',
+                cancelLabel: 'Cancel',
+            }
+        }).prev().on(ace.click_event, function(){
+            $(this).next().focus();
+        });
+        $('#drt').val(startDate + " - " + endDate);
+        
+        $('#drcr').daterangepicker({
+            startDate: startDate,
+            endDate: endDate,
+            maxDate: endDate,
+            'applyClass' : 'btn-sm btn-success',
+            'cancelClass' : 'btn-sm btn-default',
+            locale: {
+                applyLabel: 'Apply',
+                cancelLabel: 'Cancel',
+            }
+        }).prev().on(ace.click_event, function(){
+            $(this).next().focus();
+        });
+        $('#drcr').val(startDate + " - " + endDate);
+        
+        
+    });
+    
+    function submitExportCSV(){
+        var drsale = $('#drsale').val();
+        if(drsale != ''){
+            $("#btncsvsale").button('loading');
+            $('#frmSR').submit();
+            setTimeout(function() {
+                $('#btncsvsale').button('reset');
+            }, 2000);
+        } else{
+            bootbox.dialog({
+                message: "Select Date Range to export file csv.", 
+                buttons: {
+                    "success" : {
+                        "label" : "OK",
+                        "className" : "btn-sm btn-primary"
+                    }
+                }
+            });
+        }
+        return false;
+    }
+    
+    function submitExportCSVEDC(){
+        var check = false;
+        var email = $('#email').val();
+        if(email != ''){
+            check = true;
+            email = email.trim();
+            if(email == ''){
+                check = false;
+                bootbox.dialog({
+                    message: "Email containing all spaces.", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+                return false;
+            }
+        } else{
+            check = false;
+            bootbox.dialog({
+                message: "Email require to export file csv.", 
+                buttons: {
+                    "success" : {
+                        "label" : "OK",
+                        "className" : "btn-sm btn-primary"
+                    }
+                }
+            });
+            return false;
+        }
+        var dredc = $('#dredc').val();
+        if(dredc != ''){
+            check = true;
+        } else{
+            check = false;
+            bootbox.dialog({
+                message: "Select Date Range to export file csv.", 
+                buttons: {
+                    "success" : {
+                        "label" : "OK",
+                        "className" : "btn-sm btn-primary"
+                    }
+                }
+            });
+            return false;
+        }
+        if(check){
+            $("#btncsvedc").button('loading');
+            $('#frmEDC').submit();
+            setTimeout(function() {
+                $('#btncsvedc').button('reset');
+            }, 2000);
+        }
+        return false;
+    }
+    
+    function submitExportCSVPQS(){
+        var drpqs = $('#drpqs').val();
+        if(drpqs != ''){
+            $("#btncsvpqs").button('loading');
+            $('#frmPQS').submit();
+            setTimeout(function() {
+                $('#btncsvpqs').button('reset');
+            }, 2000);
+        } else{
+            bootbox.dialog({
+                message: "Select Date Range to export file csv.", 
+                buttons: {
+                    "success" : {
+                        "label" : "OK",
+                        "className" : "btn-sm btn-primary"
+                    }
+                }
+            });
+        }
+        return false;
+    }
+    
+    function submitExportCSVT(){
+        var drt = $('#drt').val();
+        if(drt != ''){
+            $("#btncsvt").button('loading');
+            $('#frmT').submit();
+            setTimeout(function() {
+                $('#btncsvt').button('reset');
+            }, 2000);
+        } else{
+            bootbox.dialog({
+                message: "Select Date Range to export file csv.", 
+                buttons: {
+                    "success" : {
+                        "label" : "OK",
+                        "className" : "btn-sm btn-primary"
+                    }
+                }
+            });
+        }
+        return false;
+    }
+    
+    function submitExportCSVCR(){
+        var drcr = $('#drcr').val();
+        if(drcr != ''){
+            $("#btncsvcr").button('loading');
+            $('#frmCR').submit();
+            setTimeout(function() {
+                $('#btncsvcr').button('reset');
+            }, 2000);
+        } else{
+            bootbox.dialog({
+                message: "Select Date Range to export file csv.", 
+                buttons: {
+                    "success" : {
+                        "label" : "OK",
+                        "className" : "btn-sm btn-primary"
+                    }
+                }
+            });
+        }
+        return false;
+    }
+    
+    
+    
+}catch(e){}
+</script>
+
+

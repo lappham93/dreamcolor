@@ -1,12 +1,15 @@
 package com.mit.models;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.mit.dao.video.VideoDAO;
+import com.mit.entities.photo.PhotoType;
 import com.mit.entities.video.LinkParser;
 import com.mit.entities.video.Video;
+import com.mit.midutil.MIdNoise;
 
 public class VideoModel {
 	public static final int NEW_SORT = 1;
@@ -61,7 +64,16 @@ public class VideoModel {
 				site = parser.parseSite();
 				title = parser.parseTitle();
 				desc = parser.parseDescription();
-				//TODO parser thumbnail, upload thumbnail to server
+				try {
+					String thumb = parser.parseThumbnail();
+					byte[] data = parser.parseThumbnailData(thumb);
+					Map<String, Object> rs = UploadPhotoModel.Instance.uploadPhoto(data, thumb, PhotoType.VIDEO_THUMBNAIL.getValue());
+					if ((int) rs.get("err") >= 0) {
+						thumbnail = MIdNoise.deNoiseLId(String.valueOf(rs.get("id")));
+					}
+				} catch (Exception e) {
+					
+				}
 				
 			}
 		}

@@ -1,5 +1,7 @@
 package com.mit.entities.banner;
 
+import com.mit.entities.photo.PhotoType;
+import com.mit.entities.photo.PhotoView;
 import com.mit.utils.LinkBuilder;
 
 
@@ -50,13 +52,13 @@ public class VideoBanner extends Banner {
 	public static class UserView extends Banner.UserView {		
 		private String id;
 		private String msg;
-		private String thumb;
+		private PhotoView thumb;
 
 		private UserView(VideoBanner videoBanner) {
 			super(videoBanner);
 			this.id = videoBanner.getId();
 			this.msg = videoBanner.getMsg();
-			this.thumb = LinkBuilder.buildBannerThumbLink(videoBanner.getThumb());
+			this.thumb = new PhotoView(videoBanner.getThumb(), PhotoType.BANNER.getValue());
 		}
 		
 		public String getId() {
@@ -67,7 +69,7 @@ public class VideoBanner extends Banner {
 			return msg;
 		}
 
-		public String getThumb() {
+		public PhotoView getThumb() {
 			return thumb;
 		}	
 	}

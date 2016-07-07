@@ -46,6 +46,24 @@ public class CategoryDAO extends CommonDAO {
 
 	private CategoryDAO() {
 	}
+	
+	 public List<Category> listAllIgnoreStatus() {		
+			List<Category> Categorys = Collections.emptyList();
+			if(dbSource != null) {
+				try {
+					Document objFinder = new Document();
+					Document sortBy = new Document("position", -1).append("updateTime", -1);
+					FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(objFinder).sort(sortBy);
+					if(doc != null) {
+						Categorys = new MongoMapper().parseList(doc);
+					}
+				} catch(final Exception e) {
+					_logger.error("listAllIgnoreStatus ", e);
+				}
+			}
+
+			return Categorys;
+		}
 
     public List<Category> listAll() {		
 		List<Category> Categorys = Collections.emptyList();
@@ -64,7 +82,7 @@ public class CategoryDAO extends CommonDAO {
 
 		return Categorys;
 	}
-	
+    
 	public List<Category> listSubCategories(String path, boolean isRoot) {		
 		List<Category> Categorys = Collections.emptyList();
 		if(dbSource != null) {

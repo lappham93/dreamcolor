@@ -1,11 +1,12 @@
 package com.mit.entities.color;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mit.utils.LinkBuilder;
+import com.mit.entities.photo.PhotoType;
+import com.mit.entities.photo.PhotoView;
 
 public class Category {
 	private static final int ACTIVE = 1;
-	
+
 	private int id;
 	private String name;
 	private String description;
@@ -13,7 +14,7 @@ public class Category {
 	private int status;
 	private long createTime;
 	private long updateTime;
-	
+
 	public Category(int id, String name, String description, long photo) {
 		this.id = id;
 		this.name = name;
@@ -21,7 +22,7 @@ public class Category {
 		this.photo = photo;
 		this.status = ACTIVE;
 	}
-	
+
 	public Category(int id, String name, String description, long photo, int status, long createTime, long updateTime) {
 		this.id = id;
 		this.name = name;
@@ -55,18 +56,18 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	@JsonIgnore
 	public long getPhotoNum() {
 		return photo;
 	}
-	
+
 	public void setPhoto(long photo) {
 		this.photo = photo;
 	}
-	
-	public String getPhoto() {
-		return LinkBuilder.buildColorPhotoLink(photo);
+
+	public PhotoView getPhoto() {
+		return new PhotoView(photo, PhotoType.COLOR.getValue());
 	}
 
 	public int getStatus() {
@@ -92,5 +93,5 @@ public class Category {
 	public void setUpdateTime(long updateTime) {
 		this.updateTime = updateTime;
 	}
-	
+
 }

@@ -68,23 +68,23 @@ public class MainApp {
 
 	public static void addServlets(ServletHandler handler) {
 		//color
-		handler.addServletWithMapping(GetListColorCategoryServlet.class, "/dreaMau/color/category/list");
-		handler.addServletWithMapping(GetListColorServlet.class, "/dreaMau/color/list");
-		handler.addServletWithMapping(ViewColorServlet.class, "/dreaMau/color/view");
+		handler.addServletWithMapping(GetListColorCategoryServlet.class, "/dreamau/color/category/list");
+		handler.addServletWithMapping(GetListColorServlet.class, "/dreamau/color/list");
+		handler.addServletWithMapping(ViewColorServlet.class, "/dreamau/color/view");
 		
 		//product
-		handler.addServletWithMapping(GetListProductServlet.class, "/dreaMau/product/list");
-		handler.addServletWithMapping(GetProductDetailServlet.class, "/dreaMau/product/detail");
-		handler.addServletWithMapping(ViewProductServlet.class, "/dreaMau/product/view");
+		handler.addServletWithMapping(GetListProductServlet.class, "/dreamau/product/list");
+		handler.addServletWithMapping(GetProductDetailServlet.class, "/dreamau/product/detail");
+		handler.addServletWithMapping(ViewProductServlet.class, "/dreamau/product/view");
 		
 		//distributor
-		handler.addServletWithMapping(GetListDistributorServlet.class, "/dreaMau/distributor/list");
+		handler.addServletWithMapping(GetListDistributorServlet.class, "/dreamau/distributor/list");
 		
 		//banner
-		handler.addServletWithMapping(GetListBannerServlet.class, "/dreaMau/banner/list");
+		handler.addServletWithMapping(GetListBannerServlet.class, "/dreamau/banner/list");
 		
 		//video
-		handler.addServletWithMapping(GetListVideoServlet.class, "/dreaMau/video/list");
-		handler.addServletWithMapping(ViewVideoServlet.class, "dreaMau/video/view");
+		handler.addServletWithMapping(GetListVideoServlet.class, "/dreamau/video/list");
+		handler.addServletWithMapping(ViewVideoServlet.class, "dreamau/video/view");
 	}
 }

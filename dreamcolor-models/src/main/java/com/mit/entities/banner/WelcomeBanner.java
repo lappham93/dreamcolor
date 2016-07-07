@@ -1,15 +1,16 @@
 package com.mit.entities.banner;
 
-import com.mit.utils.LinkBuilder;
+import com.mit.entities.photo.PhotoType;
+import com.mit.entities.photo.PhotoView;
 
-
-public class WelcomeBanner extends Banner {	
+public class WelcomeBanner extends Banner {
 	public static final int TYPE = BannerType.WELCOME.getValue();
-	
+
 	private String msg;
 	private long thumb;
-	
-	public WelcomeBanner() {}
+
+	public WelcomeBanner() {
+	}
 
 	public WelcomeBanner(long uId, String msg, long thumb, int status) {
 		super(uId, TYPE, status);
@@ -32,27 +33,27 @@ public class WelcomeBanner extends Banner {
 	public void setThumb(long thumb) {
 		this.thumb = thumb;
 	}
-	
+
 	public UserView buildUserView() {
 		return new UserView(this);
 	}
-	
-	public static class UserView extends Banner.UserView {	
+
+	public static class UserView extends Banner.UserView {
 		private String msg;
-		private String thumb;
+		private PhotoView thumb;
 
 		private UserView(WelcomeBanner welcomeBanner) {
 			super(welcomeBanner);
 			this.msg = welcomeBanner.getMsg();
-			this.thumb = LinkBuilder.buildBannerThumbLink(welcomeBanner.getThumb());
+			this.thumb = new PhotoView(welcomeBanner.getThumb(), PhotoType.BANNER.getValue());
 		}
 
 		public String getMsg() {
 			return msg;
 		}
 
-		public String getThumb() {
+		public PhotoView getThumb() {
 			return thumb;
-		}	
+		}
 	}
 }
