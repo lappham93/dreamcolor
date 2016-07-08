@@ -44,7 +44,7 @@ public class Configuration {
     public static String AD_EMAIL;
     
     static{
-        APP_TITLE = MConfig.getConfig().getString("systeminfo.app-title", "cyogel admin");
+        APP_TITLE = MConfig.getConfig().getString("systeminfo.app-title", "dreamcolor admin");
         APP_DOMAIN = MConfig.getConfig().getString("systeminfo.domain", "");
         APP_STATIC_DOMAIN = MConfig.getConfig().getString("systeminfo.static-domain", "");
         

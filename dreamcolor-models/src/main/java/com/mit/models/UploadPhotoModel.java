@@ -38,19 +38,19 @@ public class UploadPhotoModel {
 			tmp.setContentType(contentType);
 			long id = 0;
 			if (type == PhotoType.COLOR.getValue()) {
-				id = MIdGenLongDAO.getInstance(PhotoCommon.colorPhotoIdGen).getNext();
+				id = MIdGenLongDAO.getInstance(PhotoCommon.idGen.get(PhotoType.COLOR.getValue())).getNext();
 				tmp.setId(id);
 				err = ColorPhotoClient.getInstance().putMPhoto(tmp);
 			} else if (type == PhotoType.PRODUCT.getValue()) {
-				id = MIdGenLongDAO.getInstance(PhotoCommon.productPhotoIdGen).getNext();
+				id = MIdGenLongDAO.getInstance(PhotoCommon.idGen.get(PhotoType.PRODUCT.getValue())).getNext();
 				tmp.setId(id);
 				err = ProductPhotoClient.getInstance().putMPhoto(tmp);
 			} else if (type == PhotoType.BANNER.getValue()) {
-				id = MIdGenLongDAO.getInstance(PhotoCommon.bannerNewsPhotoIdGen).getNext();
+				id = MIdGenLongDAO.getInstance(PhotoCommon.idGen.get(PhotoType.BANNER.getValue())).getNext();
 				tmp.setId(id);
 				err = BannerPhotoClient.getInstance().putMPhoto(tmp);
 			} else if (type == PhotoType.VIDEO_THUMBNAIL.getValue()) {
-				id = MIdGenLongDAO.getInstance(PhotoCommon.videoPhotoIdGen).getNext();
+				id = MIdGenLongDAO.getInstance(PhotoCommon.idGen.get(PhotoType.VIDEO_THUMBNAIL.getValue())).getNext();
 				tmp.setId(id);
 				err = VideoThumbnailClient.getInstance().putMPhoto(tmp);
 			}

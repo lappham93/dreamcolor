@@ -3,10 +3,10 @@
 <div class="tabbable">
     <ul class="nav nav-tabs hidden-sm hidden-xs">
         <li>
-            <a href="/web/admin/product?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
+            <a href="/web/admin/color?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
         </li>
         <li class="active">
-            <a href="/web/admin/product?option=pro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Product</a>
+            <a href="/web/admin/color?option=color"><i class="green ace-icon fa fa-barcode bigger-120"></i>Color</a>
         </li>
     </ul>
     <ul class="nav nav-tabs hidden-md hidden-lg">
@@ -17,10 +17,10 @@
             </a>
             <ul class="dropdown-menu dropdown-info">
                 <li>
-                    <a href="/web/admin/product?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
+                    <a href="/web/admin/color?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
                 </li>
                 <li class="active">
-                    <a href="/web/admin/product?option=pro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Product</a>
+                    <a href="/web/admin/color?option=color"><i class="green ace-icon fa fa-barcode bigger-120"></i>Color</a>
                 </li>
             </ul>
         </li>

@@ -1,0 +1,826 @@
+
+
+<div class="tabbable">
+    <ul class="nav nav-tabs hidden-sm hidden-xs">
+        <li class="active">
+            <a href="/web/admin/color?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
+        </li>
+        <li>
+            <a href="/web/admin/color?option=color"><i class="green ace-icon fa fa-barcode bigger-120"></i>Color</a>
+        </li>
+    </ul>
+    <ul class="nav nav-tabs hidden-md hidden-lg">
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                Menu &nbsp;
+                <i class="ace-icon fa fa-caret-down bigger-110 width-auto"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-info">
+                <li class="active">
+                    <a href="/web/admin/color?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
+                </li>
+                <li>
+                    <a href="/web/admin/color?option=color"><i class="green ace-icon fa fa-barcode bigger-120"></i>Color</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="table" class="tab-pane fade in active">
+
+            <h3 class="header smaller lighter blue">Add Category</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    <iframe id="if_Add" name="if_Add" style="display: none;width: 0px;height: 0px"></iframe>
+                    <form id="frmAdd" name="frmAdd" class="form-horizontal" role="form" action="/web/admin/color" method="POST" enctype="multipart/form-data" target="if_Add">
+                        <div id="add_alert_success" class="alert alert-success" style="display: none;"></div>
+                        <div id="add_alert_err" class="alert alert-danger" style="display: none;"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Name: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="name" name="name" placeholder="name" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Description: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="desc" name="desc" placeholder="description" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Status: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-7">
+                                <label>
+                                    <input id="status" name="status" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Photo: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-9">
+                                <div class="col-xs-12 col-sm-5">
+                                    <input type="file" name="thumb" id="thumb" style="display: none;" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button id="btnadd" class="btn btn-info" type="button" onclick="addCate(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="reset" onclick="resetAdd(); return false;"><i class="ace-icon fa fa-undo bigger-110"></i>Reset</button>
+                            </div>
+                        </div>
+                        <input type="hidden" id="action" name="action" value="addcate"/>
+                        <input type="hidden" id="callback" name="callback" value="completeAddCate"/>
+                    </form>
+                </div>
+            </div>
+
+            <h3 class="header smaller lighter blue">List Category</h3>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table id="tableproduct" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="center">No.</th>
+                                <th class="hidden-480">Photo</th>
+                                <th class="">Name</th>
+                                <th class="hidden-480">Description</th>
+                                <th class="hidden-480">Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#loop_row}}
+                            <tr>
+                                <td class="center">{{NO}}</td>
+                                <td class="hidden-480">
+                                    <ul class="ace-thumbnails">
+                                        <li>
+                                            <a href="{{URI_TP}}" data-rel="colorbox">
+                                                <img width="150" height="150" alt="150x150" src="{{URI_CP}}" />
+                                                <div class="text">
+                                                    <div class="inner">Photo</div>
+                                                </div>
+                                            </a>
+
+                                            <div class="tools tools-bottom">
+                                                <a href="#" onclick="changeImgModal('{{ID}}'); return false;">
+                                                    <i class="ace-icon fa fa-camera"></i>
+                                                    <span style="font-size: 12px;">Change photo</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="">{{NAME}}</td>
+                                <td class="hidden-480" width="20%">{{DESC}}</td>
+                                <td class="hidden-480">
+                                    {{#STATUS_ON}}<span class="label label-sm label-success">On</span>{{/STATUS_ON}}
+                                    {{#STATUS_OFF}}<span class="label label-sm label-inverse">Off</span>{{/STATUS_OFF}}
+                                </td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+            <!--                            <button class="btn btn-xs btn-success tooltip-success" data-rel="tooltip" title="Approve" data-placement="top">
+                                            <i class="ace-icon fa fa-check bigger-120"></i>
+                                        </button>-->
+                                        <button class="btn btn-xs btn-info tooltip-info" data-rel="tooltip" title="Edit" data-placement="top" onclick="openEditModal('{{ID}}'); return false;">
+                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                        </button>
+                                        <button class="btn btn-xs btn-danger tooltip-error" data-rel="tooltip" title="Delete" data-placement="top" onclick="openDelModal('{{ID}}'); return false;">
+                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                        </button>
+<!--                                        <button class="btn btn-xs btn-warning tooltip-warning" data-rel="tooltip" title="On/Off" data-placement="top" onclick="openOOModal(); return false;">
+                                            <i class="ace-icon fa fa-flag bigger-120"></i>
+                                        </button>-->
+                                    </div>
+                                    <div class="hidden-md hidden-lg">
+                                        <div class="inline pos-rel">
+                                            <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                <li>
+                                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View" onclick="openViewModal('{{ID}}'); return false;">
+                                                        <span class="blue">
+                                                            <i class="ace-icon fa fa-eye bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit" onclick="openEditModal('{{ID}}'); return false;">
+                                                        <span class="green">
+                                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="openDelModal('{{ID}}'); return false;">
+                                                        <span class="red">
+                                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+<!--                                                <li>
+                                                    <a href="#" class="tooltip-warning" data-rel="tooltip" title="On/Off" onclick="openOOModal(); return false;">
+                                                        <span class="orange">
+                                                            <i class="ace-icon fa fa-flag bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/loop_row}}
+                            
+                            {{#table_empty}}
+                            <tr><td class="center" colspan="15">No item found.</td></tr>
+                            {{/table_empty}}
+                        </tbody>
+                    </table>
+                </div><!-- /.span -->
+            </div><!-- /.row -->
+
+<!--            <div class="row">
+                <div class="col-xs-12">
+                    <div id="paging" class="dataTables_paginate paging_bootstrap_alt pagination">
+                        {{paging}}
+                    </div>
+                </div>
+            </div>-->
+
+        </div>
+    </div>
+</div>
+
+<!-- viewModal -->
+<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editModalLabel">View Banner Video</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label class="col-xs-5 control-label no-padding-right bolder" style="text-align: right;">Url: </label>
+                        <div class="col-xs-7 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vurl"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-5 control-label no-padding-right bolder" style="text-align: right;">Message: </label>
+                        <div class="col-xs-7 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vmsg"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-5 control-label no-padding-right bolder" style="text-align: right;">Status: </label>
+                        <div class="col-xs-7 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vstatus"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- editModal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editModalLabel">Edit Banner Video</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_Edit" name="if_Edit" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmEditP" name="frmEditP" class="form-horizontal" role="form" action="/web/admin/banner" method="POST" target="if_Edit">
+                    <div id="edit_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="edit_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Url: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="eurl" name="eurl" placeholder="url" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Message: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="emsg" name="emsg" placeholder="message" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>                    
+                    
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                <select class="col-xs-12 col-sm-12" id="estatus" name="estatus" data-placeholder="Choose a status...">
+                                    <option value=""> Choose a status... </option>
+                                    <option value="0">Delete</option>
+                                    <option value="1">Active</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" id="action" name="action" value="editvb"/>
+                    <input type="hidden" id="eidp" name="eidp" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeEditVB"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button id="btnedit" type="button" class="btn btn-sm btn-primary" onclick="submitEditVB();">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- changeImgModal -->
+<div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel" aria-hidden="true" style="top: 5%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="delModalLabel">Change Photo</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_Img" name="if_Img" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmImg" name="frmImg" class="form-horizontal" action="/web/admin/color" method="POST" enctype="multipart/form-data" target="if_Img">
+                    <div id="img_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="img_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="file" name="cimg" id="cimg"  />
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="changecp"/>
+                    <input type="hidden" id="iidp" name="iidp" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeChangeImg"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnimg" class="btn btn-sm btn-success" onclick="submitImgPP();">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Delete Modal -->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="delModalLabel">Delete Banner Video</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_Del" name="if_Del" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmDel" name="frmDel" class="form-horizontal" action="/web/admin/banner" method="POST" target="if_Del">
+                    <div id="del_alert_success" class="alert alert-success success" style="display: none;"></div>
+                    <div id="del_alert_err" class="alert alert-danger warning" style="display: none;"></div>
+                    <div class="form-group">
+                        <p id="delInfo" class="alert alert-warning">Are you sure you want to delete this banner?</p>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="delBanner"/>
+                    <input type="hidden" id="did" name="did" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeDel"/>
+                </form>
+            </div>
+            <div class="modal-footer" id="del_modal_footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-sm btn-danger" onclick="submitDel();">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+try{
+    jQuery(function ($) {
+        /********************************/
+        //add tooltip for small view action buttons in dropdown menu
+        //$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+        $('[data-rel="tooltip"]').tooltip();
+
+        //tooltip placement on right or left
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table');
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            //var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'top';
+        }
+        
+        if(!ace.vars['touch']) {
+            $('.chosen-select').chosen({allow_single_deselect:true}); 
+            //resize the chosen on window resize
+
+            $(window)
+            .off('resize.chosen')
+            .on('resize.chosen', function() {
+                $('.chosen-select').each(function() {
+                     var $this = $(this);
+                     $this.next().css({'width': $this.parent().width()});
+                })
+            }).trigger('resize.chosen');
+            //resize chosen on sidebar collapse/expand
+            $(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+                if(event_name != 'sidebar_collapsed') return;
+                $('.chosen-select').each(function() {
+                     var $this = $(this);
+                     $this.next().css({'width': $this.parent().width()});
+                })
+            });
+
+            $('#chosen-multiple-style .btn').on('click', function(e){
+                var target = $(this).find('input[type=radio]');
+                var which = parseInt(target.val());
+                if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+                 else $('#form-field-select-4').removeClass('tag-input-style');
+            });
+        }
+        
+        $('#thumb').ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false, //| true | large
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
+        }).on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
+        //change primary photo.
+        var file_img = $('#cimg');
+        var upload_in_progress = false;
+        file_img.ace_file_input({
+            style : 'well',
+            btn_choose : 'Select or drop file image here',
+            btn_change: null,
+            no_icon:'ace-icon fa fa-cloud-upload',
+            droppable: true,
+            thumbnail: 'large',
+
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
+
+            before_remove: function() {
+                if(upload_in_progress)
+                    return false;//if we are in the middle of uploading a file, don't allow resetting file input
+                return true;
+            },
+
+            preview_error: function(filename , code) {
+                //code = 1 means file load error
+                //code = 2 image load error (possibly file is not an image)
+                //code = 3 preview failed
+            }
+        })
+        file_img.on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
+        var $overflow = '';
+        var colorbox_params = {
+            rel: 'colorbox',
+            reposition:true,
+            scalePhotos:true,
+            scrolling:false,
+            previous:'<i class="ace-icon fa fa-arrow-left"></i>',
+            next:'<i class="ace-icon fa fa-arrow-right"></i>',
+            close:'&times;',
+            current:'{current} of {total}',
+            maxWidth:'100%',
+            maxHeight:'100%',
+            onOpen:function(){
+                $overflow = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+            },
+            onClosed:function(){
+                document.body.style.overflow = $overflow;
+            },
+            onComplete:function(){
+                $.colorbox.resize();
+            }
+        };
+
+        $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+        $("#cboxLoadingGraphic").html("<i class='ace-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
+        
+    });
+
+    {{#HAS_TABLE}}
+    //zscommon.renderPaging('paging','','','','','{{keyword}}');
+    {{/HAS_TABLE}}
+
+    $().ready(function() {
+        $('.modal').hide();
+	});
+    
+    //Reset.
+    function resetAdd(){
+        $('#add_alert_success').hide();
+        $('#add_alert_err').hide();
+        $('#name').val("");
+        $('#desc').val("");
+        $('#status').prop('checked', true);
+        $('input[id*="thumb"]').ace_file_input('reset_input');
+        $('#btnadd').button('reset');
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    }
+    
+    //Add Category
+    function addCate(){
+        $('#add_alert_success').hide();
+        $('#add_alert_err').hide();
+        var serr = "";
+        var name = $('#name').val();
+        if(name == ''){
+            serr += "Name required. ";
+        }
+        var desc = $('#desc').val();
+        if(desc == ''){
+            serr += "Description required. ";
+        }
+        var thumb = $('#thumb').val();
+        if(thumb == ''){
+            serr += "Photo required. ";
+        }
+        
+        $('#frmAdd').unbind('submit');
+        if(serr == ''){
+            console.log('frmAdd submit...');
+            $("#btnadd").button('loading');
+            $('#frmAdd').submit();
+        } else{
+            $('#add_alert_err').html(serr);
+            $('#add_alert_err').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+        }
+        return false;
+    };
+    
+    function completeAddCate(data){
+        if(data.err >= 0){
+            $('#add_alert_success').html(data.msg);
+            $('#add_alert_success').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
+            setTimeout(function() {
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#add_alert_err').html(data.msg);
+            $('#add_alert_err').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
+            $('#frmAdd').bind('submit');
+            $('#btnadd').button('reset');
+        }
+    };
+    
+    //Edit.
+    function openEditModal(id){
+        $('#edit_alert_success').hide();
+        $('#edit_alert_err').hide();
+        $('#eidp').val(id);
+        //reset.
+        $('#epid').val('');
+        $('#eurl').val('');
+        $('#emsg').val('');
+        $('#estatus').val('');
+        
+        //get content Banner Order.
+        if(id != ''){
+            var data = {
+                action: 'getvb',
+                id: id
+            };
+            $.ajax({
+                type: "POST",
+                url: "{{domain}}/web/admin/banner",
+                data: data,
+                dataType : 'json',
+                cache: false,
+                success: function(data){
+                    if(data.err >= 0){
+                        var oob = data.oob;
+                        $('#eurl').val(oob.url);
+                        $('#emsg').val(oob.msg);
+                        $('#estatus').val(oob.idstatus);
+                    } else{
+                        console.log(data.msg);
+                        bootbox.dialog({
+                            message: data.msg,
+                            buttons: {
+                                "success" : {
+                                    "label" : "OK",
+                                    "className" : "btn-sm btn-primary"
+                                }
+                            }
+                        });
+                        return false;
+                    }
+                }
+            });
+        }
+        
+        $('#editModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitEditVB(){
+        $('#edit_alert_success').hide();
+        $('#edit_alert_err').hide();
+        
+        var serr = "";
+        var eurl = $('#eurl').val();
+        if(eurl == ''){
+            serr += "Url required. ";
+        }
+        var message = $('#emsg').val();
+        if(message == ''){
+            serr += "Message required. ";
+        }
+        var status = $('#estatus').val();
+        if(status == ''){
+            serr += "Status required. ";
+        }
+        
+        $('#frmEditP').unbind('submit');
+        if(serr == ''){
+            console.log('frmEditP submit...');
+            $("#btnedit").button('loading');
+            $('#frmEditP').submit();
+        } else{
+            $('#edit_alert_err').html(serr);
+            $('#edit_alert_err').show();
+            $("#editModal").animate({ scrollTop: 0 }, "slow");
+            $('#btnedit').button('reset');
+        }
+        return false;
+    };
+    
+    function completeEditVB(data){
+        if(data.err >= 0){
+            $('#edit_alert_success').html(data.msg);
+            $('#edit_alert_success').show();
+            $("#editModal").animate({ scrollTop: 0 }, "slow");
+            setTimeout(function() {
+                $('#editModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#edit_alert_err').html(data.msg);
+            $('#edit_alert_err').show();
+            $("#editModal").animate({ scrollTop: 0 }, "slow");
+
+            $('#frmEditP').bind('submit');
+            $('#btnedit').button('reset');
+        }
+    };
+    
+    //View.
+    function openViewModal(id){
+        if(id != ''){
+            var data = {
+                action: 'getvb',
+                id: id
+            };
+            $.ajax({
+                type: "POST",
+                url: "{{domain}}/web/admin/banner",
+                data: data,
+                dataType : 'json',
+                cache: false,
+                success: function(data){
+                    if(data.err >= 0){
+                        var oob = data.oob;
+                        $('#vurl').text(oob.url);
+                        $('#vmsg').text(oob.msg);
+                        $('#vstatus').text(oob.status);
+                    } else{
+                        console.log(data.msg);
+                        bootbox.dialog({
+                            message: data.msg,
+                            buttons: {
+                                "success" : {
+                                    "label" : "OK",
+                                    "className" : "btn-sm btn-primary"
+                                }
+                            }
+                        });
+                        return false;
+                    }
+                }
+            });
+        } else{
+            
+        }
+        $('#viewModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    //Change thumb photo.
+    function changeImgModal(id){
+        $('#iidp').val(id);
+        $('#img_alert_success').hide();
+        $('#img_alert_err').hide();
+        $('#cimg').ace_file_input('reset_input');
+        $('#imgModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitImgPP(){
+        $('#img_alert_success').hide();
+        $('#img_alert_err').hide();
+        var id = $('#iidp').val();
+        var file = $('#cimg').val();
+        $('#frmImg').unbind('submit');
+        if(file == ''){
+            $('#img_alert_err').html('Please choose image to change...');
+            $('#img_alert_err').show();
+            return false;
+        }
+        if(id != '' && file != ''){
+            $("#btnimg").button('loading');
+            $('#frmImg').submit();
+        }
+    };
+    
+    function completeChangeImg(data){
+        if(data.err >= 0){
+            $('#img_alert_success').html(data.msg);
+            $('#img_alert_success').show();
+            setTimeout(function() {
+                $('#imgModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#img_alert_err').html(data.msg);
+            $('#img_alert_err').show();
+            $('frmImg').bind('submit');
+            $('#btnimg').button('reset');
+        }
+    };
+    
+    function openDelModal(id){
+    	$("#del_alert_success").hide();
+    	$("#del_alert_err").hide();
+    	$("#delInfo").show();
+    	$("#did").val(id);
+    	$('#delModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitDel(){
+    	$("#frmDel").submit();
+    };
+    
+    function completeDel(data){
+    	$("#delInfo").hide();
+    	if (data != null){
+    		if (data.err >= 0){
+    			$("#del_alert_err").hide();
+    			$("#del_alert_success").html(data.msg);
+    			$("#del_alert_success").show();
+    			setTimeout(function(){
+    				$("#delModal").modal('hide');
+    				window.location.reload(true);
+			    }, 2000);
+    		} else {
+    			$("#del_alert_err").html(data.msg);
+    			$("#del_alert_err").show();
+    		}
+    	} else {
+    		$("#del_alert_err").html("Server Error");
+			$("#del_alert_err").show();
+    	}
+    };
+    
+}catch(e){}
+</script>
+<script src="{{static-domain}}/mitassets/js/jquery.colorbox.js"></script>
+<!--<script src="{{static-domain}}/mitassets/js/fuelux/fuelux.spinner.js"></script>-->
+<!--<script src="{{static-domain}}/mitassets/js/jquery.bootstrap-duallistbox.js"></script>-->

@@ -16,7 +16,7 @@ public enum PhotoType {
 		return value;
 	}
 	
-	public PhotoType getPhotoType(int value) {
+	public static PhotoType getPhotoType(int value) {
 		for (PhotoType p : PhotoType.values()) {
 			if (p.getValue() == value) {
 				return p;

@@ -5,7 +5,7 @@
             <a href="/web/admin/product?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
         </li>
         <li>
-            <a href="/web/admin/product?option=pro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Production</a>
+            <a href="/web/admin/product?option=pro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Product</a>
         </li>
     </ul>
     <ul class="nav nav-tabs hidden-md hidden-lg">
@@ -19,16 +19,7 @@
                     <a href="/web/admin/product?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
                 </li>
                 <li>
-                    <a href="/web/admin/product?option=po"><i class="green ace-icon fa fa-check-square-o bigger-120"></i>Production Option</a>
-                </li>
-                <li>
-                    <a href="/web/admin/product?option=pov"><i class="green ace-icon fa fa-pencil-square-o bigger-120"></i>Production Option Value</a>
-                </li>
-                <li>
-                    <a href="/web/admin/product?option=pro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Production</a>
-                </li>
-                <li>
-                    <a href="/web/admin/product?option=sku"><i class="green ace-icon glyphicon glyphicon-star bigger-120"></i>SKU</a>
+                    <a href="/web/admin/product?option=pro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Product</a>
                 </li>
             </ul>
         </li>
@@ -52,7 +43,6 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Parent Category: <span class="orange">(*)</span></label>
                             <div class="col-xs-12 col-sm-9">
-                                <!--<input type="text" id="path" name="path" placeholder="path" class="col-xs-12 col-sm-5"/>-->
                                 <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
                                     <select class="col-xs-12 col-sm-12" id="pc" name="pc" data-placeholder="Choose a parent category...">
                                         <option value=""> Choose a parent category... </option>

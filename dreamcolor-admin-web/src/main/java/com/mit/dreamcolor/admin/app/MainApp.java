@@ -27,6 +27,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHandler;
 
 import com.mit.configer.MConfig;
+import com.mit.dreamcolor.admin.handler.ColorHandler;
 import com.mit.dreamcolor.admin.handler.DenyHandler;
 import com.mit.dreamcolor.admin.handler.HomeHandler;
 import com.mit.dreamcolor.admin.handler.LoginHandler;
@@ -61,6 +62,7 @@ public class MainApp {
         handler.addServletWithMapping(LogoutHandler.class, "/web/admin/logout");
         handler.addServletWithMapping(DenyHandler.class, "/web/admin/deny");
         handler.addServletWithMapping(ProductHandler.class, "/web/admin/product");
+        handler.addServletWithMapping(ColorHandler.class, "/web/admin/color");
         
         //MAPPING ==============================================================
         
