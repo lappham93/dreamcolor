@@ -62,7 +62,7 @@
                                 <!-- Logo -->
                                  
                                 <a class="navbar-brand" href="/">
-                                    <img class="site_logo" alt="Site Logo" height="70" src="{{static-domain}}/dc/imgs/logo2.png" style="height: 70px; width: 230px;"/>
+                                    <img class="site_logo" alt="Site Logo" height="70" src="{{static-domain}}/dc/imgs/logo3.png" style="height: 70px; width: 230px;"/>
                                 </a></div>
                                 <!-- Navbar Collapse -->
                                 <div class="navbar-collapse collapse">
