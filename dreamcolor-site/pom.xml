@@ -181,7 +181,7 @@
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
 						<manifest>
-							<mainClass>com.mit.dc.site.MainApp</mainClass>
+							<mainClass>com.mit.dc.site.app.MainApp</mainClass>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>

@@ -4,48 +4,49 @@
     <div>
         <ul>
             <li>
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_05.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" />
+                <img src="{{static-domain}}/dc/imgs/topbanner.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" style="width: 100%;"/>
             </li>
         </ul>
     </div>
 </section>
 <!-- slider -->
 
-<div id="fun-factor" class="page-section black-bg">
+<section id="features" class="page-section">
+    <div class="section-title" data-animation="fadeInUp" style="margin-bottom: 20px;">
+        <h2 class="title">About Dreamau</h2>
+    </div>
+    <div class="section-title" data-animation="fadeInUp" style="height: 72px;">
+        <div class="col-md-12 text-center" data-animation="pulse">
+            <img src="{{static-domain}}/dc/imgs/Indicator.png" width="748" height="72" alt="" />
+        </div>
+    </div>
     <div class="container">
-        <div class="row text-center fact-counter white">
-            <div class="col-sm-4 col-md-3 bottom-xs-pad-30" data-animation="fadeInLeft">
-                <div class="count-number" data-count="550">
-                    <span class="counter"></span>
-                </div>
-                <!-- Icon -->
-                <i class="icon-heart2 fa-4x"></i>
+        <div class="row">
+            <div class="col-sm-4" data-animation="fadeInRight">
+                <p class="text-center">
+                    <a href="{{static-domain}}/dc/imgs/thumb1.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="{{static-domain}}/dc/imgs/thumb1.jpg" width="334" height="334" alt=""></a>
+                </p>
+                <!--<h5 class="bottom-margin-10"><a href="#" class="black">Creative Design</a></h5>-->
+                <p>DreaMau is the only machine in the world capable of producing what your imagination tell you to.</p>
             </div>
-            <div class="col-sm-4 col-md-3 bottom-xs-pad-30" data-animation="fadeInRight">
-                <div class="count-number" data-count="1223">
-                    <span class="counter"></span>
-                </div>
-                <!-- Icon -->
-                <i class="icon-star4 fa-4x"></i>
+            <div class="col-sm-4" data-animation="fadeInUp">
+                <p class="text-center">
+                    <a href="{{static-domain}}/dc/imgs/thumb2.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="{{static-domain}}/dc/imgs/thumb2.jpg" width="334" height="334" alt=""></a>
+                </p>
+                <!--<h5 class="bottom-margin-10"><a href="#" class="black">Responsive</a></h5>-->
+                <p>Thousands of nail polish colors with a great variety of tones and textures like: Cream, Pearl, Metallic, Shadow, Glitter, and Neon.</p>
             </div>
-            <div class="col-sm-4 col-md-3 bottom-xs-pad-30" data-animation="fadeInRight">
-                <div class="count-number" data-count="925">
-                    <span class="counter"></span>
-                </div>
-                <!-- Icon -->
-                <i class="icon-glass3 fa-4x"></i>
-            </div>
-            <div class="col-sm-4 col-md-3 bottom-xs-pad-30" data-animation="fadeInLeft">
-                <div class="count-number" data-count="1910">
-                    <span class="counter"></span>
-                </div>
-                <!-- Icon -->
-                <i class="icon-plane3 fa-4x"></i>
+            <div class="col-sm-4" data-animation="fadeInLeft">
+                <p class="text-center">
+                    <a href="{{static-domain}}/dc/imgs/thumb3.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="{{static-domain}}/dc/imgs/thumb3.jpg" width="334" height="334" alt=""></a>
+                </p>
+                <!--<h5 class="bottom-margin-10"><a href="#" class="black">HMTL 5</a></h5>-->
+                <p>For the first time, you can choose and produce the color, right away.</p>
             </div>
         </div>
     </div>
-</div>
-<!-- fun-factor -->
+</section>
+<!-- About -->
 
 <section id="additional" class="page-section">
     <div class="container">
@@ -57,28 +58,29 @@
             <div class="col-md-4" data-animation="fadeInUp">
                 <div class="section-title text-left" data-animation="fadeInRight">
                     <!-- Title -->
-                    <h2 class="title">Fashion my passion.</h2>
+                    <h2 class="title">Innovation</h2>
                 </div>
                 <!-- Content -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur odio sed dolor tincidunt
-                porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor.</p>
+                <h5>Nail Polish & Gel Polish</h5>
+                <p>Not only can DreaMau create nail polish, it can also create gel polish. By adding CYOGEL mix to your nail polish and with the high-gloss, 
+                    strong Tougher Top Coat, it will extend the life of the wear to 2 weeks.</p>
+                <p>The possibilities are endless.</p>
                 <!-- Features -->
-                <div class="row responsive-features top-pad-20">
+                <div class="row responsive-features top-pad-20 text-center">
                     <!-- Features 1 -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <!-- Title And Content -->
-                        <span class="icon-refresh2 text-color"></span>
-                        <h5>Modelling</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <!--<span class="icon-refresh2 text-color"></span>-->
+                        <h5>1. Machine</h5>
+                        <p><img src="{{static-domain}}/dc/imgs/machine.png" width="95" height="105" alt="" /></p>
                     </div>
                     <!-- Features 1 -->
                     <!-- Features 2 -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-xs-6">
                         <!-- Title And Content -->
-                        <span class="icon-settings3 text-color"></span>
-                        <h5>Party</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <!--<span class="icon-settings3 text-color"></span>-->
+                        <h5>2. Wonders</h5>
+                        <p><img src="{{static-domain}}/dc/imgs/wonders.png" width="91" height="104" alt="" /></p>
                     </div>
                     <!-- Features 2 -->
                 </div>
@@ -94,7 +96,7 @@
 </section>
 <!-- additional -->
 
-<section id="who-we-are" class="page-section no-pad light-bg border-tb">
+<section id="who-we-are" class="page-section no-pad black-bg border-tb">
     <div class="container-fluid who-we-are">
         <div class="row">
             <div class="col-md-6 no-pad" data-animation="fadeInLeft">
@@ -103,7 +105,7 @@
                         <div class="row">
                             <div class="col-sm-12 no-pad">
                                 <iframe id="cyogel-video" class="embed-responsive-item col-sm-12 no-pad"
-                                        src="//www.youtube.com/embed/jS3ZyfimiKc?rel=0&amp;autoplay=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;autohide=1"
+                                        src="//www.youtube.com/embed/cUg8yaIbo0o?rel=0&amp;autoplay=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;autohide=1"
                                         allowfullscreen="" style="height: 560px; width: 100%;">
                                 </iframe>
                             </div>
@@ -128,7 +130,8 @@
                 </section>
             </div>
             <div class="col-md-6 no-pad text-center" data-animation="fadeInRight">
-                <div class="image-bg" data-background="{{static-domain}}/dc/imgs/Dreamau-Web_15.jpg"></div>
+                <img src="{{static-domain}}/dc/imgs/DreaMau-Machine.png" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" style="width: 100%;"/>
+                <!--<div class="image-bg" data-background="{{static-domain}}/dc/imgs/DreaMau-Machine.png"></div>-->
             </div>
         </div>
     </div>
@@ -137,26 +140,30 @@
 
 <section id="service" class="page-section">
     <div class="container">
-        <div class="section-title" data-animation="fadeInUp">
+        <div class="section-title" data-animation="fadeInUp" style="margin-bottom: 20px;">
             <!-- Heading -->
-            <h2 class="title">What We Do?</h2>
+            <h2 class="title">How does it work?</h2>
+        </div>
+        <div class="section-title" data-animation="fadeInUp" style="height: 72px; margin-bottom: 20px;">
+            <div class="col-md-12 text-center" data-animation="pulse">
+                <img src="{{static-domain}}/dc/imgs/Indicator.png" width="748" height="72" alt="" />
+            </div>
+        </div>
+        <div class="section-title text-center" data-animation="pulse" style="margin-bottom: 20px;">
+            <!-- Heading -->
+            <h4 class="title">In 5 short step, you'll have the color of your dreams.</h4>
         </div>
         <div class="row">
-            <div class="col-md-4" data-animation="fadeInLeft">
+            <div class="col-md-4 text-center" data-animation="fadeInLeft">
                 <ul class="features-list features-list-left">
                     <li class="features-list-item" data-animation="fadeInLeft">
-                        <div class="features-content">
+                        <div class="features-content text-left">
                             <img src="{{static-domain}}/dc/imgs/Dreamau-Web_21.jpg" alt="" />
                         </div>
                     </li>
                     <li class="features-list-item" data-animation="fadeInUp">
-                        <div class="features-content">
+                        <div class="features-content text-left">
                             <img src="{{static-domain}}/dc/imgs/Dreamau-Web_24.jpg" alt="" />
-                        </div>
-                    </li>
-                    <li class="features-list-item" data-animation="fadeInLeft">
-                        <div class="features-content">
-                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_28.jpg" alt="" />
                         </div>
                     </li>
                 </ul>
@@ -164,20 +171,29 @@
             <div class="col-md-4 text-center" data-animation="pulse">
                 <!-- Image -->
                 <img src="{{static-domain}}/dc/imgs/Dreamau-Web_18.jpg" width="350" height="480" alt="" />
+                <!--<img src="{{static-domain}}/dc/imgs/Dreamau-Web_27.jpg" alt="" />-->
             </div>
             <div class="col-md-4" data-animation="fadeInRight">
-                <ul class="features-list features-list-right">
+                <ul class="features-list features-list-left">
                     <li class="features-list-item" data-animation="fadeInRight">
-                        <div class="features-content text-right">
+                        <div class="features-content">
+                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_28.jpg" alt="" />
+                        </div>
+                    </li>
+                    <li class="features-list-item" data-animation="fadeInRight">
+                        <div class="features-content">
                             <img src="{{static-domain}}/dc/imgs/Dreamau-Web_22.jpg" alt="" />
                         </div>
                     </li>
-                    <li class="features-list-item" data-animation="fadeInUp">
-                        <div class="features-content text-right">
+<!--                    <li class="features-list-item" data-animation="fadeInUp">
+                        <div class="features-content">
                             <img src="{{static-domain}}/dc/imgs/Dreamau-Web_27.jpg" alt="" />
                         </div>
-                    </li>
+                    </li>-->
                 </ul>
+            </div>
+            <div class="col-md-12 text-center" data-animation="pulse">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_27.jpg" alt="" />
             </div>
         </div>
     </div>
@@ -197,7 +213,7 @@
         <!-- Item 1 -->
         <div class="grid-item all web">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" width="340" height="274" alt="Recent Work" class="img-responsive" />
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Fashion</div>-->
             </a>
         </div>
@@ -205,15 +221,15 @@
         <!-- Item 2 -->
         <div class="grid-item all web">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" width="340" height="548" alt="Recent Work" class="img-responsive" />
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Style</div>-->
             </a>
         </div>
         <!-- Item 2 Ends-->
         <!-- Item 3 -->
         <div class="grid-item all web">
-            <a href="http://placehold.it/340x548" data-rel="prettyPhoto[portfolio]">
-                <img src="http://placehold.it/340x548" width="340" height="548" alt="Recent Work" class="img-responsive" />
+            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_55.jpg" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_55.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Ritto</div>-->
             </a>
         </div>
@@ -221,7 +237,7 @@
         <!-- Item 4 -->
         <div class="grid-item all web">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" width="340" height="548" alt="Recent Work" class="img-responsive" />
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Black &amp; White</div>-->
             </a>
         </div>
@@ -229,7 +245,7 @@
         <!-- Item 5 -->
         <div class="grid-item all web">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" width="340" height="274" alt="Recent Work" class="img-responsive" />
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">walky</div>-->
             </a>
         </div>
@@ -237,7 +253,7 @@
         <!-- Item 6 -->
         <div class="grid-item all web">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" width="340" height="274" alt="Recent Work" class="img-responsive" />
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Style</div>-->
             </a>
         </div>
@@ -245,7 +261,7 @@
         <!-- Item 7 -->
         <div class="grid-item all web">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" width="340" height="274" alt="Recent Work" class="img-responsive" />
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Superb</div>-->
             </a>
         </div>
@@ -256,27 +272,17 @@
 <!-- works -->
 
 <section id="team" class="page-section">
-    <div class="image-bg content-in fixed" data-background="img/sections/bg/bg-2.jpg"></div>
+    <div class="image-bg content-in fixed" data-background="{{static-domain}}/dc/imgs/bg-black.jpg"></div>
     <div class="container text-center white">
         <div class="section-title" data-animation="fadeInUp">
-            <h1 class="title">Meet the Team</h1>
+            <h1 class="title">Master Distributors</h1>
         </div>
         <div class="row">
-            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
+            <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInRight">
                 <div class="image">
-                    <!-- Image -->
-                    <img src="img/sections/fashion-team-1.jpg" alt="" title="" width="270" height="270" />
-                </div>
-                <div class="description">
-                    <!-- Name -->
-                    <h4 class="name text-color">Phillip Parisis</h4>
-                    <!-- Designation -->
-                    <div class="role">Hair Styler</div>
-                    <!-- Text -->
-                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
+                    <img src="{{static-domain}}/dc/imgs/CYOGel_LOGO.png" alt="" title="" width="460" height="232" />
                 </div>
                 <div class="social-icon i-3x">
-                <!-- Social Icons -->
                 <a href="#">
                     <i class="fa fa-facebook"></i>
                 </a> 
@@ -290,22 +296,11 @@
                     <i class="fa fa-pinterest"></i>
                 </a></div>
             </div>
-            <!-- .employee  -->
-            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInRight">
+            <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
                 <div class="image">
-                    <!-- Image -->
-                    <img src="img/sections/fashion-team-2.jpg" alt="" title="" width="270" height="270" />
-                </div>
-                <div class="description">
-                    <!-- Name -->
-                    <h4 class="name text-color">Simo Kruyt</h4>
-                    <!-- Designation -->
-                    <div class="role">Model Designer</div>
-                    <!-- Text -->
-                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
+                    <img src="{{static-domain}}/dc/imgs/Alfalfa-logo.png" alt="" title="" width="460" height="232" />
                 </div>
                 <div class="social-icon i-3x">
-                <!-- Social Icons -->
                 <a href="#">
                     <i class="fa fa-facebook"></i>
                 </a> 
@@ -319,22 +314,16 @@
                     <i class="fa fa-pinterest"></i>
                 </a></div>
             </div>
-            <!-- .employee -->
-            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
+<!--            <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
                 <div class="image">
-                    <!-- Image -->
-                    <img src="img/sections/fashion-team-3.jpg" alt="" title="" width="270" height="270" />
+                    <img src="{{static-domain}}/dc/imgs/Alfalfa-logo.png" alt="" title="" width="460" height="232" />
                 </div>
                 <div class="description">
-                    <!-- Name -->
                     <h4 class="name text-color">Jorge Canaveral</h4>
-                    <!-- Designation -->
                     <div class="role">Event Manager</div>
-                    <!-- Text -->
                     <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
                 </div>
                 <div class="social-icon i-3x">
-                <!-- Social Icons -->
                 <a href="#">
                     <i class="fa fa-facebook"></i>
                 </a> 
@@ -347,36 +336,7 @@
                 <a href="#">
                     <i class="fa fa-pinterest"></i>
                 </a></div>
-            </div>
-            <!-- .employee -->
-            <div class="col-sm-4 col-md-3 icons-hover-color bottom-xs-pad-20" data-animation="fadeInRight">
-                <div class="image">
-                    <!-- Image -->
-                    <img src="img/sections/fashion-team-4.jpg" alt="" title="" width="270" height="270" />
-                </div>
-                <div class="description">
-                    <!-- Name -->
-                    <h4 class="name text-color">Aimee Devlin</h4>
-                    <!-- Designation -->
-                    <div class="role">Fashion Consultant</div>
-                    <!-- Text -->
-                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-                </div>
-                <div class="social-icon i-3x">
-                <!-- Social Icons -->
-                <a href="#">
-                    <i class="fa fa-facebook"></i>
-                </a> 
-                <a href="#">
-                    <i class="fa fa-twitter"></i>
-                </a> 
-                <a href="#">
-                    <i class="fa fa-google"></i>
-                </a> 
-                <a href="#">
-                    <i class="fa fa-pinterest"></i>
-                </a></div>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>
