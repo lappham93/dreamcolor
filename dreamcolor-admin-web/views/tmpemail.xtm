@@ -1,0 +1,1001 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Cyogel</title>
+    <style type="text/css">
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            table[class="table-row"] {
+                float: none !important;
+                width: 98% !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            table[class="table-row-fixed"] {
+                float: none !important;
+                width: 98% !important;
+            }
+            table[class="table-col"],
+            table[class="table-col-border"] {
+                float: none !important;
+                width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                table-layout: fixed;
+            }
+            td[class="table-col-td"] {
+                width: 100% !important;
+            }
+            table[class="table-col-border"] + table[class="table-col-border"] {
+                padding-top: 12px;
+                margin-top: 12px;
+                border-top: 1px solid #E8E8E8;
+            }
+            table[class="table-col"] + table[class="table-col"] {
+                margin-top: 15px;
+            }
+            td[class="table-row-td"] {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            table[class="navbar-row"],
+            td[class="navbar-row-td"] {
+                width: 100% !important;
+            }
+            img {
+                max-width: 100% !important;
+                display: inline !important;
+            }
+            img[class="pull-right"] {
+                float: right;
+                margin-left: 11px;
+                max-width: 125px !important;
+                padding-bottom: 0 !important;
+            }
+            img[class="pull-left"] {
+                float: left;
+                margin-right: 11px;
+                max-width: 125px !important;
+                padding-bottom: 0 !important;
+            }
+            table[class="table-space"],
+            table[class="header-row"] {
+                float: none !important;
+                width: 98% !important;
+            }
+            td[class="header-row-td"] {
+                width: 100% !important;
+            }
+        }
+        
+        @media only screen and (max-width: 480px) {
+            table[class="table-row"] {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+        }
+        
+        @media only screen and (max-width: 320px) {
+            table[class="table-row"] {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+        }
+        
+        @media only screen and (max-width: 608px) {
+            td[class="table-td-wrap"] {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="font-family: Arial, sans-serif; font-size:13px; color: #444444; min-height: 200px;" bgcolor="#E4E6E9" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+    <table width="100%" height="100%" bgcolor="#E4E6E9" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td width="100%" align="center" valign="top" bgcolor="#E4E6E9" style="background-color:#E4E6E9; min-height: 200px;">
+                <table>
+                    <tr>
+                        <td class="table-td-wrap" align="center" width="608">
+                            <div style="font-family: Arial, sans-serif; line-height: 32px; color: #444444; font-size: 13px;">
+                                Can't read this email?
+                                <a href="https://cyogel.com/" style="color: #478fca; text-decoration: none; font-size: 14px; background-color: transparent;">View it Online &rarr;</a>
+                            </div>
+
+                            <table class="table-row" style="table-layout: auto; padding-right: 24px; padding-left: 24px; width: 600px; background-color: #ffffff;" bgcolor="#FFFFFF" width="600" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr height="55px" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; height: 55px;">
+                                        <td class="table-row-td" style="height: 55px; padding-right: 16px; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; vertical-align: middle;" valign="middle" align="left">
+                                            <a href="https://cyogel.com/" style="color: #428bca; text-decoration: none; padding: 0px; font-size: 18px; line-height: 20px; height: 50px; background-color: transparent;">
+                                                <img width="132" height="53" src="https://cyogel.com/cyogel/static/cyogel/img/vmind/logo.png" style="border: 0px none #444444; vertical-align: middle; display: block;" hspace="0" vspace="0" border="0">
+                                            </a>
+                                        </td>
+
+                                        <td class="table-row-td" style="height: 55px; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; text-align: right; vertical-align: middle;" align="right" valign="middle">
+                                            <a href="https://cyogel.com/" style="color: #428bca; text-decoration: none; font-size: 15px; background-color: transparent;">
+                                                About
+                                            </a> &nbsp;
+                                            <a href="https://cyogel.com/cyogel/contactus" style="color: #428bca; text-decoration: none; font-size: 15px; background-color: transparent;">
+                                                Contact
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-space" height="6" style="height: 6px; font-size: 0px; line-height: 0; width: 600px; background-color: #e4e6e9;" width="600" bgcolor="#E4E6E9" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="6" style="height: 6px; width: 600px; background-color: #e4e6e9;" width="600" bgcolor="#E4E6E9" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table-space" height="16" style="height: 16px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="16" style="height: 16px; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 24px; padding-right: 24px;" valign="top" align="left">
+                                            <table class="table-col" align="left" width="552" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="552" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <div style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; text-align: center;">
+                                                                <a href="https://cyogel.com/">
+                                                                    <img src="https://cyogel.com/cyogel/static/cyogel/img/rsz_1bannercyogel.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
+                                            <table class="table-col" align="left" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="528" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="font-size: 28px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">
+                                                                            Hi, 
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-size: 24px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">
+                                                                            What is CYOGEL?
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #444444; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            It is Create Your Own Gelcolor from any brand nail polish
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-size: 24px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">
+                                                                            SAVE MONEY & EASILY
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #444444; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            Turn any brand nail polish into matching GelColor (cured under UV and LED light)
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-size: 24px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">
+                                                                            SIMPLE & EASY ENOUGH
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #444444; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            Just pour 1/2 bottle of any brand nail polish into an empty cleaned GEL bottle (same color and same brand), 
+                                                                            top off to bottle's neck with CYOGEL mix and SHAKE well. 
+                                                                            You will have a beautiful matching GelColor bottle!
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-space" height="12" style="height: 12px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="12" style="height: 12px; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+<!--                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
+                                            <table class="table-col" align="left" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="528" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table width="100%" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="100%" bgcolor="#d9edf7" style="font-family: Arial, sans-serif; line-height: 19px; color: #31708f; font-size: 14px; font-weight: normal; padding: 15px; border: 1px solid #bce8f1; background-color: #d9edf7;" valign="top" align="left">
+                                                                            You can also use Zurb's responsive email templates built on Ink.
+                                                                            <br>
+                                                                            <a href="http://zurb.com/ink/templates.php" style="color: #428bca; text-decoration: none; background-color: transparent;">Click here to see them</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>-->
+                            <table class="table-space" height="24" style="height: 24px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="24" style="height: 24px; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-space" height="32" style="height: 32px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="32" style="height: 32px; width: 600px; padding-left: 18px; padding-right: 18px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="center">&nbsp;
+                                            <table bgcolor="#E8E8E8" height="0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td bgcolor="#E8E8E8" height="1" width="100%" style="height: 1px; font-size:0;" valign="top" align="left">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
+                                            <table class="table-col" align="left" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="528" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; width: 528px;" valign="top" align="left">
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #6397bf; margin: 0px; font-size: 18px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            Our products
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 25px; padding-right: 25px;" valign="top" align="left">
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=6">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/Gel_Base _2oz.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=6" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>2 oz Gel Mix</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $24.00
+                                                                </p>
+                                                                CYOGEL - Gel Mix is a patent pending, revolutionary product that allows you to self-mix limitless colors to form a long lasting. 
+                                                                With a 2 oz gel mix bottle, you can refill at least 8 bottles (0.5 oz) of beautiful gel-colors.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=5">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/Gel_Base _8oz.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=5" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>8 oz Gel Mix</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $76.80
+                                                                </p>
+                                                                CYOGEL - Gel Mix is a patent pending, revolutionary product that allows you to self-mix limitless colors to form a long lasting. With a 8 oz gel mix bottle, 
+                                                                you can refill at least 32 bottles (0.5 oz) of beautiful gel-colors.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=4">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/Gel_Top_2oz.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=4" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>2 oz Gel Top</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $24.00
+                                                                </p>
+                                                                CYOGEL - Gel Top Coat creates a beautiful finish with the ultra shiny gelcolor.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-space" height="32" style="height: 32px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="32" style="height: 32px; width: 600px; padding-left: 18px; padding-right: 18px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="center">&nbsp;
+                                            <table bgcolor="#E8E8E8" height="0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td bgcolor="#E8E8E8" height="1" width="100%" style="height: 1px; font-size:0;" valign="top" align="left">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 25px; padding-right: 25px;" valign="top" align="left">
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=3">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/Gel_Top_8oz.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=3" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>8 oz Gel Top</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $76.80
+                                                                </p>
+                                                                CYOGEL - Gel Top Coat creates a beautiful finish with the ultra shiny gelcolor.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=8">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/Kit_1.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=8" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>EASTERN Combo Kit</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $195.02
+                                                                </p>
+                                                                EASTERN Combo Kit (1 gel mix 8 oz, 1 gel top 8 oz and 34 empty gel bottles 0.5 oz)
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=9">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/Kit_7.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=9" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>WESTERN Combo Kit</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $203.41
+                                                                </p>
+                                                                WESTERN Combo Kit (1 gel mix 8 oz, 1 gel top 8 oz, 1 digital scale and 31 empty gel bottles 0.5 oz)
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table-space" height="32" style="height: 32px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="32" style="height: 32px; width: 600px; padding-left: 18px; padding-right: 18px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="center">&nbsp;
+                                            <table bgcolor="#E8E8E8" height="0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td bgcolor="#E8E8E8" height="1" width="100%" style="height: 1px; font-size:0;" valign="top" align="left">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 25px; padding-right: 25px;" valign="top" align="left">
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=13">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/digital-scale-1024x920.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=13" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>Digital Scale</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $12.90
+                                                                </p>
+                                                                American Weigh Scales AWS-1KG-BLK Signature Series Black Digital Pocket Scale, 1000 by 0.1 G
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=12">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/Nail_Lacquer_Shaker_View01.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=12" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>Nail Polish Shaker</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $36.00
+                                                                </p>
+                                                                Can be plugged in or using 4 AA batteries. Fit with round, square, oval shape lacquer or gelcolor bottles.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=11">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/white_bottle.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=11" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>Empty Gel Bottle 0.5 oz</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $1.10
+                                                                </p>
+                                                                UV protected gelcolor bottle 0.5 oz: White coated for UV protection. Included brush and cap.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-space" height="32" style="height: 32px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="32" style="height: 32px; width: 600px; padding-left: 18px; padding-right: 18px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="center">&nbsp;
+                                            <table bgcolor="#E8E8E8" height="0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td bgcolor="#E8E8E8" height="1" width="100%" style="height: 1px; font-size:0;" valign="top" align="left">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 25px; padding-right: 25px;" valign="top" align="left">
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=10">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/Steel_Balls-1.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=10" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>BB Pellets (200 pcs)</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $7.85
+                                                                </p>
+                                                                Each bottle of gelcolor or nail polish needs 1 steel BB Pellet to speed up the color blending process.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table-col-border" align="left" width="181" style="padding-right: 16px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="165" style="text-align: justify; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <a href="https://cyogel.com/cyogel/product?productId=7">
+                                                                <img width="165" height="165" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/product/white_brush.jpg" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px;" hspace="0" vspace="0" border="0">
+                                                            </a>
+                                                            <p style="text-align: center; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px;">
+                                                                <a href="https://cyogel.com/cyogel/product?productId=7" style="color: #5b7a91; text-decoration: none; background-color: transparent;">
+                                                                    <b>White Hair Brush Flat</b>
+                                                                </a>
+                                                                <br>
+                                                                <p class="header-row-td" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #F05925; margin: 0px; font-size: 17px; padding-bottom: 8px; padding-top: 0px;" valign="top" align="left">
+                                                                    $0.36
+                                                                </p>
+                                                                Works with both gelcolor and nail lacquer. Size 15/415, fit round bottle 0.5 oz, OPI bottle 0.5 oz and Vinylux bottle 0.5 oz.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table-space" height="6" style="height: 6px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="6" style="height: 6px; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table-space" height="32" style="height: 32px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="32" style="height: 32px; width: 600px; padding-left: 18px; padding-right: 18px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="center">&nbsp;
+                                            <table bgcolor="#E8E8E8" height="0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td bgcolor="#E8E8E8" height="1" width="100%" style="height: 1px; font-size:0;" valign="top" align="left">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
+                                            <table class="table-col" align="left" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="528" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; width: 528px;" valign="top" align="left">
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #6397bf; margin: 0px; font-size: 18px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            HOW TO CREATE YOUR OWN GEL?
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
+                                            <table class="table-col" align="left" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="528"  style="background-color: #07687e; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: left; font-size: 22px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #ECECEC; padding-bottom: 10px; padding-top: 15px; padding-left: 20px;" valign="top" align="left">
+                                                                            STEP 1:
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #ECECEC; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            Pour half of matched nail polish into an empty gel bottle.
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #444444; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            <img width="320" height="320" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/vmind/step1-img.png" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px; padding-left: 100px;" hspace="0" vspace="0" border="0">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td class="table-col-td" width="528"  style="background-color: #50407d; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: left; font-size: 22px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #ECECEC; padding-bottom: 10px; padding-top: 15px; padding-left: 20px;" valign="top" align="left">
+                                                                            STEP 2:
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #ECECEC; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            Top off to the neck of the gel bottle with CYOGEL mix.
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #444444; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            <img width="320" height="320" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/vmind/step2-img.png" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px; padding-left: 100px;" hspace="0" vspace="0" border="0">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td class="table-col-td" width="528"  style="background-color: #9b4276; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: left; font-size: 22px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #ECECEC; padding-bottom: 10px; padding-top: 15px; padding-left: 20px;" valign="top" align="left">
+                                                                            STEP 3:
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #ECECEC; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            Shake well to blend CYOGEL mix with nail polish.
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #444444; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            <img width="320" height="320" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/vmind/step3-img.png" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px; padding-left: 100px;" hspace="0" vspace="0" border="0">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                        <td class="table-col-td" width="528"  style="background-color: #000; font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: left; font-size: 22px; margin: 0px; font-family: Arial, sans-serif; font-weight: normal; line-height: 30px; color: #ECECEC; padding-bottom: 10px; padding-top: 15px; padding-left: 20px;" valign="top" align="left">
+                                                                            TOTAL COST BRANDED GELCOLOR THAT YOU JUST CREATED: $4.00
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <table class="header-row" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="528" style="text-align: center; font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #444444; margin: 0px; font-size: 16px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">
+                                                                            <img width="355" height="251" class="pull-left" src="https://cyogel.com/cyogel/static/cyogel/img/vmind/step4-img.png" style="border: 0px none #444444; vertical-align: middle; display: block; padding-bottom: 9px; padding-left: 92px;" hspace="0" vspace="0" border="0">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-space" height="16" style="height: 16px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="16" style="height: 16px; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-space" height="12" style="height: 12px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="12" style="height: 12px; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table-space" height="16" style="height: 16px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="16" style="height: 16px; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+                            <table class="table-space" height="6" style="height: 6px; font-size: 0px; line-height: 0; width: 600px; background-color: #e4e6e9;" width="600" bgcolor="#E4E6E9" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="6" style="height: 6px; width: 600px; background-color: #e4e6e9;" width="600" bgcolor="#E4E6E9" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
+                                            <table class="table-col" align="left" width="273" style="padding-right: 18px; table-layout: fixed;" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="255" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table class="header-row" width="255" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="255" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; margin: 0px; font-size: 18px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">Our Social Channels</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                            <div style="font-family: Arial, sans-serif; line-height: 36px; color: #444444; font-size: 13px;">
+                                                                <a href="https://www.facebook.com/CYOGEL-185686185102058" target="_blank" style="color: #6688a6; text-decoration: none; margin: 0px; text-align: center; vertical-align: baseline; border-width: 1px 1px 2px; border-style: solid; border-color: #8aafce; padding: 6px 12px; font-size: 14px; line-height: 20px; background-color: #ffffff;">Facebook</a>
+                                                                <a href="https://plus.google.com/101632725135656721370" target="_blank" style="color: #b7837a; text-decoration: none; margin: 0px; text-align: center; vertical-align: baseline; border-width: 1px 1px 2px; border-style: solid; border-color: #d7a59d; padding: 6px 12px; font-size: 14px; line-height: 20px; background-color: #ffffff;">Google+</a>
+                                                                <a href="https://twitter.com/cyogel1" target="_blank" style="color: #ffffff; text-decoration: none; margin: 0px; text-align: center; vertical-align: baseline; border: 4px solid #6fb3e0; padding: 4px 9px; font-size: 14px; line-height: 19px; background-color: #6fb3e0;">Twitter</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table-col" align="left" width="255" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="255" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table class="header-row" width="255" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="header-row-td" width="255" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; margin: 0px; font-size: 18px; padding-bottom: 8px; padding-top: 10px;" valign="top" align="left">Our Contact Info</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            Phone: 1-888-359-9397
+                                                            <br>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <table class="table-space" height="24" style="height: 24px; font-size: 0px; line-height: 0; width: 600px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="24" style="height: 24px; width: 600px; padding-left: 18px; padding-right: 18px; background-color: #ffffff;" width="600" bgcolor="#FFFFFF" align="center">&nbsp;
+                                            <table bgcolor="#E8E8E8" height="0" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td bgcolor="#E8E8E8" height="1" width="100%" style="height: 1px; font-size:0;" valign="top" align="left">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-row" width="600" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
+                                            <table class="table-col" align="left" width="528" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="table-col-td" width="528" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal;" valign="top" align="left">
+                                                            <table class="table-space" height="16" style="height: 16px; font-size: 0px; line-height: 0; width: 528px; background-color: #ffffff;" width="528" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="table-space-td" valign="middle" height="16" style="height: 16px; width: 528px; background-color: #ffffff;" width="528" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div style="font-family: Arial, sans-serif; line-height: 19px; color: #777777; font-size: 14px; text-align: center;">COPYRIGHT&copy;2015 CYOGEL</div>
+                                                            <table class="table-space" height="12" style="height: 12px; font-size: 0px; line-height: 0; width: 528px; background-color: #ffffff;" width="528" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="table-space-td" valign="middle" height="12" style="height: 12px; width: 528px; background-color: #ffffff;" width="528" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div style="font-family: Arial, sans-serif; line-height: 19px; color: #bbbbbb; font-size: 13px; text-align: center;">
+                                                                <a href="https://cyogel.com/cyogel/terms-of-use" style="color: #428bca; text-decoration: none; background-color: transparent;">Terms</a> &nbsp;|&nbsp;
+                                                                <a href="https://cyogel.com/cyogel/privacy-policy" style="color: #428bca; text-decoration: none; background-color: transparent;">Privacy</a> &nbsp;|&nbsp;
+                                                                <a href="https://cyogel.com/cyogel/delivery-policy" style="color: #428bca; text-decoration: none; background-color: transparent;">Delivery</a>
+                                                            </div>
+                                                            <table class="table-space" height="16" style="height: 16px; font-size: 0px; line-height: 0; width: 528px; background-color: #ffffff;" width="528" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="table-space-td" valign="middle" height="16" style="height: 16px; width: 528px; background-color: #ffffff;" width="528" bgcolor="#FFFFFF" align="left">&nbsp;</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table-space" height="8" style="height: 8px; font-size: 0px; line-height: 0; width: 600px; background-color: #e4e6e9;" width="600" bgcolor="#E4E6E9" cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="table-space-td" valign="middle" height="8" style="height: 8px; width: 600px; background-color: #e4e6e9;" width="600" bgcolor="#E4E6E9" align="left">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

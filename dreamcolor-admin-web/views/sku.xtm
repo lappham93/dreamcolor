@@ -1,0 +1,2297 @@
+
+
+<div class="tabbable">
+    <ul class="nav nav-tabs hidden-sm hidden-xs">
+        <li>
+            <a href="/web/admin/product?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
+        </li>
+        <li>
+            <a href="/web/admin/product?option=po"><i class="green ace-icon fa fa-check-square-o bigger-120"></i>Production Option</a>
+        </li>
+        <li>
+            <a href="/web/admin/product?option=pov"><i class="green ace-icon fa fa-pencil-square-o bigger-120"></i>Production Option Value</a>
+        </li>
+        <li>
+            <a href="/web/admin/product?option=pro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Production</a>
+        </li>
+        <li class="active">
+            <a href="/web/admin/product?option=sku"><i class="green ace-icon glyphicon glyphicon-star bigger-120"></i>SKU</a>
+        </li>
+    </ul>
+    <ul class="nav nav-tabs hidden-md hidden-lg">
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                Menu &nbsp;
+                <i class="ace-icon fa fa-caret-down bigger-110 width-auto"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-info">
+                <li>
+                    <a href="/web/admin/product?option=cate"><i class="green ace-icon fa fa-list bigger-120"></i>Category</a>
+                </li>
+                <li>
+                    <a href="/web/admin/product?option=po"><i class="green ace-icon fa fa-check-square-o bigger-120"></i>Production Option</a>
+                </li>
+                <li>
+                    <a href="/web/admin/product?option=pov"><i class="green ace-icon fa fa-pencil-square-o bigger-120"></i>Production Option Value</a>
+                </li>
+                <li>
+                    <a href="/web/admin/product?option=pro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Production</a>
+                </li>
+                <li class="active">
+                    <a href="/web/admin/product?option=sku"><i class="green ace-icon glyphicon glyphicon-star bigger-120"></i>SKU</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="table" class="tab-pane fade in active">
+
+            <h3 class="header smaller lighter blue">Add SKU</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    <iframe id="if_Add" name="if_Add" style="display: none;width: 0px;height: 0px"></iframe>
+                    <form id="frmAdd" name="frmAdd" class="form-horizontal" role="form" action="/web/admin/sku" method="POST" enctype="multipart/form-data" target="if_Add">
+                        <div id="add_alert_success" class="alert alert-success" style="display: none;"></div>
+                        <div id="add_alert_err" class="alert alert-danger" style="display: none;"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Name: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="name" name="name" placeholder="name" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Product: <span class="orange">(*)</span></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                    <select class="col-xs-12 col-sm-12" id="pid" name="pid" data-placeholder="Choose a product...">
+                                        <option value=""> Choose a product... </option>
+                                        {{#loop_option_product}}
+                                        <option value="{{KEY}}">{{VALUE}}</option>
+                                        {{/loop_option_product}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Base Price: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="bprice" name="bprice" placeholder="base price" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">UpSale Percent Distributor: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="upd" name="upd" placeholder="upsale percent distributor" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">UpSale Percent Salon Buyer: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="upsb" name="upsb" placeholder="upsale percent salon Buyer" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">UpSale Percent Retailer: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="upr" name="upr" placeholder="upsale percent retailer" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Quantity: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="qty" name="qty" placeholder="quantity" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Description: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="desc" name="desc" placeholder="description" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-1">Display Order: <span class="orange">(*)</span></label>
+<!--                            <div class="col-sm-9">
+                                <input type="text" id="order" name="order" placeholder="display order" class="col-xs-12 col-sm-5"/>
+                            </div>-->
+                            <div class="col-sm-9 col-xs-7">
+                                <input type="text" id="order" name="order" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                    <select class="col-xs-12 col-sm-12" id="status" name="status" data-placeholder="Choose a status...">
+                                        <option value=""> Choose a status... </option>
+                                        <option value="0">Delete</option>
+                                        <option value="1">Active</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Width: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="width" name="width" placeholder="width" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Height: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="height" name="height" placeholder="height" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div><div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Depth: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="depth" name="depth" placeholder="depth" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Dimension Unit: <span class="orange">(*)</span></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                    <select class="col-xs-12 col-sm-12" id="dunit" name="dunit" data-placeholder="Choose a unit...">
+                                        <option value=""> Choose a unit... </option>
+                                        <option value="0">Inch</option>
+                                        <option value="1">Feet</option>
+                                        <option value="2">Milimeter</option>
+                                        <option value="3">Centimeter</option>
+                                        <option value="4">Meter</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Weight: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" id="weight" name="weight" placeholder="weight" class="col-xs-12 col-sm-5"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Weight Unit: <span class="orange">(*)</span></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                    <select class="col-xs-12 col-sm-12" id="wunit" name="wunit" data-placeholder="Choose a unit...">
+                                        <option value=""> Choose a unit... </option>
+                                        <option value="0">oz</option>
+                                        <option value="1">Pound</option>
+                                        <option value="2">Gram</option>
+                                        <option value="3">Kilogam</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Option Value: <span class="orange">(*)</span></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                    <select multiple="multiple" size="10" name="lov" id="lov">
+                                        {{#loop_option_value}}
+                                        <option value="{{KEY}}">{{VALUE}}</option>
+                                        {{/loop_option_value}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Taxable: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-7">
+                                <label>
+                                    <input id="istax" name="istax" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Discount: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-7">
+                                <label>
+                                    <input id="isdis" name="isdis" class="ace ace-switch ace-switch-4" type="checkbox" />
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Active: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-7">
+                                <label>
+                                    <input id="isact" name="isact" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Delete: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-7">
+                                <label>
+                                    <input id="isdel" name="isdel" class="ace ace-switch ace-switch-4" type="checkbox" />
+                                    <span class="lbl"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Primary Photo: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-9">
+                                <div class="col-xs-12 col-sm-5">
+                                    <input type="file" name="priphoto" id="priphoto" style="display: none;" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Other Photo: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-9">
+                                <div class="col-xs-10 col-sm-5">
+                                    <input type="file" name="photo1" id="photo1" style="display: none;" />
+                                </div>
+                                <div class="col-xs-2 col-sm-5" style="padding-left: 0px;">
+                                    <button id="btnap" class="btn btn-xs btn-success tooltip-success" type="button" onclick="addPhoto(); return false;" data-rel="tooltip" title="Add" data-placement="top"><i class="ace-icon fa fa-plus bigger-110"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="listPhoto">
+                        </div>
+
+                        <div class="clearfix">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button id="btnadd" class="btn btn-info" type="button" onclick="addSKU(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="reset" onclick="resetAdd(); return false;"><i class="ace-icon fa fa-undo bigger-110"></i>Reset</button>
+                            </div>
+                        </div>
+                        <input type="hidden" id="numPhoto" name="numPhoto" value="1"/>
+                        <input type="hidden" id="ov" name="ov" value=""/>
+                        <input type="hidden" id="action" name="action" value="addsku"/>
+                        <input type="hidden" id="callback" name="callback" value="completeAddSKU"/>
+                    </form>
+                </div>
+            </div>
+
+            <h3 class="header smaller lighter blue">List SKUs</h3>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <table id="tableproduct" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="center">No.</th>
+                                <th class="hidden-480">Photo</th>
+                                <th class="hidden-md hidden-lg">Name</th>
+                                <!--<th class="hidden-480">Product</th>-->
+                                <th class="hidden-480">SKU Info</th>
+                                <th class="hidden-480">SKU Info</th>
+                                <th class="hidden-480">Description</th>
+                                <!--<th class="hidden-480">Width x Height x Depth</th>-->
+                                <!--<th class="hidden-480">Weight</th>-->
+                                <th class="hidden-480">Option Value</th>
+                                <!--<th>Flags</th>-->
+                                <th class="hidden-480"><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>Update</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#loop_row}}
+                            <tr>
+                                <td class="center">{{NO}}</td>
+                                <td class="hidden-480">
+                                    <ul class="ace-thumbnails">
+                                        <li>
+                                            <a href="{{URI_PP}}" data-rel="colorbox">
+                                                <img width="150" height="150" alt="150x150" src="{{URI_PP}}" />
+                                                <div class="text">
+                                                    <div class="inner">Primary Photo</div>
+                                                </div>
+                                            </a>
+
+                                            <div class="tools tools-bottom">
+                                                <a href="#" onclick="changeImgModal('{{ID}}'); return false;">
+                                                    <i class="ace-icon fa fa-camera"></i>
+                                                    <span style="font-size: 12px;">Change image</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="hidden-md hidden-lg">{{NAME}}</td>
+                                <!--<td class="hidden-480">{{PRODUCT}}</td>-->
+                                <td class="hidden-480" width="20%">
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Name: <span class="green"><strong>{{NAME}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Product: <span class="green"><strong>{{PRODUCT}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Price: <span class="green"><strong>${{BPRICE}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; UpSale Percent Distributor: <span class="green"><strong>{{UPD}}%</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Sale Price Distributor: <span class="green"><strong>${{SPD}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; UpSale Percent Salon Buyer: <span class="green"><strong>{{UPSB}}%</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Sale Price Salon Buyer: <span class="green"><strong>${{SPSB}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; UpSale Percent Retailer: <span class="green"><strong>{{UPR}}%</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Sale Price Retailer: <span class="green"><strong>${{SPR}}</strong></span><br>
+                                </td>
+                                <td class="hidden-480" width="25%">
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Quantity: <span class="green"><strong>{{QTY}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Order: <span class="green"><strong>{{ORDER}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Width x Height x Depth: <span class="green"><strong>{{WIDTH}} x {{HEIGHT}} x {{DEPTH}} {{DUNIT}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Weight: <span class="green"><strong>{{WEIGHT}} {{WUNIT}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Status: <span class="blue"><strong>{{STATUS}}</strong></span><br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Is Taxable: {{#ISTAX_ON}}<span class="green"><strong>On</strong></span>{{/ISTAX_ON}} {{#ISTAX_OFF}}<span class="red"><strong>Off</strong></span>{{/ISTAX_OFF}} <br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Is Discount: {{#ISDISC_ON}}<span class="green"><strong>On</strong></span>{{/ISDISC_ON}} {{#ISDISC_OFF}}<span class="red"><strong>Off</strong></span>{{/ISDISC_OFF}} <br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Is Active: {{#ISACT_ON}}<span class="green"><strong>On</strong></span>{{/ISACT_ON}} {{#ISACT_OFF}}<span class="red"><strong>Off</strong></span>{{/ISACT_OFF}} <br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Is Delete: {{#ISDEL_ON}}<span class="green"><strong>On</strong></span>{{/ISDEL_ON}} {{#ISDEL_OFF}}<span class="red"><strong>Off</strong></span>{{/ISDEL_OFF}}
+                                </td>
+                                <td class="hidden-480" width="20%">{{DESC}}</td>
+<!--                                <td class="hidden-480">{{WIDTH}} x {{HEIGHT}} x {{DEPTH}} {{DUNIT}}</td>
+                                <td class="hidden-480">{{WEIGHT}} {{WUNIT}}</td>-->
+                                <td class="hidden-480">
+                                    {{#OPTION_VALUE}}
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; {{VALUE_POV}} <br>
+                                    {{/OPTION_VALUE}}
+                                </td>
+<!--                                <td>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Is Taxable: {{#ISTAX_ON}}<span class="green"><strong>On</strong></span>{{/ISTAX_ON}} {{#ISTAX_OFF}}<span class="red"><strong>Off</strong></span>{{/ISTAX_OFF}} <br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Is Discount: {{#ISDISC_ON}}<span class="green"><strong>On</strong></span>{{/ISDISC_ON}} {{#ISDISC_OFF}}<span class="red"><strong>Off</strong></span>{{/ISDISC_OFF}} <br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Is Active: {{#ISACT_ON}}<span class="green"><strong>On</strong></span>{{/ISACT_ON}} {{#ISACT_OFF}}<span class="red"><strong>Off</strong></span>{{/ISACT_OFF}} <br>
+                                    <i class="ace-icon fa fa-check bigger-110 green"></i>&nbsp; Is Delete: {{#ISDEL_ON}}<span class="green"><strong>On</strong></span>{{/ISDEL_ON}} {{#ISDEL_OFF}}<span class="red"><strong>Off</strong></span>{{/ISDEL_OFF}}
+                                </td>-->
+                                <td class="hidden-480">{{UPDATE}}</td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+            <!--                            <button class="btn btn-xs btn-success tooltip-success" data-rel="tooltip" title="Approve" data-placement="top">
+                                            <i class="ace-icon fa fa-check bigger-120"></i>
+                                        </button>-->
+                                        <button class="btn btn-xs btn-info tooltip-info" data-rel="tooltip" title="Edit" data-placement="top" onclick="openEditModal('{{ID}}'); return false;">
+                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                        </button>
+<!--                                        <button class="btn btn-xs btn-danger tooltip-error" data-rel="tooltip" title="Delete" data-placement="top" onclick="openDelModal(); return false;">
+                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                        </button>
+                                        <button class="btn btn-xs btn-warning tooltip-warning" data-rel="tooltip" title="On/Off" data-placement="top" onclick="openOOModal(); return false;">
+                                            <i class="ace-icon fa fa-flag bigger-120"></i>
+                                        </button>-->
+                                    </div>
+                                    <div class="hidden-md hidden-lg">
+                                        <div class="inline pos-rel">
+                                            <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                <li>
+                                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View" onclick="openViewModal('{{ID}}'); return false;">
+                                                        <span class="blue">
+                                                            <i class="ace-icon fa fa-eye bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit" onclick="openEditModal('{{ID}}'); return false;">
+                                                        <span class="green">
+                                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+<!--                                                <li>
+                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="openDelModal(); return false;">
+                                                        <span class="red">
+                                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="tooltip-warning" data-rel="tooltip" title="On/Off" onclick="openOOModal(); return false;">
+                                                        <span class="orange">
+                                                            <i class="ace-icon fa fa-flag bigger-120"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hidden-480">
+                                <!--<td></td>-->
+                                <td>Other Photo:</td>
+                                <td colspan="6">
+                                    <ul class="ace-thumbnails">
+                                        {{#loop_op}}
+                                        <li>
+                                            <a href="{{URI_OP}}" data-rel="colorbox">
+                                                <img width="100" height="100" alt="100x100" src="{{URI_OP}}" />
+                                                <div class="text">
+                                                    <div class="inner">Other Photo</div>
+                                                </div>
+                                            </a>
+                                            <div class="tools tools-bottom">
+                                                <a href="#" onclick="changeImgOPModal('{{ID}}', '{{ID_OP}}'); return false;">
+                                                    <i class="ace-icon fa fa-camera"></i>
+                                                </a>
+                                                <a href="#" onclick="openDelPhotoModal('{{ID}}', '{{ID_OP}}'); return false;">
+                                                    <i class="ace-icon fa fa-times red"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        {{/loop_op}}
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                        <button class="btn btn-xs btn-success tooltip-success" data-rel="tooltip" title="Add Photo" data-placement="top" onclick="openAddPhotoModal('{{ID}}'); return false;">
+                                            <i class="ace-icon fa fa-plus bigger-120"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/loop_row}}
+                            
+                            {{#table_empty}}
+                            <tr><td class="center" colspan="15">No item found.</td></tr>
+                            {{/table_empty}}
+                        </tbody>
+                    </table>
+                </div><!-- /.span -->
+            </div><!-- /.row -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="paging" class="dataTables_paginate paging_bootstrap_alt pagination">
+                        {{paging}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- viewModal -->
+<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editModalLabel">View Product</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Name: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vname"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Product: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vproduct"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Base Price: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vbprice"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">UpSale Percent Distributor: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vupd"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Sale Price Distributor: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vspd"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">UpSale Percent Salon Buyer: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vupsb"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Sale Price Salon Buyer: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vspsb"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">UpSale Percent Retailer: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vupr"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Sale Price Retailer: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vspr"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Quantity: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vqty"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Description: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vdesc"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Order: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vorder"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Status: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vstatus"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">W x H x D: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vwhd"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Weight: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vweight"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Option Value: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vov"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Is Taxable: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vistax"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Is Discount: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="visdis"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Is Active: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="visact"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Is Delete: </label>
+                        <div class="col-xs-6 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="visdel"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- editModal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editModalLabel">Edit Production</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_Edit" name="if_Edit" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmEditP" name="frmEditP" class="form-horizontal" role="form" action="/web/admin/product" method="POST" target="if_Edit">
+                    <div id="edit_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="edit_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Name: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="ename" name="ename" placeholder="name" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Product: <span class="orange">(*)</span></label>
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                <select class="col-xs-12 col-sm-12" id="epid" name="epid" data-placeholder="Choose a product...">
+                                    <option value=""> Choose a product... </option>
+                                    {{#loop_option_product}}
+                                    <option value="{{KEY}}">{{VALUE}}</option>
+                                    {{/loop_option_product}}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Base Price: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="ebprice" name="ebprice" placeholder="base price" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">UpSale Percent Distributor: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="eupd" name="eupd" placeholder="upsale percent distributor" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">UpSale Percent Salon Buyer: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="eupsb" name="eupsb" placeholder="upsale percent salon Buyer" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">UpSale Percent Retailer: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="eupr" name="eupr" placeholder="upsale percent retailer" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Quantity: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="eqty" name="eqty" placeholder="quantity" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Description: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="edesc" name="edesc" placeholder="description" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-1">Display Order: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <input type="text" id="eorder" name="eorder" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                <select class="col-xs-12 col-sm-12" id="estatus" name="estatus" data-placeholder="Choose a status...">
+                                    <option value=""> Choose a status... </option>
+                                    <option value="0">Delete</option>
+                                    <option value="1">Active</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Width: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="ewidth" name="ewidth" placeholder="width" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Height: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="eheight" name="eheight" placeholder="height" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div><div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Depth: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="edepth" name="edepth" placeholder="depth" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Dimension Unit: <span class="orange">(*)</span></label>
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                <select class="col-xs-12 col-sm-12" id="edunit" name="edunit" data-placeholder="Choose a unit...">
+                                    <option value=""> Choose a unit... </option>
+                                    <option value="0">Inch</option>
+                                    <option value="1">Feet</option>
+                                    <option value="2">Milimeter</option>
+                                    <option value="3">Centimeter</option>
+                                    <option value="4">Meter</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Weight: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="eweight" name="eweight" placeholder="weight" class="col-xs-12 col-sm-10"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Weight Unit: <span class="orange">(*)</span></label>
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                <select class="col-xs-12 col-sm-12" id="ewunit" name="ewunit" data-placeholder="Choose a unit...">
+                                    <option value=""> Choose a unit... </option>
+                                    <option value="0">oz</option>
+                                    <option value="1">Pound</option>
+                                    <option value="2">Gram</option>
+                                    <option value="3">Kilogam</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Option Value: <span class="orange">(*)</span></label>
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-12" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                                <select multiple="multiple" size="10" name="elovfull" id="elovfull" style="display: none;">
+                                    {{#loop_option_value}}
+                                    <option value="{{KEY}}">{{VALUE}}</option>
+                                    {{/loop_option_value}}
+                                </select>
+                                <select multiple="multiple" size="10" name="elov" id="elov">
+                                    {{#loop_option_value}}
+                                    <option value="{{KEY}}">{{VALUE}}</option>
+                                    {{/loop_option_value}}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Taxable: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <label>
+                                <input id="eistax" name="eistax" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Discount: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <label>
+                                <input id="eisdis" name="eisdis" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Active: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <label>
+                                <input id="eisact" name="eisact" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Delete: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <label>
+                                <input id="eisdel" name="eisdel" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" id="action" name="action" value="editsku"/>
+                    <input type="hidden" id="eidp" name="eidp" value=""/>
+                    <input type="hidden" id="eov" name="eov" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeEditProduct"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button id="btnedit" type="button" class="btn btn-sm btn-primary" onclick="submitEditProduct();">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- deleteModal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="delModalLabel">Delete Production</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_DelP" name="if_DelP" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmDelP" name="frmDelP" class="form-horizontal" action="/web/admin/product" method="POST" target="if_DelP">
+                    <div id="del_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="del_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <p id="delInfo" class="alert alert-warning">Are you sure you want to delete [NAME_ITEM]?</p>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="delp"/>
+                    <input type="hidden" id="didp" name="didp" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeDelP"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-sm btn-danger" onclick="submitDelP();">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- onoffModal -->
+<div class="modal fade" id="onoffModal" tabindex="-1" role="dialog" aria-labelledby="onoffModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="ooModalLabel">On/Off Production</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_OOP" name="if_OOP" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmOOP" name="frmOOP" class="form-horizontal" action="/web/admin/product" method="POST" target="if_OOP">
+                    <div id="oo_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="oo_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <p id="ooInfo" class="alert alert-warning">Are you sure you want to on/off [NAME_ITEM]?</p>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="oop"/>
+                    <input type="hidden" id="ooidp" name="ooidp" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeOOP"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-sm btn-warning" onclick="submitOOP();">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- changeImgModal -->
+<div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel" aria-hidden="true" style="top: 5%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="cImgModalLabel">Change Photo</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_Img" name="if_Img" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmImg" name="frmImg" class="form-horizontal" action="/web/admin/sku" method="POST" enctype="multipart/form-data" target="if_Img">
+                    <div id="img_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="img_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="file" name="cimg" id="cimg"  />
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="cimg"/>
+                    <input type="hidden" id="iidp" name="iidp" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeChangeImg"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnimg" class="btn btn-sm btn-success" onclick="submitImgPP();">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- changeImgOPModal -->
+<div class="modal fade" id="imgOPModal" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel" aria-hidden="true" style="top: 5%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="cImgOPModalLabel">Change Photo</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_ImgOP" name="if_ImgOP" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmImgOP" name="frmImgOP" class="form-horizontal" action="/web/admin/sku" method="POST" enctype="multipart/form-data" target="if_ImgOP">
+                    <div id="imgop_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="imgop_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input type="file" name="cimgop" id="cimgop"  />
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="cimgop"/>
+                    <input type="hidden" id="pidop" name="pidop" value=""/>
+                    <input type="hidden" id="iidop" name="iidop" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeChangeImgOP"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnimgop" class="btn btn-sm btn-success" onclick="submitImgOP();">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- deletePhotoModal -->
+<div class="modal fade" id="deletePhotoModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="delPModalLabel">Delete Photo</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_DelPhoto" name="if_DelPhoto" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmDelPhoto" name="frmDelPhoto" class="form-horizontal" action="/web/admin/sku" method="POST" enctype="multipart/form-data" target="if_DelPhoto">
+                    <div id="delphoto_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="delphoto_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <p id="delPhotoInfo" class="alert alert-warning">Are you sure you want to delete this photo?</p>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="delphoto"/>
+                    <input type="hidden" id="didsku" name="didsku" value=""/>
+                    <input type="hidden" id="didop" name="didop" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeDelPhoto"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button id="btndip" type="button" class="btn btn-sm btn-danger" onclick="submitDelPhoto();">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- addPhotoModal -->
+<div class="modal fade" id="addPhotoModal" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel" aria-hidden="true" style="top: 5%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addModalLabel">Add Photo</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_AddPhoto" name="if_AddPhoto" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmAddPhoto" name="frmAddPhoto" class="form-horizontal" action="/web/admin/sku" method="POST" enctype="multipart/form-data" target="if_AddPhoto">
+                    <div id="addphoto_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="addphoto_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-xs-2 control-label no-padding-right" for="form-field-2"></label>
+                        <div class="col-sm-10 col-xs-10">
+                            <div class="col-xs-10 col-sm-9">
+                                <input type="file" name="aphoto1" id="aphoto1" style="display: none;" />
+                            </div>
+                            <div class="col-xs-2 col-sm-3" style="padding-left: 0px;">
+                                <button id="btnap" class="btn btn-xs btn-success tooltip-success" type="button" onclick="addOtherPhoto(); return false;" data-rel="tooltip" title="Add" data-placement="top"><i class="ace-icon fa fa-plus bigger-110"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="listOtherPhoto">
+                    </div>
+                    <input type="hidden" id="action" name="action" value="addOPhoto"/>
+                    <input type="hidden" id="aidsku" name="aidsku" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeAddPhoto"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="btnaphoto" class="btn btn-sm btn-success" onclick="submitAddPhoto();">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+try{
+    jQuery(function ($) {
+        /********************************/
+        //add tooltip for small view action buttons in dropdown menu
+        //$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+        $('[data-rel="tooltip"]').tooltip();
+
+        //tooltip placement on right or left
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table');
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            //var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'top';
+        }
+        
+        if(!ace.vars['touch']) {
+            $('.chosen-select').chosen({allow_single_deselect:true}); 
+            //resize the chosen on window resize
+
+            $(window)
+            .off('resize.chosen')
+            .on('resize.chosen', function() {
+                $('.chosen-select').each(function() {
+                     var $this = $(this);
+                     $this.next().css({'width': $this.parent().width()});
+                })
+            }).trigger('resize.chosen');
+            //resize chosen on sidebar collapse/expand
+            $(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+                if(event_name != 'sidebar_collapsed') return;
+                $('.chosen-select').each(function() {
+                     var $this = $(this);
+                     $this.next().css({'width': $this.parent().width()});
+                })
+            });
+
+            $('#chosen-multiple-style .btn').on('click', function(e){
+                var target = $(this).find('input[type=radio]');
+                var which = parseInt(target.val());
+                if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+                 else $('#form-field-select-4').removeClass('tag-input-style');
+            });
+        }
+        
+        $('#priphoto').ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false, //| true | large
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
+        }).on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
+        $('#photo1').ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false, //| true | large
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
+        }).on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
+        $('#aphoto1').ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false, //| true | large
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
+        }).on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
+        //change primary photo.
+        var file_img = $('#cimg');
+        var upload_in_progress = false;
+        file_img.ace_file_input({
+            style : 'well',
+            btn_choose : 'Select or drop file image here',
+            btn_change: null,
+            no_icon:'ace-icon fa fa-cloud-upload',
+            droppable: true,
+            thumbnail: 'large',
+
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
+
+            before_remove: function() {
+                if(upload_in_progress)
+                    return false;//if we are in the middle of uploading a file, don't allow resetting file input
+                return true;
+            },
+
+            preview_error: function(filename , code) {
+                //code = 1 means file load error
+                //code = 2 image load error (possibly file is not an image)
+                //code = 3 preview failed
+            }
+        })
+        file_img.on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
+        //change primary photo.
+        var file_imgop = $('#cimgop');
+        var upload_in_progressop = false;
+        file_imgop.ace_file_input({
+            style : 'well',
+            btn_choose : 'Select or drop file image here',
+            btn_change: null,
+            no_icon:'ace-icon fa fa-cloud-upload',
+            droppable: true,
+            thumbnail: 'large',
+
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
+
+            before_remove: function() {
+                if(upload_in_progressop)
+                    return false;//if we are in the middle of uploading a file, don't allow resetting file input
+                return true;
+            },
+
+            preview_error: function(filename , code) {
+                //code = 1 means file load error
+                //code = 2 image load error (possibly file is not an image)
+                //code = 3 preview failed
+            }
+        })
+        file_imgop.on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
+        var $overflow = '';
+        var colorbox_params = {
+            rel: 'colorbox',
+            reposition:true,
+            scalePhotos:true,
+            scrolling:false,
+            previous:'<i class="ace-icon fa fa-arrow-left"></i>',
+            next:'<i class="ace-icon fa fa-arrow-right"></i>',
+            close:'&times;',
+            current:'{current} of {total}',
+            maxWidth:'100%',
+            maxHeight:'100%',
+            onOpen:function(){
+                $overflow = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+            },
+            onClosed:function(){
+                document.body.style.overflow = $overflow;
+            },
+            onComplete:function(){
+                $.colorbox.resize();
+            }
+        };
+
+        $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+        $("#cboxLoadingGraphic").html("<i class='ace-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
+        
+        //Dual Listbox.
+        // https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox
+        var lov = $('select[name="lov"]').bootstrapDualListbox({infoTextFiltered: '<span class="label label-purple label-lg">Filtered</span>'});
+        var containerlov = lov.bootstrapDualListbox('getContainer');
+        containerlov.find('.btn').addClass('btn-white btn-info btn-bold');
+        
+        $('#order').ace_spinner({
+            value:1,min:1,max:1000,step:1, on_sides: true, 
+            icon_up:'ace-icon fa fa-plus bigger-110', 
+            icon_down:'ace-icon fa fa-minus bigger-110', 
+            btn_up_class:'btn-success', 
+            btn_down_class:'btn-danger'
+        });
+        
+        $('#eorder').ace_spinner({
+            value:1,min:1,max:1000,step:1, on_sides: true, 
+            icon_up:'ace-icon fa fa-plus bigger-110', 
+            icon_down:'ace-icon fa fa-minus bigger-110', 
+            btn_up_class:'btn-success', 
+            btn_down_class:'btn-danger'
+        });
+        
+    });
+
+    {{#HAS_TABLE}}
+    zscommon.renderPaging('paging','','','','','{{keyword}}');
+    {{/HAS_TABLE}}
+
+    $().ready(function() {
+        $('.modal').hide();
+	});
+    
+    var htmlPhoto = '<div class="form-group" id="div_IDOPHOTO"> \
+                        <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2"></label> \
+                        <div class="col-sm-9 col-xs-9"> \
+                            <div class="col-xs-10 col-sm-5"> \
+                                <input type="file" name="IDOPHOTO" id="IDOPHOTO" style="display: none;" /> \
+                            </div> \
+                            <div class="col-xs-2 col-sm-5" style="padding-left: 0px;"> \
+                                <button id="btnrmp" class="btn btn-xs btn-danger tooltip-error" type="button" onclick="rmPhoto(\'IDOPHOTO\'); return false;" data-rel="tooltip" title="Remove" data-placement="top"><i class="ace-icon fa fa-trash-o bigger-110"></i></button> \
+                            </div> \
+                        </div> \
+                    </div>';
+    var hoPhoto = '<div class="form-group" id="div_IDOPHOTO"> \
+                        <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2"></label> \
+                        <div class="col-sm-9 col-xs-9"> \
+                            <div class="col-xs-10 col-sm-5"> \
+                                <label class="ace-file-input"><input type="file" name="IDOPHOTO" id="IDOPHOTO" style="display: none;"><span class="ace-file-container" data-title="Choose"><span class="ace-file-name" data-title="No File ..."><i class=" ace-icon fa fa-upload"></i></span></span><a class="remove" href="#"><i class=" ace-icon fa fa-times"></i></a></label> \
+                            </div> \
+                            <div class="col-xs-2 col-sm-5" style="padding-left: 0px;"> \
+                                <button id="btnrmp" class="btn btn-xs btn-danger tooltip-error" type="button" onclick="rmPhoto(\'IDOPHOTO\'); return false;" data-rel="tooltip" title="" data-placement="top" data-original-title="Remove"><i class="ace-icon fa fa-trash-o bigger-110"></i></button> \
+                            </div> \
+                        </div> \
+                    </div>';
+    var numPhoto = 1;
+    var noPhoto = 2;
+    //Other photo.
+    function addPhoto(){
+        var idophoto = "photo" + noPhoto++;
+        numPhoto++;
+        var row = htmlPhoto.replace(/IDOPHOTO/g, idophoto);
+        $('#listPhoto').append(row);
+        var file_input = $('#'+idophoto);
+        //file_input.ace_file_input('reset_input');
+        file_input.ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false, //| true | large
+
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
+
+            before_remove: function() {
+                if(upload_in_progressop)
+                    return false;//if we are in the middle of uploading a file, don't allow resetting file input
+                return true;
+            },
+
+            preview_error: function(filename , code) {
+                //code = 1 means file load error
+                //code = 2 image load error (possibly file is not an image)
+                //code = 3 preview failed
+            }
+        }).on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+    }
+    
+    function rmPhoto(iddiv){
+        numPhoto--;
+        $('#div_'+iddiv).remove();
+    }
+    
+    //Add Other Photo Modal.
+    var htmlAOPhoto = '<div class="form-group" id="adiv_IDOPHOTO"> \
+                        <label class="col-sm-2 col-xs-2 control-label no-padding-right" for="form-field-2"></label> \
+                        <div class="col-sm-10 col-xs-10"> \
+                            <div class="col-xs-10 col-sm-9"> \
+                                <input type="file" name="IDOPHOTO" id="IDOPHOTO" style="display: none;" /> \
+                            </div> \
+                            <div class="col-xs-2 col-sm-3" style="padding-left: 0px;"> \
+                                <button id="btnrmp" class="btn btn-xs btn-danger tooltip-error" type="button" onclick="rmAOPhoto(\'IDOPHOTO\'); return false;" data-rel="tooltip" title="Remove" data-placement="top"><i class="ace-icon fa fa-trash-o bigger-110"></i></button> \
+                            </div> \
+                        </div> \
+                    </div>';
+    var noAOPhoto = 2;
+    function addOtherPhoto(){
+        var idophoto = "aphoto" + noAOPhoto++;
+        var row = htmlAOPhoto.replace(/IDOPHOTO/g, idophoto);
+        $('#listOtherPhoto').append(row);
+        var file_input = $('#'+idophoto);
+        //file_input.ace_file_input('reset_input');
+        file_input.ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false, //| true | large
+
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
+
+            before_remove: function() {
+                if(upload_in_progressop)
+                    return false;//if we are in the middle of uploading a file, don't allow resetting file input
+                return true;
+            },
+
+            preview_error: function(filename , code) {
+                //code = 1 means file load error
+                //code = 2 image load error (possibly file is not an image)
+                //code = 3 preview failed
+            }
+        }).on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+    }
+    
+    function rmAOPhoto(iddiv){
+        $('#adiv_'+iddiv).remove();
+    }
+    
+    //Reset Production Option.
+    function resetAdd(){
+        $('#add_alert_success').hide();
+        $('#add_alert_err').hide();
+        $('#name').val("");
+        $('#pid').val("");
+        $('#pid').val('').trigger('chosen:updated');
+        $('#bprice').val("");
+        
+        $('#upd').val("");
+        $('#upsb').val("");
+        $('#upr').val("");
+        
+        $('#qty').val("");
+        $('#desc').val("");
+        $('#order').val("1");
+        $('#status').val("");
+        $('#width').val("");
+        $('#height').val("");
+        $('#depth').val("");
+        $('#dunit').val("");
+        $('#dunit').val('').trigger('chosen:updated');
+        $('#weight').val("");
+        $('#wunit').val("");
+        $('#wunit').val('').trigger('chosen:updated');
+        $('#ov').val("");
+        $('#ov').val('').trigger('chosen:updated');
+        $('#bootstrap-duallistbox-selected-list_lov option').prop('selected', true);
+        var multiSelect = $('#bootstrap-duallistbox-selected-list_lov').val();
+        console.log("multiSelect: " + multiSelect);
+        $('#lov').val("");
+        $('#lov').val('').trigger('chosen:updated');
+        $('input[id*="photo"]').ace_file_input('reset_input');
+        $('#btnadd').button('reset');
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    }
+    
+    //Add Production Option.
+    function addSKU(){
+        $('#add_alert_success').hide();
+        $('#add_alert_err').hide();
+        var serr = "";
+        var name = $('#name').val();
+        if(name == ''){
+            serr += "Name required. ";
+        }
+        var pid = $('#pid').val();
+        if(pid == ''){
+            serr += "Product required. ";
+        }
+        var bprice = $('#bprice').val();
+        if(bprice == ''){
+            serr += "Base price required. ";
+        } else{
+            if(!$.isNumeric(bprice)){
+                serr += "Base price is number. ";
+            }
+        }
+        
+        var upd = $('#upd').val();
+        if(upd == ''){
+            serr += "UpSale Percent Distributor required. ";
+        } else{
+            if(!$.isNumeric(upd)){
+                serr += "UpSale Percent Distributor is number. ";
+            }
+        }
+        var upsb = $('#upsb').val();
+        if(upsb == ''){
+            serr += "UpSale Percent Salon Buyer required. ";
+        } else{
+            if(!$.isNumeric(upsb)){
+                serr += "UpSale Percent Salon Buyer is number. ";
+            }
+        }
+        var upr = $('#upr').val();
+        if(upr == ''){
+            serr += "UpSale Percent Retailer required. ";
+        } else{
+            if(!$.isNumeric(upr)){
+                serr += "UpSale Percent Retailer is number. ";
+            }
+        }
+        
+        var qty = $('#qty').val();
+        if(qty == ''){
+            serr += "Quantity required. ";
+        } else{
+            if(!$.isNumeric(bprice)){
+                serr += "Quantity is number. ";
+            }
+        }
+        var desc = $('#desc').val();
+        if(desc == ''){
+            serr += "Description required. ";
+        }
+        var desc = $('#desc').val();
+        if(desc == ''){
+            serr += "Description required. ";
+        }
+        var order = $('#order').val();
+        if(order == ''){
+            serr += "Display order required. ";
+        }
+        var status = $('#status').val();
+        if(status == ''){
+            serr += "Status required. ";
+        }
+        
+        var width = $('#width').val();
+        if(width == ''){
+            serr += "Width required. ";
+        } else{
+            if(!$.isNumeric(width)){
+                serr += "Width is number. ";
+            }
+        }
+        var height = $('#height').val();
+        if(height == ''){
+            serr += "Height required. ";
+        } else{
+            if(!$.isNumeric(height)){
+                serr += "Height is number. ";
+            }
+        }
+        var depth = $('#depth').val();
+        if(depth == ''){
+            serr += "Depth required. ";
+        } else{
+            if(!$.isNumeric(depth)){
+                serr += "Depth is number. ";
+            }
+        }
+        var dunit = $('#dunit').val();
+        if(dunit == ''){
+            serr += "Dimension Unit required. ";
+        }
+        var weight = $('#weight').val();
+        if(weight == ''){
+            serr += "Weight required. ";
+        } else{
+            if(!$.isNumeric(weight)){
+                serr += "Weight is number. ";
+            }
+        }
+        var wunit = $('#wunit').val();
+        if(wunit == ''){
+            serr += "Weight Unit required. ";
+        }
+        
+        $('#bootstrap-duallistbox-selected-list_lov option').prop('selected', true);
+        var lov = $('#bootstrap-duallistbox-selected-list_lov').val();
+        console.log("lov: " + lov);
+        if(lov == '' || lov == null){
+            serr += "Option Value required. ";
+            $('#ov').val('');
+        } else{
+            $('#ov').val(lov);
+        }
+        
+        var priphoto = $('#priphoto').val();
+        if(priphoto == ''){
+            serr += "Primary Photo required. ";
+        }
+        
+        var photo1 = $('#photo1').val();
+        if(photo1 == ''){
+            serr += "Other Photo required at least one photo. ";
+        }
+
+        $('#numPhoto').val(numPhoto);
+
+        $('#frmAdd').unbind('submit');
+        if(serr == ''){
+            console.log('frmAdd submit...');
+            $("#btnadd").button('loading');
+            $('#frmAdd').submit();
+        } else{
+            $('#add_alert_err').html(serr);
+            $('#add_alert_err').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+        }
+        return false;
+    };
+    
+    function completeAddSKU(data){
+        if(data.err >= 0){
+            $('#add_alert_success').html(data.msg);
+            $('#add_alert_success').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
+            setTimeout(function() {
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#add_alert_err').html(data.msg);
+            $('#add_alert_err').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
+            $('#frmAdd').bind('submit');
+            $('#btnadd').button('reset');
+        }
+    };
+    
+    //Edit.
+    var eoption = '<option value="KEY" SELECTED>VALUE</option>';
+    function openEditModal(id){
+        $('#eidp').val(id);
+        //reset.
+        $('#epid').val('');
+        $('#edunit').val('');
+        $('#ewunit').val('');
+        //$('#elov option').prop('selected', false);
+        $('#elov').empty();
+        $('#elov').html($('#elovfull').html());
+        
+        //get content SKU.
+        if(id != ''){
+            var data = {
+                action: 'getsku',
+                id: id
+            };
+            $.ajax({
+                type: "POST",
+                url: "{{domain}}/web/admin/product",
+                data: data,
+                dataType : 'json',
+                cache: false,
+                success: function(data){
+                    if(data.err >= 0){
+                        var sku = data.sku;
+                        $('#ename').val(sku.name);
+                        $('#epid').val(sku.pid);
+                        $('#ebprice').val(sku.bprice);
+                        
+                        $('#eupd').val(sku.upd);
+                        $('#eupsb').val(sku.upsb);
+                        $('#eupr').val(sku.upr);
+                        
+                        $('#eqty').val(sku.qty);
+                        $('#edesc').val(sku.desc);
+                        $('#eorder').val(sku.order);
+                        $('#estatus').val(sku.idstatus);
+                        $('#ewidth').val(sku.width);
+                        $('#eheight').val(sku.height);
+                        $('#edepth').val(sku.depth);
+                        $('#edunit').val(sku.dunit);
+                        $('#eweight').val(sku.eweight);
+                        $('#ewunit').val(sku.wunit);
+                        var povids = sku.povids;
+                        //console.log("povids: " + povids);
+                        if(povids != ''){
+                            var array = povids.split(',');
+                            for(var i=0; i < array.length; i++){
+                                $('#elov option[value="'+array[i]+'"]').prop('selected', true);
+                            }
+                            
+                            //Dual Listbox.
+                            var elov = $('select[name="elov"]').bootstrapDualListbox({infoTextFiltered: '<span class="label label-purple label-lg">Filtered</span>'});
+                            var containerelov = elov.bootstrapDualListbox('getContainer');
+                            containerelov.find('.btn').addClass('btn-white btn-info btn-bold');
+                            elov.bootstrapDualListbox('refresh', true);
+
+//                            for(var i=0; i < array.length; i++){
+//                                console.log("array[i]: " + array[i]);
+//                                $('#bootstrap-duallistbox-nonselected-list_elov option[value="'+array[i]+'"]').prop('selected', true);
+//                            }
+//                            $('#bootstrap-duallistbox-nonselected-list_elov option:selected').remove().appendTo('#bootstrap-duallistbox-selected-list_elov');
+                        }
+                        if(sku.istax == 'off'){
+                            $('#eistax').prop("checked", false);
+                        } else{
+                            $('#eistax').prop("checked", true);
+                        }
+                        if(sku.isdis == 'off'){
+                            $('#eisdis').prop("checked", false);
+                        } else{
+                            $('#eisdis').prop("checked", true);
+                        }
+                        if(sku.isact == 'off'){
+                            $('#eisact').prop("checked", false);
+                        } else{
+                            $('#eisact').prop("checked", true);
+                        }
+                        if(sku.isdel == 'off'){
+                            $('#eisdel').prop("checked", false);
+                        } else{
+                            $('#eisdel').prop("checked", true);
+                        }
+                        
+                    } else{
+                        console.log(data.msg);
+                        bootbox.dialog({
+                            message: data.msg,
+                            buttons: {
+                                "success" : {
+                                    "label" : "OK",
+                                    "className" : "btn-sm btn-primary"
+                                }
+                            }
+                        });
+                        return false;
+                    }
+                }
+            });
+        }
+        
+        $('#editModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitEditProduct(){
+        $('#edit_alert_success').hide();
+        $('#edit_alert_err').hide();
+        
+        var serr = "";
+        var name = $('#ename').val();
+        if(name == ''){
+            serr += "Name required. ";
+        }
+        var pid = $('#epid').val();
+        if(pid == ''){
+            serr += "Product required. ";
+        }
+        var bprice = $('#ebprice').val();
+        if(bprice == ''){
+            serr += "Base price required. ";
+        } else{
+            if(!$.isNumeric(bprice)){
+                serr += "Base price is number. ";
+            }
+        }
+        
+        var upd = $('#eupd').val();
+        if(upd == ''){
+            serr += "UpSale Percent Distributor required. ";
+        } else{
+            if(!$.isNumeric(upd)){
+                serr += "UpSale Percent Distributor is number. ";
+            }
+        }
+        var upsb = $('#eupsb').val();
+        if(upsb == ''){
+            serr += "UpSale Percent Salon Buyer required. ";
+        } else{
+            if(!$.isNumeric(upsb)){
+                serr += "UpSale Percent Salon Buyer is number. ";
+            }
+        }
+        var upr = $('#eupr').val();
+        if(upr == ''){
+            serr += "UpSale Percent Retailer required. ";
+        } else{
+            if(!$.isNumeric(upr)){
+                serr += "UpSale Percent Retailer is number. ";
+            }
+        }
+        
+        var qty = $('#eqty').val();
+        if(qty == ''){
+            serr += "Quantity required. ";
+        } else{
+            if(!$.isNumeric(bprice)){
+                serr += "Quantity is number. ";
+            }
+        }
+        var desc = $('#edesc').val();
+        if(desc == ''){
+            serr += "Description required. ";
+        }
+        var order = $('#eorder').val();
+        if(order == ''){
+            serr += "Display order required. ";
+        }
+        var status = $('#estatus').val();
+        if(status == ''){
+            serr += "Status required. ";
+        }
+        
+        var width = $('#ewidth').val();
+        if(width == ''){
+            serr += "Width required. ";
+        } else{
+            if(!$.isNumeric(width)){
+                serr += "Width is number. ";
+            }
+        }
+        var height = $('#eheight').val();
+        if(height == ''){
+            serr += "Height required. ";
+        } else{
+            if(!$.isNumeric(height)){
+                serr += "Height is number. ";
+            }
+        }
+        var depth = $('#edepth').val();
+        if(depth == ''){
+            serr += "Depth required. ";
+        } else{
+            if(!$.isNumeric(depth)){
+                serr += "Depth is number. ";
+            }
+        }
+        var dunit = $('#edunit').val();
+        if(dunit == ''){
+            serr += "Dimension Unit required. ";
+        }
+        var weight = $('#eweight').val();
+        if(weight == ''){
+            serr += "Weight required. ";
+        } else{
+            if(!$.isNumeric(weight)){
+                serr += "Weight is number. ";
+            }
+        }
+        var wunit = $('#ewunit').val();
+        if(wunit == ''){
+            serr += "Weight Unit required. ";
+        }
+        
+        $('#bootstrap-duallistbox-selected-list_elov option').prop('selected', true);
+        var lov = $('#bootstrap-duallistbox-selected-list_elov').val();
+        console.log("lov: " + lov);
+        if(lov == '' || lov == null){
+            serr += "Option Value required. ";
+            $('#eov').val('');
+        } else{
+            $('#eov').val(lov);
+        }
+        
+        $('#frmEditP').unbind('submit');
+        if(serr == ''){
+            console.log('frmEditP submit...');
+            $("#btnedit").button('loading');
+            $('#frmEditP').submit();
+        } else{
+            $('#edit_alert_err').html(serr);
+            $('#edit_alert_err').show();
+            $("#editModal").animate({ scrollTop: 0 }, "slow");
+            $('#btnedit').button('reset');
+        }
+        return false;
+    };
+    
+    function completeEditProduct(data){
+        if(data.err >= 0){
+            $('#edit_alert_success').html(data.msg);
+            $('#edit_alert_success').show();
+            $("#editModal").animate({ scrollTop: 0 }, "slow");
+            setTimeout(function() {
+                $('#editModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#edit_alert_err').html(data.msg);
+            $('#edit_alert_err').show();
+            $("#editModal").animate({ scrollTop: 0 }, "slow");
+
+            $('#frmEditP').bind('submit');
+            $('#btnedit').button('reset');
+        }
+    };
+    
+    //View.
+    function openViewModal(id){
+        if(id != ''){
+            var data = {
+                action: 'getsku',
+                id: id
+            };
+            $.ajax({
+                type: "POST",
+                url: "{{domain}}/web/admin/product",
+                data: data,
+                dataType : 'json',
+                cache: false,
+                success: function(data){
+                    if(data.err >= 0){
+                        var sku = data.sku;
+                        $('#vname').text(sku.name);
+                        $('#vproduct').text(sku.product);
+                        $('#vbprice').text('$' + sku.bprice);
+                        
+                        $('#vupd').text(sku.upd + '%');
+                        $('#vspd').text('$' + sku.spd);
+                        $('#vupsb').text(sku.upsb + '%');
+                        $('#vspsb').text('$' + sku.spsb);
+                        $('#vupr').text(sku.upr + '%');
+                        $('#vspr').text('$' + sku.spr);
+                        
+                        $('#vqty').text(sku.qty);
+                        $('#vdesc').text(sku.desc);
+                        $('#vorder').text(sku.order);
+                        $('#vstatus').text(sku.status);
+                        $('#vwhd').text(sku.whd);
+                        $('#vweight').text(sku.weight);
+                        $('#vov').text(sku.pov);
+                        $('#vistax').text(sku.istax);
+                        $('#visdis').text(sku.isdis);
+                        $('#visact').text(sku.isact);
+                        $('#visdel').text(sku.isdel);
+                    } else{
+                        console.log(data.msg);
+                        bootbox.dialog({
+                            message: data.msg,
+                            buttons: {
+                                "success" : {
+                                    "label" : "OK",
+                                    "className" : "btn-sm btn-primary"
+                                }
+                            }
+                        });
+                        return false;
+                    }
+                }
+            });
+        } else{
+            
+        }
+        $('#viewModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    //Change primary photo.
+    function changeImgModal(id){
+        $('#iidp').val(id);
+        $('#img_alert_success').hide();
+        $('#img_alert_err').hide();
+        $('#cimg').ace_file_input('reset_input');
+        $('#imgModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitImgPP(){
+        $('#img_alert_success').hide();
+        $('#img_alert_err').hide();
+        var id = $('#iidp').val();
+        var file = $('#cimg').val();
+        $('#frmImg').unbind('submit');
+        if(file == ''){
+            $('#img_alert_err').html('Please choose image to change...');
+            $('#img_alert_err').show();
+            return false;
+        }
+        if(id != '' && file != ''){
+            $("#btnimg").button('loading');
+            $('#frmImg').submit();
+        }
+    };
+    
+    function completeChangeImg(data){
+        if(data.err >= 0){
+            $('#img_alert_success').html(data.msg);
+            $('#img_alert_success').show();
+            setTimeout(function() {
+                $('#imgModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#img_alert_err').html(data.msg);
+            $('#img_alert_err').show();
+            $('frmImg').bind('submit');
+            $('#btnimg').button('reset');
+        }
+    };
+    
+    //Change Other Photo.
+    function changeImgOPModal(idp, idop){
+        $('#pidop').val(idp);
+        $('#iidop').val(idop);
+        $('#imgop_alert_success').hide();
+        $('#imgop_alert_err').hide();
+        $('#cimgop').ace_file_input('reset_input');
+        $('#imgOPModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitImgOP(){
+        $('#imgop_alert_success').hide();
+        $('#imgop_alert_err').hide();
+        var pidop = $('#pidop').val();
+        var iidop = $('#iidop').val();
+        var file = $('#cimgop').val();
+        $('#frmImgOP').unbind('submit');
+        if(file == ''){
+            $('#imgop_alert_err').html('Please choose image to change...');
+            $('#imgop_alert_err').show();
+            return false;
+        }
+        if(pidop != '' && iidop != '' && file != ''){
+            $("#btnimgop").button('loading');
+            $('#frmImgOP').submit();
+        }
+    };
+    
+    function completeChangeImgOP(data){
+        if(data.err >= 0){
+            $('#imgop_alert_success').html(data.msg);
+            $('#imgop_alert_success').show();
+            setTimeout(function() {
+                $('#imgOPModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#imgop_alert_err').html(data.msg);
+            $('#imgop_alert_err').show();
+            $('frmImgOP').bind('submit');
+            $('#btnimgop').button('reset');
+        }
+    };
+    
+    //Delete Photo.
+    function openDelPhotoModal(didsku, didop){
+        $('#didsku').val(didsku);
+        $('#didop').val(didop);
+        $('#deletePhotoModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitDelPhoto(){
+        $('#delphoto_alert_success').hide();
+        $('#delphoto_alert_err').hide();
+        var didsku = $('#didsku').val();
+        var didop = $('#didop').val();
+        $('#frmDelPhoto').unbind('submit');
+        if(didsku != '' && didop != ''){
+            $("#btndip").button('loading');
+            $('#frmDelPhoto').submit();
+        }
+    };
+    
+    function completeDelPhoto(data){
+        if(data.err >= 0){
+            $('#delphoto_alert_success').html(data.msg);
+            $('#delphoto_alert_success').show();
+            setTimeout(function() {
+                $('#deletePhotoModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#delphoto_alert_err').html(data.msg);
+            $('#delphoto_alert_err').show();
+            $('frmDelPhoto').bind('submit');
+            $("#btndip").button('reset');
+        }
+    };
+    
+    //Add Photo Modal.
+    function openAddPhotoModal(aidsku){
+        $('#aidsku').val(aidsku);
+        $('#addPhotoModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitAddPhoto(){
+        $('#addphoto_alert_success').hide();
+        $('#addphoto_alert_err').hide();
+        var serr = "";
+        var aidsku = $('#aidsku').val();
+        var aphoto1 = $('#aphoto1').val();
+        if(aphoto1 == ''){
+            serr += "Other Photo required at least one photo. ";
+        }
+        if(serr != ''){
+            $('#addphoto_alert_err').html(serr);
+            $('#addphoto_alert_err').show();
+            return false;
+        }
+        $('#frmAddPhoto').unbind('submit');
+        if(aidsku != '' && aphoto1 != ''){
+            $("#btnaphoto").button('loading');
+            $('#frmAddPhoto').submit();
+        }
+    };
+    
+    function completeAddPhoto(data){
+        if(data.err >= 0){
+            $('#addphoto_alert_success').html(data.msg);
+            $('#addphoto_alert_success').show();
+            setTimeout(function() {
+                $('#addPhotoModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#addphoto_alert_err').html(data.msg);
+            $('#addphoto_alert_err').show();
+            $('frmAddPhoto').bind('submit');
+            $("#btnaphoto").button('reset');
+        }
+    };
+    
+    
+    
+    
+    
+    
+    //Delete.
+    function openDelModal(did){
+//        var nameBiz = $('#'+did+'_n').html();
+//        $('#delInfo').html('Are you sure that you want to permanently delete <strong>' + nameBiz + '</strong> ?');
+//        $('#didp').val(did);
+        $('#deleteModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitDelP(){
+        $('#frmDelP').submit();
+    };
+    
+    function completeDelP(data){
+        if(data.err >= 0){
+            $('#del_alert_success').html(data.msg);
+            $('#del_alert_success').show();
+            setTimeout(function() {
+                $('#deleteModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#del_alert_err').html(data.msg);
+            $('#del_alert_err').show();
+        }
+    };
+    
+    //On/Off production.
+    function openOOModal(bid){
+        $('#oo_alert_success').hide();
+        $('#oo_alert_err').hide();
+//        var nameBiz = $('#'+bid+'_n').html();
+//        $('#ooInfo').html('Are you sure that you want to permanently reject <strong>' + nameBiz + '</strong> ?');
+//        $('#ooidp').val(bid);
+        $('#onoffModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitOOP(){
+        $('#frmOOP').submit();
+    };
+    
+    function completeOOP(data){
+        if(data.err >= 0){
+            $('#oo_alert_success').html(data.msg);
+            $('#oo_alert_success').show();
+            setTimeout(function() {
+                $('#onoffModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#oo_alert_err').html(data.msg);
+            $('#oo_alert_err').show();
+        }
+    };
+    
+    
+    
+}catch(e){}
+</script>
+<script src="{{static-domain}}/mitassets/js/jquery.colorbox.js"></script>
+<script src="{{static-domain}}/mitassets/js/fuelux/fuelux.spinner.js"></script>
+<script src="{{static-domain}}/mitassets/js/jquery.bootstrap-duallistbox.js"></script>

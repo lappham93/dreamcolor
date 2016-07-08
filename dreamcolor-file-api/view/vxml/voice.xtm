@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+	<form>
+		<block>
+			<prompt>
+				Your u-sav-all code is {{CODE}}. Repeat again, your u-sav-all code is {{CODE}}.
+			</prompt>
+			<reprompt />
+		</block>
+	</form>
+</vxml>

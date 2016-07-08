@@ -1,0 +1,462 @@
+
+<div class="tabbable">
+    <ul class="nav nav-tabs hidden-sm hidden-xs">
+        <li>
+            <a href="/web/admin/repcode?option=table"><i class="green ace-icon fa fa-list bigger-120"></i>Table</a>
+        </li>
+        <li class="active">
+            <a href="/web/admin/repcode?option=tree"><i class="green ace-icon glyphicon glyphicon-indent-left bigger-120"></i>Tree</a>
+        </li>
+        <li>
+            <a href="/web/admin/repcode?option=reptype"><i class="green ace-icon fa fa-check-square-o bigger-120"></i>Type</a>
+        </li>
+    </ul>
+    <ul class="nav nav-tabs hidden-md hidden-lg">
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                Menu &nbsp;
+                <i class="ace-icon fa fa-caret-down bigger-110 width-auto"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-info">
+                <li>
+                    <a href="/web/admin/repcode?option=table"><i class="green ace-icon fa fa-list bigger-120"></i>Table</a>
+                </li>
+                <li class="active">
+                    <a href="/web/admin/repcode?option=tree"><i class="green ace-icon glyphicon glyphicon-indent-left bigger-120"></i>Tree</a>
+                </li>
+                <li>
+                    <a href="/web/admin/repcode?option=reptype"><i class="green ace-icon fa fa-check-square-o bigger-120"></i>Type</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="tree" class="tab-pane fade in active">
+
+            <h3 class="header smaller lighter blue">Tree View</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    
+                    
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="widget-box widget-color-green2">
+                                <div class="widget-header">
+                                    <h4 class="widget-title lighter smaller">Tree Repcodes</h4>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main padding-8">
+                                    	<div class="tree-loading" id="is_load"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div>
+                                        <ul class="tree tree-folder-select" role="tree" id="tree1"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="widget-box widget-color-blue2">
+                                <div class="widget-header">
+                                    <h4 class="widget-title lighter smaller">Information</h4>
+                                </div>
+
+                                <div class="widget-body" id="ifForm" style="display:none">
+                                    <div class="widget-main padding-8">
+                                    	<div>
+					                        <label class="control-label no-padding-right bolder purple" style="text-align: right;">User Account Name </label>
+					                        <div class="no-padding">
+					                            <span class="green" id="ifUName" style="padding-top: 2px; padding-left:20px"></span>
+					                        </div>
+					                    </div>
+                                    	<div>
+					                        <label class="control-label no-padding-right bolder purple" style="text-align: right;">Name </label>
+					                        <div class="no-padding">
+					                            <span class="green" id="ifName" style="padding-top: 2px; padding-left:20px"></span>
+					                        </div>
+					                    </div>
+					                    <div>
+					                        <label class="control-label no-padding-right bolder purple" style="text-align: right;">Email </label>
+					                        <div class="no-padding">
+					                            <span class="green" id="ifEmail" style="padding-top: 2px; padding-left:20px"></span>
+					                        </div>
+					                    </div>
+					                    <div>
+					                        <label class="control-label no-padding-right bolder purple" style="text-align: right;">Code </label>
+					                        <div class="no-padding">
+					                            <span class="green" id="ifCode" style="padding-top: 2px;padding-left:20px"></span>
+					                        </div>
+					                    </div>
+					                    <div>
+					                        <label class="control-label no-padding-right bolder purple" style="text-align: right;">Type </label>
+					                        <div class="no-padding">
+					                            <span class="green" id="ifType" style="padding-top: 2px;padding-left:20px""></span>
+					                        </div>
+					                    </div>
+					                    <div>
+					                        <label class="control-label no-padding-right bolder purple" style="text-align: right;">Status </label>
+					                        <div class="no-padding">
+					                            <span class="green" id="ifStatus" style="padding-top: 2px;padding-left:20px""></span>
+					                        </div>
+					                    </div>
+					                    <div id="if-level" style="display:none">
+					                        <label class="control-label no-padding-right bolder purple" style="text-align: right;">Level </label>
+					                        <div class="no-padding">
+					                            <span class="green" id="ifLevel", style="padding-top: 2px;padding-left:20px""></span>
+					                        </div>
+					                    </div>
+                                    </div>
+                                </div> <!--widget-body-->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- viewModal -->
+<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editModalLabel">View Production</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Name: </label>
+                        <div class="col-xs-8 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;">Product 1</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Description: </label>
+                        <div class="col-xs-8 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;">This is description 1 This is description 1 This is description 1</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Description: </label>
+                        <div class="col-xs-8 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;">This is description 1 This is description 1 This is description 1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- editModal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="editModalLabel">Edit Production</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_Edit" name="if_Edit" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmEditP" name="frmEditP" class="form-horizontal" role="form" action="/web/admin/production" method="POST" target="if_Edit">
+                    <div id="edit_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="edit_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right bolder" for="ename">Name: </label>
+                        <div class="col-sm-9">
+                            <input class="col-xs-12 col-sm-12" type="text" id="ename" name="ename" placeholder="name product">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right bolder" for="edesc">Description: </label>
+                        <div class="col-sm-9">
+                            <input class="col-xs-12 col-sm-12" type="text" id="edesc" name="edesc" placeholder="description">
+                        </div>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="editp"/>
+                    <input type="hidden" id="eidp" name="eidp" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeEditProduct"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-sm btn-primary" onclick="submitEditProduct();">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- deleteModal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="delModalLabel">Delete Production</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_DelP" name="if_DelP" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmDelP" name="frmDelP" class="form-horizontal" action="/web/admin/production" method="POST" target="if_DelP">
+                    <div id="del_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="del_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <p id="delInfo" class="alert alert-warning">Are you sure you want to delete [NAME_ITEM]?</p>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="delp"/>
+                    <input type="hidden" id="didp" name="didp" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeDelP"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-sm btn-danger" onclick="submitDelP();">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- onoffModal -->
+<div class="modal fade" id="onoffModal" tabindex="-1" role="dialog" aria-labelledby="onoffModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="delModalLabel">On/Off Production</h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="if_OOP" name="if_OOP" style="display: none;width: 0px;height: 0px"></iframe>
+                <form id="frmOOP" name="frmOOP" class="form-horizontal" action="/web/admin/production" method="POST" target="if_OOP">
+                    <div id="oo_alert_success" class="alert alert-success" style="display: none;"></div>
+                    <div id="oo_alert_err" class="alert alert-danger" style="display: none;"></div>
+                    <div class="form-group">
+                        <p id="ooInfo" class="alert alert-warning">Are you sure you want to on/off [NAME_ITEM]?</p>
+                    </div>
+                    <input type="hidden" id="action" name="action" value="oop"/>
+                    <input type="hidden" id="ooidp" name="ooidp" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeOOP"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-sm btn-warning" onclick="submitOOP();">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+try{
+    jQuery(function ($) {
+        
+        var RemoteData = function(options, callback) {
+			var parent_id = null
+			if( !('text' in options || 'type' in options) ){
+				parent_id = 0;//load first level data
+			}
+			else if('type' in options && options['type'] == 'folder') {//it has children
+				if('id' in options)
+					parent_id = options['id'];
+			}
+			
+			if(parent_id !== null) {
+				$.ajax({
+					url: "/web/admin/repcode",
+					data: {action: "getchildren", id: parent_id},
+					type: 'POST',
+					dataType: 'json',
+					success : function(response) {
+						if(response.err >= 0)
+							$("#is_load").hide();
+							callback({ data: response.data })
+					},
+					error: function(response) {
+						//console.log(response);
+					}
+				})
+			}
+		}
+		
+        $('#tree1').ace_tree({
+            dataSource: RemoteData,
+            multiSelect: false,
+            cacheItems: true,
+            folderSelect: true,
+            'open-icon' : 'ace-icon tree-minus',
+            'close-icon' : 'ace-icon tree-plus',
+            'selectable' : true,
+            loadingHTML : '<div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div>'
+        });
+        
+        var curr_id = "";
+        $('#tree1')
+        .on('selected.fu.tree', function(e, data) {
+        	if ('target' in data && 'id' in data.target && data.target.id != curr_id){ 
+            	var id = data.target.id;
+            	curr_id = id;
+            	$.ajax({
+					url: "/web/admin/repcode",
+					data: {action: "getInfoDC", id: id},
+					type: 'POST',
+					dataType: 'json',
+					success : function(response) {
+						if(response.err >= 0 && 'data' in response)
+							showInfoItem(response.data);
+						else
+							console.log("No data found: " + response);
+					},
+					error: function(response) {
+						console.log("Response error: " + response);
+					}
+				})
+			}
+        }).on('loaded.fu.tree', function(e, data) {
+            console.log("loaded.fu.tree data: " + JSON.stringify(data));
+            
+        }).on('opened.fu.tree', function(e, data) {
+            console.log("opened.fu.tree data: " + JSON.stringify(data));
+            
+        });
+        
+        function showInfoItem(data){
+			$("#ifForm").show();
+			$("#ifName").text(data.name);
+			$("#ifUName").text(data.uname);
+			$("#ifEmail").text(data.email);
+			$("#ifCode").text(data.code);
+			$("#ifType").text(data.type);
+			$("#ifStatus").text(data.status);
+			if (data.typeCode == 3){
+				$("#ifLevel").text(data.level);
+				$("#if-level").show();
+			}
+			else 
+				$("#if-level").hide();
+        }
+        /**
+        //please refer to docs for more info
+        $('#tree1')
+        .on('loaded.fu.tree', function(e) {
+        })
+        .on('updated.fu.tree', function(e, result) {
+        })
+        .on('selected.fu.tree', function(e) {
+        })
+        .on('deselected.fu.tree', function(e) {
+        })
+        .on('opened.fu.tree', function(e) {
+        })
+        .on('closed.fu.tree', function(e) {
+        });
+        */
+    });
+
+    
+
+    $().ready(function() {
+        $('.modal').hide();
+	});
+    
+    //Edit.
+    function openEditModal(idp){
+        $('#eidp').val(idp);
+        
+        $('#editModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitEditProduct(){
+        $('#frmEditP').submit();
+    };
+    
+    function completeEditProduct(data){
+        if(data.err >= 0){
+            $('#edit_alert_success').html(data.msg);
+            $('#edit_alert_success').show();
+            setTimeout(function() {
+                $('#editModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#edit_alert_err').html(data.msg);
+            $('#edit_alert_err').show();
+        }
+    };
+    
+    //View.
+    function openViewModal(){
+        $('#viewModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    //Delete.
+    function openDelModal(did){
+//        var nameBiz = $('#'+did+'_n').html();
+//        $('#delInfo').html('Are you sure that you want to permanently delete <strong>' + nameBiz + '</strong> ?');
+//        $('#didp').val(did);
+        $('#deleteModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitDelP(){
+        $('#frmDelP').submit();
+    };
+    
+    function completeDelP(data){
+        if(data.err >= 0){
+            $('#del_alert_success').html(data.msg);
+            $('#del_alert_success').show();
+            setTimeout(function() {
+                $('#deleteModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#del_alert_err').html(data.msg);
+            $('#del_alert_err').show();
+        }
+    };
+    
+    //On/Off production.
+    function openOOModal(bid){
+        $('#oo_alert_success').hide();
+        $('#oo_alert_err').hide();
+//        var nameBiz = $('#'+bid+'_n').html();
+//        $('#ooInfo').html('Are you sure that you want to permanently reject <strong>' + nameBiz + '</strong> ?');
+//        $('#ooidp').val(bid);
+        $('#onoffModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitOOP(){
+        $('#frmOOP').submit();
+    };
+    
+    function completeOOP(data){
+        if(data.err >= 0){
+            $('#oo_alert_success').html(data.msg);
+            $('#oo_alert_success').show();
+            setTimeout(function() {
+                $('#onoffModal').modal('hide');
+                //window.location = window.location.href;
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#oo_alert_err').html(data.msg);
+            $('#oo_alert_err').show();
+        }
+    };
+    
+    
+    
+}catch(e){}
+</script>
+
+<script src="{{static-domain}}/mitassets/js/fuelux/fuelux.tree.js"></script>
+<!--<script src="{{static-domain}}/mitassets/js/fuelux/tree.js"></script>-->

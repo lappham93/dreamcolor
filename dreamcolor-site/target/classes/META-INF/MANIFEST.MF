@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Built-By: TinnyLe
+Class-Path: lib/mit-jettyserver-1.0.0.jar lib/libphonenumber-6.3.1.jar
+  lib/hapax-2.0.jar lib/minimal-json-0.9.4.jar lib/timeago-1.0.1.jar l
+ ib/commons-fileupload-1.2.jar lib/commons-csv-1.2.jar lib/mit-configu
+ ration-1.0.0.jar lib/jetty-servlet-9.3.6.v20151106.jar lib/jetty-secu
+ rity-9.3.6.v20151106.jar lib/jetty-server-9.3.6.v20151106.jar lib/jav
+ ax.servlet-api-3.1.0.jar lib/jetty-http-9.3.6.v20151106.jar lib/jetty
+ -util-9.3.6.v20151106.jar lib/jetty-io-9.3.6.v20151106.jar lib/libthr
+ ift-0.9.2.jar lib/httpclient-4.2.5.jar lib/commons-codec-1.6.jar lib/
+ httpcore-4.2.4.jar lib/commons-configuration-1.10.jar lib/commons-lan
+ g-2.6.jar lib/commons-logging-1.1.1.jar lib/commons-io-2.5.jar lib/sl
+ f4j-api-1.7.21.jar
+Build-Jdk: 1.8.0_65
+Created-By: Maven Integration for Eclipse
+Main-Class: com.mit.dc.site.MainApp
+
