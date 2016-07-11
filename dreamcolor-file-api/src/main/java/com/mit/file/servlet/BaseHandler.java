@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import com.eclipsesource.json.JsonObject;
 import com.mit.dao.photo.BannerPhotoClient;
 import com.mit.dao.photo.ColorPhotoClient;
+import com.mit.dao.photo.DistributorPhotoClient;
 import com.mit.dao.photo.ProductPhotoClient;
 import com.mit.dao.photo.VideoThumbnailClient;
 import com.mit.entities.photo.PhotoType;
@@ -94,6 +95,8 @@ public class BaseHandler extends HttpServlet {
 					tptrs = ProductPhotoClient.getInstance().getMPhoto(pid);
 				} else if (type == PhotoType.VIDEO_THUMBNAIL.getValue()) {
 					tptrs = VideoThumbnailClient.getInstance().getMPhoto(pid);
+				} else if (type == PhotoType.DISTRIBUTOR.getValue()) {
+					tptrs = DistributorPhotoClient.getInstance().getMPhoto(pid);
 				}
 				
 				if (tptrs != null && tptrs.error >= 0 && tptrs.value != null) {

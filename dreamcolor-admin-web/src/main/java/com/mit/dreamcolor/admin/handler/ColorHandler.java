@@ -17,7 +17,6 @@
 package com.mit.dreamcolor.admin.handler;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +30,7 @@ import org.slf4j.LoggerFactory;
 
 import com.eclipsesource.json.JsonObject;
 import com.mit.dao.color.CategoryDAO;
-import com.mit.dao.product.ProductDAO;
+import com.mit.dao.color.ColorDAO;
 import com.mit.dreamcolor.admin.common.Common;
 import com.mit.dreamcolor.admin.common.Configuration;
 import com.mit.dreamcolor.admin.common.Paging;
@@ -39,8 +38,8 @@ import com.mit.dreamcolor.admin.utils.HttpHelper;
 import com.mit.dreamcolor.admin.utils.PhotoUtil;
 import com.mit.dreamcolor.admin.utils.UploadFormUtil;
 import com.mit.entities.color.Category;
+import com.mit.entities.color.Color;
 import com.mit.entities.photo.PhotoType;
-import com.mit.entities.product.Product;
 import com.mit.midutil.MIdNoise;
 
 import hapax.TemplateDataDictionary;
@@ -61,7 +60,7 @@ public class ColorHandler extends BaseHandler {
 			// select template.
 			String option = req.getParameter("option");
 			if ("color".equalsIgnoreCase(option)) {
-				renderPageProduct(dic, req, resp);
+				renderPageColor(dic, req, resp);
 				dic.setVariable("MAIN_CONTENT", applyTemplate(dic, "color.xtm", req));
 			} else {
 				renderPageCategory(dic, req, resp);
@@ -95,11 +94,11 @@ public class ColorHandler extends BaseHandler {
 							addCategory(req, resp, result, mapFile, params);
 						} else if ("changecp".equalsIgnoreCase(action)) {
 							changeCategoryPhoto(req, resp, result, mapFile, params);
-						} else if ("cimgop".equalsIgnoreCase(action)) {
-							changeOtherPhoto(req, resp, result, mapFile, params);
-						} else if ("addOPhoto".equalsIgnoreCase(action)) {
-							addOtherPhoto(req, resp, result, mapFile, params);
-						} 
+						} else if ("addcolor".equalsIgnoreCase(action)) {
+							addColor(req, resp, result, mapFile, params);
+						} else if ("changecop".equalsIgnoreCase(action)) {
+							changeColorPhoto(req, resp, result, mapFile, params);
+						}
 					}
 				}
 			} else {
@@ -110,11 +109,9 @@ public class ColorHandler extends BaseHandler {
 						getCategory(req, resp, result);
 					} else if ("editcate".equalsIgnoreCase(action)) {
 						editCategory(req, resp, result);
-					} else if ("getpro".equalsIgnoreCase(action)) {
-						getProduct(req, resp, result);
-					} else if ("delop".equalsIgnoreCase(action)) {
-						deleteOtherPhoto(req, resp, result);
-					} else if ("editpro".equalsIgnoreCase(action)) {
+					} else if ("getcolor".equalsIgnoreCase(action)) {
+						getColor(req, resp, result);
+					} else if ("editcolor".equalsIgnoreCase(action)) {
 						editProduct(req, resp, result);
 					}
 				}
@@ -165,7 +162,7 @@ public class ColorHandler extends BaseHandler {
 		}
 	}
 
-	private void renderPageProduct(TemplateDataDictionary dic, HttpServletRequest req, HttpServletResponse resp) {
+	private void renderPageColor(TemplateDataDictionary dic, HttpServletRequest req, HttpServletResponse resp) {
 
 		// render selection.
 		Map<Integer, String> mapCate = new HashMap<Integer, String>();
@@ -191,7 +188,7 @@ public class ColorHandler extends BaseHandler {
 		paging.currPage = page;
 		paging.pageSize = Configuration.APP_PAGING_PAGE_SIZE;
 		paging.numDisplay = Configuration.APP_PAGING_NUM_DISPLAY;
-		paging.totalRecords = ProductDAO.getInstance().totalAll();
+		paging.totalRecords = ColorDAO.getInstance().totalAllIgnoreStatus();
 
 		if (paging.totalRecords <= 0) {
 			dic.addSection("empty");
@@ -201,41 +198,34 @@ public class ColorHandler extends BaseHandler {
 		int totalPages = paging.getTotalPages();
 		paging.currPage = Paging.clamp(paging.currPage, 1, totalPages);
 		int offset = (paging.currPage - 1) * paging.pageSize;
-		boolean ascOrder = false;
-		List<Product> listPro = ProductDAO.getInstance().getSlideAll(offset, paging.pageSize, "updateTime", ascOrder);
+		List<Color> colors = ColorDAO.getInstance().getSliceIgnoreStatus(paging.pageSize, offset, "updateTime", false);
 
-		if (listPro != null && !listPro.isEmpty()) {
+		if (colors != null && !colors.isEmpty()) {
 			dic.addSection("HAS_TABLE");
 			int i = offset + 1;
-			for (Product pro : listPro) {
+			for (Color color : colors) {
 				TemplateDataDictionary loopRow = dic.addSection("loop_row");
 				loopRow.setVariable("NO", String.valueOf(i));
-				loopRow.setVariable("NAME", pro.getName());
-				loopRow.setVariable("ID", MIdNoise.enNoiseLId(pro.getId()));
-				loopRow.setVariable("MODEL", pro.getModel());
-				loopRow.setVariable("MANU", pro.getManufacturer());
-				String cate = !mapCate.isEmpty() && mapCate.containsKey(pro.getCategoryId())
-						? mapCate.get(pro.getCategoryId()) : "";
+				loopRow.setVariable("CODE", color.getCode());
+				loopRow.setVariable("ID", MIdNoise.enNoiseLId(color.getId()));
+				String cate = !mapCate.isEmpty() && mapCate.containsKey(color.getCategoryId())
+						? mapCate.get(color.getCategoryId()) : "";
 				loopRow.setVariable("CATE", cate);
-				loopRow.setVariable("DESC", pro.getDesc());
-				loopRow.setVariable("UPDATE", Common.timeAgo(pro.getUpdateTime()));
-				if (pro.getStatus() > 0) {
+				loopRow.setVariable("VIEWS", String.valueOf(color.getViews()));
+				if (color.getIsFeature()) {
+					loopRow.addSection("FEATURE_ON");
+				} else {
+					loopRow.addSection("FEATURE_OFF");
+				}
+				loopRow.setVariable("UPDATE", Common.timeAgo(color.getUpdateTime()));
+				if (color.getStatus() > 0) {
 					loopRow.addSection("STATUS_ON");
 				} else {
 					loopRow.addSection("STATUS_OFF");
 				}
 				// photo
-				String priPhoto = PhotoUtil.Instance.buildURIImg(pro.getPrimaryPhoto(), PhotoType.PRODUCT);
-				loopRow.setVariable("URI_PP", priPhoto);
-				if (pro.getPhotos() != null) {
-					for (long otherPhotoId : pro.getPhotos()) {
-						TemplateDataDictionary opLoop = loopRow.addSection("loop_op");
-						String otherPhoto = PhotoUtil.Instance.buildURIImg(otherPhotoId, PhotoType.PRODUCT);
-						opLoop.setVariable("URI_OP", otherPhoto);
-						opLoop.setVariable("ID", MIdNoise.enNoiseLId(pro.getId()));
-						opLoop.setVariable("ID_OP", MIdNoise.enNoiseLId(otherPhotoId));
-					}
-				}
+				String priPhoto = PhotoUtil.Instance.buildURIImg(color.getPhoto(), PhotoType.COLOR);
+				loopRow.setVariable("URI_CP", priPhoto);
 				i++;
 			}
 		} else {
@@ -248,9 +238,9 @@ public class ColorHandler extends BaseHandler {
 		jsonPaging.set("pageSize", paging.pageSize);
 		jsonPaging.set("numDisplay", paging.numDisplay);
 		jsonPaging.set("totalRecord", paging.totalRecords);
-		jsonPaging.set("action", "/web/admin/product");
+		jsonPaging.set("action", "/web/admin/color");
 		dic.setVariable("paging", jsonPaging.toString());
-		dic.setVariable("keyword", "option=pro");
+		dic.setVariable("keyword", "option=color");
 	}
 
 	private void getCategory(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
@@ -260,8 +250,9 @@ public class ColorHandler extends BaseHandler {
 			Category cate = CategoryDAO.getInstance().getById(id);
 			if (cate != null) {
 				JsonObject ocate = new JsonObject();
-				ocate.set("id", cate.getId());
+//				ocate.set("id", cate.getId());
 				ocate.set("name", cate.getName());
+				ocate.set("desc", cate.getDescription());
 				String status = "";
 				if (cate.getStatus() == 0) {
 					status = "off";
@@ -270,7 +261,7 @@ public class ColorHandler extends BaseHandler {
 				}
 				ocate.set("status", status);
 				result.set("err", 0);
-				result.set("cate", ocate);
+				result.set("cc", ocate);
 				result.set("msg", "Get category successfully.");
 			} else {
 				result.set("err", -1);
@@ -283,19 +274,18 @@ public class ColorHandler extends BaseHandler {
 	}
 
 	private void editCategory(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
-		String seidcate = req.getParameter("eidcate");
+		String seidcate = req.getParameter("eid");
 		String sname = req.getParameter("ename");
-		String spc = req.getParameter("epc");
-		String sposition = req.getParameter("eposition");
+		String sdesc = req.getParameter("edesc");
 		String sstatus = req.getParameter("estatus");
-		// System.out.println("sstatus: " + sstatus);
-		if (sname != null && !sname.isEmpty() && spc != null && !spc.isEmpty() && sposition != null
-				&& !sposition.isEmpty() && seidcate != null && !seidcate.isEmpty()) {
+		if (sname != null && !sname.isEmpty() && sdesc != null && !sdesc.isEmpty() &&
+				seidcate != null && !seidcate.isEmpty()) {
 			int idcate = MIdNoise.deNoiseIId(seidcate);
-			int status = "on".equalsIgnoreCase(sstatus) ? 1 : 0;
+			int status = sstatus != null ? 1 : 0;
 			Category cate = CategoryDAO.getInstance().getById(idcate);
 			if (cate != null) {
-				cate.setName(sname);
+				cate.setName(sname.trim());
+				cate.setDescription(sdesc.trim());
 				cate.setStatus(status);
 				int err = CategoryDAO.getInstance().update(cate);
 				if (err >= 0) {
@@ -315,60 +305,6 @@ public class ColorHandler extends BaseHandler {
 		}
 	}
 
-	private void addProduct(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
-			Map<String, FileItem> mapFile, Map<String, String> params) {
-		String sname = params.containsKey("name") ? params.get("name") : "";
-		String scateid = params.containsKey("cate") ? params.get("cate") : "";
-		String sdesc = params.containsKey("desc") ? params.get("desc") : "";
-		String smodel = params.containsKey("model") ? params.get("model") : "";
-		String smanu = params.containsKey("manu") ? params.get("manu") : "";
-		String sstatus = params.containsKey("status") ? params.get("status") : "";
-		FileItem priPhoto = mapFile.containsKey("priphoto") ? mapFile.get("priphoto") : null;
-		FileItem secPhoto = mapFile.containsKey("photo1") ? mapFile.get("photo1") : null;
-
-		if (sname != null && !sname.isEmpty() && sdesc != null && !sdesc.isEmpty() && smodel != null
-				&& !smodel.isEmpty() && scateid != null && !scateid.isEmpty() && smanu != null && !smanu.isEmpty()
-				&& priPhoto != null && secPhoto != null) {
-			// save primary photo
-			long priPhotoId = PhotoUtil.Instance.uploadPhoto(priPhoto, PhotoType.PRODUCT);
-			if (priPhotoId < 0) {
-				result.set("err", -1);
-				result.set("msg", "Can't insert primary photo");
-				return;
-			}
-			// save others photo
-			List<Long> otherPhotos = new ArrayList<Long>();
-			for (String key : mapFile.keySet()) {
-				if (!key.equalsIgnoreCase("priPhoto")) {
-					FileItem photo = mapFile.get(key);
-					long otherPhotoId = PhotoUtil.Instance.uploadPhoto(photo, PhotoType.PRODUCT);
-					if (otherPhotoId < 0) {
-						result.set("err", -1);
-						result.set("msg", "Can't insert other photo");
-						return;
-					}
-					otherPhotos.add(otherPhotoId);
-				}
-			}
-			// save product
-			int cateid = MIdNoise.deNoiseIId(scateid);
-			int status = "on".equalsIgnoreCase(sstatus) ? 1 : 0;
-			Product pro = new Product(0, cateid, smanu, smodel, sname, sdesc, priPhotoId, otherPhotos);
-			pro.setStatus(status);
-			int err = ProductDAO.getInstance().insert(pro);
-			if (err >= 0) {
-				result.set("err", 0);
-				result.set("msg", "Add product successfully.");
-			} else {
-				result.set("err", -1);
-				result.set("msg", "Add product fail.");
-			}
-		} else {
-			result.set("err", -1);
-			result.set("msg", "Parameter invalid.");
-		}
-	}
-	
 	private void addCategory(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
 			Map<String, FileItem> mapFile, Map<String, String> params) {
 		String sname = params.containsKey("name") ? params.get("name") : "";
@@ -376,7 +312,7 @@ public class ColorHandler extends BaseHandler {
 		String sstatus = params.containsKey("status") ? params.get("status") : "";
 		FileItem photo = mapFile.containsKey("thumb") ? mapFile.get("thumb") : null;
 
-		if (sname != null && !sname.isEmpty() && sdesc != null && !sdesc.isEmpty() && sstatus != null && !sstatus.isEmpty() && 
+		if (sname != null && !sname.isEmpty() && sdesc != null && !sdesc.isEmpty() && sstatus != null && 
 				photo != null && photo.getSize() > 0) {
 			// save photo
 			long priPhotoId = PhotoUtil.Instance.uploadPhoto(photo, PhotoType.COLOR);
@@ -400,42 +336,6 @@ public class ColorHandler extends BaseHandler {
 		} else {
 			result.set("err", -1);
 			result.set("msg", "Parameter invalid.");
-		}
-	}
-
-	private void deleteOtherPhoto(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
-		try {
-			String sdidop = req.getParameter("didop");
-			String sskuid = req.getParameter("didsku");
-			if (sdidop != null && !sdidop.isEmpty() && sskuid != null && !sskuid.isEmpty()) {
-				long skuid = MIdNoise.deNoiseLId(sskuid);
-				long idop = MIdNoise.deNoiseLId(sdidop);
-				Product sku = ProductDAO.getInstance().getById(skuid);
-				if (sku != null) {
-					List<Long> lidop = sku.getPhotos();
-					lidop.remove(new Long(idop));
-					sku.setPhotos(lidop);
-					int err1 = ProductDAO.getInstance().update(sku);
-					if (err1 >= 0) {
-						result.set("err", 0);
-						result.set("msg", "Delete other photo successfully.");
-						return;
-					} else {
-						result.set("err", -1);
-						result.set("msg", "Delete other photo fail.");
-						return;
-					}
-				} else {
-					result.set("err", -1);
-					result.set("msg", "Product not exist.");
-					return;
-				}
-			} else {
-				result.set("err", -1);
-				result.set("msg", "Parameter invalid.");
-			}
-		} catch (Exception e) {
-			logger.error("ProductHandler.deleteOtherPhoto: " + e, e);
 		}
 	}
 
@@ -475,166 +375,137 @@ public class ColorHandler extends BaseHandler {
 			logger.error("ColorHandler.changeCategoryPhoto: " + e, e);
 		}
 	}
+	
+	private void addColor(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
+			Map<String, FileItem> mapFile, Map<String, String> params) {
+		String scode = params.containsKey("code") ? params.get("code") : "";
+		String scate = params.containsKey("cate") ? params.get("cate") : "";
+		String sstatus = params.containsKey("status") ? params.get("status") : "";
+		String sisfeature = params.containsKey("isfeature") ? params.get("isfeature") : "";
+		FileItem photo = mapFile.containsKey("photo") ? mapFile.get("photo") : null;
 
-	private void changeOtherPhoto(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
-			Map<String, FileItem> mapFile, Map<String, String> params) throws IOException {
-		try {
-			if (params != null && !params.isEmpty() && mapFile != null && !mapFile.isEmpty()) {
-				String sidop = params.containsKey("iidop") ? params.get("iidop") : "";
-				String spid = params.containsKey("pidop") ? params.get("pidop") : "";
-				FileItem priphoto = mapFile.containsKey("cimgop") ? mapFile.get("cimgop") : null;
-				if (sidop != null && !sidop.isEmpty() && spid != null && !spid.isEmpty() && priphoto != null
-						&& priphoto.getSize() > 0) {
-					long pid = MIdNoise.deNoiseLId(spid);
-					long opid = MIdNoise.deNoiseLId(sidop);
-					Product sku = ProductDAO.getInstance().getById(pid);
-					if (sku != null) {
-						// save image.
-						long pId = PhotoUtil.Instance.uploadPhoto(priphoto, PhotoType.PRODUCT);
-						if (pId > 0) {
-							List<Long> opIds = sku.getPhotos();
-							int idx = opIds.indexOf(opid);
-							if (idx >= 0) {
-								opIds.set(idx, pId);
-							}
-							ProductDAO.getInstance().update(sku);
-							result.set("err", 0);
-							result.set("msg", "Change other photo successfully.");
-							return;
-						} else {
-							result.set("err", -1);
-							result.set("msg", "Can't insert other photo");
-							return;
-						}
-					} else {
-						result.set("err", -1);
-						result.set("msg", "Product is not exist.");
-						return;
-					}
-				}
+		if (scode != null && !scode.isEmpty() && scate != null && !scate.isEmpty() && sstatus != null && 
+				sisfeature != null && photo != null && photo.getSize() > 0) {
+			// save photo
+			long priPhotoId = PhotoUtil.Instance.uploadPhoto(photo, PhotoType.COLOR);
+			if (priPhotoId < 0) {
+				result.set("err", -1);
+				result.set("msg", "Can't insert photo");
+				return;
 			}
+			// save color
+			int cateId = MIdNoise.deNoiseIId(scate);
+			int status = "on".equalsIgnoreCase(sstatus) ? 1 : 0;
+			boolean isFeature = "on".equalsIgnoreCase(sisfeature);
+			Color color = new Color(0, cateId, scode, priPhotoId, isFeature);
+			color.setStatus(status);
+			int err = ColorDAO.getInstance().insert(color);
+			if (err >= 0) {
+				result.set("err", 0);
+				result.set("msg", "Add color successfully.");
+			} else {
+				result.set("err", -1);
+				result.set("msg", "Add color fail.");
+			}
+		} else {
 			result.set("err", -1);
 			result.set("msg", "Parameter invalid.");
-		} catch (Exception e) {
-			logger.error("ProductHandler.changePrimaryPhoto: " + e, e);
 		}
 	}
 
-	private void addOtherPhoto(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
-			Map<String, FileItem> mapFile, Map<String, String> params) throws IOException {
-		try {
-			if (params != null && !params.isEmpty() && mapFile != null && !mapFile.isEmpty()) {
-				String spid = params.containsKey("aidsku") ? params.get("aidsku") : "";
-				if (spid != null && !spid.isEmpty()) {
-					long pid = MIdNoise.deNoiseLId(spid);
-					Product sku = ProductDAO.getInstance().getById(pid);
-					if (sku != null) {
-						// save image.
-						List<Long> otherPhotoIds = new ArrayList<>();
-						for (String key : mapFile.keySet()) {
-							FileItem file = mapFile.get(key);
-							if (file == null || file.getSize() <= 0) {
-								continue;
-							}
-							long pId = PhotoUtil.Instance.uploadPhoto(file, PhotoType.PRODUCT);
-							if (pId > 0) {
-								otherPhotoIds.add(pId);
-							} else {
-								result.set("err", -1);
-								result.set("msg", "Can't insert other photo");
-								return;
-							}
-						}
-						List<Long> opIds = sku.getPhotos();
-						opIds.addAll(otherPhotoIds);
-						ProductDAO.getInstance().update(sku);
-						result.set("err", 0);
-						result.set("msg", "Add other photo successfully.");
-						return;
-					} else {
-						result.set("err", -1);
-						result.set("msg", "Product is not exist.");
-						return;
-					}
-				}
-			}
-			result.set("err", -1);
-			result.set("msg", "Parameter invalid.");
-		} catch (Exception e) {
-			logger.error("ProductHandler.changePrimaryPhoto: " + e, e);
-		}
-	}
 
-	private void getProduct(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
+	private void getColor(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
 		String spid = req.getParameter("id");
 		if (spid != null && !spid.isEmpty()) {
 			long pid = MIdNoise.deNoiseLId(spid);
-			Product pro = ProductDAO.getInstance().getById(pid);
+			Color pro = ColorDAO.getInstance().getById(pid);
 			if (pro != null) {
 				JsonObject opro = new JsonObject();
-				opro.set("id", pro.getId());
-				opro.set("name", pro.getName());
-				opro.set("model", pro.getModel());
-				opro.set("manu", pro.getManufacturer());
-				opro.set("desc", pro.getDesc());
+				opro.set("code", pro.getCode());
 				opro.set("cateid", MIdNoise.enNoiseIId(pro.getCategoryId()));
 				Category cate = CategoryDAO.getInstance().getById(pro.getCategoryId());
-				if (cate != null) {
-					opro.set("namecate", cate.getName());
-				} else {
-					opro.set("namecate", "");
-				}
-				if (pro.getStatus() == 0) {
-					opro.set("status", "off");
-				} else {
-					opro.set("status", "on");
-				}
+				String cateName = cate != null ? cate.getName() : "";
+				opro.set("namecate", cateName);
+				opro.set("status", pro.getStatus() > 0 ? "on" : "off");
+				opro.set("isfeature", pro.getIsFeature() ? "yes" : "no");
 				result.set("err", 0);
-				result.set("pro", opro);
-				result.set("msg", "Get product successfully.");
+				result.set("color", opro);
+				result.set("msg", "Get color successfully.");
 			} else {
 				result.set("err", -1);
-				result.set("msg", "Get product info fail.");
+				result.set("msg", "Get color info fail.");
 			}
 		} else {
 			result.set("err", -1);
 			result.set("msg", "Parameter invaliad.");
 		}
 	}
+	
+	private void changeColorPhoto(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
+			Map<String, FileItem> mapFile, Map<String, String> params) throws IOException {
+		try {
+			if (params != null && !params.isEmpty() && mapFile != null && !mapFile.isEmpty()) {
+				String scolorId = params.containsKey("iidp") ? params.get("iidp") : "";
+				FileItem priphoto = mapFile.containsKey("cimg") ? mapFile.get("cimg") : null;
+				if (scolorId != null && !scolorId.isEmpty() && priphoto != null && priphoto.getSize() > 0) {
+					long colorId = MIdNoise.deNoiseLId(scolorId);
+					Color color = ColorDAO.getInstance().getById(colorId);
+					if (color != null) {
+						// save image.
+						long pId = PhotoUtil.Instance.uploadPhoto(priphoto, PhotoType.COLOR);
+						if (pId > 0) {
+							color.setPhoto(pId);
+							ColorDAO.getInstance().update(color);
+							result.set("err", 0);
+							result.set("msg", "Change photo successfully.");
+							return;
+						} else {
+							result.set("err", -1);
+							result.set("msg", "Can't insert photo");
+							return;
+						}
+					} else {
+						result.set("err", -1);
+						result.set("msg", "Color is not exist.");
+						return;
+					}
+				}
+			}
+			result.set("err", -1);
+			result.set("msg", "Parameter invalid.");
+		} catch (Exception e) {
+			logger.error("ColorHandler.changeCategoryPhoto: " + e, e);
+		}
+	}
 
 	private void editProduct(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
-		String seidp = req.getParameter("eidp");
-		String sname = req.getParameter("ename");
-		String smodel = req.getParameter("emodel");
-		String smanu = req.getParameter("emanu");
-		String sdesc = req.getParameter("edesc");
+		String seidp = req.getParameter("eid");
+		String scode = req.getParameter("ecode");
 		String scateid = req.getParameter("ecate");
+		String sisfeature = req.getParameter("eisfeature");
 		String sstatus = req.getParameter("estatus");
-		if (seidp != null && !seidp.isEmpty() && sname != null && !sname.isEmpty() && smodel != null
-				&& !smodel.isEmpty() && smanu != null && !smanu.isEmpty() && scateid != null && !scateid.isEmpty() 
-				&& sdesc != null && !sdesc.isEmpty() && sstatus != null && !sstatus.isEmpty()) {
+		if (seidp != null && !seidp.isEmpty() && scode != null && !scode.isEmpty() && scateid != null && !scateid.isEmpty()) {
 			int cateid = MIdNoise.deNoiseIId(scateid);
-			int status = "on".equalsIgnoreCase(sstatus) ? 1 : 0;
+			int status = sstatus != null ? 1 : 0;
+			boolean isFeature = sisfeature != null;
 			long pid = MIdNoise.deNoiseLId(seidp);
-			Product pro = ProductDAO.getInstance().getById(pid);
-			if (pro != null) {
-				pro.setName(sname);
-				pro.setModel(smodel);
-				pro.setManufacturer(smanu);
-				pro.setDesc(sdesc);
-				pro.setCategoryId(cateid);
-				pro.setStatus(status);
-				int err = ProductDAO.getInstance().update(pro);
+			Color color = ColorDAO.getInstance().getById(pid);
+			if (color != null) {
+				color.setCode(scode);
+				color.setCategoryId(cateid);
+				color.setIsFeature(isFeature);
+				color.setStatus(status);
+				int err = ColorDAO.getInstance().update(color);
 				if (err >= 0) {
 					result.set("err", 0);
-					result.set("msg", "Edit Product successfully.");
+					result.set("msg", "Edit Color successfully.");
 				} else {
 					result.set("err", -1);
-					result.set("msg", "Edit Product fail.");
+					result.set("msg", "Edit Color fail.");
 				}
 			} else {
 				result.set("err", -1);
-				result.set("msg", "Get Product info fail.");
+				result.set("msg", "Get Color info fail.");
 			}
 
 		} else {

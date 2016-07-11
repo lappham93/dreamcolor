@@ -363,7 +363,7 @@ public class ProductHandler extends BaseHandler {
 				&& !sposition.isEmpty() && seidcate != null && !seidcate.isEmpty()) {
 			int idcate = MIdNoise.deNoiseIId(seidcate);
 			int position = Integer.valueOf(sposition);
-			int status = "on".equalsIgnoreCase(sstatus) ? 1 : 0;
+			int status = sstatus != null ? 1 : 0;
 			int pc = 0;
 			String path = "";
 			if (!"0".equalsIgnoreCase(spc)) {
@@ -663,9 +663,9 @@ public class ProductHandler extends BaseHandler {
 		String sstatus = req.getParameter("estatus");
 		if (seidp != null && !seidp.isEmpty() && sname != null && !sname.isEmpty() && smodel != null
 				&& !smodel.isEmpty() && smanu != null && !smanu.isEmpty() && scateid != null && !scateid.isEmpty() 
-				&& sdesc != null && !sdesc.isEmpty() && sstatus != null && !sstatus.isEmpty()) {
+				&& sdesc != null && !sdesc.isEmpty()) {
 			int cateid = MIdNoise.deNoiseIId(scateid);
-			int status = "on".equalsIgnoreCase(sstatus) ? 1 : 0;
+			int status = sstatus != null ? 1 : 0;
 			long pid = MIdNoise.deNoiseLId(seidp);
 			Product pro = ProductDAO.getInstance().getById(pid);
 			if (pro != null) {

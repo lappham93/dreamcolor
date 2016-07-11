@@ -1,16 +1,15 @@
 package lap;
 
-import java.util.Map;
+import java.util.List;
 
-import com.mit.dao.AppKeyDAO;
-import com.mit.entities.app.AppKey;
-import com.mit.models.ColorModel;
-import com.mit.models.VideoModel;
+import com.mit.dao.banner.BannerDAO;
+import com.mit.entities.banner.Banner;
+import com.mit.entities.banner.BannerType;
 import com.mit.utils.JsonUtils;
 
 public class Test {
 	public static void main(String[] args) {
-		AppKey app = new AppKey(2, 1, "dreamcolor", 1, "dkmobility", "sajf3dc75e6fe8689e11f7ab597j192c", "ss2144ccc95099082f5705093ea2hh2");
-		AppKeyDAO.getInstance().insert(app);
+		List<Banner> listB = BannerDAO.getInstance().getAllListByType(BannerType.WELCOME.getValue());
+		System.out.println(JsonUtils.Instance.toJson(listB));
 	}
 }

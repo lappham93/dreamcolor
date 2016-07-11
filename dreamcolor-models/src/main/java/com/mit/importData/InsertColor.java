@@ -23,7 +23,7 @@ public class InsertColor {
 			for (Category cate : cates) {
 				int count = i + 5;
 				for (; i < count; i++) {
-					Color color = new Color(0, cate.getId(), "code " + i, new Long(i));
+					Color color = new Color(0, cate.getId(), "code " + i, new Long(i), false);
 					ColorDAO.getInstance().insert(color);
 				}
 			}

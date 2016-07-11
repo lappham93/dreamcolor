@@ -6,13 +6,10 @@
             <a href="/web/admin/banner?option=bweb"><i class="green ace-icon fa fa-globe bigger-120"></i>Banner Web</a>
         </li>
         <li>
-            <a href="/web/admin/banner?option=bord"><i class="green ace-icon fa fa-list-alt bigger-120"></i>Banner Order</a>
+            <a href="/web/admin/banner?option=bvid"><i class="green ace-icon fa fa-list-alt bigger-120"></i>Banner Video</a>
         </li>
         <li class="active">
             <a href="/web/admin/banner?option=bwel"><i class="green ace-icon fa fa-pencil-square-o bigger-120"></i>Banner Welcome</a>
-        </li>
-        <li>
-            <a href="/web/admin/banner?option=bpro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Banner Product</a>
         </li>
     </ul>
     <ul class="nav nav-tabs hidden-md hidden-lg">
@@ -26,13 +23,10 @@
                     <a href="/web/admin/banner?option=bweb"><i class="green ace-icon fa fa-globe bigger-120"></i>Banner Web</a>
                 </li>
                 <li>
-                    <a href="/web/admin/banner?option=bord"><i class="green ace-icon fa fa-list-alt bigger-120"></i>Banner Order</a>
+                    <a href="/web/admin/banner?option=bvid"><i class="green ace-icon fa fa-list-alt bigger-120"></i>Banner Video</a>
                 </li>
                 <li class="active">
                     <a href="/web/admin/banner?option=bwel"><i class="green ace-icon fa fa-pencil-square-o bigger-120"></i>Banner Welcome</a>
-                </li>
-                <li>
-                    <a href="/web/admin/banner?option=bpro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Banner Product</a>
                 </li>
             </ul>
         </li>
@@ -55,17 +49,14 @@
                         </div>
                         
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
-                            <div class="col-xs-12 col-sm-9">
-                                <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                                    <select class="col-xs-12 col-sm-12" id="status" name="status" data-placeholder="Choose a status...">
-                                        <option value=""> Choose a status... </option>
-                                        <option value="0">Delete</option>
-                                        <option value="1">Active</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+	                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Status: <span class="orange">(*)</span></label>
+	                        <div class="col-sm-9 col-xs-7">
+	                            <label>
+	                                <input id="status" name="status" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+	                                <span class="lbl"></span>
+	                            </label>
+	                        </div>
+                   		</div>
 
                         <div class="form-group">
                             <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Thumb Photo: <span class="orange">(*)</span></label>
@@ -260,20 +251,16 @@
                         </div>
                     </div>                    
                     
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
-                        <div class="col-xs-12 col-sm-9">
-                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                                <select class="col-xs-12 col-sm-12" id="estatus" name="estatus" data-placeholder="Choose a status...">
-                                    <option value=""> Choose a status... </option>
-                                    <option value="0">Delete</option>
-                                    <option value="1">Active</option>
-                                </select>
-                            </div>
+					<div class="form-group">
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Status: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <label>
+                                <input id="estatus" name="estatus" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
                         </div>
-                    </div>
-                    
-                    <input type="hidden" id="action" name="action" value="editwelb"/>
+               		</div>                    
+                    <input type="hidden" id="action" name="action" value="editwel"/>
                     <input type="hidden" id="eidp" name="eidp" value=""/>
                     <input type="hidden" id="callback" name="callback" value="completeEditWelB"/>
                 </form>
@@ -513,7 +500,7 @@ try{
         $('#add_alert_success').hide();
         $('#add_alert_err').hide();
         $('#message').val("");
-        $('#status').val("");
+        $('#status').prop('checked', true);
         $('input[id*="thumb"]').ace_file_input('reset_input');
         $('#btnadd').button('reset');
         $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -527,10 +514,6 @@ try{
         var message = $('#message').val();
         if(message == ''){
             serr += "Message required. ";
-        }
-        var status = $('#status').val();
-        if(status == ''){
-            serr += "Status required. ";
         }
         var thumb = $('#thumb').val();
         if(thumb == ''){
@@ -576,12 +559,11 @@ try{
         $('#eidp').val(id);
         //reset.
         $('#emsg').val('');
-        $('#estatus').val('');
         
         //get content Banner Web.
         if(id != ''){
             var data = {
-                action: 'getwelb',
+                action: 'getbanner',
                 id: id
             };
             $.ajax({
@@ -592,9 +574,9 @@ try{
                 cache: false,
                 success: function(data){
                     if(data.err >= 0){
-                        var owb = data.owb;
+                        var owb = data.banner;
                         $('#emsg').val(owb.msg);
-                        $('#estatus').val(owb.idstatus);
+                        $('#estatus').prop('checked', owb.status == 'on');
                     } else{
                         console.log(data.msg);
                         bootbox.dialog({
@@ -623,10 +605,6 @@ try{
         var message = $('#emsg').val();
         if(message == ''){
             serr += "Message required. ";
-        }
-        var status = $('#estatus').val();
-        if(status == ''){
-            serr += "Status required. ";
         }
         
         $('#frmEditP').unbind('submit');

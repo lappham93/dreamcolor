@@ -4,7 +4,8 @@ public enum PhotoType {
 	COLOR(1),
 	PRODUCT(2),
 	BANNER(3),
-	VIDEO_THUMBNAIL(4);
+	VIDEO_THUMBNAIL(4),
+	DISTRIBUTOR(5);
 	
 	private int value;
 	

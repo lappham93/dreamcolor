@@ -1,6 +1,7 @@
 package com.mit.entities.color;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mit.dao.color.ColorDAO;
 import com.mit.entities.photo.PhotoType;
 import com.mit.entities.photo.PhotoView;
 
@@ -68,6 +69,10 @@ public class Category {
 
 	public PhotoView getPhoto() {
 		return new PhotoView(photo, PhotoType.COLOR.getValue());
+	}
+	
+	public int getColors() {
+		return ColorDAO.getInstance().totalAll(this.id);
 	}
 
 	public int getStatus() {

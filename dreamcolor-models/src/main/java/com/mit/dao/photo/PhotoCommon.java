@@ -46,18 +46,21 @@ public class PhotoCommon {
     	photoName.put(PhotoType.COLOR.getValue(), "colorphoto");
     	photoName.put(PhotoType.PRODUCT.getValue(), "productphoto");
     	photoName.put(PhotoType.VIDEO_THUMBNAIL.getValue(), "videophoto");
+    	photoName.put(PhotoType.DISTRIBUTOR.getValue(), "distributorphoto");
     	
     	idGen = new HashMap<>();
     	idGen.put(PhotoType.BANNER.getValue(), "bannerphotoid");
     	idGen.put(PhotoType.COLOR.getValue(), "colorphotoid");
     	idGen.put(PhotoType.PRODUCT.getValue(), "productphotoid");
     	idGen.put(PhotoType.VIDEO_THUMBNAIL.getValue(), "videophotoid");
+    	idGen.put(PhotoType.DISTRIBUTOR.getValue(), "photodistributorid");
     	
     	photoTable = new HashMap<>();
     	photoTable.put(PhotoType.BANNER.getValue(), "set_banner_photo");
     	photoTable.put(PhotoType.COLOR.getValue(), "set_color_photo");
     	photoTable.put(PhotoType.PRODUCT.getValue(), "set_product_photo");
     	photoTable.put(PhotoType.VIDEO_THUMBNAIL.getValue(), "set_video_photo");
+    	photoTable.put(PhotoType.DISTRIBUTOR.getValue(), "set_distributor_photo");
     	
     }
     

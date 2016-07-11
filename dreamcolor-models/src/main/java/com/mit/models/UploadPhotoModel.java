@@ -7,6 +7,7 @@ import java.util.Map;
 import com.mit.dao.mid.MIdGenLongDAO;
 import com.mit.dao.photo.BannerPhotoClient;
 import com.mit.dao.photo.ColorPhotoClient;
+import com.mit.dao.photo.DistributorPhotoClient;
 import com.mit.dao.photo.PhotoCommon;
 import com.mit.dao.photo.PhotoInfoDAO;
 import com.mit.dao.photo.ProductPhotoClient;
@@ -53,6 +54,10 @@ public class UploadPhotoModel {
 				id = MIdGenLongDAO.getInstance(PhotoCommon.idGen.get(PhotoType.VIDEO_THUMBNAIL.getValue())).getNext();
 				tmp.setId(id);
 				err = VideoThumbnailClient.getInstance().putMPhoto(tmp);
+			} else if (type == PhotoType.DISTRIBUTOR.getValue()) {
+				id = MIdGenLongDAO.getInstance(PhotoCommon.idGen.get(PhotoType.DISTRIBUTOR.getValue())).getNext();
+				tmp.setId(id);
+				err = DistributorPhotoClient.getInstance().putMPhoto(tmp);
 			}
 
 			if (err >= 0) {

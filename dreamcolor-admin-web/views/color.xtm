@@ -28,17 +28,17 @@
     <div class="tab-content">
         <div id="table" class="tab-pane fade in active">
 
-            <h3 class="header smaller lighter blue">Add Product</h3>
+            <h3 class="header smaller lighter blue">Add Color</h3>
             <div class="row">
                 <div class="col-xs-12">
                     <iframe id="if_Add" name="if_Add" style="display: none;width: 0px;height: 0px"></iframe>
-                    <form id="frmAdd" name="frmAdd" class="form-horizontal" role="form" action="/web/admin/product" method="POST" enctype="multipart/form-data" target="if_Add">
+                    <form id="frmAdd" name="frmAdd" class="form-horizontal" role="form" action="/web/admin/color" method="POST" enctype="multipart/form-data" target="if_Add">
                         <div id="add_alert_success" class="alert alert-success" style="display: none;"></div>
                         <div id="add_alert_err" class="alert alert-danger" style="display: none;"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Name: <span class="orange">(*)</span></label>
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Code: <span class="orange">(*)</span></label>
                             <div class="col-sm-9">
-                                <input type="text" id="name" name="name" placeholder="name" class="col-xs-12 col-sm-5"/>
+                                <input type="text" id="code" name="code" placeholder="code" class="col-xs-12 col-sm-5"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -55,21 +55,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Description: <span class="orange">(*)</span></label>
-                            <div class="col-sm-9">
-                                <input type="text" id="desc" name="desc" placeholder="description" class="col-xs-12 col-sm-5"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Model: <span class="orange">(*)</span></label>
-                            <div class="col-sm-9">
-                                <input type="text" id="model" name="model" placeholder="model" class="col-xs-12 col-sm-5"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Manufacturer: <span class="orange">(*)</span></label>
-                            <div class="col-sm-9">
-                                <input type="text" id="manu" name="manu" placeholder="manufacturer" class="col-xs-12 col-sm-5"/>
+                            <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Feature: <span class="orange">(*)</span></label>
+                            <div class="col-sm-9 col-xs-7">
+                                <label>
+                                    <input id="isfeature" name="isfeature" class="ace ace-switch ace-switch-4" type="checkbox" />
+                                    <span class="lbl"></span>
+                                </label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -82,14 +73,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Primary Photo: <span class="orange">(*)</span></label>
+                            <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Photo: <span class="orange">(*)</span></label>
                             <div class="col-sm-9 col-xs-9">
                                 <div class="col-xs-12 col-sm-5">
-                                    <input type="file" name="priphoto" id="priphoto" style="display: none;" />
+                                    <input type="file" name="photo" id="photo" style="display: none;" />
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+       <!--                 <div class="form-group">
                             <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Other Photo: <span class="orange">(*)</span></label>
                             <div class="col-sm-9 col-xs-9">
                                 <div class="col-xs-10 col-sm-5">
@@ -101,24 +92,24 @@
                             </div>
                         </div>
                         <div id="listPhoto">
-                        </div>
+                        </div> -->
 
                         <div class="clearfix">
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btnadd" class="btn btn-info" type="button" onclick="addProduct(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
+                                <button id="btnadd" class="btn btn-info" type="button" onclick="addColor(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
                                 &nbsp; &nbsp; &nbsp;
                                 <button class="btn" type="reset" onclick="resetAdd(); return false;"><i class="ace-icon fa fa-undo bigger-110"></i>Reset</button>
                             </div>
                         </div>
                         <input type="hidden" id="numPhoto" name="numPhoto" value="1"/>
                         <input type="hidden" id="ov" name="ov" value=""/>
-                        <input type="hidden" id="action" name="action" value="addpro"/>
-                        <input type="hidden" id="callback" name="callback" value="completeAddProduct"/>
+                        <input type="hidden" id="action" name="action" value="addcolor"/>
+                        <input type="hidden" id="callback" name="callback" value="completeAddColor"/>
                     </form>
                 </div>
             </div>
 
-            <h3 class="header smaller lighter blue">List Products</h3>
+            <h3 class="header smaller lighter blue">List Colors</h3>
 
             <div class="row">
                 <div class="col-xs-12">
@@ -127,11 +118,10 @@
                             <tr>
                                 <th class="center">No.</th>
                                 <th class="hidden-480">Photo</th>
-                                <th>Name</th>
+                                <th>Code</th>
                                 <th class="hidden-480">Category</th>
-                                <th class="hidden-480">Model</th>
-                                <th class="hidden-480">Manufacturer</th>
-                                <th class="hidden-480">Description</th>
+                                <th class="hidden-480">IsFeature</th>
+                                <th class="hidden-480">Number Of View</th>
                                 <th>Status</th>
                                 <th class="hidden-480"><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>Update</th>
                                 <th></th>
@@ -145,10 +135,10 @@
                                 <td class="hidden-480">
                                     <ul class="ace-thumbnails">
                                         <li>
-                                            <a href="{{URI_PP}}" data-rel="colorbox">
-                                                <img width="150" height="150" alt="150x150" src="{{URI_PP}}" />
+                                            <a href="{{URI_CP}}" data-rel="colorbox">
+                                                <img width="150" height="150" alt="150x150" src="{{URI_CP}}" />
                                                 <div class="text">
-                                                    <div class="inner">Primary Photo</div>
+                                                    <div class="inner">Photo</div>
                                                 </div>
                                             </a>
 
@@ -161,11 +151,13 @@
                                         </li>
                                     </ul>
                                 </td>
-                                <td>{{NAME}}</td>
+                                <td>{{CODE}}</td>
                                 <td class="hidden-480">{{CATE}}</td>
-                                <td class="hidden-480">{{MODEL}}</td>
-                                <td class="hidden-480">{{MANU}}</td>
-                                <td class="hidden-480" width="20%">{{DESC}}</td>
+                                <td class="hidden-480">
+                                    {{#FEATURE_ON}}<span class="label label-sm label-success">Yes</span>{{/FEATURE_ON}}
+                                    {{#FEATURE_OFF}}<span class="label label-sm label-inverse">No</span>{{/FEATURE_OFF}}
+                                </td>
+                                <td class="hidden-480">{{VIEWS}}</td>
                                 <td>
                                     {{#STATUS_ON}}<span class="label label-sm label-success">On</span>{{/STATUS_ON}}
                                     {{#STATUS_OFF}}<span class="label label-sm label-inverse">Off</span>{{/STATUS_OFF}}
@@ -216,8 +208,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="hidden-480">
-                                <!--<td></td>-->
+ <!--                           <tr class="hidden-480">
                                 <td>Other Photo:</td>
                                 <td colspan="8">
                                     <ul class="ace-thumbnails">
@@ -248,7 +239,7 @@
                                         </button>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> -->
                             {{/loop_row}}
                             
                             {{#table_empty}}
@@ -277,14 +268,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="editModalLabel">View Production</h4>
+                <h4 class="modal-title" id="editModalLabel">View Color</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-xs-12">
-                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Name: </label>
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Code: </label>
                         <div class="col-xs-6 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="vname"></span>
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vcode"></span>
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -294,21 +285,9 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Model: </label>
+                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Is Feature: </label>
                         <div class="col-xs-6 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="vmodel"></span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Manufacturer: </label>
-                        <div class="col-xs-6 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="vmanu"></span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <label class="col-xs-6 control-label no-padding-right bolder" style="text-align: right;">Description: </label>
-                        <div class="col-xs-6 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="vdesc"></span>
+                            <span class="col-xs-12" style="padding-top: 2px;" id="visfeature"></span>
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -332,17 +311,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="editModalLabel">Edit Product</h4>
+                <h4 class="modal-title" id="editModalLabel">Edit Color</h4>
             </div>
             <div class="modal-body">
                 <iframe id="if_Edit" name="if_Edit" style="display: none;width: 0px;height: 0px"></iframe>
-                <form id="frmEditP" name="frmEditP" class="form-horizontal" role="form" action="/web/admin/product" method="POST" target="if_Edit">
+                <form id="frmEditP" name="frmEditP" class="form-horizontal" role="form" action="/web/admin/color" method="POST" target="if_Edit">
                     <div id="edit_alert_success" class="alert alert-success" style="display: none;"></div>
                     <div id="edit_alert_err" class="alert alert-danger" style="display: none;"></div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Name: <span class="orange">(*)</span></label>
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Code: <span class="orange">(*)</span></label>
                         <div class="col-sm-9">
-                            <input type="text" id="ename" name="ename" placeholder="name" class="col-xs-12 col-sm-10"/>
+                            <input type="text" id="ecode" name="ecode" placeholder="code" class="col-xs-12 col-sm-10"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -359,21 +338,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Description: <span class="orange">(*)</span></label>
-                        <div class="col-sm-9">
-                            <input type="text" id="edesc" name="edesc" placeholder="description" class="col-xs-12 col-sm-10"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Model: <span class="orange">(*)</span></label>
-                        <div class="col-sm-9">
-                            <input type="text" id="emodel" name="emodel" placeholder="model" class="col-xs-12 col-sm-10"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Manufacturer: <span class="orange">(*)</span></label>
-                        <div class="col-sm-9">
-                            <input type="text" id="emanu" name="emanu" placeholder="manufacturer" class="col-xs-12 col-sm-10"/>
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Is Feature: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <label>
+                                <input id="eisfeature" name="eisfeature" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -386,15 +356,15 @@
                         </div>
                     </div>
                     
-                    <input type="hidden" id="action" name="action" value="editpro"/>
-                    <input type="hidden" id="eidp" name="eidp" value=""/>
+                    <input type="hidden" id="action" name="action" value="editcolor"/>
+                    <input type="hidden" id="eid" name="eid" value=""/>
                     <input type="hidden" id="eov" name="eov" value=""/>
-                    <input type="hidden" id="callback" name="callback" value="completeEditProduct"/>
+                    <input type="hidden" id="callback" name="callback" value="completeEditColor"/>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button id="btnedit" type="button" class="btn btn-sm btn-primary" onclick="submitEditProduct();">Save changes</button>
+                <button id="btnedit" type="button" class="btn btn-sm btn-primary" onclick="submitEditColor();">Save changes</button>
             </div>
         </div>
     </div>
@@ -468,7 +438,7 @@
             </div>
             <div class="modal-body">
                 <iframe id="if_Img" name="if_Img" style="display: none;width: 0px;height: 0px"></iframe>
-                <form id="frmImg" name="frmImg" class="form-horizontal" action="/web/admin/product" method="POST" enctype="multipart/form-data" target="if_Img">
+                <form id="frmImg" name="frmImg" class="form-horizontal" action="/web/admin/color" method="POST" enctype="multipart/form-data" target="if_Img">
                     <div id="img_alert_success" class="alert alert-success" style="display: none;"></div>
                     <div id="img_alert_err" class="alert alert-danger" style="display: none;"></div>
                     <div class="form-group">
@@ -476,7 +446,7 @@
                             <input type="file" name="cimg" id="cimg"  />
                         </div>
                     </div>
-                    <input type="hidden" id="action" name="action" value="cimg"/>
+                    <input type="hidden" id="action" name="action" value="changecop"/>
                     <input type="hidden" id="iidp" name="iidp" value=""/>
                     <input type="hidden" id="callback" name="callback" value="completeChangeImg"/>
                 </form>
@@ -641,7 +611,7 @@ try{
             });
         }
         
-        $('#priphoto').ace_file_input({
+        $('#photo').ace_file_input({
             no_file:'No File ...',
             btn_choose:'Choose',
             btn_change:'Change',
@@ -1202,41 +1172,24 @@ try{
     	$('#div_ndays').toggle();
     });
     
-    function addProduct(){
+    function addColor(){
         $('#add_alert_success').hide();
         $('#add_alert_err').hide();
         var serr = "";
-        var name = $('#name').val();
-        if(name == ''){
-            serr += "Name required. ";
+        var code = $('#code').val();
+        if(code == ''){
+            serr += "Code required. ";
         }
         var cate = $('#cate').val();
         if(cate == ''){
             serr += "Category required. ";
         }
-        var desc = $('#desc').val();
-        if(desc == ''){
-            serr += "Description required. ";
-        }
-        var model = $('#model').val();
-        if(model == ''){
-            serr += "Model required. ";
-        }
-        var manu = $('#manu').val();
-        if(manu == ''){
-            serr += "Manufacturer required. ";
-        }
-        var priphoto = $('#priphoto').val();
-        if(priphoto == ''){
-            serr += "Primary Photo required. ";
-        }
-        
-        var photo1 = $('#photo1').val();
-        if(photo1 == ''){
-            serr += "Other Photo required at least one photo. ";
+        var photo = $('#photo').val();
+        if(photo == ''){
+            serr += "Photo required. ";
         }
 
-        $('#numPhoto').val(numPhoto);
+//        $('#numPhoto').val(numPhoto);
 
         $('#frmAdd').unbind('submit');
         if(serr == ''){
@@ -1251,7 +1204,7 @@ try{
         return false;
     };
     
-    function completeAddProduct(data){
+    function completeAddColor(data){
         if(data.err >= 0){
             $('#add_alert_success').html(data.msg);
             $('#add_alert_success').show();
@@ -1273,33 +1226,27 @@ try{
     //Edit.
     var eoption = '<option value="KEY" SELECTED>VALUE</option>';
     function openEditModal(id){
-        $('#eidp').val(id);
+        $('#eid').val(id);
         $('#edit_alert_success').hide();
         $('#edit_alert_err').hide();
-        $('#edunit').val('');
-        $('#ewunit').val('');
-        $('#elov').empty();
-        $('#elov').html($('#elovfull').html());
         
         if(id != ''){
             var data = {
-                action: 'getpro',
+                action: 'getcolor',
                 id: id
             };
             $.ajax({
                 type: "POST",
-                url: "{{domain}}/web/admin/product",
+                url: "{{domain}}/web/admin/color",
                 data: data,
                 dataType : 'json',
                 cache: false,
                 success: function(data){
                     if(data.err >= 0){
-                        var sku = data.pro;
-                        $('#ename').val(sku.name);
+                        var sku = data.color;
+                        $('#ecode').val(sku.code);
                         $('#ecate').val(sku.cateid);
-                        $('#edesc').val(sku.desc);
-                        $('#emodel').val(sku.model);
-                        $('#emanu').val(sku.manu);
+                        $('#eisfeature').prop('checked', sku.isfeature == 'yes');
                         $('#estatus').prop('checked', sku.status == 'on');
                     } else{
                         console.log(data.msg);
@@ -1321,31 +1268,19 @@ try{
         $('#editModal').modal({backdrop: 'static', keyboard: false, show: true});
     };
     
-    function submitEditProduct(){
+    function submitEditColor(){
         $('#edit_alert_success').hide();
         $('#edit_alert_err').hide();
         
         var serr = "";
-        var name = $('#ename').val();
-        if(name == ''){
-            serr += "Name required. ";
-        }
-        var desc = $('#edesc').val();
-        if(desc == ''){
-            serr += "Description required. ";
+        var code = $('#ecode').val();
+        if(code == ''){
+            serr += "Code required. ";
         }
         var cate = $('#ecate').val();
         if (cate == ''){
         	serr += "Category required. ";
         }
-		var model = $('#emodel').val();
-		if (model == ''){
-			serr += "Model required. ";
-		}
-		var manu = $('#emanu').val();
-		if (manu == ''){
-			serr += "Manufacturer required. ";
-		}		
 		        
         $('#frmEditP').unbind('submit');
         if(serr == ''){
@@ -1361,7 +1296,7 @@ try{
         return false;
     };
     
-    function completeEditProduct(data){
+    function completeEditColor(data){
         if(data.err >= 0){
             $('#edit_alert_success').html(data.msg);
             $('#edit_alert_success').show();
@@ -1385,23 +1320,21 @@ try{
     function openViewModal(id){
         if(id != ''){
             var data = {
-                action: 'getpro',
+                action: 'getcolor',
                 id: id
             };
             $.ajax({
                 type: "POST",
-                url: "{{domain}}/web/admin/product",
+                url: "{{domain}}/web/admin/color",
                 data: data,
                 dataType : 'json',
                 cache: false,
                 success: function(data){
                     if(data.err >= 0){
-                        var sku = data.pro;
-                        $('#vname').text(sku.name);
-                        $('#vdesc').text(sku.desc);
+                        var sku = data.color;
+                        $('#vcode').text(sku.code);
                         $('#vcate').text(sku.namecate);
-                        $('#vmodel').text(sku.model);
-                        $('#vmanu').text(sku.manu);
+                        $('#visfeature').text(sku.isfeature);
                         $('#vstatus').text(sku.status);
                     } else{
                         console.log(data.msg);

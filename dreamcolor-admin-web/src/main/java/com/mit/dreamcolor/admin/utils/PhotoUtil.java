@@ -9,6 +9,7 @@ import org.apache.commons.io.FilenameUtils;
 import com.mit.dao.mid.MIdGenLongDAO;
 import com.mit.dao.photo.BannerPhotoClient;
 import com.mit.dao.photo.ColorPhotoClient;
+import com.mit.dao.photo.DistributorPhotoClient;
 import com.mit.dao.photo.PhotoCommon;
 import com.mit.dao.photo.ProductPhotoClient;
 import com.mit.dao.photo.VideoThumbnailClient;
@@ -64,6 +65,8 @@ public class PhotoUtil {
 			err = ProductPhotoClient.getInstance().putMPhoto(tmp);
 		} else if (type == PhotoType.VIDEO_THUMBNAIL.getValue()) {
 			err = VideoThumbnailClient.getInstance().putMPhoto(tmp);
+		} else if (type == PhotoType.DISTRIBUTOR.getValue()) {
+			err = DistributorPhotoClient.getInstance().putMPhoto(tmp);
 		}
 
 		return err;
@@ -79,6 +82,8 @@ public class PhotoUtil {
 			rs = ProductPhotoClient.getInstance().getMPhoto(id);
 		} else if (type == PhotoType.VIDEO_THUMBNAIL.getValue()) {
 			rs = VideoThumbnailClient.getInstance().getMPhoto(id);
+		} else if (type == PhotoType.DISTRIBUTOR.getValue()) {
+			rs = DistributorPhotoClient.getInstance().getMPhoto(id);
 		}
 
 		return rs;

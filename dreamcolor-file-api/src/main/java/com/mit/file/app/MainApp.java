@@ -9,6 +9,7 @@ import org.eclipse.jetty.servlet.ServletHandler;
 
 import com.mit.file.servlet.LoadBannerPhotoServlet;
 import com.mit.file.servlet.LoadColorPhotoServlet;
+import com.mit.file.servlet.LoadDistributorPhotoServlet;
 import com.mit.file.servlet.LoadProductPhotoServlet;
 import com.mit.file.servlet.LoadVideoThumbPhotoServlet;
 import com.mit.jetty.server.WebServers;
@@ -29,6 +30,7 @@ public class MainApp {
         handler.addServletWithMapping(LoadBannerPhotoServlet.class, "/dreamau/load/bn/photo");
         handler.addServletWithMapping(LoadProductPhotoServlet.class, "/dreamau/load/pro/photo");
         handler.addServletWithMapping(LoadVideoThumbPhotoServlet.class, "/dreamau/load/video/photo");
+        handler.addServletWithMapping(LoadDistributorPhotoServlet.class, "/dreamau/load/distributor/photo");
         
         //MAPPING ==============================================================
         

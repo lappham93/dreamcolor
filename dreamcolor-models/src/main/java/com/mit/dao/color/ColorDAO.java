@@ -53,18 +53,47 @@ public class ColorDAO extends CommonDAO {
 		return rs;
 	}
 	
-	public List<Color> getSlice(int count, int from, String fieldSort, boolean ascOrder) {
+	public int totalAll(int categoryId) {
+		int rs = MongoErrorCode.NOT_CONNECT;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document("categoryId", categoryId)
+						.append("status", new Document("$gt", 0));
+				rs = (int)dbSource.getCollection(TABLE_NAME).count(filter);
+			} catch (final Exception e) {
+				_logger.error("totalAll ", e);
+			}
+		}
+		
+		return rs;
+	}
+	
+	public int totalAllIgnoreStatus() {
+		int rs = MongoErrorCode.NOT_CONNECT;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document();
+				rs = (int)dbSource.getCollection(TABLE_NAME).count(filter);
+			} catch (final Exception e) {
+				_logger.error("totalAllIgnoreStatus ", e);
+			}
+		}
+		
+		return rs;
+	}
+	
+	public List<Color> getSliceIgnoreStatus(int count, int from, String fieldSort, boolean ascOrder) {
 		List<Color> colors = null;
 		if(dbSource != null) {
 			try {
-				Document filter = new Document("status", new Document("$gt", 0));
-				Document sort = new Document("fieldSort", ascOrder ? 1 : -1);
+				Document filter = new Document();
+				Document sort = new Document(fieldSort, ascOrder ? 1 : -1);
 				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).skip(from).limit(count);
 				if(doc != null) {
 					colors = new MongoMapper().parseList(doc);
 				}
 			} catch(final Exception e) {
-				_logger.error("getSlice ", e);
+				_logger.error("getSliceIgnoreStatus ", e);
 			}
 		}
 
@@ -77,7 +106,7 @@ public class ColorDAO extends CommonDAO {
 			try {
 				Document filter = new Document("categoryId", categoryId)
 						.append("status", new Document("$gt", 0));
-				Document sort = new Document("fieldSort", ascOrder ? 1 : -1);
+				Document sort = new Document(fieldSort, ascOrder ? 1 : -1);
 				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).skip(from).limit(count);
 				if(doc != null) {
 					colors = new MongoMapper().parseList(doc);
@@ -90,12 +119,30 @@ public class ColorDAO extends CommonDAO {
 		return colors;
 	}
 	
+	public List<Color> getFeatureSlice(int count, int from, String fieldSort, boolean ascOrder) {
+		List<Color> colors = null;
+		if(dbSource != null) {
+			try {
+				Document filter = new Document("isFeature", true)
+						.append("status", new Document("$gt", 0));
+				Document sort = new Document(fieldSort, ascOrder ? 1 : -1);
+				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).skip(from).limit(count);
+				if(doc != null) {
+					colors = new MongoMapper().parseList(doc);
+				}
+			} catch(final Exception e) {
+				_logger.error("getFeatureSlice ", e);
+			}
+		}
+
+		return colors;
+	}
+	
 	public Color getById(long id) {
 		Color color = null;
 		if (dbSource != null) {
 			try {
-				Document filter = new Document("_id", id)
-						.append("status", new Document("$gt", 0));
+				Document filter = new Document("_id", id);
 				Document doc = dbSource.getCollection(TABLE_NAME).find(filter).first();
 				if (doc != null) {
 					color = new MongoMapper().parseObject(doc);
@@ -116,6 +163,13 @@ public class ColorDAO extends CommonDAO {
 				Document update = new Document("$inc", new Document("views", 1));
 				UpdateResult ur = dbSource.getCollection(TABLE_NAME).updateOne(filter, update);
 				rs = (int)ur.getModifiedCount();
+				//set isFeature
+				if (rs > 0) {
+					filter.append("isFeature", false)
+						.append("views", new Document("$gt", Color.VIEWS_OF_FEATURE_DEFAUTL));
+					update = new Document("$set", new Document("isFeature", true));
+					dbSource.getCollection(TABLE_NAME).updateOne(filter, update);
+				}
 			} catch (final Exception e) {
 				_logger.error("updateView ", e);
 			}
@@ -201,7 +255,7 @@ public class ColorDAO extends CommonDAO {
 		@Override
 		public Color parseObject(Document doc) {
 			Color cate = new Color(doc.getLong("_id"), doc.getInteger("categoryId"), doc.getString("code"), doc.getInteger("views"),
-					doc.getLong("photo"), doc.getInteger("status"), doc.getDate("createTime").getTime(), 
+					doc.getLong("photo"), doc.getBoolean("isFeature"), doc.getInteger("status"), doc.getDate("createTime").getTime(), 
 					doc.getDate("updateTime").getTime());
 			return cate;
 		}
@@ -213,6 +267,7 @@ public class ColorDAO extends CommonDAO {
 					.append("code", obj.getCode())
 					.append("views", obj.getViews())
 					.append("photo", obj.getPhoto())
+					.append("isFeature", obj.getIsFeature())
 					.append("status", obj.getStatus());
 			return doc;
 		}

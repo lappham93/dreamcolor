@@ -15,7 +15,7 @@ public class LinkBuilder {
 		String link = _default;
 		if (id > 0) {
 			String idNoise = MIdNoise.enNoiseLId(id);
-			link = Common.DOMAIN_FILE + "/dreamMau/load/color/photo?p=" + idNoise;
+			link = Common.DOMAIN_FILE + "/dreamau/load/color/photo?p=" + idNoise;
 		}
 		return link;
 	}
@@ -24,7 +24,7 @@ public class LinkBuilder {
     	String link = _default;
     	if (id > 0) {
 			String idNoise = MIdNoise.enNoiseLId(id);
-	        link = Common.DOMAIN_FILE + "/dreamMau/load/pro/photo?p=" + idNoise;
+	        link = Common.DOMAIN_FILE + "/dreamau/load/pro/photo?p=" + idNoise;
     	}
     	return link;
 	}
@@ -33,7 +33,7 @@ public class LinkBuilder {
     	String link = _default;
     	if (id > 0) {
 			String idNoise = MIdNoise.enNoiseLId(id);
-	        link = Common.DOMAIN_FILE + "/dreamMau/load/distributor/photo?p=" + idNoise;
+	        link = Common.DOMAIN_FILE + "/dreamau/load/distributor/photo?p=" + idNoise;
     	}
     	return link;
 	}
@@ -42,7 +42,7 @@ public class LinkBuilder {
     	String link = "https://api.cyogel.com/statics/welcom_cyogel@2x.png";
     	if (id > 0) {
 			String idNoise = MIdNoise.enNoiseLId(id);
-	        link = Common.DOMAIN_FILE + "/dreamMau/load/bn/photo?p=" + idNoise;
+	        link = Common.DOMAIN_FILE + "/dreamau/load/bn/photo?p=" + idNoise;
     	}
     	return link;
 	}
@@ -51,7 +51,7 @@ public class LinkBuilder {
     	String link = "https://api.cyogel.com/statics/welcom_cyogel@2x.png";
     	if (id > 0) {
 			String idNoise = MIdNoise.enNoiseLId(id);
-	        link = Common.DOMAIN_FILE + "/dreamMau/load/video/photo?p=" + idNoise;
+	        link = Common.DOMAIN_FILE + "/dreamau/load/video/photo?p=" + idNoise;
     	}
     	return link;
 	}

@@ -93,8 +93,7 @@ public class CategoryDAO extends CommonDAO {
 		Category cates = null;
 		if (dbSource != null) {
 			try {
-				Document filter = new Document("_id", id)
-						.append("status", new Document("$gt", 0));
+				Document filter = new Document("_id", id);
 				Document doc = dbSource.getCollection(TABLE_NAME).find(filter).first();
 				if (doc != null) {
 					cates = new MongoMapper().parseObject(doc);
