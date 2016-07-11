@@ -17,6 +17,8 @@
 package com.mit.dc.site.app;
 
 import com.mit.configer.MConfig;
+import com.mit.dc.site.handler.AboutUsHandler;
+import com.mit.dc.site.handler.ContactHandler;
 import com.mit.dc.site.handler.HomeHandler;
 import com.mit.jetty.server.WebServers;
 import org.eclipse.jetty.server.Handler;
@@ -47,6 +49,8 @@ public class MainApp {
         //Web
         handler.addServletWithMapping(HomeHandler.class, "/");
         handler.addServletWithMapping(HomeHandler.class, "/web/site");
+        handler.addServletWithMapping(ContactHandler.class, "/web/site/contact");
+        handler.addServletWithMapping(AboutUsHandler.class, "/web/site/aboutus");
         
         
         //MAPPING ==============================================================

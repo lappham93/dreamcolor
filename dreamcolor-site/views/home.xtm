@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-md-4 text-center bottom-xs-pad-30" data-animation="pulse">
                 <!-- Image -->
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_08.jpg" width="280" height="440" alt="" />
+                <img src="{{static-domain}}/dc/imgs/Group-5.png" width="280" height="440" alt="" />
             </div>
             <div class="col-md-4" data-animation="fadeInUp">
                 <div class="section-title text-left" data-animation="fadeInRight">
@@ -88,7 +88,7 @@
             </div>
             <div class="col-md-4 text-center bottom-xs-pad-30" data-animation="pulse">
                 <!-- Image -->
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_10.jpg" width="280" height="440" alt="" />
+                <img src="{{static-domain}}/dc/imgs/Group-6.png" width="280" height="440" alt="" />
             </div>
         </div>
         <div class="clearfix"></div>
@@ -211,7 +211,7 @@
     <div class="masonry-grid grid-col-5" data-gutter="0" data-animation="fadeInUp">
         <div class="grid-sizer"></div>
         <!-- Item 1 -->
-        <div class="grid-item all web">
+        <div class="grid-item all web" style="padding: 5px;">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" data-rel="prettyPhoto[portfolio]">
                 <img src="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Fashion</div>-->
@@ -219,7 +219,7 @@
         </div>
         <!-- Item 1 Ends-->
         <!-- Item 2 -->
-        <div class="grid-item all web">
+        <div class="grid-item all web" style="padding: 5px;">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" data-rel="prettyPhoto[portfolio]">
                 <img src="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Style</div>-->
@@ -227,7 +227,7 @@
         </div>
         <!-- Item 2 Ends-->
         <!-- Item 3 -->
-        <div class="grid-item all web">
+        <div class="grid-item all web" style="padding: 5px;">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_55.jpg" data-rel="prettyPhoto[portfolio]">
                 <img src="{{static-domain}}/dc/imgs/Dreamau-Web_55.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Ritto</div>-->
@@ -235,7 +235,7 @@
         </div>
         <!-- Item 3 Ends-->
         <!-- Item 4 -->
-        <div class="grid-item all web">
+        <div class="grid-item all web" style="padding: 5px;">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" data-rel="prettyPhoto[portfolio]">
                 <img src="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Black &amp; White</div>-->
@@ -243,7 +243,7 @@
         </div>
         <!-- Item 4 Ends-->
         <!-- Item 5 -->
-        <div class="grid-item all web">
+        <div class="grid-item all web" style="padding: 5px;">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" data-rel="prettyPhoto[portfolio]">
                 <img src="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">walky</div>-->
@@ -251,7 +251,7 @@
         </div>
         <!-- Item 5 Ends-->
         <!-- Item 6 -->
-        <div class="grid-item all web">
+        <div class="grid-item all web" style="padding: 5px;">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" data-rel="prettyPhoto[portfolio]">
                 <img src="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Style</div>-->
@@ -259,7 +259,7 @@
         </div>
         <!-- Item 6 Ends-->
         <!-- Item 7 -->
-        <div class="grid-item all web">
+        <div class="grid-item all web" style="padding: 5px;">
             <a href="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" data-rel="prettyPhoto[portfolio]">
                 <img src="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Superb</div>-->
@@ -348,7 +348,7 @@
     <div class="container" data-animation="pulse">
         <div class="row">
             <div class="col-md-12">Get A Free Quote / Need a Help ? 
-            <a class="black" href="#">Contact Us</a></div>
+            <a class="black" href="/web/site/contact">Contact Us</a></div>
         </div>
     </div>
 </div>
