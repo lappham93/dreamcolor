@@ -61,7 +61,7 @@
                                 <span class="icon-bar"></span></button> 
                                 <!-- Logo -->
                                  
-                                <a class="navbar-brand" href="/">
+                                <a class="navbar-brand" href="/web/site">
                                     <img class="site_logo" alt="Site Logo" height="70" src="{{static-domain}}/dc/imgs/logo3.png" style="height: 70px; width: 230px;"/>
                                 </a></div>
                                 <!-- Navbar Collapse -->
@@ -69,16 +69,16 @@
                                     <!-- nav -->
                                     <ul class="nav navbar-nav">
                                         <li class="mega-menu">
-                                            <a href="#">Home</a>
+                                            <a href="/web/site">Home</a>
                                         </li>
                                         <li class="mega-menu">
                                             <a href="#">Color Chart</a>
                                         </li>
                                         <li>
-                                            <a href="#">About Us</a>
+                                            <a href="/web/site/aboutus">About Us</a>
                                         </li>
                                         <li>
-                                            <a href="#">Contact</a> 
+                                            <a href="/web/site/contact">Contact</a> 
                                         </li>
                                         <li class="hidden-767">
                                             <a href="#" class="header-contact">
@@ -306,7 +306,8 @@
     <script type="text/javascript" src="{{static-domain}}/dclight/rs-plugin/js/jquery.themepunch.revolution.min.js"></script> 
     <script type="text/javascript" src="{{static-domain}}/dclight/js/revolution-custom.js"></script> 
     <!-- Portfolio Filter -->
-     
+    
+    <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.easypiechart.min.js"></script> 
     <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.mixitup.min.js"></script> 
     <!-- Animations -->
      

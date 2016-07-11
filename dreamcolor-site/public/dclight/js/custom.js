@@ -1230,7 +1230,7 @@ function GmapInit() {
 		};		
 		var map = new google.maps.Map($this[0], mapOptions);
 		
-		var image = 'img/map-marker.png';
+		var image = '/web/site/static/dclight/img/map-marker.png';
 		if( dataContent !== undefined && dataContent !== false ) {
 			contentString = '<div class="map-data">' + '<h6>' + title + '</h6>' + '<div class="map-content">' + dataContent + '</div>' + '</div>';
 		}
@@ -1268,7 +1268,7 @@ function GmapInit() {
 function MapLoadScript() {
 	var script = document.createElement('script');
 	script.type = 'text/javascript';
-	script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=GmapInit';
+	script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDWSsgpEEX6QBKaflZi9IGJlc5_YWZ4J34&v=3.exp&' + 'callback=GmapInit';
 	document.body.appendChild(script);
 }
 
