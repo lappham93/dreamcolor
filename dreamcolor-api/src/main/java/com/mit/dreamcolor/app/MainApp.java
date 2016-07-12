@@ -13,7 +13,9 @@ import com.mit.banner.servlet.GetListBannerServlet;
 import com.mit.color.servlet.GetListColorCategoryServlet;
 import com.mit.color.servlet.GetListColorServlet;
 import com.mit.color.servlet.GetListFeatureServlet;
+import com.mit.color.servlet.SearchResultServlet;
 import com.mit.color.servlet.ViewColorServlet;
+import com.mit.color.servlet.WordSuggestServlet;
 import com.mit.distributor.servlet.GetListDistributorServlet;
 import com.mit.handler.NoFunctionHandler;
 import com.mit.handler.ValidateHandler;
@@ -73,6 +75,8 @@ public class MainApp {
 		handler.addServletWithMapping(GetListColorServlet.class, "/dreamau/color/list");
 		handler.addServletWithMapping(ViewColorServlet.class, "/dreamau/color/view");
 		handler.addServletWithMapping(GetListFeatureServlet.class, "/dreamau/feature/list");
+		handler.addServletWithMapping(WordSuggestServlet.class, "/dreamau/search/suggest");
+		handler.addServletWithMapping(SearchResultServlet.class, "/dreamau/search/result");
 		
 		//product
 		handler.addServletWithMapping(GetListProductServlet.class, "/dreamau/product/list");

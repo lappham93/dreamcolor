@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mit.cyogel</groupId>
+    <groupId>com.mit.dreamcolor</groupId>
     <artifactId>dreamcolor-admin-web</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
@@ -177,7 +177,7 @@
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
 						<manifest>
-							<mainClass>com.mit.cyogel.admin.app.MainApp</mainClass>
+							<mainClass>com.mit.dreamcolor.admin.app.MainApp</mainClass>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>

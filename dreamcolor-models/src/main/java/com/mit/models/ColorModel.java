@@ -1,5 +1,6 @@
 package com.mit.models;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -79,6 +80,30 @@ public class ColorModel {
 		rs.put("hasMore", hasMore);
 		rs.put("colors", Color.buildListColorView(colors));
 		
+		return rs;
+	}
+	
+	public Map<String, Object> searchColor(String code, int count, int from) {
+		Map<String, Object> rs = new HashMap<>();
+		int err = ModelError.SUCCESS;
+		boolean hasMore = false;
+		List<Color> colors = ColorDAO.getInstance().getSearchSlice(code, count + 1, from, "views", false);
+		if (colors != null && colors.size() > count) {
+			colors = colors.subList(0, count);
+			hasMore = true;
+		}
+		rs.put("err", err);
+		rs.put("hasMore", hasMore);
+		rs.put("colors", Color.buildListColorView(colors));
+		
+		return rs;
+	}
+	
+	public List<String> suggest(String code, int count) {
+		List<String> rs = new ArrayList<String>();
+		if (code != null && code != "") {
+			rs = ColorDAO.getInstance().getSuggest(code, count);
+		}
 		return rs;
 	}
 	

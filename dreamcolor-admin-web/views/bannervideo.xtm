@@ -6,13 +6,10 @@
             <a href="/web/admin/banner?option=bweb"><i class="green ace-icon fa fa-globe bigger-120"></i>Banner Web</a>
         </li>
         <li class="active">
-            <a href="/web/admin/banner?option=bord"><i class="green ace-icon fa fa-list-alt bigger-120"></i>Banner Order</a>
+            <a href="/web/admin/banner?option=bvid"><i class="green ace-icon fa fa-list-alt bigger-120"></i>Banner Video</a>
         </li>
         <li>
             <a href="/web/admin/banner?option=bwel"><i class="green ace-icon fa fa-pencil-square-o bigger-120"></i>Banner Welcome</a>
-        </li>
-        <li>
-            <a href="/web/admin/banner?option=bpro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Banner Product</a>
         </li>
     </ul>
     <ul class="nav nav-tabs hidden-md hidden-lg">
@@ -26,13 +23,10 @@
                     <a href="/web/admin/banner?option=bweb"><i class="green ace-icon fa fa-globe bigger-120"></i>Banner Web</a>
                 </li>
                 <li class="active">
-                    <a href="/web/admin/banner?option=bord"><i class="green ace-icon fa fa-list-alt bigger-120"></i>Banner Order</a>
+                    <a href="/web/admin/banner?option=bvid"><i class="green ace-icon fa fa-list-alt bigger-120"></i>Banner Video</a>
                 </li>
                 <li>
                     <a href="/web/admin/banner?option=bwel"><i class="green ace-icon fa fa-pencil-square-o bigger-120"></i>Banner Welcome</a>
-                </li>
-                <li>
-                    <a href="/web/admin/banner?option=bpro"><i class="green ace-icon fa fa-barcode bigger-120"></i>Banner Product</a>
                 </li>
             </ul>
         </li>
@@ -40,7 +34,7 @@
     <div class="tab-content">
         <div id="table" class="tab-pane fade in active">
 
-            <h3 class="header smaller lighter blue">Add Banner Order</h3>
+            <h3 class="header smaller lighter blue">Add Banner Video</h3>
             <div class="row">
                 <div class="col-xs-12">
                     <iframe id="if_Add" name="if_Add" style="display: none;width: 0px;height: 0px"></iframe>
@@ -48,9 +42,9 @@
                         <div id="add_alert_success" class="alert alert-success" style="display: none;"></div>
                         <div id="add_alert_err" class="alert alert-danger" style="display: none;"></div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Order Number: <span class="orange">(*)</span></label>
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Url: <span class="orange">(*)</span></label>
                             <div class="col-sm-9">
-                                <input type="text" id="ordnumber" name="ordnumber" placeholder="order number" class="col-xs-12 col-sm-5"/>
+                                <input type="text" id="url" name="url" placeholder="url" class="col-xs-12 col-sm-5"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -59,20 +53,15 @@
                                 <input type="text" id="message" name="message" placeholder="message" class="col-xs-12 col-sm-5"/>
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
-                            <div class="col-xs-12 col-sm-9">
-                                <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                                    <select class="col-xs-12 col-sm-12" id="status" name="status" data-placeholder="Choose a status...">
-                                        <option value=""> Choose a status... </option>
-                                        <option value="0">Delete</option>
-                                        <option value="1">Active</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
+						<div class="form-group">
+	                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Status: <span class="orange">(*)</span></label>
+	                        <div class="col-sm-9 col-xs-7">
+	                            <label>
+	                                <input id="status" name="status" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+	                                <span class="lbl"></span>
+	                            </label>
+	                        </div>
+                   		</div>
                         <div class="form-group">
                             <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Thumb Photo: <span class="orange">(*)</span></label>
                             <div class="col-sm-9 col-xs-9">
@@ -84,18 +73,18 @@
 
                         <div class="clearfix">
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btnadd" class="btn btn-info" type="button" onclick="addBOrder(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
+                                <button id="btnadd" class="btn btn-info" type="button" onclick="addBVideo(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
                                 &nbsp; &nbsp; &nbsp;
                                 <button class="btn" type="reset" onclick="resetAdd(); return false;"><i class="ace-icon fa fa-undo bigger-110"></i>Reset</button>
                             </div>
                         </div>
-                        <input type="hidden" id="action" name="action" value="addborder"/>
-                        <input type="hidden" id="callback" name="callback" value="completeAddBOrder"/>
+                        <input type="hidden" id="action" name="action" value="addbvid"/>
+                        <input type="hidden" id="callback" name="callback" value="completeAddBVideo"/>
                     </form>
                 </div>
             </div>
 
-            <h3 class="header smaller lighter blue">List Banner Order</h3>
+            <h3 class="header smaller lighter blue">List Banner Video</h3>
 
             <div class="row">
                 <div class="col-xs-12">
@@ -104,7 +93,7 @@
                             <tr>
                                 <th class="center">No.</th>
                                 <th class="hidden-480">Thumb</th>
-                                <th class="">Order Number</th>
+                                <th class="">Url</th>
                                 <th class="hidden-480">Message</th>
                                 <th class="hidden-480">Status</th>
                                 <th></th>
@@ -134,7 +123,7 @@
                                         </li>
                                     </ul>
                                 </td>
-                                <td class="">{{ORDER_NUMBER}}</td>
+                                <td class="">{{URL}}</td>
                                 <td class="hidden-480" width="20%">{{MSG}}</td>
                                 <td class="hidden-480">
                                     {{#STATUS_ON}}<span class="label label-sm label-success">On</span>{{/STATUS_ON}}
@@ -148,7 +137,7 @@
                                         <button class="btn btn-xs btn-info tooltip-info" data-rel="tooltip" title="Edit" data-placement="top" onclick="openEditModal('{{ID}}'); return false;">
                                             <i class="ace-icon fa fa-pencil bigger-120"></i>
                                         </button>
-<!--                                        <button class="btn btn-xs btn-danger tooltip-error" data-rel="tooltip" title="Delete" data-placement="top" onclick="openDelModal(); return false;">
+   <!--                                     <button class="btn btn-xs btn-danger tooltip-error" data-rel="tooltip" title="Delete" data-placement="top" onclick="openDelModal('{{ID}}'); return false;">
                                             <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                         </button>
                                         <button class="btn btn-xs btn-warning tooltip-warning" data-rel="tooltip" title="On/Off" data-placement="top" onclick="openOOModal(); return false;">
@@ -175,8 +164,8 @@
                                                         </span>
                                                     </a>
                                                 </li>
-<!--                                                <li>
-                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="openDelModal(); return false;">
+     <!--                                           <li>
+                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="openDelModal('{{ID}}'); return false;">
                                                         <span class="red">
                                                             <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                         </span>
@@ -222,14 +211,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="editModalLabel">View Banner Order</h4>
+                <h4 class="modal-title" id="editModalLabel">View Banner Video</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-xs-12">
-                        <label class="col-xs-5 control-label no-padding-right bolder" style="text-align: right;">Order number: </label>
+                        <label class="col-xs-5 control-label no-padding-right bolder" style="text-align: right;">Url: </label>
                         <div class="col-xs-7 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="vordnumber"></span>
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vurl"></span>
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -259,7 +248,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="editModalLabel">Edit Banner Order</h4>
+                <h4 class="modal-title" id="editModalLabel">Edit Banner Video</h4>
             </div>
             <div class="modal-body">
                 <iframe id="if_Edit" name="if_Edit" style="display: none;width: 0px;height: 0px"></iframe>
@@ -268,9 +257,9 @@
                     <div id="edit_alert_err" class="alert alert-danger" style="display: none;"></div>
                     
                     <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Order number: <span class="orange">(*)</span></label>
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Url: <span class="orange">(*)</span></label>
                         <div class="col-sm-9">
-                            <input type="text" id="eordnumber" name="eordnumber" placeholder="Order number" class="col-xs-12 col-sm-10"/>
+                            <input type="text" id="eurl" name="eurl" placeholder="url" class="col-xs-12 col-sm-10"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -279,28 +268,24 @@
                             <input type="text" id="emsg" name="emsg" placeholder="message" class="col-xs-12 col-sm-10"/>
                         </div>
                     </div>                    
-                    
                     <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
-                        <div class="col-xs-12 col-sm-9">
-                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                                <select class="col-xs-12 col-sm-12" id="estatus" name="estatus" data-placeholder="Choose a status...">
-                                    <option value=""> Choose a status... </option>
-                                    <option value="0">Delete</option>
-                                    <option value="1">Active</option>
-                                </select>
-                            </div>
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Status: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <label>
+                                <input id="estatus" name="estatus" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
                         </div>
-                    </div>
+               		</div>
                     
-                    <input type="hidden" id="action" name="action" value="editob"/>
+                    <input type="hidden" id="action" name="action" value="editvb"/>
                     <input type="hidden" id="eidp" name="eidp" value=""/>
-                    <input type="hidden" id="callback" name="callback" value="completeEditOB"/>
+                    <input type="hidden" id="callback" name="callback" value="completeEditVB"/>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button id="btnedit" type="button" class="btn btn-sm btn-primary" onclick="submitEditOB();">Save changes</button>
+                <button id="btnedit" type="button" class="btn btn-sm btn-primary" onclick="submitEditVB();">Save changes</button>
             </div>
         </div>
     </div>
@@ -324,7 +309,7 @@
                             <input type="file" name="cimg" id="cimg"  />
                         </div>
                     </div>
-                    <input type="hidden" id="action" name="action" value="cimgbord"/>
+                    <input type="hidden" id="action" name="action" value="cimg"/>
                     <input type="hidden" id="iidp" name="iidp" value=""/>
                     <input type="hidden" id="callback" name="callback" value="completeChangeImg"/>
                 </form>
@@ -336,6 +321,7 @@
         </div>
     </div>
 </div>
+
 
 <script type="text/javascript">
 try{
@@ -532,34 +518,26 @@ try{
     function resetAdd(){
         $('#add_alert_success').hide();
         $('#add_alert_err').hide();
-        $('#ordnumber').val("");
+        $('#url').val("");
         $('#message').val("");
-        $('#status').val("");
+        $('#status').prop('checked', true);
         $('input[id*="thumb"]').ace_file_input('reset_input');
         $('#btnadd').button('reset');
         $("html, body").animate({ scrollTop: 0 }, "slow");
     }
     
-    //Add Banner Order.
-    function addBOrder(){
+    //Add Banner Video.
+    function addBVideo(){
         $('#add_alert_success').hide();
         $('#add_alert_err').hide();
         var serr = "";
-        var ordnumber = $('#ordnumber').val();
-        if(ordnumber == ''){
-            serr += "Order number required. ";
-        } else{
-            if(!$.isNumeric(ordnumber)){
-                serr += "Order number is number. ";
-            }
+        var url = $('#url').val();
+        if(url == ''){
+            serr += "Url required. ";
         }
         var message = $('#message').val();
         if(message == ''){
             serr += "Message required. ";
-        }
-        var status = $('#status').val();
-        if(status == ''){
-            serr += "Status required. ";
         }
         var thumb = $('#thumb').val();
         if(thumb == ''){
@@ -579,7 +557,7 @@ try{
         return false;
     };
     
-    function completeAddBOrder(data){
+    function completeAddBVideo(data){
         if(data.err >= 0){
             $('#add_alert_success').html(data.msg);
             $('#add_alert_success').show();
@@ -605,14 +583,14 @@ try{
         $('#eidp').val(id);
         //reset.
         $('#epid').val('');
-        $('#eordnumber').val('');
+        $('#eurl').val('');
         $('#emsg').val('');
         $('#estatus').val('');
         
         //get content Banner Order.
         if(id != ''){
             var data = {
-                action: 'getob',
+                action: 'getbanner',
                 id: id
             };
             $.ajax({
@@ -623,10 +601,10 @@ try{
                 cache: false,
                 success: function(data){
                     if(data.err >= 0){
-                        var oob = data.oob;
-                        $('#eordnumber').val(oob.ordnumber);
+                        var oob = data.banner;
+                        $('#eurl').val(oob.url);
                         $('#emsg').val(oob.msg);
-                        $('#estatus').val(oob.idstatus);
+                        $('#estatus').prop('checked', oob.status == 'on');
                     } else{
                         console.log(data.msg);
                         bootbox.dialog({
@@ -647,26 +625,18 @@ try{
         $('#editModal').modal({backdrop: 'static', keyboard: false, show: true});
     };
     
-    function submitEditOB(){
+    function submitEditVB(){
         $('#edit_alert_success').hide();
         $('#edit_alert_err').hide();
         
         var serr = "";
-        var eordnumber = $('#eordnumber').val();
-        if(eordnumber == ''){
-            serr += "Order number required. ";
-        } else{
-            if(!$.isNumeric(eordnumber)){
-                serr += "Order number is number. ";
-            }
+        var eurl = $('#eurl').val();
+        if(eurl == ''){
+            serr += "Url required. ";
         }
         var message = $('#emsg').val();
         if(message == ''){
             serr += "Message required. ";
-        }
-        var status = $('#estatus').val();
-        if(status == ''){
-            serr += "Status required. ";
         }
         
         $('#frmEditP').unbind('submit');
@@ -683,7 +653,7 @@ try{
         return false;
     };
     
-    function completeEditOB(data){
+    function completeEditVB(data){
         if(data.err >= 0){
             $('#edit_alert_success').html(data.msg);
             $('#edit_alert_success').show();
@@ -707,7 +677,7 @@ try{
     function openViewModal(id){
         if(id != ''){
             var data = {
-                action: 'getob',
+                action: 'getbanner',
                 id: id
             };
             $.ajax({
@@ -718,8 +688,8 @@ try{
                 cache: false,
                 success: function(data){
                     if(data.err >= 0){
-                        var oob = data.oob;
-                        $('#vordnumber').text(oob.ordnumber);
+                        var oob = data.banner;
+                        $('#vurl').text(oob.url);
                         $('#vmsg').text(oob.msg);
                         $('#vstatus').text(oob.status);
                     } else{
@@ -784,6 +754,39 @@ try{
             $('frmImg').bind('submit');
             $('#btnimg').button('reset');
         }
+    };
+    
+    function openDelModal(id){
+    	$("#del_alert_success").hide();
+    	$("#del_alert_err").hide();
+    	$("#delInfo").show();
+    	$("#did").val(id);
+    	$('#delModal').modal({backdrop: 'static', keyboard: false, show: true});
+    };
+    
+    function submitDel(){
+    	$("#frmDel").submit();
+    };
+    
+    function completeDel(data){
+    	$("#delInfo").hide();
+    	if (data != null){
+    		if (data.err >= 0){
+    			$("#del_alert_err").hide();
+    			$("#del_alert_success").html(data.msg);
+    			$("#del_alert_success").show();
+    			setTimeout(function(){
+    				$("#delModal").modal('hide');
+    				window.location.reload(true);
+			    }, 2000);
+    		} else {
+    			$("#del_alert_err").html(data.msg);
+    			$("#del_alert_err").show();
+    		}
+    	} else {
+    		$("#del_alert_err").html("Server Error");
+			$("#del_alert_err").show();
+    	}
     };
     
 }catch(e){}

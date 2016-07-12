@@ -65,6 +65,9 @@ public class BannerHandler extends BaseHandler {
 			if ("bwel".equalsIgnoreCase(option)) {
 				renderBannerWelcome(dic, req, resp);
 				dic.setVariable("MAIN_CONTENT", applyTemplate(dic, "bannerwelcome.xtm", req));
+			} else if ("bvid".equalsIgnoreCase(option)) {
+				renderBannerVideo(dic, req, resp);
+				dic.setVariable("MAIN_CONTENT", applyTemplate(dic, "bannervideo.xtm", req));
 			} else {
 				renderBannerWeb(dic, req, resp);
 				dic.setVariable("MAIN_CONTENT", applyTemplate(dic, "bannerweb.xtm", req));
@@ -97,6 +100,8 @@ public class BannerHandler extends BaseHandler {
 							addBannerWeb(req, resp, result, mapFile, params);
 						} else if ("addbwel".equalsIgnoreCase(action)) {
 							addBannerWelcome(req, resp, result, mapFile, params);
+						} else if ("addbvid".equalsIgnoreCase(action)) {
+							addBannerVideo(req, resp, result, mapFile, params);
 						} else if ("cimg".equalsIgnoreCase(action)) {
 							changePhoto(req, resp, result, mapFile, params);
 						}
@@ -112,6 +117,8 @@ public class BannerHandler extends BaseHandler {
 						editBannerWeb(req, resp, result);
 					} else if ("editwel".equalsIgnoreCase(action)) {
 						editBannerWelcome(req, resp, result);
+					} else if ("editvb".equalsIgnoreCase(action)) {
+						editBannerVideo(req, resp, result);
 					}
 				}
 			}
@@ -167,7 +174,7 @@ public class BannerHandler extends BaseHandler {
 		}
 
 	}
-	
+
 	private void renderBannerWelcome(TemplateDataDictionary dic, HttpServletRequest req, HttpServletResponse resp)
 			throws UnsupportedEncodingException {
 		List<Banner> listB = BannerDAO.getInstance().getAllListByType(BannerType.WELCOME.getValue());
@@ -183,6 +190,38 @@ public class BannerHandler extends BaseHandler {
 					String uripri = PhotoUtil.Instance.buildURIImg(wb.getThumb(), PhotoType.BANNER);
 					uripri = uripri != null && !uripri.isEmpty() ? uripri : Configuration.IMG_DEFAULT;
 					loopRow.setVariable("URI_TP", uripri);
+					loopRow.setVariable("MSG", wb.getMsg());
+					if (wb.getStatus() > 0) {
+						loopRow.addSection("STATUS_ON");
+					} else {
+						loopRow.addSection("STATUS_OFF");
+					}
+
+					i++;
+				}
+			}
+		} else {
+			dic.addSection("table_empty");
+		}
+
+	}
+
+	private void renderBannerVideo(TemplateDataDictionary dic, HttpServletRequest req, HttpServletResponse resp)
+			throws UnsupportedEncodingException {
+		List<Banner> listB = BannerDAO.getInstance().getAllListByType(BannerType.VIDEO.getValue());
+		if (listB != null && !listB.isEmpty()) {
+			int i = 1;
+			for (Banner b : listB) {
+				if (b.getType() == BannerType.VIDEO.getValue()) {
+					VideoBanner wb = (VideoBanner) b;
+					// System.out.println("wb: " + wb);
+					TemplateDataDictionary loopRow = dic.addSection("loop_row");
+					loopRow.setVariable("NO", String.valueOf(i));
+					loopRow.setVariable("ID", MIdNoise.enNoiseLId(wb.getuId()));
+					String uripri = PhotoUtil.Instance.buildURIImg(wb.getThumb(), PhotoType.BANNER);
+					uripri = uripri != null && !uripri.isEmpty() ? uripri : Configuration.IMG_DEFAULT;
+					loopRow.setVariable("URI_TP", uripri);
+					loopRow.setVariable("URL", URLDecoder.decode(wb.getId(), "UTF-8"));
 					loopRow.setVariable("MSG", wb.getMsg());
 					if (wb.getStatus() > 0) {
 						loopRow.addSection("STATUS_ON");
@@ -239,7 +278,7 @@ public class BannerHandler extends BaseHandler {
 			logger.error("BannerHandler.addBannerWeb: " + e, e);
 		}
 	}
-	
+
 	private void addBannerWelcome(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
 			Map<String, FileItem> mapFile, Map<String, String> params) throws IOException {
 		try {
@@ -247,8 +286,7 @@ public class BannerHandler extends BaseHandler {
 				String smessage = params.containsKey("message") ? params.get("message") : "";
 				String sstatus = params.containsKey("status") ? params.get("status") : "";
 				FileItem thumb = mapFile.containsKey("thumb") ? mapFile.get("thumb") : null;
-				if (smessage != null && !smessage.isEmpty() && thumb != null
-						&& thumb.getSize() > 0) {
+				if (smessage != null && !smessage.isEmpty() && thumb != null && thumb.getSize() > 0) {
 					// save primary photo
 					long priPhotoId = PhotoUtil.Instance.uploadPhoto(thumb, PhotoType.BANNER);
 					if (priPhotoId < 0) {
@@ -279,8 +317,49 @@ public class BannerHandler extends BaseHandler {
 		}
 	}
 
+	private void addBannerVideo(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
+			Map<String, FileItem> mapFile, Map<String, String> params) throws IOException {
+		try {
+			if (params != null && !params.isEmpty() && mapFile != null && !mapFile.isEmpty()) {
+				String surl = params.containsKey("url") ? params.get("url") : "";
+				String smessage = params.containsKey("message") ? params.get("message") : "";
+				String sstatus = params.containsKey("status") ? params.get("status") : "";
+				FileItem thumb = mapFile.containsKey("thumb") ? mapFile.get("thumb") : null;
+				if (surl != null && !surl.isEmpty() && smessage != null && !smessage.isEmpty() && thumb != null
+						&& thumb.getSize() > 0) {
+					// save primary photo
+					long priPhotoId = PhotoUtil.Instance.uploadPhoto(thumb, PhotoType.BANNER);
+					if (priPhotoId < 0) {
+						result.set("err", -1);
+						result.set("msg", "Can't insert primary photo");
+						return;
+					}
+					// save banner
+					int status = "on".equalsIgnoreCase(sstatus) ? 1 : 0;
+					String url = URLEncoder.encode(surl, "UTF-8");
+					VideoBanner wb = new VideoBanner(0, url, smessage, priPhotoId, status);
+					if (BannerDAO.getInstance().insert(wb) >= 0) {
+						result.set("err", 0);
+						result.set("msg", "Add banner video successfully.");
+					} else {
+						result.set("err", -1);
+						result.set("msg", "Add banner video fail.");
+					}
+				} else {
+					result.set("err", -1);
+					result.set("msg", "Parameter invalid.");
+				}
+			} else {
+				result.set("err", -1);
+				result.set("msg", "Parameter invalid.");
+			}
+		} catch (Exception e) {
+			logger.error("BannerHandler.addBannerWeb: " + e, e);
+		}
+	}
 
-	private void editBannerWeb(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
+	private void editBannerWeb(HttpServletRequest req, HttpServletResponse resp, JsonObject result)
+			throws UnsupportedEncodingException {
 		String seidp = req.getParameter("eidp");
 		String surl = req.getParameter("eurl");
 		String smsg = req.getParameter("emsg");
@@ -291,7 +370,8 @@ public class BannerHandler extends BaseHandler {
 			WebBanner pro = (WebBanner) BannerDAO.getInstance().getById(pid);
 			if (pro != null) {
 				pro.setMsg(smsg);
-				pro.setId(surl);
+				String url = URLEncoder.encode(surl, "UTF-8");
+				pro.setId(url);
 				pro.setStatus(status);
 				int err = BannerDAO.getInstance().update(pro);
 				if (err >= 0) {
@@ -311,7 +391,7 @@ public class BannerHandler extends BaseHandler {
 			result.set("msg", "Parameter invaliad.");
 		}
 	}
-	
+
 	private void editBannerWelcome(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
 		String seidp = req.getParameter("eidp");
 		String smsg = req.getParameter("emsg");
@@ -321,6 +401,40 @@ public class BannerHandler extends BaseHandler {
 			long pid = MIdNoise.deNoiseLId(seidp);
 			WelcomeBanner pro = (WelcomeBanner) BannerDAO.getInstance().getById(pid);
 			if (pro != null) {
+				pro.setMsg(smsg);
+				pro.setStatus(status);
+				int err = BannerDAO.getInstance().update(pro);
+				if (err >= 0) {
+					result.set("err", 0);
+					result.set("msg", "Edit Banner successfully.");
+				} else {
+					result.set("err", -1);
+					result.set("msg", "Edit Banner fail.");
+				}
+			} else {
+				result.set("err", -1);
+				result.set("msg", "Get Banner info fail.");
+			}
+
+		} else {
+			result.set("err", -1);
+			result.set("msg", "Parameter invaliad.");
+		}
+	}
+
+	private void editBannerVideo(HttpServletRequest req, HttpServletResponse resp, JsonObject result)
+			throws UnsupportedEncodingException {
+		String seidp = req.getParameter("eidp");
+		String surl = req.getParameter("eurl");
+		String smsg = req.getParameter("emsg");
+		String sstatus = req.getParameter("estatus");
+		if (seidp != null && !seidp.isEmpty() && surl != null && !surl.isEmpty() && smsg != null && !smsg.isEmpty()) {
+			int status = sstatus != null ? 1 : 0;
+			long pid = MIdNoise.deNoiseLId(seidp);
+			VideoBanner pro = (VideoBanner) BannerDAO.getInstance().getById(pid);
+			if (pro != null) {
+				String url = URLEncoder.encode(surl, "UTF-8");
+				pro.setId(url);
 				pro.setMsg(smsg);
 				pro.setStatus(status);
 				int err = BannerDAO.getInstance().update(pro);
@@ -405,6 +519,7 @@ public class BannerHandler extends BaseHandler {
 					owb.set("msg", wb.getMsg());
 				} else if (banner instanceof VideoBanner) {
 					VideoBanner vb = (VideoBanner) banner;
+					owb.set("url", URLDecoder.decode(vb.getId(), "UTF-8"));
 					owb.set("msg", vb.getMsg());
 				} else if (banner instanceof WelcomeBanner) {
 					WelcomeBanner wb = (WelcomeBanner) banner;

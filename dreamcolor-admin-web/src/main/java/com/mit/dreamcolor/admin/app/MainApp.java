@@ -30,10 +30,12 @@ import com.mit.configer.MConfig;
 import com.mit.dreamcolor.admin.handler.BannerHandler;
 import com.mit.dreamcolor.admin.handler.ColorHandler;
 import com.mit.dreamcolor.admin.handler.DenyHandler;
+import com.mit.dreamcolor.admin.handler.DistributorHandler;
 import com.mit.dreamcolor.admin.handler.HomeHandler;
 import com.mit.dreamcolor.admin.handler.LoginHandler;
 import com.mit.dreamcolor.admin.handler.LogoutHandler;
 import com.mit.dreamcolor.admin.handler.ProductHandler;
+import com.mit.dreamcolor.admin.handler.VideoHandler;
 import com.mit.jetty.server.WebServers;
 
 /**
@@ -65,6 +67,8 @@ public class MainApp {
         handler.addServletWithMapping(ProductHandler.class, "/web/admin/product");
         handler.addServletWithMapping(ColorHandler.class, "/web/admin/color");
         handler.addServletWithMapping(BannerHandler.class, "/web/admin/banner");
+        handler.addServletWithMapping(VideoHandler.class, "/web/admin/video");
+        handler.addServletWithMapping(DistributorHandler.class, "/web/admin/distributor");
         
         //MAPPING ==============================================================
         

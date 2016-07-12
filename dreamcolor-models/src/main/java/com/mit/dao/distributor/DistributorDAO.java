@@ -55,11 +55,25 @@ public class DistributorDAO extends CommonDAO {
 		return rs;
 	}
 	
+	public int totalAllIgnoreStatus() {
+		int rs = MongoErrorCode.NOT_CONNECT;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document();
+				rs = (int) dbSource.getCollection(TABLE_NAME).count(filter);
+			} catch (Exception e) {
+				_logger.error("totalAllIgnoreStatus ", e);
+			}
+		}
+		
+		return rs;
+	}
+	
 	public List<Distributor> getSliceByState(String state, String countryCode, int from, int size, String fieldSort, boolean ascOrder) {
 		List<Distributor> distributors = null;
 		if(dbSource != null) {
 			try {
-				Document objFinder = new Document();
+				Document objFinder = new Document("status", new Document("$gt", 0));
 				
 				if (!countryCode.isEmpty()) {
 					objFinder = objFinder.append("countryCode", countryCode);
@@ -81,11 +95,37 @@ public class DistributorDAO extends CommonDAO {
 		return distributors;
 	}
 	
-	public Distributor getById(long id) {
+	public List<Distributor> getSliceIgnoreStatus(String state, String countryCode, int from, int size, String fieldSort, boolean ascOrder) {
+		List<Distributor> distributors = null;
+		if(dbSource != null) {
+			try {
+				Document objFinder = new Document();
+				
+				if (!countryCode.isEmpty()) {
+					objFinder = objFinder.append("countryCode", countryCode);
+				}
+				if (!state.isEmpty()) {
+					objFinder = objFinder.append("state", state);
+				}				
+				Document sort = new Document(fieldSort, ascOrder ? 1 : -1);
+				
+				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(objFinder).sort(sort).skip(from).limit(size);
+				if(doc != null) {
+					distributors = new MongoMapper().parseList(doc);
+				}
+			} catch(final Exception e) {
+				_logger.error("getSliceIgnoreStatus ", e);
+			}
+		}
+
+		return distributors;
+	}
+	
+	public Distributor getById(int id) {
 		Distributor productOption = null;
 		if(dbSource != null) {
 			try {
-				Document objFinder = new Document("_id", id).append("status", new Document("$gt", 0));
+				Document objFinder = new Document("_id", id);
 				Document doc = dbSource.getCollection(TABLE_NAME).find(objFinder).first();
 				if(doc != null) {
 					productOption = new MongoMapper().parseObject(doc);

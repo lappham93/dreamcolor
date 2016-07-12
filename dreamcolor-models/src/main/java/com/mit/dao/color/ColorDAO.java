@@ -1,6 +1,7 @@
 package com.mit.dao.color;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -15,6 +16,7 @@ import com.mit.dao.MongoDBParse;
 import com.mit.dao.mid.MIdGenLongDAO;
 import com.mit.entities.color.Color;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.UpdateResult;
 
 public class ColorDAO extends CommonDAO {
@@ -136,6 +138,50 @@ public class ColorDAO extends CommonDAO {
 		}
 
 		return colors;
+	}
+	
+	public List<Color> getSearchSlice(String code, int count, int from, String fieldSort, boolean ascOrder) {
+		List<Color> colors = null;
+		if(dbSource != null) {
+			try {
+				Document filter = new Document("status", new Document("$gt", 0));
+				if (code != null && !code.isEmpty()) {
+					filter.append("code", new Document("$regex", code));
+				}
+				Document sort = new Document(fieldSort, ascOrder ? 1 : -1);
+				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).skip(from).limit(count);
+				if(doc != null) {
+					colors = new MongoMapper().parseList(doc);
+				}
+			} catch(final Exception e) {
+				_logger.error("getSearchSlice ", e);
+			}
+		}
+
+		return colors;
+	}
+	
+	public List<String> getSuggest(String code, int count) {
+		List<String> words = null;
+		if(dbSource != null) {
+			try {
+				Document filter = new Document("code", new Document("$regex", "^" + code).append("$options", "m"))
+						.append("status", new Document("$gt", 0));
+				Document sort = new Document("code", 1);
+				FindIterable<Document> docs = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).limit(count);
+				if(docs != null) {
+					words = new ArrayList<String>();
+					MongoCursor<Document> tmp = docs.iterator();
+					while (tmp.hasNext()) {
+						words.add(tmp.next().getString("code"));
+					}
+				}
+			} catch(final Exception e) {
+				_logger.error("getSuggest ", e);
+			}
+		}
+
+		return words;
 	}
 	
 	public Color getById(long id) {

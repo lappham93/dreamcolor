@@ -1,109 +1,40 @@
-<div class="row">
-    <h3 class="header smaller lighter blue">Product</h3>
-    <iframe id="if_notify_product" name="if_notify_product" style="display: none;width: 0px;height: 0px"></iframe>
-    <form id="frmNotifyProduct" class="form-horizontal" role="form" action="/web/admin/notification" method="POST" target="if_notify_product">
-    <div id="notify_product_alert_success" class="alert alert-success" style="display: none;"></div>
-    <div id="notify_product_alert_err" class="alert alert-danger" style="display: none;"></div>
 
-        <div class="form-group">
-            <label class="col-sm-3 control-label no-padding-right">SKU: <span class="orange">(*)</span></label>
-            <div class="col-xs-12 col-sm-9">
-                <div class="col-xs-12 col-sm-9">
-                    <select class="col-xs-12 col-sm-5" id="productId" name="productId">
-                        <option value="" selected >Please select ...</option>
-                        {{#loop_option}}
-                        <option value="{{SKU_ID}}">{{SKU_NAME}}</option>
-                        {{/loop_option}}
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-sm-3 control-label no-padding-right">Country: <span class="orange">(*)</span></label>
-            <div class="col-xs-12 col-sm-9">
-                <div class="col-xs-12 col-sm-9">
-                    <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                        <select class="chosen-select col-xs-12 col-sm-12" id="pCountry" name="pCountry">
-                            <option value="" selected> Choose a country... </option>
-                            <option value"all">All</option>
-                            {{#loop_country}}
-                            <option value="{{ISO_CODE}}">{{NAME}}</option>
-                            {{/loop_country}}
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-3 control-label no-padding-right">User Type: <span class="orange">(*)</span></label>
-            <div class="col-xs-12 col-sm-9">
-                <div class="col-xs-12 col-sm-9">
-                    <select class="col-xs-12 col-sm-5" id="pType" name="pType">
-                        <option value="" selected> Choose a type... </option>
-                        <option value"all">All</option>
-                        {{#loop_type}}
-                        <option value="{{KEY}}">{{VALUE}}</option>
-                        {{/loop_type}}
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="clearfix">
-                <div class="col-xs-12 col-sm-9">
-                    <div class="col-md-offset-5 col-md-9">
-                        <button id="btn_notify_product" class="btn btn-info" type="button" onClick="notifyProduct();">
-                            <i class="ace-icon fa fa-check bigger-110"></i>Notify Product
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <input type="hidden" id="action" name="action" value="notifyProduct"/>
-        <input type="hidden" id="callback" name="callback" value="completeNotifyProduct"/>
-    </form>
-</div>
-
-<div class="row">
-    <h3 class="header smaller lighter blue">Add Web News</h3>
-</div>
-
+<h3 class="header smaller lighter blue">Add Video</h3>
 <div class="row">
     <div class="col-xs-12">
         <iframe id="if_Add" name="if_Add" style="display: none;width: 0px;height: 0px"></iframe>
-        <form id="frmAdd" name="frmAdd" class="form-horizontal" role="form" action="/web/admin/notification" method="POST" enctype="multipart/form-data" target="if_Add">
+        <form id="frmAdd" name="frmAdd" class="form-horizontal" role="form" action="/web/admin/video" method="POST" enctype="multipart/form-data" target="if_Add">
             <div id="add_alert_success" class="alert alert-success" style="display: none;"></div>
             <div id="add_alert_err" class="alert alert-danger" style="display: none;"></div>
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">URL: <span class="orange">(*)</span></label>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Link: <span class="orange">(*)</span></label>
                 <div class="col-sm-9">
-                    <input type="text" id="url" name="url" placeholder="url" class="col-xs-12 col-sm-5"/>
+                    <input type="text" id="link" name="link" placeholder="link" class="col-xs-12 col-sm-5"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Message: <span class="orange">(*)</span></label>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Title: <span class="orange">(*)</span></label>
                 <div class="col-sm-9">
-                    <input type="text" id="message" name="message" placeholder="message" class="col-xs-12 col-sm-5"/>
+                    <input type="text" id="title" name="title" placeholder="Title" class="col-xs-12 col-sm-5"/>
                 </div>
             </div>
-
             <div class="form-group">
-                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
-                <div class="col-xs-12 col-sm-9">
-                    <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                        <select class="col-xs-12 col-sm-12" id="status" name="status" data-placeholder="Choose a status...">
-                            <option value=""> Choose a status... </option>
-                            <option value="0">Delete</option>
-                            <option value="1">Active</option>
-                        </select>
-                    </div>
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Description: <span class="orange">(*)</span></label>
+                <div class="col-sm-9">
+                    <input type="text" id="desc" name="desc" placeholder="description" class="col-xs-12 col-sm-5"/>
                 </div>
             </div>
-
             <div class="form-group">
-                <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Thumb Photo: <span class="orange">(*)</span></label>
+                <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Status: <span class="orange">(*)</span></label>
+                <div class="col-sm-9 col-xs-7">
+                    <label>
+                        <input id="status" name="status" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                        <span class="lbl"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Thumb: <span class="orange">(*)</span></label>
                 <div class="col-sm-9 col-xs-9">
                     <div class="col-xs-12 col-sm-5">
                         <input type="file" name="thumb" id="thumb" style="display: none;" />
@@ -113,20 +44,21 @@
 
             <div class="clearfix">
                 <div class="col-md-offset-3 col-md-9">
-                    <button id="btnadd" class="btn btn-info" type="button" onclick="addWebNews(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
+                    <button id="btnadd" class="btn btn-info" type="button" onclick="addVideo(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
                     &nbsp; &nbsp; &nbsp;
                     <button class="btn" type="reset" onclick="resetAdd(); return false;"><i class="ace-icon fa fa-undo bigger-110"></i>Reset</button>
                 </div>
             </div>
-            <input type="hidden" id="action" name="action" value="addWebNews"/>
-            <input type="hidden" id="callback" name="callback" value="completeAddWebNews"/>
+            <input type="hidden" id="numPhoto" name="numPhoto" value="1"/>
+            <input type="hidden" id="ov" name="ov" value=""/>
+            <input type="hidden" id="action" name="action" value="addvideo"/>
+            <input type="hidden" id="callback" name="callback" value="completeAddVideo"/>
         </form>
     </div>
 </div>
 
-<div class="row">
-    <h3 class="header smaller lighter blue">List Web News</h3>
-</div>
+<h3 class="header smaller lighter blue">List Videos</h3>
+
 <div class="row">
     <div class="col-xs-12">
         <table id="tableproduct" class="table table-striped table-bordered">
@@ -134,9 +66,12 @@
                 <tr>
                     <th class="center">No.</th>
                     <th class="hidden-480">Thumb</th>
-                    <th class="">URL</th>
-                    <th class="hidden-480">Message</th>
-                    <th class="hidden-480">Status</th>
+                    <th class="hidden-480">Link</th>
+                    <th>Title</th>
+                    <th class="hidden-480">Description</th>
+                    <th class="hidden-480">Number Of View</th>
+                    <th>Status</th>
+                    <th class="hidden-480"><i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>Update</th>
                     <th></th>
                 </tr>
             </thead>
@@ -148,35 +83,35 @@
                     <td class="hidden-480">
                         <ul class="ace-thumbnails">
                             <li>
-                                <a href="{{URI_TP}}" data-rel="colorbox">
-                                    <img width="150" height="150" alt="150x150" src="{{URI_TP}}" />
+                                <a href="{{URI_VP}}" data-rel="colorbox">
+                                    <img width="150" height="150" alt="150x150" src="{{URI_VP}}" />
                                     <div class="text">
-                                        <div class="inner">Thumb Photo</div>
+                                        <div class="inner">Photo</div>
                                     </div>
                                 </a>
 
                                 <div class="tools tools-bottom">
                                     <a href="#" onclick="changeImgModal('{{ID}}'); return false;">
                                         <i class="ace-icon fa fa-camera"></i>
-                                        <span style="font-size: 12px;">Change photo</span>
+                                        <span style="font-size: 12px;">Change image</span>
                                     </a>
                                 </div>
                             </li>
                         </ul>
                     </td>
-                    <td class="">{{URL}}</td>
-                    <td class="hidden-480" width="20%">{{MSG}}</td>
-                    <td class="hidden-480">
+                    <td class="hidden-480">{{URL}}</td>
+                    <td>{{TITLE}}</td>
+                    <td class="hidden-480">{{DESC}}</td>
+                    <td class="hidden-480">{{VIEWS}}</td>
+                    <td>
                         {{#STATUS_ON}}<span class="label label-sm label-success">On</span>{{/STATUS_ON}}
                         {{#STATUS_OFF}}<span class="label label-sm label-inverse">Off</span>{{/STATUS_OFF}}
                     </td>
+                    <td class="hidden-480">{{UPDATE}}</td>
                     <td>
                         <div class="hidden-sm hidden-xs btn-group">
                             <button class="btn btn-xs btn-info tooltip-info" data-rel="tooltip" title="Edit" data-placement="top" onclick="openEditModal('{{ID}}'); return false;">
                                 <i class="ace-icon fa fa-pencil bigger-120"></i>
-                            </button>
-                            <button class="btn btn-xs btn-success tooltip-info" data-rel="tooltip" title="Notify" data-placement="top" onclick="openNotifyWebNewsModal('{{ID}}'); return false;">
-                                <i class="ace-icon fa fa-bolt bigger-120"></i>
                             </button>
                         </div>
                         <div class="hidden-md hidden-lg">
@@ -199,20 +134,59 @@
                                             </span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#" class="tooltip-success" data-rel="tooltip" title="Notify" onclick="openNotifyWebNewsModal('{{ID}}'); return false;">
-                                            <span class="green">
-                                                <i class="ace-icon fa fa-bolt bigger-120"></i>
+                   <!--                 <li>
+                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete" onclick="openDelModal(); return false;">
+                                            <span class="red">
+                                                <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                             </span>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="#" class="tooltip-warning" data-rel="tooltip" title="On/Off" onclick="openOOModal(); return false;">
+                                            <span class="orange">
+                                                <i class="ace-icon fa fa-flag bigger-120"></i>
+                                            </span>
+                                        </a>
+                                    </li>-->
                                 </ul>
                             </div>
                         </div>
                     </td>
                 </tr>
+    <!--           <tr class="hidden-480">
+                    <td>Other Photo:</td>
+                    <td colspan="8">
+                        <ul class="ace-thumbnails">
+                            {{#loop_op}}
+                            <li>
+                                <a href="{{URI_OP}}" data-rel="colorbox">
+                                    <img width="100" height="100" alt="100x100" src="{{URI_OP}}" />
+                                    <div class="text">
+                                        <div class="inner">Other Photo</div>
+                                    </div>
+                                </a>
+                                <div class="tools tools-bottom">
+                                    <a href="#" onclick="changeImgOPModal('{{ID}}', '{{ID_OP}}'); return false;">
+                                        <i class="ace-icon fa fa-camera"></i>
+                                    </a>
+                                    <a href="#" onclick="openDelPhotoModal('{{ID}}', '{{ID_OP}}'); return false;">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            {{/loop_op}}
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="hidden-sm hidden-xs btn-group">
+                            <button class="btn btn-xs btn-success tooltip-success" data-rel="tooltip" title="Add Photo" data-placement="top" onclick="openAddPhotoModal('{{ID}}'); return false;">
+                                <i class="ace-icon fa fa-plus bigger-120"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr> -->
                 {{/loop_row}}
-
+                
                 {{#table_empty}}
                 <tr><td class="center" colspan="15">No item found.</td></tr>
                 {{/table_empty}}
@@ -221,26 +195,41 @@
     </div><!-- /.span -->
 </div><!-- /.row -->
 
+<div class="row">
+    <div class="col-xs-12">
+        <div id="paging" class="dataTables_paginate paging_bootstrap_alt pagination">
+            {{paging}}
+        </div>
+    </div>
+</div>
+
+
 <!-- viewModal -->
 <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="editModalLabel">View Web News</h4>
+                <h4 class="modal-title" id="editModalLabel">View Video</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-xs-12">
-                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">URL: </label>
+                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Link: </label>
                         <div class="col-xs-8 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="vurl"></span>
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vlink"></span>
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Message: </label>
+                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Title: </label>
                         <div class="col-xs-8 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="vmsg"></span>
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vtitle"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Description: </label>
+                        <div class="col-xs-8 no-padding">
+                            <span class="col-xs-12" style="padding-top: 2px;" id="vdesc"></span>
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -264,122 +253,50 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="editModalLabel">Edit Banner Web</h4>
+                <h4 class="modal-title" id="editModalLabel">Edit Video</h4>
             </div>
             <div class="modal-body">
                 <iframe id="if_Edit" name="if_Edit" style="display: none;width: 0px;height: 0px"></iframe>
-                <form id="frmEditP" name="frmEditP" class="form-horizontal" role="form" action="/web/admin/notification" method="POST" target="if_Edit">
+                <form id="frmEditP" name="frmEditP" class="form-horizontal" role="form" action="/web/admin/video" method="POST" target="if_Edit">
                     <div id="edit_alert_success" class="alert alert-success" style="display: none;"></div>
                     <div id="edit_alert_err" class="alert alert-danger" style="display: none;"></div>
-
                     <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">URL: <span class="orange">(*)</span></label>
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Link: <span class="orange">(*)</span></label>
                         <div class="col-sm-9">
-                            <input type="text" id="eurl" name="eurl" placeholder="url" class="col-xs-12 col-sm-10"/>
+                            <input type="text" id="elink" name="elink" placeholder="link" class="col-xs-12 col-sm-10"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Message: <span class="orange">(*)</span></label>
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Title: <span class="orange">(*)</span></label>
                         <div class="col-sm-9">
-                            <input type="text" id="emsg" name="emsg" placeholder="message" class="col-xs-12 col-sm-10"/>
+                            <input type="text" id="etitle" name="etitle" placeholder="title" class="col-xs-12 col-sm-10"/>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Status: <span class="orange">(*)</span></label>
-                        <div class="col-xs-12 col-sm-9">
-                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                                <select class="col-xs-12 col-sm-12" id="estatus" name="estatus" data-placeholder="Choose a status...">
-                                    <option value=""> Choose a status... </option>
-                                    <option value="0">Delete</option>
-                                    <option value="1">Active</option>
-                                </select>
-                            </div>
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Description: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" id="edesc" name="edesc" placeholder="description" class="col-xs-12 col-sm-10"/>
                         </div>
                     </div>
-
-                    <input type="hidden" id="action" name="action" value="editWebNews"/>
-                    <input type="hidden" id="eidp" name="eidp" value=""/>
-                    <input type="hidden" id="callback" name="callback" value="completeEditWN"/>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-xs-5 control-label no-padding-right" for="form-field-2">Status: <span class="orange">(*)</span></label>
+                        <div class="col-sm-9 col-xs-7">
+                            <label>
+                                <input id="estatus" name="estatus" checked class="ace ace-switch ace-switch-4" type="checkbox" />
+                                <span class="lbl"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" id="action" name="action" value="editvideo"/>
+                    <input type="hidden" id="eid" name="eid" value=""/>
+                    <input type="hidden" id="eov" name="eov" value=""/>
+                    <input type="hidden" id="callback" name="callback" value="completeEditVideo"/>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button id="btnedit" type="button" class="btn btn-sm btn-primary" onclick="submitEditWN();">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Notify Web News Modal -->
-<div class="modal fade" id="notifyWebNewsModal" tabindex="-1" role="dialog" aria-labelledby="notifyWebNewsModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="editModalLabel">Notify Web News</h4>
-            </div>
-            <div class="modal-body">
-                <iframe id="if_notify_webnews" name="if_notify_webnews" style="display: none;width: 0px;height: 0px"></iframe>
-                <div class="row">
-                    <div id="notify_WN_alert_success" class="alert alert-success" style="display: none;"></div>
-                    <div id="notify_WN_alert_err" class="alert alert-danger" style="display: none;"></div>
-                    <div class="col-xs-12">
-                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">URL: </label>
-                        <div class="col-xs-8 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="nurl"></span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Message: </label>
-                        <div class="col-xs-8 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="nmsg"></span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <label class="col-xs-4 control-label no-padding-right bolder" style="text-align: right;">Status: </label>
-                        <div class="col-xs-8 no-padding">
-                            <span class="col-xs-12" style="padding-top: 2px;" id="nstatus"></span>
-                        </div>
-                    </div>
-                </div>
-                <form id="frmNotifyWebNews" name="frmNotifyWebNews" class="form-horizontal" role="form" action="/web/admin/notification" method="POST" target="if_notify_webnews">
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Country: <span class="orange">(*)</span></label>
-                        <div class="col-xs-12 col-sm-9">
-                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                                <select class="chosen-select col-xs-12 col-sm-12" id="wnCountry" name="wnCountry" data-placeholder="Choose a country...">
-                                    <option value="" selected> Choose a country... </option>
-                                    <option value"all">All</option>
-                                    {{#loop_country}}
-                                    <option value="{{ISO_CODE}}">{{NAME}}</option>
-                                    {{/loop_country}}       
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">User Type: <span class="orange">(*)</span></label>
-                        <div class="col-xs-12 col-sm-9">
-                            <div class="col-xs-12 col-sm-10" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
-                                <select class="col-xs-12 col-sm-12" id="wnType" name="wnType" data-placeholder="Choose a type...">
-                                    <option value="" selected> Choose a type... </option>
-                                    <option value"all">All</option>
-                                    {{#loop_type}}
-                                    <option value="{{KEY}}">{{VALUE}}</option>
-                                    {{/loop_type}}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <input type="hidden" id="wnId" name="wnId" value=""/>  
-                    <input type="hidden" id="action" name="action" value="notifyWebNews"/>
-                    <input type="hidden" id="callback" name="callback" value="completeNotifyWebNews"/>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                <button id="btnNotifyWN" type="button" class="btn btn-sm btn-primary" onclick="submitNotifyWN();">Notify</button>
+                <button id="btnedit" type="button" class="btn btn-sm btn-primary" onclick="submitEditVideo();">Save changes</button>
             </div>
         </div>
     </div>
@@ -391,11 +308,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="delModalLabel">Change Photo</h4>
+                <h4 class="modal-title" id="cImgModalLabel">Change Photo</h4>
             </div>
             <div class="modal-body">
                 <iframe id="if_Img" name="if_Img" style="display: none;width: 0px;height: 0px"></iframe>
-                <form id="frmImg" name="frmImg" class="form-horizontal" action="/web/admin/notification" method="POST" enctype="multipart/form-data" target="if_Img">
+                <form id="frmImg" name="frmImg" class="form-horizontal" action="/web/admin/video" method="POST" enctype="multipart/form-data" target="if_Img">
                     <div id="img_alert_success" class="alert alert-success" style="display: none;"></div>
                     <div id="img_alert_err" class="alert alert-danger" style="display: none;"></div>
                     <div class="form-group">
@@ -403,7 +320,7 @@
                             <input type="file" name="cimg" id="cimg"  />
                         </div>
                     </div>
-                    <input type="hidden" id="action" name="action" value="cimg"/>
+                    <input type="hidden" id="action" name="action" value="changethumb"/>
                     <input type="hidden" id="iidp" name="iidp" value=""/>
                     <input type="hidden" id="callback" name="callback" value="completeChangeImg"/>
                 </form>
@@ -417,7 +334,7 @@
 </div>
 
 <script type="text/javascript">
-try {
+try{
     jQuery(function ($) {
         /********************************/
         //add tooltip for small view action buttons in dropdown menu
@@ -437,9 +354,9 @@ try {
             if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
             return 'top';
         }
-
+        
         if(!ace.vars['touch']) {
-            $('.chosen-select').chosen({allow_single_deselect:true});
+            $('.chosen-select').chosen({allow_single_deselect:true}); 
             //resize the chosen on window resize
 
             $(window)
@@ -466,7 +383,7 @@ try {
                  else $('#form-field-select-4').removeClass('tag-input-style');
             });
         }
-
+        
         $('#thumb').ace_file_input({
             no_file:'No File ...',
             btn_choose:'Choose',
@@ -485,7 +402,7 @@ try {
             if(info.error_count['ext'] || info.error_count['mime']){
                 //alert('Invalid file type! Please select an image!');
                 bootbox.dialog({
-                    message: "Invalid file type! Please select an image!",
+                    message: "Invalid file type! Please select an image!", 
                     buttons: {
                         "success" : {
                             "label" : "OK",
@@ -511,7 +428,7 @@ try {
             //ev.preventDefault();
             //file_img.ace_file_input('reset_input');
         });
-
+        
         //change primary photo.
         var file_img = $('#cimg');
         var upload_in_progress = false;
@@ -543,7 +460,7 @@ try {
             if(info.error_count['ext'] || info.error_count['mime']){
                 //alert('Invalid file type! Please select an image!');
                 bootbox.dialog({
-                    message: "Invalid file type! Please select an image!",
+                    message: "Invalid file type! Please select an image!", 
                     buttons: {
                         "success" : {
                             "label" : "OK",
@@ -569,7 +486,65 @@ try {
             //ev.preventDefault();
             //file_img.ace_file_input('reset_input');
         });
+        
+        //change other photo.
+        var file_imgop = $('#cimgop');
+        var upload_in_progressop = false;
+        file_imgop.ace_file_input({
+            style : 'well',
+            btn_choose : 'Select or drop file image here',
+            btn_change: null,
+            no_icon:'ace-icon fa fa-cloud-upload',
+            droppable: true,
+            thumbnail: 'large',
 
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
+
+            before_remove: function() {
+                if(upload_in_progressop)
+                    return false;//if we are in the middle of uploading a file, don't allow resetting file input
+                return true;
+            },
+
+            preview_error: function(filename , code) {
+                //code = 1 means file load error
+                //code = 2 image load error (possibly file is not an image)
+                //code = 3 preview failed
+            }
+        })
+        file_imgop.on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
         var $overflow = '';
         var colorbox_params = {
             rel: 'colorbox',
@@ -596,42 +571,108 @@ try {
 
         $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
         $("#cboxLoadingGraphic").html("<i class='ace-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
-
+        
+        //Dual Listbox.
+        // https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox
+        var lov = $('select[name="lov"]').bootstrapDualListbox({infoTextFiltered: '<span class="label label-purple label-lg">Filtered</span>'});
+        var containerlov = lov.bootstrapDualListbox('getContainer');
+        containerlov.find('.btn').addClass('btn-white btn-info btn-bold');
+        
+        $('#order').ace_spinner({
+            value:1,min:1,max:1000,step:1, on_sides: true, 
+            icon_up:'ace-icon fa fa-plus bigger-110', 
+            icon_down:'ace-icon fa fa-minus bigger-110', 
+            btn_up_class:'btn-success', 
+            btn_down_class:'btn-danger'
+        });
+        
+        $('#eorder').ace_spinner({
+            value:1,min:1,max:1000,step:1, on_sides: true, 
+            icon_up:'ace-icon fa fa-plus bigger-110', 
+            icon_down:'ace-icon fa fa-minus bigger-110', 
+            btn_up_class:'btn-success', 
+            btn_down_class:'btn-danger'
+        });
+        
+        $('#ndays').ace_spinner({
+            value:7,min:1,max:1000,step:1, on_sides: true, 
+            icon_up:'ace-icon fa fa-plus bigger-110', 
+            icon_down:'ace-icon fa fa-minus bigger-110', 
+            btn_up_class:'btn-success', 
+            btn_down_class:'btn-danger'
+        });
+        
     });
 
-    //Reset.
+    {{#HAS_TABLE}}
+    zscommon.renderPaging('paging','','','','','{{keyword}}');
+    {{/HAS_TABLE}}
+
+    $().ready(function() {
+        $('.modal').hide();
+	});
+    
+    
+    var htmlPhoto = '<div class="form-group" id="div_IDOPHOTO"> \
+                        <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2"></label> \
+                        <div class="col-sm-9 col-xs-9"> \
+                            <div class="col-xs-10 col-sm-5"> \
+                                <input type="file" name="IDOPHOTO" id="IDOPHOTO" style="display: none;" /> \
+                            </div> \
+                            <div class="col-xs-2 col-sm-5" style="padding-left: 0px;"> \
+                                <button id="btnrmp" class="btn btn-xs btn-danger tooltip-error" type="button" onclick="rmPhoto(\'IDOPHOTO\'); return false;" data-rel="tooltip" title="Remove" data-placement="top"><i class="ace-icon fa fa-trash-o bigger-110"></i></button> \
+                            </div> \
+                        </div> \
+                    </div>';
+    var hoPhoto = '<div class="form-group" id="div_IDOPHOTO"> \
+                        <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2"></label> \
+                        <div class="col-sm-9 col-xs-9"> \
+                            <div class="col-xs-10 col-sm-5"> \
+                                <label class="ace-file-input"><input type="file" name="IDOPHOTO" id="IDOPHOTO" style="display: none;"><span class="ace-file-container" data-title="Choose"><span class="ace-file-name" data-title="No File ..."><i class=" ace-icon fa fa-upload"></i></span></span><a class="remove" href="#"><i class=" ace-icon fa fa-times"></i></a></label> \
+                            </div> \
+                            <div class="col-xs-2 col-sm-5" style="padding-left: 0px;"> \
+                                <button id="btnrmp" class="btn btn-xs btn-danger tooltip-error" type="button" onclick="rmPhoto(\'IDOPHOTO\'); return false;" data-rel="tooltip" title="" data-placement="top" data-original-title="Remove"><i class="ace-icon fa fa-trash-o bigger-110"></i></button> \
+                            </div> \
+                        </div> \
+                    </div>';
+    
     function resetAdd(){
         $('#add_alert_success').hide();
         $('#add_alert_err').hide();
         $('#url').val("");
-        $('#message').val("");
-        $('#status').val("");
+        $('#desc').val("");
+        $('#title').val("");
+        $('#status').prop('checked', true);
+        $('#ov').val("");
+        $('#ov').val('').trigger('chosen:updated');
+        $('.removeall').click();
         $('input[id*="thumb"]').ace_file_input('reset_input');
         $('#btnadd').button('reset');
         $("html, body").animate({ scrollTop: 0 }, "slow");
     }
-
-    //Add Web News
-    function addWebNews(){
+    
+    function addVideo(){
         $('#add_alert_success').hide();
         $('#add_alert_err').hide();
         var serr = "";
-        var url = $('#url').val();
-        if(url == ''){
-            serr += "URL required. ";
+        var link = $('#link').val();
+        if(link == ''){
+            serr += "Link required. ";
         }
-        var message = $('#message').val();
-        if(message == ''){
-            serr += "Message required. ";
+        var title = $('#title').val();
+        if(title == ''){
+            serr += "Title required. ";
         }
-        var status = $('#status').val();
-        if(status == ''){
-            serr += "Status required. ";
+        var desc = $('#desc').val();
+        if(desc == ''){
+            serr += "Description required. ";
         }
-        var thumb = $('#thumb').val();
-        if(thumb == ''){
-            serr += "Thumb Photo required. ";
+        var photo = $('#thumb').val();
+        if(photo == ''){
+            serr += "Thumb required. ";
         }
+
+//        $('#numPhoto').val(numPhoto);
 
         $('#frmAdd').unbind('submit');
         if(serr == ''){
@@ -645,8 +686,8 @@ try {
         }
         return false;
     };
-
-    function completeAddWebNews(data){
+    
+    function completeAddVideo(data){
         if(data.err >= 0){
             $('#add_alert_success').html(data.msg);
             $('#add_alert_success').show();
@@ -664,36 +705,31 @@ try {
             $('#btnadd').button('reset');
         }
     };
-
+    
     //Edit.
     function openEditModal(id){
+        $('#eid').val(id);
         $('#edit_alert_success').hide();
         $('#edit_alert_err').hide();
-        $('#eidp').val(id);
-        //reset.
-        $('#epid').val('');
-        $('#eurl').val('');
-        $('#emsg').val('');
-        $('#estatus').val('');
-
-        //get content Banner Web.
+        
         if(id != ''){
             var data = {
-                action: 'getWebNews',
+                action: 'getvideo',
                 id: id
             };
             $.ajax({
                 type: "POST",
-                url: "{{domain}}/web/admin/notification",
+                url: "{{domain}}/web/admin/video",
                 data: data,
                 dataType : 'json',
                 cache: false,
                 success: function(data){
                     if(data.err >= 0){
-                        var own = data.own;
-                        $('#eurl').val(own.url);
-                        $('#emsg').val(own.msg);
-                        $('#estatus').val(own.idstatus);
+                        var sku = data.video;
+                        $('#elink').val(sku.link);
+                        $('#etitle').val(sku.title);
+                        $('#edesc').val(sku.desc);
+                        $('#estatus').prop('checked', sku.status == 'on');
                     } else{
                         console.log(data.msg);
                         bootbox.dialog({
@@ -710,28 +746,28 @@ try {
                 }
             });
         }
-
+        
         $('#editModal').modal({backdrop: 'static', keyboard: false, show: true});
     };
-
-    function submitEditWN(){
+    
+    function submitEditVideo(){
         $('#edit_alert_success').hide();
         $('#edit_alert_err').hide();
-
+        
         var serr = "";
-        var url = $('#eurl').val();
-        if(url == ''){
-            serr += "URL required. ";
+        var link = $('#elink').val();
+        if(link == ''){
+            serr += "Link required. ";
         }
-        var message = $('#emsg').val();
-        if(message == ''){
-            serr += "Message required. ";
+        var title = $('#etitle').val();
+        if(title == ''){
+            serr += "Title required. ";
         }
-        var status = $('#estatus').val();
-        if(status == ''){
-            serr += "Status required. ";
+        var desc = $('#edesc').val();
+        if (desc == ''){
+        	serr += "Description required. ";
         }
-
+		        
         $('#frmEditP').unbind('submit');
         if(serr == ''){
             console.log('frmEditP submit...');
@@ -745,8 +781,8 @@ try {
         }
         return false;
     };
-
-    function completeEditWN(data){
+    
+    function completeEditVideo(data){
         if(data.err >= 0){
             $('#edit_alert_success').html(data.msg);
             $('#edit_alert_success').show();
@@ -765,26 +801,27 @@ try {
             $('#btnedit').button('reset');
         }
     };
-
+    
     //View.
     function openViewModal(id){
         if(id != ''){
             var data = {
-                action: 'getWebNews',
+                action: 'getvideo',
                 id: id
             };
             $.ajax({
                 type: "POST",
-                url: "{{domain}}/web/admin/notification",
+                url: "{{domain}}/web/admin/video",
                 data: data,
                 dataType : 'json',
                 cache: false,
                 success: function(data){
                     if(data.err >= 0){
-                        var own = data.own;
-                        $('#vurl').text(own.url);
-                        $('#vmsg').text(own.msg);
-                        $('#vstatus').text(own.status);
+                        var sku = data.video;
+                        $('#vlink').text(sku.link);
+                        $('#vtitle').text(sku.title);
+                        $('#vdesc').text(sku.desc);
+                        $('#vstatus').text(sku.status);
                     } else{
                         console.log(data.msg);
                         bootbox.dialog({
@@ -801,12 +838,11 @@ try {
                 }
             });
         } else{
-
+            
         }
         $('#viewModal').modal({backdrop: 'static', keyboard: false, show: true});
     };
-
-    //Change thumb photo.
+    
     function changeImgModal(id){
         $('#iidp').val(id);
         $('#img_alert_success').hide();
@@ -814,7 +850,7 @@ try {
         $('#cimg').ace_file_input('reset_input');
         $('#imgModal').modal({backdrop: 'static', keyboard: false, show: true});
     };
-
+    
     function submitImgPP(){
         $('#img_alert_success').hide();
         $('#img_alert_err').hide();
@@ -831,7 +867,7 @@ try {
             $('#frmImg').submit();
         }
     };
-
+    
     function completeChangeImg(data){
         if(data.err >= 0){
             $('#img_alert_success').html(data.msg);
@@ -848,138 +884,9 @@ try {
             $('#btnimg').button('reset');
         }
     };
-
-    //notify selected product
-    function notifyProduct(){
-        var serr = "";
-        var productId = $('#productId').val();
-        var country = $('#pCountry').val();
-        var type = $('#pType').val();
-
-        if(productId == ''){
-            serr += "SKU required.";
-        }
-        if(country == ''){
-            serr += "Country required.";
-        }
-        if(type == ''){
-            serr += "User Type required.";
-        }
-        $('#frmNotifyProduct').unbind('submit');
-        if(serr == ''){
-            $('#notify_product_alert_err').hide();
-            $("#btn_notify_product").button('loading');
-            $('#frmNotifyProduct').submit();
-        } else{
-            $('#notify_product_alert_err').html(serr);
-            $('#notify_product_alert_err').show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-        }
-        return false;
-    }
-
-    function completeNotifyProduct(data){
-        if (data.err >= 0) {
-            $('#notify_product_alert_success').html(data.msg);
-            $('#notify_product_alert_success').show();
-            setTimeout(function() {
-                window.location.reload(true);
-            }, 2000);
-        } else {
-            $('#notify_product_alert_err').html(data.msg);
-            $('#notify_product_alert_err').show();
-            $('#frmNotifyProduct').bind('submit');
-        }
-    }
-
-    //open notify web news modal
-    function openNotifyWebNewsModal(id){
-        if(id != ''){
-            $('#wnId').val(id);
-            var data = {
-                action: 'getWebNews',
-                id: id
-            };
-            $.ajax({
-                type: "POST",
-                url: "{{domain}}/web/admin/notification",
-                data: data,
-                dataType : 'json',
-                cache: false,
-                success: function(data) {
-                    if(data.err >= 0){
-                        var own = data.own;
-                        $('#nurl').text(own.url);
-                        $('#nmsg').text(own.msg);
-                        $('#nstatus').text(own.status);
-                    } else{
-                        console.log(data.msg);
-                        bootbox.dialog({
-                            message: data.msg,
-                            buttons: {
-                                "success" : {
-                                    "label" : "OK",
-                                    "className" : "btn-sm btn-primary"
-                                }
-                            }
-                        });
-                        return false;
-                    }
-                }
-            });
-        } else{
-
-        }
-        $('#notifyWebNewsModal').modal({backdrop: 'static', keyboard: false, show: true});
-        if(!ace.vars['touch']) {
-            //console.log('in web browser...');
-            $('.chosen-container').each(function() {
-                var $this = $(this);
-                $this.css({minWidth: '100%', width: 'auto'});
-            })
-        }
-    };
-
-    function submitNotifyWN(){
-        var serr = "";
-        var country = $('#wnCountry').val();
-        var type = $('#wnType').val();
-
-        if(country == ''){
-            serr += "Country required. ";
-        }
-        if(type == ''){
-            serr += "User Type required. ";
-        }
-        $('#frmNotifyWebNews').unbind('submit');
-        if(serr == ''){
-            $('#notify_WN_alert_err').hide();
-            $("#btnNotifyWN").button('loading');
-            $('#frmNotifyWebNews').submit();
-        } else{
-            $('#notify_WN_alert_err').html(serr);
-            $('#notify_WN_alert_err').show();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-        }
-        return false;
-    }
-
-    function completeNotifyWebNews(data){
-        console.log(data);
-        if (data.err >= 0) {
-            $('#notify_WN_alert_success').html(data.msg);
-            $('#notify_WN_alert_success').show();
-            setTimeout(function() {
-                window.location.reload(true);
-            }, 2000);
-        } else {
-            $('#notify_WN_alert_err').html(data.msg);
-            $('#notify_WN_alert_err').show();
-            $('#frmNotifyWebNews').bind('submit');
-        }
-    }
-
-} catch(e) {
-}
+    
+}catch(e){}
 </script>
 <script src="{{static-domain}}/mitassets/js/jquery.colorbox.js"></script>
+<script src="{{static-domain}}/mitassets/js/fuelux/fuelux.spinner.js"></script>
+<script src="{{static-domain}}/mitassets/js/jquery.bootstrap-duallistbox.js"></script>

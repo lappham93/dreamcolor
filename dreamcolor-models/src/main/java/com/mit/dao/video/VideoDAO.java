@@ -59,6 +59,20 @@ public class VideoDAO extends CommonDAO {
 		return rs;
 	}
 	
+	public int totalAllIgnoreStatus() {
+		int rs = MongoErrorCode.NOT_CONNECT;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document();
+				rs = (int) dbSource.getCollection(TABLE_NAME).count(filter);
+			} catch (final Exception e) {
+				_logger.error("totalAllIgnoreStatus ", e);
+			}
+		}
+		
+		return rs;
+	}
+	
 	public List<Video> getSlice(int count, int from, String fieldSort, boolean ascOrder) {
 		List<Video> rs = null;
 		if (dbSource != null) {
@@ -71,6 +85,24 @@ public class VideoDAO extends CommonDAO {
 				}
 			} catch (final Exception e) {
 				_logger.error("getSlice ", e);
+			}
+		}
+		
+		return rs;
+	}
+	
+	public List<Video> getSliceIgnoreStatus(int count, int from, String fieldSort, boolean ascOrder) {
+		List<Video> rs = null;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document();
+				Document sort = new Document(fieldSort, ascOrder ? 1 : -1);
+				FindIterable<Document> docs = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).skip(from).limit(count);
+				if (docs != null) {
+					rs = new MongoMapper().parseList(docs);
+				}
+			} catch (final Exception e) {
+				_logger.error("getSliceIgnoreStatus ", e);
 			}
 		}
 		

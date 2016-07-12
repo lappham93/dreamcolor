@@ -46,13 +46,14 @@ public class Distributor {
 		this.updateTime = updateTime;
 	}
 	
-	public Distributor(int id, String name,
+	public Distributor(int id, String name, String contactName,
 			String addressLine1, String addressLine2, String city,
 			String state, String country, String zipCode, String phone,
 			long photo, String webLink, String countryCode) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.contactName = contactName;
 		this.addressLine1 = addressLine1;
 		this.addressLine2 = addressLine2;
 		this.city = city;

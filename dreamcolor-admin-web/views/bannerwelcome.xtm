@@ -291,7 +291,7 @@
                             <input type="file" name="cimg" id="cimg"  />
                         </div>
                     </div>
-                    <input type="hidden" id="action" name="action" value="cimgbwel"/>
+                    <input type="hidden" id="action" name="action" value="cimg"/>
                     <input type="hidden" id="iidp" name="iidp" value=""/>
                     <input type="hidden" id="callback" name="callback" value="completeChangeImg"/>
                 </form>
@@ -645,7 +645,7 @@ try{
     function openViewModal(id){
         if(id != ''){
             var data = {
-                action: 'getwelb',
+                action: 'getbanner',
                 id: id
             };
             $.ajax({
@@ -656,7 +656,7 @@ try{
                 cache: false,
                 success: function(data){
                     if(data.err >= 0){
-                        var owb = data.owb;
+                        var owb = data.banner;
                         $('#vmsg').text(owb.msg);
                         $('#vstatus').text(owb.status);
                     } else{

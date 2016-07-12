@@ -7,7 +7,7 @@ public class InsertDistributor {
 	
 	public static void insertDistributor() {
 		for (int i = 0; i < 5; i ++) {
-			Distributor dis = new Distributor(0, "name " + i, "address " + i, "", "Ho chi minh", "Ho chi minh", "", "View nam", "123123", new Long(i), "", "");
+			Distributor dis = new Distributor(0, "name " + i, "", "address " + i, "", "Ho chi minh", "Ho chi minh", "", "View nam", "123123", new Long(i), "", "");
 			DistributorDAO.getInstance().insert(dis);
 		}
 	}

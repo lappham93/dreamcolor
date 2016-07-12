@@ -1,5 +1,8 @@
 package com.mit.entities.banner;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 import com.mit.entities.photo.PhotoType;
 import com.mit.entities.photo.PhotoView;
 import com.mit.utils.LinkBuilder;
@@ -56,7 +59,11 @@ public class VideoBanner extends Banner {
 
 		private UserView(VideoBanner videoBanner) {
 			super(videoBanner);
-			this.id = videoBanner.getId();
+			try {
+				this.id = URLDecoder.decode(videoBanner.getId(), "UTF-8");
+			} catch (Exception e) {
+				this.id = videoBanner.getId();
+			}
 			this.msg = videoBanner.getMsg();
 			this.thumb = new PhotoView(videoBanner.getThumb(), PhotoType.BANNER.getValue());
 		}
