@@ -1,0 +1,145 @@
+<div class="page-header">
+    <div class="container">
+        <h1 class="title">Color Chart</h1>
+    </div>
+    <div class="breadcrumb-box">
+        <div class="container">
+<!--            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">Color Chart</li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+<!-- page-header -->
+
+  <section id="testimonials" class="page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 testimonails">
+                <div class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-items="1" data-desktop="1">
+                    <div class="item pad-10" data-animation="fadeInLeft">
+                        <div class="desc-border bottom-arrow">
+                            <blockquote class="small-text text-center">
+                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. 
+                            </blockquote>
+                            <div class="star-rating text-center">
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star-half-o  text-color"></i>
+                            </div>
+                        </div>
+                        <div class="client-details text-center">
+                            <div class="client-image">
+                                <!-- Image -->
+                                <img class="img-circle" src="img/sections/testimonials/1.jpg" width="80" height="80" alt="">
+                            </div>
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong class="text-color">John Doe</strong>
+                                <!-- Company -->
+                                <span>Designer, zozothemes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item pad-10">
+                        <div class="desc-border bottom-arrow">
+                            <blockquote class="small-text text-center">
+                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. 
+                            </blockquote>
+                            <div class="star-rating text-center">
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star-half-o  text-color"></i>
+                            </div>
+                        </div>
+                        <div class="client-details text-center">
+                            <div class="client-image">
+                                <!-- Image -->
+                                <img class="img-circle" src="img/sections/testimonials/2.jpg" width="80" height="80" alt="">
+                            </div>
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong class="text-color">John Doe</strong>
+                                <!-- Company -->
+                                <span>Designer, zozothemes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item pad-10">
+                        <div class="desc-border bottom-arrow">
+                            <blockquote class="small-text text-center">
+                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. 
+                            </blockquote>
+                            <div class="star-rating text-center">
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star  text-color"></i>
+                                <i class="fa fa-star-half-o  text-color"></i>
+                            </div>
+                        </div>
+                        <div class="client-details text-center">
+                            <div class="client-image">
+                                <!-- Image -->
+                                <img class="img-circle" src="img/sections/testimonials/3.jpg" width="80" height="80" alt="">
+                            </div>
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong class="text-color">John Doe</strong>
+                                <!-- Company -->
+                                <span>Designer, zozothemes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
+                    <a href="#"><img src="img/sections/clients/1.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
+                    <a href="#"><img src="img/sections/clients/2.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
+                    <a href="#"><img src="img/sections/clients/3.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
+                    <a href="#"><img src="img/sections/clients/4.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
+                    <a href="#"><img src="img/sections/clients/5.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
+                    <a href="#"><img src="img/sections/clients/6.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
+                    <a href="#"><img src="img/sections/clients/3.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
+                    <a href="#"><img src="img/sections/clients/2.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
+                    <a href="#"><img src="img/sections/clients/1.png" width="130" height="130" alt=""></a>
+                </div>
+            </div>                    
+        </div>
+    </div>
+</section>
+<!-- clients -->
+
+<div id="get-quote" class="bg-color get-a-quote black text-center" data-appear-animation="fadeInUp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">Get A Free Quote / Need a Help ? 
+            <a class="black" href="/web/site/contact">Contact Us</a></div>
+        </div>
+    </div>
+</div>
+<!-- request -->
