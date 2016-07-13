@@ -64,7 +64,7 @@ public class MainApp {
         handler.addServletWithMapping(LoginHandler.class, "/web/admin/login");
         handler.addServletWithMapping(LogoutHandler.class, "/web/admin/logout");
         handler.addServletWithMapping(DenyHandler.class, "/web/admin/deny");
-        handler.addServletWithMapping(ProductHandler.class, "/web/admin/product");
+//        handler.addServletWithMapping(ProductHandler.class, "/web/admin/product");
         handler.addServletWithMapping(ColorHandler.class, "/web/admin/color");
         handler.addServletWithMapping(BannerHandler.class, "/web/admin/banner");
         handler.addServletWithMapping(VideoHandler.class, "/web/admin/video");

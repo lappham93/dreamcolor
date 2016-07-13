@@ -337,9 +337,9 @@ public class BaseHandler extends HttpServlet {
             } else if("/web/admin/home".equalsIgnoreCase(svl)){
                 dic.setVariable("MN_HOME", "active");
                 dic.addSection("BC_HOME");
-            } else if("/web/admin/product".equalsIgnoreCase(svl)){
-                dic.setVariable("MN_PRODUCT", "active");
-                dic.addSection("BC_PRODUCT");
+//            } else if("/web/admin/product".equalsIgnoreCase(svl)){
+//                dic.setVariable("MN_PRODUCT", "active");
+//                dic.addSection("BC_PRODUCT");
             } else if("/web/admin/color".equalsIgnoreCase(svl)){
                 dic.setVariable("MN_COLOR", "active");
                 dic.addSection("BC_COLOR");

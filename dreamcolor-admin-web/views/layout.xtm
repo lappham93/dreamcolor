@@ -143,15 +143,17 @@
                         <a class="btn btn-success" href="/web/admin">
                             <i class="ace-icon fa fa-tachometer"></i>
                         </a>
-                        <a class="btn btn-info" href="/web/admin/product">
-                            <i class="ace-icon fa fa-barcode"></i>
-                        </a>
-                        <!-- #section:basics/sidebar.layout.shortcuts -->
                         <a class="btn btn-warning" href="/web/admin/color">
                             <i class="ace-icon fa fa-circle"></i>
                         </a>
-                        <a class="btn btn-pink" href="/web/admin/order">
-                            <i class="ace-icon fa fa-list-alt"></i>
+                        <a class="btn btn-info" href="/web/admin/banner">
+                            <i class="ace-icon fa fa-desktop"></i>
+                        </a>
+                        <a class="btn btn-pink" href="/web/admin/video">
+                            <i class="ace-icon fa fa-film"></i>
+                        </a>
+                       <!-- <a class="btn btn-pink" href="/web/admin/distributor">
+                            <i class="ace-icon fa fa-bank"></i>-->
                         </a>
                         <!-- /section:basics/sidebar.layout.shortcuts -->
                     </div>
@@ -174,13 +176,13 @@
                         </a>
                         <b class="arrow"></b>
                     </li>
-                    <li class="{{MN_PRODUCT}}">
+              <!--      <li class="{{MN_PRODUCT}}">
                         <a href="/web/admin/product">
                             <i class="menu-icon fa fa-barcode"></i>
                             <span class="menu-text"> Products </span>
                         </a>
                         <b class="arrow"></b>
-                    </li>
+                    </li> -->
                     <li class="{{MN_COLOR}}">
                         <a href="/web/admin/color">
                             <i class="menu-icon fa fa-circle"></i>
@@ -257,7 +259,7 @@
                                 <a href="/web/admin">Home</a>
                             </li>
                             {{#BC_HOME}}<li class="active">Dashboard</li>{{/BC_HOME}}
-                            {{#BC_PRODUCT}}<li class="active">Products</li>{{/BC_PRODUCT}}
+                         <!--   {{#BC_PRODUCT}}<li class="active">Products</li>{{/BC_PRODUCT}} -->
                             {{#BC_COLOR}}<li class="active">Colors</li>{{/BC_COLOR}}
                             {{#BC_BANNER}}<li class="active">Banners</li>{{/BC_BANNER}}
                             {{#BC_VIDEO}}<li class="active">Videos</li>{{/BC_VIDEO}}
