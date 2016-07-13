@@ -1,0 +1,242 @@
+
+
+<h3 class="header smaller lighter blue">Upload Color</h3>
+<div class="row">
+    <div class="col-xs-12">
+        <iframe id="if_Add" name="if_Add" style="display: none;width: 0px;height: 0px"></iframe>
+        <form id="frmAdd" name="frmAdd" class="form-horizontal" role="form" action="/web/admin/upload/color" method="POST" enctype="multipart/form-data" target="if_Add">
+            <div id="add_alert_success" class="alert alert-success" style="display: none;"></div>
+            <div id="add_alert_err" class="alert alert-danger" style="display: none;"></div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1">Category: <span class="orange">(*)</span></label>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="col-xs-12 col-sm-5" style="margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px;">
+                        <select class="col-xs-12 col-sm-12" id="cate" name="cate" data-placeholder="Choose a category...">
+                            <option value=""> Choose a category... </option>
+                            {{#loop_option}}
+                            <option value="{{KEY}}">{{VALUE}}</option>
+                            {{/loop_option}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 col-xs-3 control-label no-padding-right" for="form-field-2">Photo: <span class="orange">(*)</span></label>
+                <div class="col-sm-9 col-xs-9">
+                    <div class="col-xs-12 col-sm-5">
+                        <input type="file" name="photo" id="photo" style="display: none;" multiple/>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="col-md-offset-3 col-md-9">
+                    <button id="btnadd" class="btn btn-info" type="button" onclick="upload(); return false;"><i class="ace-icon fa fa-check bigger-110"></i>Add</button>
+                    &nbsp; &nbsp; &nbsp;
+                    <button class="btn" type="reset" onclick="resetUpload(); return false;"><i class="ace-icon fa fa-undo bigger-110"></i>Reset</button>
+                </div>
+            </div>
+            <input type="hidden" id="action" name="action" value="upload"/>
+            <input type="hidden" id="callback" name="callback" value="completeUpload"/>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+try{
+    jQuery(function ($) {
+        /********************************/
+        //add tooltip for small view action buttons in dropdown menu
+        //$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+        $('[data-rel="tooltip"]').tooltip();
+
+        //tooltip placement on right or left
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table');
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            //var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'top';
+        }
+        
+        if(!ace.vars['touch']) {
+            $('.chosen-select').chosen({allow_single_deselect:true}); 
+            //resize the chosen on window resize
+
+            $(window)
+            .off('resize.chosen')
+            .on('resize.chosen', function() {
+                $('.chosen-select').each(function() {
+                     var $this = $(this);
+                     $this.next().css({'width': $this.parent().width()});
+                })
+            }).trigger('resize.chosen');
+            //resize chosen on sidebar collapse/expand
+            $(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+                if(event_name != 'sidebar_collapsed') return;
+                $('.chosen-select').each(function() {
+                     var $this = $(this);
+                     $this.next().css({'width': $this.parent().width()});
+                })
+            });
+
+            $('#chosen-multiple-style .btn').on('click', function(e){
+                var target = $(this).find('input[type=radio]');
+                var which = parseInt(target.val());
+                if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+                 else $('#form-field-select-4').removeClass('tag-input-style');
+            });
+        }
+        
+        $('#photo').ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose multiple file',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false, //| true | large
+            maxSize: 5242880,//bytes --> 5MB
+            allowExt: ["jpeg", "jpg", "png", "gif"],
+            allowMime: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+        }).on('file.error.ace', function(ev, info) {
+            if(info.error_count['ext'] || info.error_count['mime']){
+                //alert('Invalid file type! Please select an image!');
+                bootbox.dialog({
+                    message: "Invalid file type! Please select an image!", 
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+            if(info.error_count['size']){
+                //alert('Invalid file size! Maximum 100KB');
+                bootbox.dialog({
+                    message: "Invalid file size! Maximum 5MB!",
+                    buttons: {
+                        "success" : {
+                            "label" : "OK",
+                            "className" : "btn-sm btn-primary"
+                        }
+                    }
+                });
+            }
+
+            //you can reset previous selection on error
+            //ev.preventDefault();
+            //file_img.ace_file_input('reset_input');
+        });
+        
+        var $overflow = '';
+        var colorbox_params = {
+            rel: 'colorbox',
+            reposition:true,
+            scalePhotos:true,
+            scrolling:false,
+            previous:'<i class="ace-icon fa fa-arrow-left"></i>',
+            next:'<i class="ace-icon fa fa-arrow-right"></i>',
+            close:'&times;',
+            current:'{current} of {total}',
+            maxWidth:'100%',
+            maxHeight:'100%',
+            onOpen:function(){
+                $overflow = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+            },
+            onClosed:function(){
+                document.body.style.overflow = $overflow;
+            },
+            onComplete:function(){
+                $.colorbox.resize();
+            }
+        };
+
+        $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+        $("#cboxLoadingGraphic").html("<i class='ace-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
+        
+        //Dual Listbox.
+        // https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox
+        var lov = $('select[name="lov"]').bootstrapDualListbox({infoTextFiltered: '<span class="label label-purple label-lg">Filtered</span>'});
+        var containerlov = lov.bootstrapDualListbox('getContainer');
+        containerlov.find('.btn').addClass('btn-white btn-info btn-bold');
+        
+    });
+
+    {{#HAS_TABLE}}
+    zscommon.renderPaging('paging','','','','','{{keyword}}');
+    {{/HAS_TABLE}}
+
+    $().ready(function() {
+        $('.modal').hide();
+	});
+    
+    
+    function resetUpload(){
+        $('#add_alert_success').hide();
+        $('#add_alert_err').hide();
+        $('#cate').val("");
+        $('#photo').ace_file_input('reset_input');
+        $('#btnadd').button('reset');
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    }
+    
+    function upload(){
+        $('#add_alert_success').hide();
+        $('#add_alert_err').hide();
+        var serr = "";
+        $('#bootstrap-duallistbox-selected-list_lov option').prop('selected', true);
+        var lov = $('#bootstrap-duallistbox-selected-list_lov').val();
+        console.log("lov: " + lov);
+ 		
+ 		var cate = $('#cate').val();
+ 		if (cate == ''){       
+ 			serr += "Category required. ";
+ 		}
+        var priphoto = $('#photo').val();
+        if(priphoto == ''){
+            serr += "Photo required. ";
+        }
+        $('#frmAdd').unbind('submit');
+        if(serr == ''){
+            console.log('frmAdd submit...');
+            $("#btnadd").button('loading');
+            $('#frmAdd').submit();
+        } else{
+            $('#add_alert_err').html(serr);
+            $('#add_alert_err').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+        }
+        return false;
+    };
+    
+    function completeUpload(data){
+        if(data.err >= 0){
+            $('#add_alert_success').html(data.msg);
+            $('#add_alert_success').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
+            setTimeout(function() {
+                window.location.reload(true);
+            }, 2000);
+        } else{
+            $('#add_alert_err').html(data.msg);
+            $('#add_alert_err').show();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
+            $('#frmAdd').bind('submit');
+            $('#btnadd').button('reset');
+        }
+    };
+    
+    
+}catch(e){}
+</script>
+<script src="{{static-domain}}/mitassets/js/jquery.colorbox.js"></script>
+<script src="{{static-domain}}/mitassets/js/fuelux/fuelux.spinner.js"></script>
+<script src="{{static-domain}}/mitassets/js/jquery.bootstrap-duallistbox.js"></script>

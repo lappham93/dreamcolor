@@ -166,7 +166,7 @@ public class ColorHandler extends BaseHandler {
 
 		// render selection.
 		Map<Integer, String> mapCate = new HashMap<Integer, String>();
-		List<Category> cates = CategoryDAO.getInstance().getAllIgnoreStatus("updateTime", false);
+		List<Category> cates = CategoryDAO.getInstance().getAll("updateTime", false);
 		if (cates != null && !cates.isEmpty()) {
 			for (Category cate : cates) {
 				mapCate.put(cate.getId(), cate.getName());
@@ -250,7 +250,7 @@ public class ColorHandler extends BaseHandler {
 			Category cate = CategoryDAO.getInstance().getById(id);
 			if (cate != null) {
 				JsonObject ocate = new JsonObject();
-//				ocate.set("id", cate.getId());
+				// ocate.set("id", cate.getId());
 				ocate.set("name", cate.getName());
 				ocate.set("desc", cate.getDescription());
 				String status = "";
@@ -278,8 +278,8 @@ public class ColorHandler extends BaseHandler {
 		String sname = req.getParameter("ename");
 		String sdesc = req.getParameter("edesc");
 		String sstatus = req.getParameter("estatus");
-		if (sname != null && !sname.isEmpty() && sdesc != null && !sdesc.isEmpty() &&
-				seidcate != null && !seidcate.isEmpty()) {
+		if (sname != null && !sname.isEmpty() && sdesc != null && !sdesc.isEmpty() && seidcate != null
+				&& !seidcate.isEmpty()) {
 			int idcate = MIdNoise.deNoiseIId(seidcate);
 			int status = sstatus != null ? 1 : 0;
 			Category cate = CategoryDAO.getInstance().getById(idcate);
@@ -312,8 +312,8 @@ public class ColorHandler extends BaseHandler {
 		String sstatus = params.containsKey("status") ? params.get("status") : "";
 		FileItem photo = mapFile.containsKey("thumb") ? mapFile.get("thumb") : null;
 
-		if (sname != null && !sname.isEmpty() && sdesc != null && !sdesc.isEmpty() && sstatus != null && 
-				photo != null && photo.getSize() > 0) {
+		if (sname != null && !sname.isEmpty() && sdesc != null && !sdesc.isEmpty() && sstatus != null && photo != null
+				&& photo.getSize() > 0) {
 			// save photo
 			long priPhotoId = PhotoUtil.Instance.uploadPhoto(photo, PhotoType.COLOR);
 			if (priPhotoId < 0) {
@@ -375,7 +375,7 @@ public class ColorHandler extends BaseHandler {
 			logger.error("ColorHandler.changeCategoryPhoto: " + e, e);
 		}
 	}
-	
+
 	private void addColor(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
 			Map<String, FileItem> mapFile, Map<String, String> params) {
 		String scode = params.containsKey("code") ? params.get("code") : "";
@@ -384,8 +384,8 @@ public class ColorHandler extends BaseHandler {
 		String sisfeature = params.containsKey("isfeature") ? params.get("isfeature") : "";
 		FileItem photo = mapFile.containsKey("photo") ? mapFile.get("photo") : null;
 
-		if (scode != null && !scode.isEmpty() && scate != null && !scate.isEmpty() && sstatus != null && 
-				sisfeature != null && photo != null && photo.getSize() > 0) {
+		if (scode != null && !scode.isEmpty() && scate != null && !scate.isEmpty() && sstatus != null
+				&& sisfeature != null && photo != null && photo.getSize() > 0) {
 			// save photo
 			long priPhotoId = PhotoUtil.Instance.uploadPhoto(photo, PhotoType.COLOR);
 			if (priPhotoId < 0) {
@@ -413,7 +413,6 @@ public class ColorHandler extends BaseHandler {
 		}
 	}
 
-
 	private void getColor(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
 		String spid = req.getParameter("id");
 		if (spid != null && !spid.isEmpty()) {
@@ -440,7 +439,7 @@ public class ColorHandler extends BaseHandler {
 			result.set("msg", "Parameter invaliad.");
 		}
 	}
-	
+
 	private void changeColorPhoto(HttpServletRequest req, HttpServletResponse resp, JsonObject result,
 			Map<String, FileItem> mapFile, Map<String, String> params) throws IOException {
 		try {
@@ -484,7 +483,8 @@ public class ColorHandler extends BaseHandler {
 		String scateid = req.getParameter("ecate");
 		String sisfeature = req.getParameter("eisfeature");
 		String sstatus = req.getParameter("estatus");
-		if (seidp != null && !seidp.isEmpty() && scode != null && !scode.isEmpty() && scateid != null && !scateid.isEmpty()) {
+		if (seidp != null && !seidp.isEmpty() && scode != null && !scode.isEmpty() && scateid != null
+				&& !scateid.isEmpty()) {
 			int cateid = MIdNoise.deNoiseIId(scateid);
 			int status = sstatus != null ? 1 : 0;
 			boolean isFeature = sisfeature != null;

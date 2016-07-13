@@ -59,7 +59,7 @@ public class ConsumerEmailSimple extends ConsumerService {
         String msg = new String(data);
 		try {
 			if (msg != null && !msg.isEmpty()) {
-				String[] dataArr = msg.split("\t");
+				String[] dataArr = msg.split("\t\t");
 				if(dataArr.length >= 6) {
 					String emailTos = dataArr[1];
 					String emailName = dataArr[2];
@@ -78,6 +78,7 @@ public class ConsumerEmailSimple extends ConsumerService {
 							logger.error("Send mail error " + msg);
 						}
 					}
+					logger.debug("Send mail success " + msg);
 				} else {
 	        		logger.error("Data format error " + msg);
 	        	}

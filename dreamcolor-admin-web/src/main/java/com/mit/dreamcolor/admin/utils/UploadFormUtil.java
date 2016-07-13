@@ -17,11 +17,14 @@
 package com.mit.dreamcolor.admin.utils;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -93,6 +96,31 @@ public class UploadFormUtil extends HttpServlet {
                     } else{
                         // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
                         // Get the uploaded file parameters
+                        String fieldName = fi.getFieldName();
+                        String value = fi.getString();
+                        params.put(fieldName, value);
+                    }
+                }
+            }
+        } catch (Exception ex) {
+            logger.error(ex.getMessage(), ex);
+        }
+    }
+    
+    /*
+     * This function uses for the upload multiple color case only.
+     */
+    public void getMapFormUpload(HttpServletRequest req, List<FileItem> mapFile, Map<String, String> params){
+        try {
+            isMultipart = ServletFileUpload.isMultipartContent(req);
+            if(isMultipart ){
+                List<FileItem> fileItems = upload.parseRequest(req);
+                Iterator i = fileItems.iterator();
+                while (i.hasNext()) {
+                    FileItem fi = (FileItem)i.next();
+                    if (!fi.isFormField()) {
+                        mapFile.add(fi);
+                    } else{
                         String fieldName = fi.getFieldName();
                         String value = fi.getString();
                         params.put(fieldName, value);

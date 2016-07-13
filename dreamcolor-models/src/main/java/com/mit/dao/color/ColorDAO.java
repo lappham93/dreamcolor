@@ -84,6 +84,21 @@ public class ColorDAO extends CommonDAO {
 		return rs;
 	}
 	
+	public int totalFeature() {
+		int rs = MongoErrorCode.NOT_CONNECT;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document("isFeature", true)
+						.append("status", new Document("$gt", 0));
+				rs = (int)dbSource.getCollection(TABLE_NAME).count(filter);
+			} catch (final Exception e) {
+				_logger.error("totalAll ", e);
+			}
+		}
+		
+		return rs;
+	}
+	
 	public List<Color> getSliceIgnoreStatus(int count, int from, String fieldSort, boolean ascOrder) {
 		List<Color> colors = null;
 		if(dbSource != null) {
@@ -108,6 +123,24 @@ public class ColorDAO extends CommonDAO {
 			try {
 				Document filter = new Document("categoryId", categoryId)
 						.append("status", new Document("$gt", 0));
+				Document sort = new Document(fieldSort, ascOrder ? 1 : -1);
+				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).skip(from).limit(count);
+				if(doc != null) {
+					colors = new MongoMapper().parseList(doc);
+				}
+			} catch(final Exception e) {
+				_logger.error("getSlice ", e);
+			}
+		}
+
+		return colors;
+	}
+	
+	public List<Color> getSlice(int count, int from, String fieldSort, boolean ascOrder) {
+		List<Color> colors = null;
+		if(dbSource != null) {
+			try {
+				Document filter = new Document("status", new Document("$gt", 0));
 				Document sort = new Document(fieldSort, ascOrder ? 1 : -1);
 				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).skip(from).limit(count);
 				if(doc != null) {
@@ -238,6 +271,30 @@ public class ColorDAO extends CommonDAO {
 				rs = MongoErrorCode.SUCCESS;
 			} catch(final Exception e) {
 				_logger.error("insert ", e);
+			}
+		}
+
+		return rs;
+	}
+	
+	public int insertBatch(List<Color> colors) {
+		int rs = MongoErrorCode.NOT_CONNECT;
+		if(dbSource != null) {
+			try {
+				MongoMapper mapper = new MongoMapper();
+				List<Document> objs = new ArrayList<Document>();
+				for (Color color: colors) {
+					if(color.getId() <= 0) {
+						color.setId(MIdGenLongDAO.getInstance(TABLE_NAME).getNext());
+					}
+					Document obj = mapper.toDocument(color);
+					obj = mapper.buildInsertTime(obj);
+					objs.add(obj);
+				}
+				dbSource.getCollection(TABLE_NAME).insertMany(objs);
+				rs = MongoErrorCode.SUCCESS;
+			} catch(final Exception e) {
+				_logger.error("insertBatch ", e);
 			}
 		}
 

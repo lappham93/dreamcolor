@@ -23,6 +23,7 @@ import com.mit.jetty.server.WebServers;
 import com.mit.product.servlet.GetListProductServlet;
 import com.mit.product.servlet.GetProductDetailServlet;
 import com.mit.product.servlet.ViewProductServlet;
+import com.mit.user.servlet.SendFeedbackServlet;
 import com.mit.utils.ConfigUtils;
 import com.mit.video.servlet.GetListVideoServlet;
 import com.mit.video.servlet.ViewVideoServlet;
@@ -92,5 +93,8 @@ public class MainApp {
 		//video
 		handler.addServletWithMapping(GetListVideoServlet.class, "/dreamau/video/list");
 		handler.addServletWithMapping(ViewVideoServlet.class, "/dreamau/video/view");
+		
+		//user
+		handler.addServletWithMapping(SendFeedbackServlet.class, "/dreamau/user/feedback");
 	}
 }

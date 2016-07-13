@@ -53,6 +53,24 @@ public class CategoryDAO extends CommonDAO {
 		return rs;
 	}
 	
+	public List<Category> getAll(String fieldSort, boolean ascOrder) {
+		List<Category> cates = null;
+		if(dbSource != null) {
+			try {
+				Document filter = new Document("status", new Document("$gt", 0));
+				Document sort = new Document("fieldSort", ascOrder ? 1 : -1);
+				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort);
+				if(doc != null) {
+					cates = new MongoMapper().parseList(doc);
+				}
+			} catch(final Exception e) {
+				_logger.error("getAll ", e);
+			}
+		}
+
+		return cates;
+	}
+	
 	public List<Category> getAllIgnoreStatus(String fieldSort, boolean ascOrder) {
 		List<Category> cates = null;
 		if(dbSource != null) {
