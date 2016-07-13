@@ -94,7 +94,7 @@ public class UploadFormUtil extends HttpServlet {
                         // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
                         // Get the uploaded file parameters
                         String fieldName = fi.getFieldName();
-                        String value = fi.getString();
+                        String value = fi.getString("utf-8");
                         params.put(fieldName, value);
                     }
                 }

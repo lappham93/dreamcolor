@@ -34,11 +34,11 @@
 			<artifactId>libphonenumber</artifactId>
 			<version>6.3.1</version>
 		</dependency>
-<!--        <dependency>
-			<groupId>com.mit.bconnect</groupId>
-			<artifactId>bconnect-models</artifactId>
+        <dependency>
+			<groupId>com.mit.dreamcolor</groupId>
+			<artifactId>dreamcolor-models</artifactId>
 			<version>0.0.1</version>
-		</dependency>-->
+		</dependency>
         <dependency>
 			<groupId>org</groupId>
 			<artifactId>hapax</artifactId>

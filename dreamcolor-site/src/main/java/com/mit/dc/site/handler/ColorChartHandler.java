@@ -17,11 +17,14 @@
 package com.mit.dc.site.handler;
 
 import com.eclipsesource.json.JsonObject;
+import com.mit.dao.color.CategoryDAO;
+import com.mit.dao.color.ColorDAO;
 import com.mit.dc.site.utils.HttpHelper;
 import com.mit.dc.site.utils.UploadFormUtil;
+import com.mit.entities.color.Category;
+import com.mit.entities.color.Color;
 import hapax.TemplateDataDictionary;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.fileupload.FileItem;
@@ -117,5 +120,19 @@ public class ColorChartHandler extends BaseHandler {
         } catch (Exception ex) {
             logger.error(ex.getMessage(), ex);
         }
+    }
+    
+    private void renderPageColorChart(TemplateDataDictionary dic, HttpServletRequest req, HttpServletResponse resp){
+        //get list category.
+        List<Category> listCate = CategoryDAO.getInstance().getAll();
+        if(listCate != null && !listCate.isEmpty()){
+            for(Category cate : listCate){
+                List<Color> listCL = ColorDAO.getInstance().getByCateId(cate.getId());
+                if(listCL != null && !listCL.isEmpty()){
+                    
+                }
+            }
+        }
+        
     }
 }

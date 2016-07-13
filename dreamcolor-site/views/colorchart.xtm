@@ -131,6 +131,15 @@
                 <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
                     <a href="#"><img src="img/sections/clients/1.png" width="130" height="130" alt=""></a>
                 </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
+                    <a href="#"><img src="img/sections/clients/4.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
+                    <a href="#"><img src="img/sections/clients/5.png" width="130" height="130" alt=""></a>
+                </div>
+                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
+                    <a href="#"><img src="img/sections/clients/6.png" width="130" height="130" alt=""></a>
+                </div>
             </div>                    
         </div>
     </div>
