@@ -122,7 +122,7 @@ public class UploadFormUtil extends HttpServlet {
                         mapFile.add(fi);
                     } else{
                         String fieldName = fi.getFieldName();
-                        String value = fi.getString();
+                        String value = fi.getString("utf-8");
                         params.put(fieldName, value);
                     }
                 }

@@ -18,128 +18,50 @@
 <section id="testimonials" class="page-section">
     <div class="container">
         <div class="section-title" data-animation="fadeInUp">
-            <h2 class="title">List Colors</h2>
+            <h2 class="title">Category Colors</h2>
         </div>
         <div class="row">
             <div class="col-md-6 testimonails">
-                <div class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-items="1" data-desktop="1">
-                    <div class="item pad-10" data-animation="fadeInLeft">
-                        <div class="desc-border bottom-arrow">
-                            <blockquote class="small-text text-center">
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. 
-                            </blockquote>
-                            <div class="star-rating text-center">
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star-half-o  text-color"></i>
+                {{#loop_ct}}
+                <div id="d_cate_{{ID}}" style="{{DISPLAY}}">
+                    <div id="cl_cate_{{ID}}" class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-items="1" data-desktop="1">
+                        {{#loop_color}}
+                        <div class="item pad-10" data-animation="fadeInLeft">
+                            <div class="desc-border bottom-arrow">
+                                <blockquote class="small-text text-center">
+                                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. 
+                                </blockquote>
+                                <div class="star-rating text-center">
+                                    <i class="fa fa-star  text-color"></i>
+                                    <i class="fa fa-star  text-color"></i>
+                                    <i class="fa fa-star  text-color"></i>
+                                    <i class="fa fa-star  text-color"></i>
+                                    <i class="fa fa-star-half-o  text-color"></i>
+                                </div>
+                            </div>
+                            <div class="client-details text-center">
+                                <div class="client-image">
+                                    <img class="img-circle" src="{{URI_CL}}" width="80" height="80" alt="">
+                                </div>
+                                <div class="client-details">
+                                    <!-- Name -->
+                                    <strong class="text-color">{{CL_CODE}}</strong>
+                                    <!-- Company -->
+                                    <span>Designer, zozothemes</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="client-details text-center">
-                            <div class="client-image">
-                                <!-- Image -->
-                                <img class="img-circle" src="img/sections/testimonials/1.jpg" width="80" height="80" alt="">
-                            </div>
-                            <div class="client-details">
-                                <!-- Name -->
-                                <strong class="text-color">John Doe</strong>
-                                <!-- Company -->
-                                <span>Designer, zozothemes</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item pad-10">
-                        <div class="desc-border bottom-arrow">
-                            <blockquote class="small-text text-center">
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. 
-                            </blockquote>
-                            <div class="star-rating text-center">
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star-half-o  text-color"></i>
-                            </div>
-                        </div>
-                        <div class="client-details text-center">
-                            <div class="client-image">
-                                <!-- Image -->
-                                <img class="img-circle" src="img/sections/testimonials/2.jpg" width="80" height="80" alt="">
-                            </div>
-                            <div class="client-details">
-                                <!-- Name -->
-                                <strong class="text-color">John Doe</strong>
-                                <!-- Company -->
-                                <span>Designer, zozothemes</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item pad-10">
-                        <div class="desc-border bottom-arrow">
-                            <blockquote class="small-text text-center">
-                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste. 
-                            </blockquote>
-                            <div class="star-rating text-center">
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star  text-color"></i>
-                                <i class="fa fa-star-half-o  text-color"></i>
-                            </div>
-                        </div>
-                        <div class="client-details text-center">
-                            <div class="client-image">
-                                <!-- Image -->
-                                <img class="img-circle" src="img/sections/testimonials/3.jpg" width="80" height="80" alt="">
-                            </div>
-                            <div class="client-details">
-                                <!-- Name -->
-                                <strong class="text-color">John Doe</strong>
-                                <!-- Company -->
-                                <span>Designer, zozothemes</span>
-                            </div>
-                        </div>
+                        {{/loop_color}}
                     </div>
                 </div>
+                {{/loop_ct}}
             </div>
             <div class="col-md-6 text-center">
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
-                    <a href="#"><img src="img/sections/clients/1.png" width="130" height="130" alt=""></a>
+                {{#loop_cate}}
+                <div id="cate_{{ID}}" class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
+                    <a href="#" onclick="viewListColor('{{ID}}'); return false;"><img src="{{URI_CATE}}" width="130" height="130" alt=""></a>
                 </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
-                    <a href="#"><img src="img/sections/clients/2.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
-                    <a href="#"><img src="img/sections/clients/3.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
-                    <a href="#"><img src="img/sections/clients/4.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
-                    <a href="#"><img src="img/sections/clients/5.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
-                    <a href="#"><img src="img/sections/clients/6.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
-                    <a href="#"><img src="img/sections/clients/3.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
-                    <a href="#"><img src="img/sections/clients/2.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
-                    <a href="#"><img src="img/sections/clients/1.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
-                    <a href="#"><img src="img/sections/clients/4.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
-                    <a href="#"><img src="img/sections/clients/5.png" width="130" height="130" alt=""></a>
-                </div>
-                <div class="boxed-block inline-block margin-10" data-animation="fadeInRight">
-                    <a href="#"><img src="img/sections/clients/6.png" width="130" height="130" alt=""></a>
-                </div>
+                {{/loop_cate}}
             </div>                    
         </div>
     </div>
@@ -153,14 +75,9 @@
         <div class="row">
             <div class="col-md-12 text-center" data-animation="pulse">
                 <div class="owl-carousel navigation-1" data-pagination="false" data-items="6" data-autoplay="true" data-navigation="true">		
-                    <a href="#"><img src="img/sections/clients/1.png" width="170" height="170" alt=""></a>
-                    <a href="#"><img src="img/sections/clients/2.png" width="170" height="170" alt=""></a>
-                    <a href="#"><img src="img/sections/clients/3.png" width="170" height="170" alt=""></a>
-                    <a href="#"><img src="img/sections/clients/4.png" width="170" height="170" alt=""></a>
-                    <a href="#"><img src="img/sections/clients/5.png" width="170" height="170" alt=""></a>
-                    <a href="#"><img src="img/sections/clients/6.png" width="170" height="170" alt=""></a>
-                    <a href="#"><img src="img/sections/clients/1.png" width="170" height="170" alt=""></a>
-                    <a href="#"><img src="img/sections/clients/2.png" width="170" height="170" alt=""></a>
+                    {{#loop_all_color}}
+                    <a href="#"><img src="{{URI_CL}}" width="170" height="170" alt=""></a>
+                    {{/loop_all_color}}
                 </div>
             </div>
         </div>
@@ -176,3 +93,37 @@
     </div>
 </div>
 <!-- request -->
+
+<script type="text/javascript">
+try{
+    
+    function viewListColor(id){
+        $('div[id^=cate_]').removeClass('border-color');
+        $('#cate_' + id).addClass('border-color');
+        
+        $('div[id^=d_cate]').hide();
+        $('#d_cate_' + id).show();
+        
+        return false;
+    }
+    
+    function customDataSuccess(data){
+        var content = "";
+        if(data.err >= 0){
+            var listCL = data.arrCL;
+            if(listCL != null && listCL != undefined){
+                var c = 0;
+                for(var i = 0; i < listCL.length; i++){
+                    var objCL = listCL[i];
+                    var tmp = item.replace(/URI_CL/g, objCL.uri);
+                    tmp = tmp.replace(/CL_CODE/g, objCL.code);
+                    content = content + tmp;
+                }
+            }
+        }
+        $("#cl_cate").html(content);
+    }
+    
+}catch(e){}
+
+</script>

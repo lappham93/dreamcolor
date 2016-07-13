@@ -16,13 +16,17 @@
 
 package com.mit.dc.site.handler;
 
+import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonObject;
 import com.mit.dao.color.CategoryDAO;
 import com.mit.dao.color.ColorDAO;
 import com.mit.dc.site.utils.HttpHelper;
+import com.mit.dc.site.utils.PhotoUtil;
 import com.mit.dc.site.utils.UploadFormUtil;
 import com.mit.entities.color.Category;
 import com.mit.entities.color.Color;
+import com.mit.entities.photo.PhotoType;
+import com.mit.midutil.MIdNoise;
 import hapax.TemplateDataDictionary;
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
@@ -44,6 +48,7 @@ public class ColorChartHandler extends BaseHandler {
         try {
             TemplateDataDictionary dic = getDictionary();
         	
+            renderPageColorChart(dic, req, resp);
         	dic.setVariable("MAIN_CONTENT", applyTemplate(dic, "colorchart.xtm", req));
         	
             print(applyTemplateLayoutMain(dic, req, resp), resp);
@@ -84,9 +89,10 @@ public class ColorChartHandler extends BaseHandler {
                 action = req.getParameter("action");
                 callback = req.getParameter("callback");
                 if(action != null && !action.isEmpty()) {
-//                    if("getState".equalsIgnoreCase(action)){
-//                        getStateOfCountry(req, resp, result);
-//                    } else if("getbiz".equalsIgnoreCase(action)){
+                    if("getColorOfCate".equalsIgnoreCase(action)){
+                        getColorOfCate(req, resp, result);
+                    } 
+//                    else if("getbiz".equalsIgnoreCase(action)){
 //                        getBiz(req, resp, result);
 //                    } else if("editbiz".equalsIgnoreCase(action)){
 //                        editBiz(req, resp, result);
@@ -126,13 +132,62 @@ public class ColorChartHandler extends BaseHandler {
         //get list category.
         List<Category> listCate = CategoryDAO.getInstance().getAll();
         if(listCate != null && !listCate.isEmpty()){
+            int i = 0;
             for(Category cate : listCate){
                 List<Color> listCL = ColorDAO.getInstance().getByCateId(cate.getId());
                 if(listCL != null && !listCL.isEmpty()){
+                    TemplateDataDictionary loopCT = dic.addSection("loop_ct");
+                    if(i == 0){
+                        loopCT.setVariable("DISPLAY", "");
+                    } else{
+                        loopCT.setVariable("DISPLAY", "display: none;");
+                    }
+                    loopCT.setVariable("ID", MIdNoise.enNoiseIId(cate.getId()));
                     
+                    for(Color cl : listCL){
+                        TemplateDataDictionary loopRow = loopCT.addSection("loop_color");
+                        String uri = PhotoUtil.Instance.buildURIImg(cl.getPhoto(), PhotoType.COLOR);
+                        loopRow.setVariable("URI_CL", uri);
+                        loopRow.setVariable("CL_CODE", cl.getCode());
+                        
+                        TemplateDataDictionary loopAllCL = dic.addSection("loop_all_color");
+                        String uriCL = PhotoUtil.Instance.buildURIImg(cl.getPhoto(), PhotoType.COLOR);
+                        loopAllCL.setVariable("URI_CL", uriCL);
+                    }
+                    i++;
                 }
             }
+            for(Category cate : listCate){
+                TemplateDataDictionary loopRow = dic.addSection("loop_cate");
+                String uri = PhotoUtil.Instance.buildURIImg(cate.getPhotoNum(), PhotoType.COLOR);
+				loopRow.setVariable("URI_CATE", uri);
+                loopRow.setVariable("ID", MIdNoise.enNoiseIId(cate.getId()));
+            }
         }
-        
     }
+    
+    private void getColorOfCate(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
+		String sid = req.getParameter("id");
+		if (sid != null && !sid.isEmpty()) {
+			int id = MIdNoise.deNoiseIId(sid);
+            
+            JsonArray jlistCL = new JsonArray();
+            List<Color> listCL = ColorDAO.getInstance().getByCateId(id);
+            if(listCL != null && !listCL.isEmpty()){
+                for(Color cl : listCL){
+                    JsonObject objCL = new JsonObject();
+                    String uri = PhotoUtil.Instance.buildURIImg(cl.getPhoto(), PhotoType.COLOR);
+                    objCL.set("uri", uri);
+                    objCL.set("code", cl.getCode());
+                    jlistCL.add(objCL);
+                }
+            }
+            result.set("err", 0);
+            result.set("arrCL", jlistCL);
+            result.set("msg", "Get category successfully.");
+		} else {
+			result.set("err", -1);
+			result.set("msg", "Parameter invaliad.");
+		}
+	}
 }
