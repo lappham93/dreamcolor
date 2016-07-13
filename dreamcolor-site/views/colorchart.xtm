@@ -15,8 +15,11 @@
 </div>
 <!-- page-header -->
 
-  <section id="testimonials" class="page-section">
+<section id="testimonials" class="page-section">
     <div class="container">
+        <div class="section-title" data-animation="fadeInUp">
+            <h2 class="title">List Colors</h2>
+        </div>
         <div class="row">
             <div class="col-md-6 testimonails">
                 <div class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-items="1" data-desktop="1">
@@ -132,7 +135,28 @@
         </div>
     </div>
 </section>
-<!-- clients -->
+
+<section id="clients" class="page-section">
+    <div class="container">
+<!--        <div class="section-title" data-animation="fadeInUp">
+            <h2 class="title">List Colors</h2>
+        </div>-->
+        <div class="row">
+            <div class="col-md-12 text-center" data-animation="pulse">
+                <div class="owl-carousel navigation-1" data-pagination="false" data-items="6" data-autoplay="true" data-navigation="true">		
+                    <a href="#"><img src="img/sections/clients/1.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/2.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/3.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/4.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/5.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/6.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/1.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/2.png" width="170" height="170" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <div id="get-quote" class="bg-color get-a-quote black text-center" data-appear-animation="fadeInUp">
     <div class="container">

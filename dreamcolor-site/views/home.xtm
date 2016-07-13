@@ -11,16 +11,16 @@
 </section>
 <!-- slider -->
 
-<section id="features" class="page-section">
-    <div class="section-title" data-animation="fadeInUp" style="margin-bottom: 20px;">
+<section id="features" class="page-section" style="background-color: #2e2e2e;">
+    <div class="section-title white" data-animation="fadeInUp" style="margin-bottom: 20px;">
         <h2 class="title">About Dreamau</h2>
     </div>
     <div class="section-title" data-animation="fadeInUp" style="height: 72px;">
         <div class="col-md-12 text-center" data-animation="pulse">
-            <img src="{{static-domain}}/dc/imgs/Indicator.png" width="748" height="72" alt="" />
+            <img src="{{static-domain}}/dc/imgs/Indicator_2.png" width="748" height="72" alt="" />
         </div>
     </div>
-    <div class="container">
+    <div class="container white">
         <div class="row">
             <div class="col-sm-4" data-animation="fadeInRight">
                 <p class="text-center">
@@ -168,10 +168,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-4 text-center" data-animation="pulse">
-                <!-- Image -->
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_18.jpg" width="350" height="480" alt="" />
-                <!--<img src="{{static-domain}}/dc/imgs/Dreamau-Web_27.jpg" alt="" />-->
+            <div class="col-md-4 text-center" data-animation="pulse" style="">
+                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_19.jpg" width="350" height="480" alt="" />
             </div>
             <div class="col-md-4" data-animation="fadeInRight">
                 <ul class="features-list features-list-left">
