@@ -117,6 +117,24 @@ public class ColorDAO extends CommonDAO {
 		return colors;
 	}
 	
+    public List<Color> getByCateId(int categoryId) {
+		List<Color> colors = null;
+		if(dbSource != null) {
+			try {
+				Document filter = new Document("categoryId", categoryId).append("status", new Document("$gt", 0));
+				Document sort = new Document("createTime", -1);
+				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort);
+				if(doc != null) {
+					colors = new MongoMapper().parseList(doc);
+				}
+			} catch(final Exception e) {
+				_logger.error("getByCateId ", e);
+			}
+		}
+
+		return colors;
+	}
+    
 	public List<Color> getSlice(int categoryId, int count, int from, String fieldSort, boolean ascOrder) {
 		List<Color> colors = null;
 		if(dbSource != null) {
