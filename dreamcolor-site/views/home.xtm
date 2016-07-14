@@ -210,56 +210,56 @@
         <div class="grid-sizer"></div>
         <!-- Item 1 -->
         <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_33.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
+            <a href="{{static-domain}}/dc/imgs/Group_8.png" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Group_8.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Fashion</div>-->
             </a>
         </div>
         <!-- Item 1 Ends-->
         <!-- Item 2 -->
         <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_35.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
+            <a href="{{static-domain}}/dc/imgs/Group_12.png" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Group_12.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Style</div>-->
             </a>
         </div>
         <!-- Item 2 Ends-->
         <!-- Item 3 -->
         <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_55.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_55.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
+            <a href="{{static-domain}}/dc/imgs/Group_10.png" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Group_10.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Ritto</div>-->
             </a>
         </div>
         <!-- Item 3 Ends-->
         <!-- Item 4 -->
         <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_41.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
+            <a href="{{static-domain}}/dc/imgs/Group_13.png" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Group_13.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Black &amp; White</div>-->
             </a>
         </div>
         <!-- Item 4 Ends-->
         <!-- Item 5 -->
         <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_43.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
+            <a href="{{static-domain}}/dc/imgs/Group_15.jpg" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Group_15.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">walky</div>-->
             </a>
         </div>
         <!-- Item 5 Ends-->
         <!-- Item 6 -->
         <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_49.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
+            <a href="{{static-domain}}/dc/imgs/Group_11.png" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Group_11.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Style</div>-->
             </a>
         </div>
         <!-- Item 6 Ends-->
         <!-- Item 7 -->
         <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_50.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
+            <a href="{{static-domain}}/dc/imgs/Group_14.png" data-rel="prettyPhoto[portfolio]">
+                <img src="{{static-domain}}/dc/imgs/Group_14.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
                 <!--<div class="portfolio-title">Superb</div>-->
             </a>
         </div>

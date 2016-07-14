@@ -319,15 +319,18 @@ public class BaseHandler extends HttpServlet {
 			// }
 
 			String svl = req.getServletPath();
-			if ("/web/admin".equalsIgnoreCase(svl)) {
+			if ("/web/site".equalsIgnoreCase(svl)) {
 				dic.setVariable("MN_HOME", "active");
-				dic.addSection("BC_HOME");
-			} else if ("/web/admin/home".equalsIgnoreCase(svl)) {
+			} else if ("/web/site/home".equalsIgnoreCase(svl)) {
 				dic.setVariable("MN_HOME", "active");
-				dic.addSection("BC_HOME");
+			} else if ("/web/site/colorchart".equalsIgnoreCase(svl)) {
+				dic.setVariable("MN_CC", "active");
+			} else if ("/web/site/aboutus".equalsIgnoreCase(svl)) {
+				dic.setVariable("MN_ABOUT", "active");
+			} else if ("/web/site/contact".equalsIgnoreCase(svl)) {
+				dic.setVariable("MN_CONTACT", "active");
 			} else {
 				dic.setVariable("MN_HOME", "active");
-				dic.addSection("BC_HOME");
 			}
 
 			if (template != null) {
