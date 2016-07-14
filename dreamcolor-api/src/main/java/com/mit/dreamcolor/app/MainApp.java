@@ -23,7 +23,9 @@ import com.mit.jetty.server.WebServers;
 import com.mit.product.servlet.GetListProductServlet;
 import com.mit.product.servlet.GetProductDetailServlet;
 import com.mit.product.servlet.ViewProductServlet;
+import com.mit.user.servlet.RemoveTokenServlet;
 import com.mit.user.servlet.SendFeedbackServlet;
+import com.mit.user.servlet.SubmitTokenServlet;
 import com.mit.utils.ConfigUtils;
 import com.mit.video.servlet.GetListVideoServlet;
 import com.mit.video.servlet.ViewVideoServlet;
@@ -96,5 +98,7 @@ public class MainApp {
 		
 		//user
 		handler.addServletWithMapping(SendFeedbackServlet.class, "/dreamau/user/feedback");
+		handler.addServletWithMapping(SubmitTokenServlet.class, "/dreamau/user/token/submit");
+		handler.addServletWithMapping(RemoveTokenServlet.class, "/dreamau/user/token/remove");
 	}
 }

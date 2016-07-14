@@ -403,6 +403,8 @@ public class ColorHandler extends BaseHandler {
 			if (err >= 0) {
 				result.set("err", 0);
 				result.set("msg", "Add color successfully.");
+				//notify
+				
 			} else {
 				result.set("err", -1);
 				result.set("msg", "Add color fail.");
