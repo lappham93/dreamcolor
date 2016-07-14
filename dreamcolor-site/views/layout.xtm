@@ -68,16 +68,16 @@
                                 <div class="navbar-collapse collapse">
                                     <!-- nav -->
                                     <ul class="nav navbar-nav">
-                                        <li class="mega-menu">
+                                        <li class="mega-menu {{MN_HOME}}">
                                             <a href="/web/site">Home</a>
                                         </li>
-                                        <li class="mega-menu">
+                                        <li class="mega-menu {{MN_CC}}">
                                             <a href="/web/site/colorchart">Color Chart</a>
                                         </li>
-                                        <li>
+                                        <li class="{{MN_ABOUT}}">
                                             <a href="/web/site/aboutus">About Us</a>
                                         </li>
-                                        <li>
+                                        <li class="{{MN_CONTACT}}">
                                             <a href="/web/site/contact">Contact</a> 
                                         </li>
                                         <li class="hidden-767">
