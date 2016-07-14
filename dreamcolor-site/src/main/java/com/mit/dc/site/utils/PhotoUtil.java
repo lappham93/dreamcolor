@@ -105,7 +105,7 @@ public class PhotoUtil {
 					folder.mkdirs();
 				}
 				String pathSaveImg = folderPath + File.separator + pidn + "." + ext;
-				String uriImg = Configuration.APP_STATIC_DOMAIN + "/pdb/pt/" + File.separator
+				String uriImg = Configuration.APP_STATIC_DOMAIN + "/pdb/pt" + File.separator
 						+ PhotoCommon.photoName.get(type.getValue()) + File.separator + pidn + "." + ext;
 				File img = new File(pathSaveImg);
 				if (!img.exists()) {

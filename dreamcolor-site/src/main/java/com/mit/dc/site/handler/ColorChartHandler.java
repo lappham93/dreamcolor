@@ -157,11 +157,16 @@ public class ColorChartHandler extends BaseHandler {
                     i++;
                 }
             }
+            int j = 0;
             for(Category cate : listCate){
                 TemplateDataDictionary loopRow = dic.addSection("loop_cate");
                 String uri = PhotoUtil.Instance.buildURIImg(cate.getPhotoNum(), PhotoType.COLOR);
 				loopRow.setVariable("URI_CATE", uri);
                 loopRow.setVariable("ID", MIdNoise.enNoiseIId(cate.getId()));
+                if(j == 0){
+                    loopRow.setVariable("CATE_ACTIVE", "border-color");
+                }
+                j++;
             }
         }
     }

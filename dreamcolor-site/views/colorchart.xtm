@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-6 text-center">
                 {{#loop_cate}}
-                <div id="cate_{{ID}}" class="boxed-block inline-block margin-10" data-animation="fadeInLeft">
+                <div id="cate_{{ID}}" class="boxed-block inline-block margin-10 {{CATE_ACTIVE}}" data-animation="fadeInLeft">
                     <a href="#" onclick="viewListColor('{{ID}}'); return false;"><img src="{{URI_CATE}}" width="130" height="130" alt=""></a>
                 </div>
                 {{/loop_cate}}
