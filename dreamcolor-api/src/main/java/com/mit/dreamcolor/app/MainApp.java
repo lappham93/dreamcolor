@@ -13,6 +13,7 @@ import com.mit.banner.servlet.GetListBannerServlet;
 import com.mit.color.servlet.GetListColorCategoryServlet;
 import com.mit.color.servlet.GetListColorServlet;
 import com.mit.color.servlet.GetListFeatureServlet;
+import com.mit.color.servlet.GetListNewColorServlet;
 import com.mit.color.servlet.SearchResultServlet;
 import com.mit.color.servlet.ViewColorServlet;
 import com.mit.color.servlet.WordSuggestServlet;
@@ -20,6 +21,9 @@ import com.mit.distributor.servlet.GetListDistributorServlet;
 import com.mit.handler.NoFunctionHandler;
 import com.mit.handler.ValidateHandler;
 import com.mit.jetty.server.WebServers;
+import com.mit.notification.servlet.GetNewsCountServlet;
+import com.mit.notification.servlet.GetNewsServlet;
+import com.mit.notification.servlet.ViewNewsServlet;
 import com.mit.product.servlet.GetListProductServlet;
 import com.mit.product.servlet.GetProductDetailServlet;
 import com.mit.product.servlet.ViewProductServlet;
@@ -80,6 +84,7 @@ public class MainApp {
 		handler.addServletWithMapping(GetListFeatureServlet.class, "/dreamau/feature/list");
 		handler.addServletWithMapping(WordSuggestServlet.class, "/dreamau/search/suggest");
 		handler.addServletWithMapping(SearchResultServlet.class, "/dreamau/search/result");
+		handler.addServletWithMapping(GetListNewColorServlet.class, "/dreamau/color/new/list");
 		
 		//product
 		handler.addServletWithMapping(GetListProductServlet.class, "/dreamau/product/list");
@@ -100,5 +105,11 @@ public class MainApp {
 		handler.addServletWithMapping(SendFeedbackServlet.class, "/dreamau/user/feedback");
 		handler.addServletWithMapping(SubmitTokenServlet.class, "/dreamau/user/token/submit");
 		handler.addServletWithMapping(RemoveTokenServlet.class, "/dreamau/user/token/remove");
+		
+		//new
+		handler.addServletWithMapping(GetNewsCountServlet.class, "/dreamau/news/count");
+		handler.addServletWithMapping(GetNewsServlet.class, "/dreamau/news/list");
+		handler.addServletWithMapping(ViewNewsServlet.class, "/dreamau/news/view");
 	}
+	
 }

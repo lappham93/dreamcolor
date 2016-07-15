@@ -20,8 +20,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.mit.cyogel</groupId>
-			<artifactId>cyogel-models</artifactId>
+			<groupId>com.mit.dreamcolor</groupId>
+			<artifactId>dreamcolor-models</artifactId>
 			<version>0.0.1</version>
 		</dependency>
 		<dependency>

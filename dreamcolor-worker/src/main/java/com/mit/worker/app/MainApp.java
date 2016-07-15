@@ -1,5 +1,6 @@
 package com.mit.worker.app;
 
+import com.mit.kafka.consumer.color.ConsumerNewColorNotify;
 import com.mit.kafka.consumer.email.ConsumerEmailSimple;
 import com.mit.luv.kafka.consumer.ConsumerQueueService;
 
@@ -18,6 +19,7 @@ public class MainApp {
 //		queueSerVice.add(new ConsumerPromotionSuggester());
 //		queueSerVice.add(new ConsumerBizInit());
         queueSerVice.add(new ConsumerEmailSimple());
+        queueSerVice.add(new ConsumerNewColorNotify());
 		queueSerVice.start();
 	}
 }

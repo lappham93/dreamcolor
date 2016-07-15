@@ -1,0 +1,127 @@
+<div class="row">
+    <h3 class="header smaller lighter blue">COLOR</h3>
+    <iframe id="if_notify" name="if_notify" style="display: none;width: 0px;height: 0px"></iframe>
+    <form id="frmProduct" class="form-horizontal" role="form" action="/web/admin/notification" method="POST" target="if_notify">
+    <div id="notify_alert_success" class="alert alert-success" style="display: none;"></div>
+    <div id="notify_alert_err" class="alert alert-danger" style="display: none;"></div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Color: <span class="orange">(*)</span></label>
+            <div class="col-xs-12 col-sm-9">
+                <select class="col-xs-12 col-sm-5" id="color" name="color">
+                    <option value="">Please select ...</option>
+                    {{#loop_option_color}}
+                    <option value="{{COLOR_ID}}">{{COLOR_CODE}}</option>
+                    {{/loop_option_color}}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right">Message: <span class="orange">(*)</span></label>
+            <div class="col-xs-12 col-sm-9">
+            	<input id="msg" name="msg" placeholder="message" class="col-xs-12 col-sm-5"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <button id="btn_notify_color" class="btn btn-info" type="button" onClick="notifyColor()">
+                    <i class="ace-icon fa fa-check bigger-110"></i>Notify Color
+                </button>
+            </div>
+        </div>
+        <input type="hidden" id="action" name="action" value="noticolor"/>
+        <input type="hidden" id="callback_notify_color" name="callback" value="completeNotifyColor"/>
+    </form>
+</div>
+
+<script type="text/javascript">
+    try {
+	    jQuery(function ($) {
+	        /********************************/
+	        //add tooltip for small view action buttons in dropdown menu
+	        //$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+	        $('[data-rel="tooltip"]').tooltip();
+	
+	        //tooltip placement on right or left
+	        function tooltip_placement(context, source) {
+	            var $source = $(source);
+	            var $parent = $source.closest('table');
+	            var off1 = $parent.offset();
+	            var w1 = $parent.width();
+	
+	            var off2 = $source.offset();
+	            //var w2 = $source.width();
+	
+	            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+	            return 'top';
+	        }
+	
+	        if(!ace.vars['touch']) {
+	            $('.chosen-select').chosen({allow_single_deselect:true});
+	            //resize the chosen on window resize
+	
+	            $(window)
+	            .off('resize.chosen')
+	            .on('resize.chosen', function() {
+	                $('.chosen-select').each(function() {
+	                     var $this = $(this);
+	                     $this.next().css({'width': $this.parent().width()});
+	                })
+	            }).trigger('resize.chosen');
+	            //resize chosen on sidebar collapse/expand
+	            $(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+	                if(event_name != 'sidebar_collapsed') return;
+	                $('.chosen-select').each(function() {
+	                     var $this = $(this);
+	                     $this.next().css({'width': $this.parent().width()});
+	                })
+	            });
+	
+	            $('#chosen-multiple-style .btn').on('click', function(e){
+	                var target = $(this).find('input[type=radio]');
+	                var which = parseInt(target.val());
+	                if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+	                 else $('#form-field-select-4').removeClass('tag-input-style');
+	            });
+	        }
+	    });
+    
+    	function notifyColor(){
+            var serr = "";
+           	var color = $('#color').val();
+           	if (color == ""){
+           		serr += "Color required. ";
+           	}
+           	var msg = $('#msg').val();
+           	if (msg == ""){
+           		serr += "Message required. ";
+           	}
+            if(serr != ''){
+            	$('#notify_alert_err').text(serr);
+	            $('#notify_alert_err').show();
+	        } else{
+                $('#notify_alert_err').hide();
+                $("#btn_notify_color").button('loading');
+                $('#frmProduct').submit();
+            }
+        }
+
+        function completeNotifyColor(data){
+            if (data.err >= 0) {
+                $('#notify_alert_success').html(data.msg);
+                $('#notify_alert_success').show();
+                setTimeout(function() {
+                    window.location.reload(true);
+                }, 2000);
+            } else {
+                $('#notify_alert_err').html(data.msg);
+                $('#notify_alert_err').show();
+
+                $('frmProduct').bind('submit');
+                $('#btn_notify_color').button('reset');
+            }
+        }
+
+    } catch(e) {
+    }
+</script>
+<script src="{{static-domain}}/mitassets/js/jquery.colorbox.js"></script>

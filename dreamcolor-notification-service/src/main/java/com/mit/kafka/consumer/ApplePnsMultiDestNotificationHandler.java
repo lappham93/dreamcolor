@@ -38,7 +38,7 @@ public class ApplePnsMultiDestNotificationHandler extends ConsumerService {
 			MultiDestNotificationItem item = new MultiDestNotificationItem(itemObj.get("id"), (int)itemObj.get("srcId"), (List)itemObj.get("destIds"), 
 					(int)itemObj.get("appId"), (int)itemObj.get("type"), (String)itemObj.get("msg"));
 //			List<DeviceToken> tokens = DeviceTokenDAO.getInstance().getByUserListAndDevice(item.getDestIds(), item.getAppId(), Device.IOS);
-			List<DeviceToken> tokens = DeviceTokenDAO.getInstance().getByDevice(Device.IOS);
+			List<DeviceToken> tokens = DeviceTokenDAO.getInstance().getByListIds(item.getDestIds(), Device.IOS);
 
 			if(tokens != null && tokens.size() > 0) {
 				tokens = TokenUtil.removeDuplicate(tokens);

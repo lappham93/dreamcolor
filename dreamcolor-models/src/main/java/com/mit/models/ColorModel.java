@@ -107,4 +107,19 @@ public class ColorModel {
 		return rs;
 	}
 	
+	public Map<String, Object> getListNewColor(int count, int from) {
+		Map<String, Object> rs = new HashMap<>();
+		int err = ModelError.SUCCESS;
+		boolean hasMore = false;
+		List<Color> colors = ColorDAO.getInstance().getSlice(count + 1, from, "createTime", false);
+		if (colors != null && colors.size() > count) {
+			colors = colors.subList(0, count);
+			hasMore = true;
+		}
+		rs.put("err", err);
+		rs.put("hasMore", hasMore);
+		rs.put("colors", Color.buildListColorView(colors));
+		
+		return rs;
+	}
 }

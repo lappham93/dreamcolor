@@ -1,6 +1,7 @@
 package com.mit.kafka.consumer;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class AndroidPnsNotificationHandler extends ConsumerService {
 			NotificationItem item = new NotificationItem(itemObj.get("id"), (int)itemObj.get("srcId"), (int)itemObj.get("destId"), 
 					(int)itemObj.get("appId"), (int)itemObj.get("type"), (String)itemObj.get("msg"));
 //			List<DeviceToken> tokens = DeviceTokenDAO.getInstance().getByUserAndDevice(item.getDestId(), item.getAppId(), Device.ANDROID);
-			List<DeviceToken> tokens = DeviceTokenDAO.getInstance().getByDevice(Device.ANDROID);
+			List<DeviceToken> tokens = DeviceTokenDAO.getInstance().getByListIds(Arrays.asList(item.getDestId()), Device.ANDROID);
 
 			if(tokens != null && tokens.size() > 0) {
 				tokens = TokenUtil.removeDuplicate(tokens);

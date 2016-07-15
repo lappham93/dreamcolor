@@ -34,6 +34,7 @@ import com.mit.dreamcolor.admin.handler.DistributorHandler;
 import com.mit.dreamcolor.admin.handler.HomeHandler;
 import com.mit.dreamcolor.admin.handler.LoginHandler;
 import com.mit.dreamcolor.admin.handler.LogoutHandler;
+import com.mit.dreamcolor.admin.handler.NotificationHandler;
 import com.mit.dreamcolor.admin.handler.UploadMultiColorHandler;
 import com.mit.dreamcolor.admin.handler.VideoHandler;
 import com.mit.jetty.server.WebServers;
@@ -70,6 +71,7 @@ public class MainApp {
         handler.addServletWithMapping(VideoHandler.class, "/web/admin/video");
         handler.addServletWithMapping(DistributorHandler.class, "/web/admin/distributor");
         handler.addServletWithMapping(UploadMultiColorHandler.class, "/web/admin/upload/color");
+        handler.addServletWithMapping(NotificationHandler.class, "/web/admin/notification");
         
         //MAPPING ==============================================================
         

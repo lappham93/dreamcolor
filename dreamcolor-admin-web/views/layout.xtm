@@ -217,14 +217,14 @@
                             <span class="menu-text"> Report </span>
                         </a>
                         <b class="arrow"></b>
-                    </li>
+                    </li>-->
                     <li class="{{MN_NOTIFICATION}}">
                         <a href="/web/admin/notification">
                             <i class="menu-icon fa fa-bolt"></i>
                             <span class="menu-text">Notifications </span>
                         </a>
                         <b class="arrow"></b>
-                    </li>-->
+                    </li>
                 </ul><!-- /.nav-list -->
 
                 <!-- #section:basics/sidebar.layout.minimize -->
@@ -264,6 +264,7 @@
                             {{#BC_BANNER}}<li class="active">Banners</li>{{/BC_BANNER}}
                             {{#BC_VIDEO}}<li class="active">Videos</li>{{/BC_VIDEO}}
                             {{#BC_DISTRIBUTOR}}<li class="active">Distributor</li>{{/BC_DISTRIBUTOR}}
+                            {{#BC_NOTIFICATION}}<li class="active">Notification</li>{{/BC_NOTIFICATION}}
                         </ul><!-- /.breadcrumb -->
 
                         <!-- #section:basics/content.searchbox -->

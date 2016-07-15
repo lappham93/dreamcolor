@@ -29,9 +29,14 @@ public class SubmitTokenServlet extends ServletWrapper {
 			String token = String.valueOf(params.get("token"));
 			String imei = String.valueOf(params.get("imei"));
 			int appId = (int) req.getAttribute("appId");
-
-			DeviceToken device = new DeviceToken(0, appId, deviceId, imei, token, DeviceToken.ACTIVE);
-			DeviceTokenDAO.getInstance().insert(device);
+			
+			DeviceToken device = DeviceTokenDAO.getInstance().getByImei(imei);
+			if (device == null) {
+				device = new DeviceToken(0, appId, deviceId, imei, token, DeviceToken.ACTIVE);
+				DeviceTokenDAO.getInstance().insert(device);
+			} else {
+				msg.setErr(ApiError.ALREADY_SUBMIT.getValue());
+			}
 		} else {
 			msg.setErr(ApiError.MISSING_PARAM.getValue());
 		}

@@ -1,5 +1,6 @@
 package com.mit.dao.user;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -14,6 +15,7 @@ import com.mit.dao.MongoDBParse;
 import com.mit.dao.mid.MIdGenDAO;
 import com.mit.entities.user.DeviceToken;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 
@@ -41,14 +43,18 @@ public class DeviceTokenDAO extends CommonDAO {
 
 	private DeviceTokenDAO() {}
 	
-	public List<DeviceToken> getAll() {
-		List<DeviceToken> rs = null;
+	public List<Integer> getAll() {
+		List<Integer> rs = null;
 		if (dbSource != null) {
 			try {
 				Document filter = new Document("status", new Document("$gt", 0));
 				FindIterable<Document> docs = dbSource.getCollection(TABLE_NAME).find(filter);
 				if (docs != null) {
-					rs = new MongoMapper().parseList(docs);
+					rs = new ArrayList<Integer>();
+					MongoCursor<Document> tmps = docs.iterator();
+					while(tmps.hasNext()) {
+						rs.add(tmps.next().getInteger("_id"));
+					}
 				}
 			} catch (Exception e) {
 				_logger.error("getAll ", e);
@@ -70,6 +76,25 @@ public class DeviceTokenDAO extends CommonDAO {
 				}
 			} catch (Exception e) {
 				_logger.error("getAll ", e);
+			}
+		}
+		
+		return rs;
+	}
+	
+	public List<DeviceToken> getByListIds(List<Integer> ids, int deviceId) {
+		List<DeviceToken> rs = null;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document("_id", new Document("$in", ids))
+						.append("deviceId", deviceId)
+						.append("status", new Document("$gt", 0));
+				FindIterable<Document> docs = dbSource.getCollection(TABLE_NAME).find(filter);
+				if (docs != null) {
+					rs = new MongoMapper().parseList(docs);
+				}
+			} catch (Exception e) {
+				_logger.error("getByListIds ", e);
 			}
 		}
 		

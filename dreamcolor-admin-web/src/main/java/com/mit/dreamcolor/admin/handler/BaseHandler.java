@@ -352,6 +352,9 @@ public class BaseHandler extends HttpServlet {
             } else if("/web/admin/distributor".equalsIgnoreCase(svl)){
                 dic.setVariable("MN_DISTRIBUTOR", "active");
                 dic.addSection("BC_DISTRIBUTOR");
+            } else if("/web/admin/notification".equalsIgnoreCase(svl)) {
+            	dic.setVariable("MN_NOTIFICATION", "active");
+            	dic.addSection("BC_NOTIFICATION");
             } else{
                 dic.setVariable("MN_HOME", "active");
                 dic.addSection("BC_HOME");
