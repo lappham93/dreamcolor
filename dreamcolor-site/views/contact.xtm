@@ -18,25 +18,25 @@
         <div class="row">
             <div class="col-md-12 contact-info">
                 <div class="row text-center">
-                    <address class="col-sm-4 col-md-4">
+                    <address class="col-sm-6 col-md-6">
                         <i class="fa fa-map-marker i-9x icons-circle text-color light-bg hover-black"></i>
                         <div class="title">Address</div>
-                        49 Archdale, 2B Charleston, New York City, USA
+                        5150 Florida Blvd, Baton Rouge, LA 70806
                     </address>
-                    <address class="col-sm-4 col-md-4">
+<!--                    <address class="col-sm-4 col-md-4">
                         <i class="fa fa-microphone i-9x icons-circle text-color light-bg hover-black"></i>
                         <div class="title">Phones</div>
                         <div>Support: +123 (345) 6789</div>
-                    </address>
-                    <address class="col-sm-4 col-md-4">
+                    </address>-->
+                    <address class="col-sm-6 col-md-6">
                         <i class="fa fa-envelope i-9x icons-circle text-color light-bg hover-black"></i>
                         <div class="title">Email Addresses</div>
                         <div>Support: <a href="mailto:info@dreamau.net">info@dreamau.net</a></div>
                     </address>
                 </div>
                 <hr>
-                <p>Fusce odio ante, consectetur nec dictum at, cursus congue orci. Donec vel tellus eget massa lacinia pulvinar ut eu lectus. Quisque elit augue, gravida sit amet egestas quis, vehicula nec magna. Vivamus nec nulla magna, et fringilla arcu. Sed ac quam at elit feugiat semper eu at nulla. Morbi vel urna non massa faucibus mollis.</p>
-                <p>Phasellus vulputate, lectus eu consequat scelerisque, felis odio consequat enim, ut vulputate elit lacus nec ipsum. Vivamus non sollicitudin eros. Nunc ut pulvinar felis. Ut lectus orci, cursus ac semper nec, lobortis nec urna. </p>
+<!--                <p>Fusce odio ante.</p>
+                <p>Phasellus vulputate.</p>-->
                 <br />
             </div>
         </div>
@@ -77,13 +77,11 @@
                 <div class="map-section">
                     <div class="map-canvas"
                         data-zoom="12"
-                        data-lat="-35.2835"
-                        data-lng="149.128"			  
+                        data-lat="30.4503235"
+                        data-lng="-91.138817"
                         data-type="roadmap"
                         data-title="DreaMau"
-                        data-content="DreaMau<br>
-                        Contact: +012 (345) 6789<br>
-                        <a href='mailto:info@dreamau.net'>info@dreamau.net</a>"							
+                        data-content="Email: <a href='mailto:info@dreamau.net'>info@dreamau.net</a>"							
                         style="height: 336px;">
                     </div>
                 </div>

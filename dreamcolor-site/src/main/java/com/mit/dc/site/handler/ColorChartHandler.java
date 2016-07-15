@@ -48,8 +48,8 @@ public class ColorChartHandler extends BaseHandler {
         try {
             TemplateDataDictionary dic = getDictionary();
         	
-            renderPageColorChart(dic, req, resp);
-        	dic.setVariable("MAIN_CONTENT", applyTemplate(dic, "colorchart.xtm", req));
+            renderPageColorChart1(dic, req, resp);
+        	dic.setVariable("MAIN_CONTENT", applyTemplate(dic, "colorchart1.xtm", req));
         	
             print(applyTemplateLayoutMain(dic, req, resp), resp);
         } catch (Exception ex) {
@@ -125,6 +125,51 @@ public class ColorChartHandler extends BaseHandler {
             }
         } catch (Exception ex) {
             logger.error(ex.getMessage(), ex);
+        }
+    }
+    
+    private void renderPageColorChart1(TemplateDataDictionary dic, HttpServletRequest req, HttpServletResponse resp){
+        //get list category.
+        List<Category> listCate = CategoryDAO.getInstance().getAll();
+        if(listCate != null && !listCate.isEmpty()){
+            String ofCate = "";
+            int i = 0;
+            for(Category cate : listCate){
+                //render list category.
+                TemplateDataDictionary loopCate = dic.addSection("loop_cate");
+                String uriCate = PhotoUtil.Instance.buildURIImg(cate.getPhotoNum(), PhotoType.COLOR);
+				loopCate.setVariable("URI_CATE", uriCate);
+                loopCate.setVariable("ID", MIdNoise.enNoiseIId(cate.getId()));
+                loopCate.setVariable("CT_NAME", cate.getName());
+                if(i == 0){
+                    ofCate = cate.getName();
+                }
+                
+                //render list color of category.
+                List<Color> listCL = ColorDAO.getInstance().getByCateId(cate.getId());
+                if(listCL != null && !listCL.isEmpty()){
+                    TemplateDataDictionary loopCT = dic.addSection("loop_ct");
+                    if(i == 0){
+                        loopCT.setVariable("DISPLAY", "");
+                    } else{
+                        loopCT.setVariable("DISPLAY", "display: none;");
+                    }
+                    loopCT.setVariable("ID", MIdNoise.enNoiseIId(cate.getId()));
+                    
+                    for(Color cl : listCL){
+                        TemplateDataDictionary loopRow = loopCT.addSection("loop_color");
+                        String uri = PhotoUtil.Instance.buildURIImg(cl.getPhoto(), PhotoType.COLOR);
+                        loopRow.setVariable("URI_CL", uri);
+                        loopRow.setVariable("CL_CODE", cl.getCode());
+                        
+                        TemplateDataDictionary loopAllCL = dic.addSection("loop_all_color");
+                        String uriCL = PhotoUtil.Instance.buildURIImg(cl.getPhoto(), PhotoType.COLOR);
+                        loopAllCL.setVariable("URI_CL", uriCL);
+                    }
+                    i++;
+                }
+            }
+            dic.setVariable("OF_CATE", ofCate);
         }
     }
     

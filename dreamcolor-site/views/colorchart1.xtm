@@ -1,0 +1,116 @@
+<div class="page-header">
+    <div class="container">
+        <h1 class="title">Color Chart</h1>
+    </div>
+    <div class="breadcrumb-box">
+        <div class="container">
+<!--            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">Color Chart</li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+<!-- page-header -->
+
+<section id="testimonials" class="page-section">
+    <div class="container">
+        <div class="section-title" data-animation="fadeInUp">
+            <h2 class="title">Category Colors</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 testimonails">
+                <div class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-items="1" data-desktop="1">
+                    {{#loop_cate}}
+                    <div class="item pad-10" data-animation="fadeInLeft">
+                        <div class="client-details text-center">
+                            <div class="client-image">
+                                <a href="#" onclick="viewListColor('{{ID}}'); return false;"><img class="img-circle" src="{{URI_CATE}}" width="130" height="130" alt=""></a>
+                            </div>
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong id="cate_{{ID}}" class="">{{CT_NAME}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    {{/loop_cate}}
+                </div>
+            </div>             
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="section-title" data-animation="fadeInUp">
+            <h2 class="title">List Colors Of <span id="ofcate">{{OF_CATE}}</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center" data-animation="pulse">
+                {{#loop_ct}}
+                <div id="d_cate_{{ID}}" style="{{DISPLAY}}">
+                    <div class="owl-carousel navigation-1" data-pagination="false" data-items="6" data-autoplay="true" data-navigation="true">		
+                        {{#loop_color}}
+                        <div class="item pad-10" data-animation="fadeInLeft">
+                            <div class="client-details text-center">
+                                <div class="client-image">
+                                    <img src="{{URI_CL}}" width="170" height="170" alt="">
+                                </div>
+                                <div class="client-details">
+                                    <strong class="">{{CL_CODE}}</strong>
+                                </div>
+                            </div>
+                        </div>
+                        {{/loop_color}}
+                    </div>
+                </div>
+                {{/loop_ct}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="get-quote" class="bg-color get-a-quote black text-center" data-appear-animation="fadeInUp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">Get A Free Quote / Need a Help ? 
+            <a class="black" href="/web/site/contact">Contact Us</a></div>
+        </div>
+    </div>
+</div>
+<!-- request -->
+
+<script type="text/javascript">
+try{
+    
+    function viewListColor(id){
+        //$('div[id^=cate_]').removeClass('border-color');
+        //$('#cate_' + id).addClass('border-color');
+        $('#ofcate').html($('#cate_' + id).html());
+        
+        $('div[id^=d_cate]').hide();
+        $('#d_cate_' + id).show();
+        
+        return false;
+    }
+    
+    function customDataSuccess(data){
+        var content = "";
+        if(data.err >= 0){
+            var listCL = data.arrCL;
+            if(listCL != null && listCL != undefined){
+                var c = 0;
+                for(var i = 0; i < listCL.length; i++){
+                    var objCL = listCL[i];
+                    var tmp = item.replace(/URI_CL/g, objCL.uri);
+                    tmp = tmp.replace(/CL_CODE/g, objCL.code);
+                    content = content + tmp;
+                }
+            }
+        }
+        $("#cl_cate").html(content);
+    }
+    
+}catch(e){}
+
+</script>

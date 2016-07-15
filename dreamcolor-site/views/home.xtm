@@ -278,39 +278,41 @@
         <div class="row">
             <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInRight">
                 <div class="image">
-                    <img src="{{static-domain}}/dc/imgs/CYOGel_LOGO.png" alt="" title="" width="460" height="232" />
+                    <a href="https://cyogel.com/" target="_blank"><img src="{{static-domain}}/dc/imgs/CYOGel_LOGO.png" alt="" title="" width="460" height="232" /></a>
                 </div>
                 <div class="social-icon i-3x">
-                <a href="#">
+                <a href="https://cyogel.com/" target="_blank">
+                    <i class="fa fa-link"></i>
+                </a> 
+                <a href="https://www.facebook.com/cyogelbest/" target="_blank">
                     <i class="fa fa-facebook"></i>
                 </a> 
-                <a href="#">
+                <a href="https://twitter.com/cyogel1" target="_blank">
                     <i class="fa fa-twitter"></i>
                 </a> 
-                <a href="#">
+                <a href="https://plus.google.com/101632725135656721370" target="_blank">
                     <i class="fa fa-google"></i>
-                </a> 
-                <a href="#">
-                    <i class="fa fa-pinterest"></i>
-                </a></div>
+                </a>
+                </div>
             </div>
             <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
                 <div class="image">
-                    <img src="{{static-domain}}/dc/imgs/Alfalfa-logo.png" alt="" title="" width="460" height="232" />
+                    <a href="http://buynailsdirect.com/" target="_blank"><img src="{{static-domain}}/dc/imgs/Alfalfa-logo.png" alt="" title="" width="460" height="232" /></a>
                 </div>
                 <div class="social-icon i-3x">
-                <a href="#">
+                <a href="http://buynailsdirect.com/" target="_blank">
+                    <i class="fa fa-link"></i>
+                </a> 
+                <a href="https://www.facebook.com/Alfalfans/" target="_blank">
                     <i class="fa fa-facebook"></i>
                 </a> 
-                <a href="#">
+                <a href="https://twitter.com/alfalfans" target="_blank">
                     <i class="fa fa-twitter"></i>
                 </a> 
-                <a href="#">
+                <a href="https://plus.google.com/100166882170602485580/posts" target="_blank">
                     <i class="fa fa-google"></i>
                 </a> 
-                <a href="#">
-                    <i class="fa fa-pinterest"></i>
-                </a></div>
+                </div>
             </div>
 <!--            <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
                 <div class="image">

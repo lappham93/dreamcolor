@@ -4,10 +4,18 @@
         <meta charset="UTF-8">
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
         <meta name="keywords" content="DreaMau Site" />
-        <meta name="description" content="DreaMau Site" />
+        <meta name="description" content="DreaMau is the only machine in the world capable of producing what your imagination tell you to." />
         <meta name="author" content="DreaMau" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<title>DreaMau Site</title>
+        
+        <meta property="og:title" content="DreaMau Site"/>
+        <meta property="og:image" content="{{static-domain}}/dc/imgs/topbanner.jpg"/>
+        <meta property="og:description" content="DreaMau is the only machine in the world capable of producing what your imagination tell you to."/>
+        <meta property="og:url" content="http://dreamau.net/"/>
+        <meta property="og:site_name" content="DreaMau Site"/>
+        <meta property="al:web:should_fallback" content="true"/>
+        
         <!-- Favicon -->
         <link rel="shortcut icon" href="{{static-domain}}/dc/imgs/logo.png" />
         <!-- Font -->
@@ -107,8 +115,19 @@
                                     <!-- Right nav -->
                                     <!-- Header Contact Content -->
                                     <div class="bg-white hide-show-content no-display header-contact-content">
-                                        <p class="vertically-absolute-middle">Call Us 
-                                        <strong>+0 (123) 456 78 90</strong></p>
+                                        <div class="col-sm-4 col-md-4">
+                                            <div class="col-sm-6 col-md-6">
+                                                <span>
+                                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/app-store.png" style="width: 100%; max-width: 100%; height: 65px;" alt="app store" class="img-responsive" /></a>
+                                                </span>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <span>
+                                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/google-play.png" style="width: 100%; max-width: 100%;  height: 65px;" alt="google play" class="img-responsive" /></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        
                                         <button class="close">
                                             <i class="fa fa-times"></i>
                                         </button>
@@ -118,7 +137,7 @@
                                     <div class="bg-white hide-show-content no-display header-search-content">
                                         <form role="search" class="navbar-form vertically-absolute-middle">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Enter your text &amp; Search Here"
+                                                <input type="text" placeholder="Enter code color &amp; Search Here"
                                                 class="form-control" id="s" name="s" value="" />
                                             </div>
                                         </form>
@@ -130,21 +149,16 @@
                                     <!-- Header Share Content -->
                                     <div class="bg-white hide-show-content no-display header-share-content">
                                         <div class="vertically-absolute-middle social-icon gray-bg icons-circle i-3x">
-                                        <a href="#">
+                                        <a href="https://www.facebook.com/DreaMau-875163192584043/?fref=ts" target="_blank">
                                             <i class="fa fa-facebook"></i>
                                         </a> 
-                                        <a href="#">
+                                        <a href="https://twitter.com/dreamaumachine" target="_blank">
                                             <i class="fa fa-twitter"></i>
                                         </a> 
-                                        <a href="#">
-                                            <i class="fa fa-pinterest"></i>
+                                        <a href="https://www.instagram.com/dreamaumachine/" target="_blank">
+                                            <i class="fa fa-instagram"></i>
                                         </a> 
-                                        <a href="#">
-                                            <i class="fa fa-google"></i>
-                                        </a> 
-                                        <a href="#">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a></div>
+                                        </div>
                                         <button class="close">
                                             <i class="fa fa-times"></i>
                                         </button>
@@ -178,82 +192,59 @@
                                 <h3 class="title">About Us</h3>
                             </div>
                             <!-- Text -->
-                            <p>We like to provide great site with complete features what you want to impletement in your business!</p>
+                            <p>The one and only nail polish machine.</p>
                             <!-- Address -->
                             <p>
-                            <strong>Office:</strong> DreaMàu
-                            <br />No. 12, Ribon Building,
-                            <br />Walse street, USA.</p>
+                                <strong>Office:</strong> DreaMàu
+                                <br />5150 Florida Blvd, Baton Rouge, LA 70806
+                            </p>
                             <!-- Phone -->
-                            <p>
+<!--                            <p>
                             <strong>Call Us:</strong> +0 (123) 456-78-90 or
-                            <br />+0 (123) 456-78-90</p>
+                            <br />+0 (123) 456-78-90
+                            </p>-->
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 widget">
                             <div class="widget-title">
                                 <!-- Title -->
-                                <h3 class="title">Latest News</h3>
+                                <h3 class="title">Mobile</h3>
                             </div>
-                            <nav>
+                            <div class="col-sm-6 col-md-6">
+                                <span>
+                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/app-store.png" style="width: 100%; max-width: 100%;" alt="app store" class="img-responsive" /></a>
+                                </span>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <span>
+                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/google-play.png" style="width: 100%; max-width: 100%;" alt="google play" class="img-responsive" /></a>
+                                </span>
+                            </div>
+<!--                            <nav>
                                 <ul class="footer-blog">
-                                    <!-- List Items -->
+                                     List Items 
                                     <li>
-                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                        <a href="#">Brochure ảnh.</a>
                                     </li>
                                 </ul>
-                            </nav>
+                            </nav>-->
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 widget newsletter bottom-xs-pad-20">
                             <div class="widget-title">
                                 <!-- Title -->
-                                <h3 class="title">Newsletter Signup</h3>
-                            </div>
-                            <div>
-                                <!-- Text -->
-                                <p>Subscribe to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</p>
-                                <p class="form-message1" style="display: none;"></p>
-                                <div class="clearfix"></div>
-                                <!-- Form -->
-                                <form id="subscribe_form" action="subscription.php" method="post" name="subscribe_form" role="form">
-                                    <div class="input-text form-group has-feedback">
-                                    <input class="form-control" type="email" value="" name="subscribe_email" /> 
-                                    <button class="submit bg-color" type="submit">
-                                        <span class="glyphicon glyphicon-arrow-right"></span>
-                                    </button></div>
-                                </form>
-                            </div>
-                            <!-- Count -->
-                            <div class="footer-count">
-                                <p class="count-number" data-count="93550">total downloads : 
-                                <span class="counter"></span></p>
-                            </div>
-                            <div class="footer-count">
-                                <p class="count-number" data-count="79550">happy clients : 
-                                <span class="counter"></span></p>
+                                <h3 class="title">Social</h3>
                             </div>
                             <!-- Social Links -->
                             <div class="social-icon gray-bg icons-circle i-3x">
-                            <a href="#">
+                            <a href="https://www.facebook.com/DreaMau-875163192584043/?fref=ts" target="_blank">
                                 <i class="fa fa-facebook"></i>
-                            </a> 
-                            <a href="#">
+                            </a>
+                            <a href="https://twitter.com/dreamaumachine" target="_blank">
                                 <i class="fa fa-twitter"></i>
-                            </a> 
-                            <a href="#">
-                                <i class="fa fa-pinterest"></i>
-                            </a> 
-                            <a href="#">
-                                <i class="fa fa-google"></i>
-                            </a> 
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                            </a></div>
+                            </a>
+                            <a href="https://www.instagram.com/dreamaumachine/" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            </div>
                         </div>
                         <!-- .newsletter -->
                     </div>
