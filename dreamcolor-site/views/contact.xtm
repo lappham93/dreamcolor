@@ -47,7 +47,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae odit iste exercitationem praesentium deleniti nostrum laborum rem id nihil tempora. </p>
             </div>-->
             <div class="col-md-4">
-                <p class="form-message" style="display: none;"></p>
+                <p id="result_msg" class="alert alert-success" role="alert" style="display: none;"></p>
                 <div class="contact-form">
                     <!-- Form Begins -->
                     <form role="form" name="contactform" id="contactform" method="post" action="#">
@@ -67,6 +67,7 @@
                             <div class="textarea-message form-group">
                                 <textarea name="contact_message" class="textarea-message hight-82 form-control" placeholder="Message" rows="2" ></textarea>
                             </div>
+                            <input type="hidden" id="action" name="action" value="contact"/>
                             <!-- Button -->
                             <button class="btn btn-default btn-block" type="submit">Send Now <i class="icon-paper-plane"></i></button>
                     </form>

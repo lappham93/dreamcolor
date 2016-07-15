@@ -19,6 +19,8 @@ package com.mit.dc.site.handler;
 import com.eclipsesource.json.JsonObject;
 import com.mit.dc.site.utils.HttpHelper;
 import com.mit.dc.site.utils.UploadFormUtil;
+import com.mit.utils.SendEmailUtils;
+import com.mit.utils.StringUtils;
 import hapax.TemplateDataDictionary;
 import java.util.HashMap;
 import java.util.Map;
@@ -81,9 +83,10 @@ public class ContactHandler extends BaseHandler {
                 action = req.getParameter("action");
                 callback = req.getParameter("callback");
                 if(action != null && !action.isEmpty()) {
-//                    if("getState".equalsIgnoreCase(action)){
-//                        getStateOfCountry(req, resp, result);
-//                    } else if("getbiz".equalsIgnoreCase(action)){
+                    if("contact".equalsIgnoreCase(action)){
+                        sendContactUs(req, resp, result);
+                    } 
+//                    else if("getbiz".equalsIgnoreCase(action)){
 //                        getBiz(req, resp, result);
 //                    } else if("editbiz".equalsIgnoreCase(action)){
 //                        editBiz(req, resp, result);
@@ -116,6 +119,28 @@ public class ContactHandler extends BaseHandler {
             }
         } catch (Exception ex) {
             logger.error(ex.getMessage(), ex);
+        }
+    }
+    
+    private void sendContactUs(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
+        String name = req.getParameter("contact_name") != null ? req.getParameter("contact_name") : "";
+        String email = req.getParameter("contact_email") != null ? req.getParameter("contact_email") : "";
+        String phone = req.getParameter("contact_phone") != null ? req.getParameter("contact_phone") : "";
+        String message = req.getParameter("contact_message") != null ? req.getParameter("contact_message") : "";
+        
+        if (!name.isEmpty() && !email.isEmpty() && !phone.isEmpty() && !message.isEmpty()) {
+            if (!StringUtils.validateEmail(email)) {
+                result.set("err", -1);
+                result.set("data", "Format email invalid.");
+            } else {
+                SendEmailUtils.Instance.sendContact(name, email, phone, message);
+                result.set("err", 0);
+                result.set("data", "Thank you for your feedback.");
+                result.set("msg", "Thank you for your feedback.");
+            }
+        } else {
+            result.set("err", -1);
+            result.set("data", "Input parameters invalid.");
         }
     }
 }

@@ -278,7 +278,7 @@ var appMaster = {
     },
 	/* ---------------------	
 		Contact Form  
-	/* --------------------- */
+	----------------------- */
 	simplecontactForm: function(){	
 		if ( $( "#contactform" ).length !== 0 ) {
 		$('#contactform').bootstrapValidator({
@@ -332,13 +332,16 @@ var appMaster = {
 				$.ajax({
 						type: "POST",
 						dataType: 'json',
-						url: "php/contact-form.php",					
+						url: "/web/site/contact",
 						data: form_data,
 						success: function(msg){						
-							$('.form-message').html(msg.data);
-							$('.form-message').show();
+							$('#result_msg').html(msg.data);
+							$('#result_msg').show();
 							submitButton.removeAttr("disabled");
-							resetForm($('#contactform'));						
+							resetForm($('#contactform'));
+                            setTimeout(function() {
+                                $('#result_msg').hide();
+                            }, 5000);
 						},
 						error: function(msg){}
 				 });

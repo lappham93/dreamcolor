@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import com.mit.luv.kafka.producer.ProducerPush;
 import com.mit.luv.kafka.producer.ProducerTopic;
+import org.slf4j.helpers.MessageFormatter;
 
 public class SendEmailUtils {
 	public static final SendEmailUtils Instance = new SendEmailUtils();
@@ -25,8 +26,8 @@ public class SendEmailUtils {
 
 	private final String _contactEmailTo = ConfigUtils.getConfig().getString("contact.email.to");
 	private final String _contactEmailCCs = ConfigUtils.getConfig().getString("contact.email.cc");
-	// private final String _contactSubject = "Message from {}";
-	// private final String _contactEmailName = "bConnect Contact";
+	 private final String _contactSubject = "Message from {}";
+	 private final String _contactEmailName = "DreaMau Contact";
 	private final String _contactMassage = "Name: %s	Email: %s	Phone: %s	Message: %s";
 	//
 	// private final String _orderSubject = "Your order with bConnect app";
@@ -74,18 +75,13 @@ public class SendEmailUtils {
 	// emailTo, _resetPassEmailName, "", _resetPassSubject, message), "\t");
 	// ProducerPush.send(ProducerTopic.SEND_EMAIL, msg);
 	// }
-	//
-	// public void sendContact(String name, String email, String phone, String
-	// message) {
-	// String subject = MessageFormatter.arrayFormat(_contactSubject, new
-	// Object[] {name}).getMessage();
-	// String contactMessage = MessageFormatter.arrayFormat(_contactMassage, new
-	// Object[] {name, email, phone, message}).getMessage();
-	// String msg = StringUtils.join(Arrays.asList(System.currentTimeMillis(),
-	// _contactEmailTo, _contactEmailName, _contactEmailCCs, subject,
-	// contactMessage), "\t");
-	// ProducerPush.send(ProducerTopic.SEND_EMAIL, msg);
-	// }
+	
+    public void sendContact(String name, String email, String phone, String message) {
+        String subject = MessageFormatter.arrayFormat(_contactSubject, new Object[] {name}).getMessage();
+        String contactMessage = MessageFormatter.arrayFormat(_contactMassage, new Object[] {name, email, phone, message}).getMessage();
+        String msg = StringUtils.join(Arrays.asList(System.currentTimeMillis(), _contactEmailTo, _contactEmailName, _contactEmailCCs, subject, contactMessage), "\t");
+        ProducerPush.send(ProducerTopic.SEND_EMAIL, msg);
+    }
 
 	// private String getEmailCCs(boolean isDomestic) {
 	// String emailCCs =
