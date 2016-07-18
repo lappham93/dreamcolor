@@ -22,12 +22,12 @@
         </div>
         <div class="row">
             <div class="col-md-12 testimonails">
-                <div class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-items="1" data-desktop="1">
+                <div id="ocate" class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="false" data-navigation="false" data-items="1" data-desktop="1">
                     {{#loop_cate}}
                     <div class="item pad-10" data-animation="fadeInLeft">
                         <div class="client-details text-center">
                             <div class="client-image">
-                                <a href="#" onclick="viewListColor('{{ID}}'); return false;"><img class="img-circle" src="{{URI_CATE}}" width="130" height="130" alt=""></a>
+                                <a id="{{ID}}" href="#" onclick="viewListColor('{{ID}}'); return false;"><img class="img-circle" src="{{URI_CATE}}" width="130" height="130" alt=""></a>
                             </div>
                             <div class="client-details">
                                 <!-- Name -->
@@ -37,7 +37,7 @@
                     </div>
                     {{/loop_cate}}
                 </div>
-            </div>             
+            </div>
         </div>
     </div>
     
@@ -93,6 +93,23 @@ try{
         
         return false;
     }
+    
+    var owl = $("#ocate");
+    owl.owlCarousel({
+        loop: true,
+        autoplay: false,
+        navigation: false,
+        pagination: true,
+        items: 1,
+        itemsDesktop: 1,
+        //animateOut: 'fadeOut',
+        afterMove: function (elem) {
+            var current = this.currentItem;
+            var idCate = elem.find(".owl-item").eq(current).find("a").attr('id');
+            //console.log('Id Image current is: ' + idCate);
+            viewListColor(idCate);
+        }
+    });
     
     function customDataSuccess(data){
         var content = "";
