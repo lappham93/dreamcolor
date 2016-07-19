@@ -25,7 +25,7 @@ public class GetNewsServlet extends ServletWrapper {
 		Map<String, Object> params = getParameter(req);
 		ApiMessage msg = new ApiMessage();
 		if (params != null && checkEmptyParameter(params, paramRequire)) {
-			String imei = String.valueOf("imei");
+			String imei = String.valueOf(params.get("imei"));
 			int page = NumberUtils.toInt(String.valueOf(params.get("page")));
 			int count = NumberUtils.toInt(String.valueOf(params.get("count")), 10);
 

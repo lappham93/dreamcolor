@@ -26,7 +26,7 @@ public class ViewNewsServlet extends ServletWrapper {
 		ApiMessage msg = new ApiMessage();
 		if(params != null && checkEmptyParameter(params, paramRequire)) {		
 			List<Long> ids = StringUtils.stringToLongList(String.valueOf(params.get("ids")), true);
-			String imei = String.valueOf("imei");
+			String imei = String.valueOf(params.get("imei"));
 			DeviceToken device = DeviceTokenDAO.getInstance().getByImei(imei);
 			if (device != null) {
 				NewsModel.Instance.viewNews(device.getId(), ids);

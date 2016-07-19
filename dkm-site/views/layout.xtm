@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <meta name="keywords" content="DKM Site" />
+        <meta name="description" content="DKM is the only machine in the world capable of producing what your imagination tell you to." />
+        <meta name="author" content="DKM" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<title>DKM Site</title>
+        
+        <meta property="og:title" content="DKM Site"/>
+        <meta property="og:image" content="{{static-domain}}/dc/imgs/topbanner.jpg"/>
+        <meta property="og:description" content="DKM is the only machine in the world capable of producing what your imagination tell you to."/>
+        <meta property="og:url" content="http://dreamau.net/"/>
+        <meta property="og:site_name" content="DKM Site"/>
+        <meta property="al:web:should_fallback" content="true"/>
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{static-domain}}/dc/imgs/logo.png" />
+        <!-- Font -->
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Arimo:300,400,700,400italic,700italic' />
+        <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css' />
+        <!-- Font Awesome Icons -->
+        <link href='{{static-domain}}/dclight/css/font-awesome.min.css' rel='stylesheet' type='text/css' />
+        <!-- Bootstrap core CSS -->
+        <link href="{{static-domain}}/dclight/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="{{static-domain}}/dclight/css/hover-dropdown-menu.css" rel="stylesheet" />
+        <!-- Icomoon Icons -->
+        <link href="{{static-domain}}/dclight/css/icons.css" rel="stylesheet" />
+        <!-- Revolution Slider -->
+        <link href="{{static-domain}}/dclight/css/revolution-slider.css" rel="stylesheet" />
+        <link href="{{static-domain}}/dclight/rs-plugin/css/settings.css" rel="stylesheet" />
+        <!-- Animations -->
+        <link href="{{static-domain}}/dclight/css/animate.min.css" rel="stylesheet" />
+        <!-- Owl Carousel Slider -->
+        <link href="{{static-domain}}/dclight/css/owl/owl.carousel.css" rel="stylesheet" />
+        <link href="{{static-domain}}/dclight/css/owl/owl.theme.css" rel="stylesheet" />
+        <link href="{{static-domain}}/dclight/css/owl/owl.transitions.css" rel="stylesheet" />
+        <!-- PrettyPhoto Popup -->
+        <link href="{{static-domain}}/dclight/css/prettyPhoto.css" rel="stylesheet" />
+        <!-- Custom Style -->
+        <link href="{{static-domain}}/dclight/css/style.css" rel="stylesheet" />
+		<link href="{{static-domain}}/dclight/css/responsive.css" rel="stylesheet">
+        <!-- Color Scheme -->
+        <link href="{{static-domain}}/dclight/css/color.css" rel="stylesheet" />
+    </head>
+    <body>
+    <div id="page">
+		<!-- Page Loader -->
+		<div id="pageloader">
+			<div class="loader-item fa fa-spin text-color"></div>
+		</div>
+        <!-- Sticky Navbar -->
+        <header id="sticker" class="sticky-navigation">
+			<!-- Sticky Menu -->
+            <div class="sticky-menu relative">
+				<!-- navbar -->
+				<div class="navbar navbar-default navbar-bg-light" role="navigation">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="navbar-header">
+                                <!-- Button For Responsive toggle -->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span> 
+                                <span class="icon-bar"></span> 
+                                <span class="icon-bar"></span> 
+                                <span class="icon-bar"></span></button> 
+                                <!-- Logo -->
+                                 
+                                <a class="navbar-brand" href="/web/dkm">
+                                    <img class="site_logo" alt="Site Logo" height="70" src="{{static-domain}}/dc/imgs/logo3.png" style="height: 70px; width: 230px;"/>
+                                </a>
+                                </div>
+                                <!-- Navbar Collapse -->
+                                <div class="navbar-collapse collapse">
+                                    <!-- nav -->
+                                    <ul class="nav navbar-nav">
+                                        <li class="mega-menu {{MN_HOME}}">
+                                            <a href="/web/dkm">Home</a>
+                                        </li>
+                                        <li class="mega-menu {{MN_CC}}">
+                                            <a href="/web/dkm/colorchart">Color Chart</a>
+                                        </li>
+                                        <li class="{{MN_ABOUT}}">
+                                            <a href="/web/dkm/aboutus">About Us</a>
+                                        </li>
+                                        <li class="{{MN_CONTACT}}">
+                                            <a href="/web/dkm/contact">Contact</a> 
+                                        </li>
+<!--                                        <li class="hidden-767">
+                                            <a href="#" class="header-contact">
+                                                <span>
+                                                    <i class="fa fa-mobile"></i>
+                                                </span>
+                                            </a>
+                                        </li>-->
+                                        <!-- Header Search -->
+                                        <li class="hidden-767">
+                                            <a href="#" class="header-search">
+                                                <span>
+                                                    <i class="fa fa-search"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <!-- Header Share -->
+<!--                                        <li class="hidden-767">
+                                            <a href="#" class="header-share">
+                                                <span>
+                                                    <i class="fa fa-share-alt"></i>
+                                                </span>
+                                            </a>
+                                        </li>-->
+                                    </ul>
+                                    <!-- Right nav -->
+                                    <!-- Header Contact Content -->
+<!--                                    <div class="bg-white hide-show-content no-display header-contact-content">
+                                        <div class="col-sm-4 col-md-4">
+                                            <div class="col-sm-6 col-md-6">
+                                                <span>
+                                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/app-store.png" style="width: 100%; max-width: 100%; height: 65px;" alt="app store" class="img-responsive" /></a>
+                                                </span>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <span>
+                                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/google-play.png" style="width: 100%; max-width: 100%;  height: 65px;" alt="google play" class="img-responsive" /></a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="close">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>-->
+                                    <!-- Header Contact Content -->
+                                    <!-- Header Search Content -->
+                                    <div class="bg-white hide-show-content no-display header-search-content">
+                                        <form role="search" class="navbar-form vertically-absolute-middle">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Enter your text &amp; Search Here"
+                                                class="form-control" id="s" name="s" value="" />
+                                            </div>
+                                        </form>
+                                        <button class="close">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Header Search Content -->
+                                    <!-- Header Share Content -->
+<!--                                    <div class="bg-white hide-show-content no-display header-share-content">
+                                        <div class="vertically-absolute-middle social-icon gray-bg icons-circle i-3x">
+                                        <a href="https://www.facebook.com/DreaMau-875163192584043/?fref=ts" target="_blank">
+                                            <i class="fa fa-facebook"></i>
+                                        </a> 
+                                        <a href="https://twitter.com/dreamaumachine" target="_blank">
+                                            <i class="fa fa-twitter"></i>
+                                        </a> 
+                                        <a href="https://www.instagram.com/dreamaumachine/" target="_blank">
+                                            <i class="fa fa-instagram"></i>
+                                        </a> 
+                                        </div>
+                                        <button class="close">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>-->
+                                    <!-- Header Share Content -->
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.col-md-12 -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+				<!-- navbar -->
+			</div>
+            <!-- Sticky Menu -->
+		</header>
+        <!-- Sticky Navbar -->
+        
+        <!-- Scripts -->
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.min.js"></script> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/bootstrap.min.js"></script> 
+        <!-- Menu jQuery plugin -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/hover-dropdown-menu.js"></script> 
+        <!-- Menu jQuery Bootstrap Addon --> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.hover-dropdown-menu-addon.js"></script> 
+        <!-- Scroll Top Menu -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.easing.1.3.js"></script> 
+        <!-- Sticky Menu --> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.sticky.js"></script> 
+        <!-- Bootstrap Validation -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/bootstrapValidator.min.js"></script> 
+        <!-- Revolution Slider -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/rs-plugin/js/jquery.themepunch.tools.min.js"></script> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/rs-plugin/js/jquery.themepunch.revolution.min.js"></script> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/revolution-custom.js"></script> 
+        <!-- Portfolio Filter -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.easypiechart.min.js"></script> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.mixitup.min.js"></script> 
+        <!-- Animations -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.appear.js"></script> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/effect.js"></script> 
+        <!-- Owl Carousel Slider -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/owl.carousel.min.js"></script> 
+        <!-- Pretty Photo Popup -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.prettyPhoto.js"></script> 
+        <!-- Parallax BG -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.parallax-1.1.3.js"></script> 
+        <!-- Fun Factor / Counter -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.countTo.js"></script> 
+        <!-- Twitter Feed -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/tweet/carousel.js"></script> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/tweet/scripts.js"></script> 
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/tweet/tweetie.min.js"></script> 
+        <!-- Background Video -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/isotope.min.js"></script>
+        <!-- Isoptope -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/jquery.mb.YTPlayer.js"></script> 
+        <!-- Custom Js Code -->
+
+        <script type="text/javascript" src="{{static-domain}}/dclight/js/custom.js"></script> 
+        <!-- Scripts -->
+        
+        
+        {{MAIN_CONTENT}}
+        
+        
+        <footer id="footer">
+            <div class="footer-widget">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-md-4 widget bottom-xs-pad-20">
+                            <div class="widget-title">
+                                <!-- Title -->
+                                <h3 class="title">About Us</h3>
+                            </div>
+                            <!-- Text -->
+                            <p>The one and only nail polish machine.</p>
+                            <!-- Address -->
+                            <p>
+                                <strong>Office:</strong> DreaMàu
+                                <br />5150 Florida Blvd, Baton Rouge, LA 70806
+                            </p>
+                            <!-- Phone -->
+<!--                            <p>
+                            <strong>Call Us:</strong> +0 (123) 456-78-90 or
+                            <br />+0 (123) 456-78-90
+                            </p>-->
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 widget">
+                            <div class="widget-title">
+                                <!-- Title -->
+                                <h3 class="title">Mobile</h3>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <span>
+                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/app-store.png" style="width: 100%; max-width: 100%;" alt="app store" class="img-responsive" /></a>
+                                </span>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <span>
+                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/google-play.png" style="width: 100%; max-width: 100%;" alt="google play" class="img-responsive" /></a>
+                                </span>
+                            </div>
+<!--                            <nav>
+                                <ul class="footer-blog">
+                                     List Items 
+                                    <li>
+                                        <a href="#">Brochure ảnh.</a>
+                                    </li>
+                                </ul>
+                            </nav>-->
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 widget newsletter bottom-xs-pad-20">
+                            <div class="widget-title">
+                                <!-- Title -->
+                                <h3 class="title">Social</h3>
+                            </div>
+                            <!-- Social Links -->
+                            <div class="social-icon gray-bg icons-circle i-3x">
+                            <a href="https://www.facebook.com/DreaMau-875163192584043/?fref=ts" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com/dreamaumachine" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/dreamaumachine/" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            </div>
+                        </div>
+                        <!-- .newsletter -->
+                    </div>
+                </div>
+            </div>
+            <!-- footer-top -->
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <!-- Copyrights -->
+                        <div class="col-xs-10 col-sm-6 col-md-6"> &copy; 2016 <a href="http://dreamau.com">DreaMàu</a>
+                        <br />
+                        <!-- Terms Link -->
+                         
+                        <a href="#">Terms of Use</a> / 
+                        <a href="#">Privacy Policy</a></div>
+                        <div class="col-xs-2 col-sm-6 col-md-6 text-right page-scroll gray-bg icons-circle i-3x">
+                            <!-- Goto Top -->
+                            <a href="#page">
+                                <i class="glyphicon glyphicon-arrow-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom -->
+        </footer>
+        <!-- footer -->
+    </div>
+    <!-- page -->
+    
+    </body>
+</html>

@@ -32,13 +32,13 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="img/sections/about/1.jpg" width="1200" height="400" alt="" title="" />
+                <img src="{{static-domain}}/dc/imgs/topbanner.jpg" width="1200" height="400" alt="" title="" />
             </div>
             <div class="item">
-                <img src="img/sections/about/2.jpg" width="1200" height="400" alt="" title="" />
+                <img src="{{static-domain}}/dc/imgs/topbanner.jpg" width="1200" height="400" alt="" title="" />
             </div>
             <div class="item">
-                <img src="img/sections/about/3.jpg" width="1200" height="400" alt="" title="" />
+                <img src="{{static-domain}}/dc/imgs/topbanner.jpg" width="1200" height="400" alt="" title="" />
             </div>
         </div>
         <!-- Controls -->
