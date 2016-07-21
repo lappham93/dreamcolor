@@ -146,7 +146,7 @@ public class Color {
 			code = color.getCode();
 			views = color.getViews();
 			isFeature = color.getIsFeature();
-			photo = new PhotoView(color.getId(), PhotoType.COLOR.getValue());
+			photo = new PhotoView(color.getPhoto(), PhotoType.COLOR.getValue());
 			createTime = color.getCreateTime();
 			updateTime = color.getUpdateTime();
 		}

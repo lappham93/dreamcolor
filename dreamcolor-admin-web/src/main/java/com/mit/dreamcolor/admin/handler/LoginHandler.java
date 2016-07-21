@@ -67,6 +67,7 @@ public class LoginHandler extends HttpServlet{
                 if(checkIsAdmin(req, resp, username, password)){
                     result.set("err", 0);
                     result.set("msg", "Login successfull.");
+                    result.set("reloadurl", reloadurl);
                 } else{
                     result.set("err", -1);
                     result.set("msg", "Infomation login is not correct. Try again!!!");
@@ -129,6 +130,7 @@ public class LoginHandler extends HttpServlet{
         dic.setVariable("main_title", Configuration.APP_TITLE);
         reloadurl = (reloadurl != null && !reloadurl.isEmpty()) ? reloadurl : Configuration.APP_DOMAIN_HOME;
         dic.setVariable("RELOAD_URL", reloadurl);
+        dic.setVariable("domain-home", reloadurl);
         resp.setHeader("X-FRAME-OPTIONS", "SAMEORIGIN");
         print(applyTemplate(dic, "login.xtm"), resp);
     }
