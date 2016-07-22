@@ -52,11 +52,11 @@ public class ColorNews extends News {
 	}
 	
 	public NotificationItem buildNotificationItem(int userId) {
-		return new NotificationItem(getuId(), 0, userId, AppKey.CYOGEL, getType(), getMsg());
+		return new NotificationItem(colorIds, 0, userId, AppKey.CYOGEL, getType(), getMsg());
 	}
 	
 	public MultiDestNotificationItem buildMultiDestNotificationItem(List<Integer> userIds) {
-		return new MultiDestNotificationItem(getuId(), 0, userIds, AppKey.CYOGEL, getType(), getMsg());
+		return new MultiDestNotificationItem(colorIds, 0, userIds, AppKey.CYOGEL, getType(), getMsg());
 	}
 	
 	public static class UserView extends News.UserView {		

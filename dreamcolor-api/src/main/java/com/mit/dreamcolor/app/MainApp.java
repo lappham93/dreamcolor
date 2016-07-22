@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import com.mit.banner.servlet.GetListBannerServlet;
 import com.mit.color.servlet.GetListColorCategoryServlet;
+import com.mit.color.servlet.GetListColorDetailsServlet;
 import com.mit.color.servlet.GetListColorServlet;
 import com.mit.color.servlet.GetListFeatureServlet;
 import com.mit.color.servlet.GetListNewColorServlet;
@@ -80,6 +81,7 @@ public class MainApp {
 		//color
 		handler.addServletWithMapping(GetListColorCategoryServlet.class, "/dreamau/color/category/list");
 		handler.addServletWithMapping(GetListColorServlet.class, "/dreamau/color/list");
+		handler.addServletWithMapping(GetListColorDetailsServlet.class, "/dreamau/color/get");
 		handler.addServletWithMapping(ViewColorServlet.class, "/dreamau/color/view");
 		handler.addServletWithMapping(GetListFeatureServlet.class, "/dreamau/feature/list");
 		handler.addServletWithMapping(WordSuggestServlet.class, "/dreamau/search/suggest");
