@@ -21,7 +21,7 @@ public class NotificationModel {
 			for (int i = 0; i < destIds.size(); i += maxSize) {
 				List<Integer> part = destIds.subList(i, Math.min(destIds.size(), i + maxSize));
 				ProducerPush.send(ProducerTopic.NEW_COLOR,
-						System.currentTimeMillis() + "\t" + msg + "\t" + thumb + "\t" + colorIds + "\t" + StringUtils.join(part, ","));
+						System.currentTimeMillis() + "\t" + msg + "\t" + thumb + "\t" + StringUtils.join(colorIds, ",") + "\t" + StringUtils.join(part, ","));
 			}
 		}
 	}

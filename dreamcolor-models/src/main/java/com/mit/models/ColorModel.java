@@ -48,6 +48,16 @@ public class ColorModel {
 		return rs;
 	}
 	
+	public Map<String, Object> getListColor(List<Long> colorIds) {
+		Map<String, Object> rs = new HashMap<>();
+		int err = ModelError.SUCCESS;
+		List<Color> colors = ColorDAO.getInstance().getByListId(colorIds);
+		rs.put("err", err);
+		rs.put("colors", Color.buildListColorView(colors));
+		
+		return rs;
+	}
+	
 	public Map<String, Object> viewColor(long colorId) {
 		Map<String, Object> rs = new HashMap<>();
 		int err = ModelError.SUCCESS;

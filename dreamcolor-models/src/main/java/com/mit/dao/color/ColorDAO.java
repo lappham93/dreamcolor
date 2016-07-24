@@ -2,6 +2,7 @@ package com.mit.dao.color;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -233,6 +234,23 @@ public class ColorDAO extends CommonDAO {
 		}
 
 		return words;
+	}
+	
+	public List<Color> getByListId(List<Long> ids) {
+		List<Color> colors = Collections.emptyList();
+		if(dbSource != null) {
+			try {
+				Document filter = new Document("_id", new Document("$in", ids)).append("status", new Document("$gt", 0));
+				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter);
+				if(doc != null) {
+					colors = new MongoMapper().parseList(doc);
+				}
+			} catch(final Exception e) {
+				_logger.error("getByListId ", e);
+			}
+		}
+
+		return colors;
 	}
 	
 	public Color getById(long id) {
