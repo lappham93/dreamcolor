@@ -141,6 +141,23 @@ public class CategoryDAO extends CommonDAO {
 		
 		return cates;
 	}
+	
+	public Category getByName(String name) {
+		Category cates = null;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document("name", name);
+				Document doc = dbSource.getCollection(TABLE_NAME).find(filter).first();
+				if (doc != null) {
+					cates = new MongoMapper().parseObject(doc);
+				}
+			} catch (final Exception e) {
+				_logger.error("getByName ", e);
+			}
+		}
+		
+		return cates;
+	}
     
 	public int insert(Category cate) {
 		int rs = MongoErrorCode.NOT_CONNECT;

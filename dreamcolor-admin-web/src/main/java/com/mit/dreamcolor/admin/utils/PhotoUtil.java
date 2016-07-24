@@ -2,6 +2,9 @@ package com.mit.dreamcolor.admin.utils;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.io.FilenameUtils;
@@ -22,6 +25,7 @@ import com.mit.mlist.MStrSortSetI64DAO;
 import com.mit.mphoto.thrift.TMPhoto;
 import com.mit.mphoto.thrift.TMPhotoResult;
 import com.mit.utils.MIMETypeUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +34,40 @@ public class PhotoUtil {
 	public static final PhotoUtil Instance = new PhotoUtil();
 
 	private PhotoUtil() {
+	}
+	
+	public long uploadPhoto(File file, PhotoType type) {
+		int err = -1;
+		long idThumb = MIdGenLongDAO.getInstance(PhotoCommon.idGen.get(type.getValue())).getNext();
+		if (idThumb >= 0) {
+			Path path = Paths.get(file.getAbsolutePath());
+	        byte[] data = null;
+	        try {
+	        	data = Files.readAllBytes(path);
+	        } catch (Exception ex) {        	
+	        }
+	        
+	        if (data != null) {
+				String filename = file.getName();
+				String ext = FilenameUtils.getExtension(filename);
+				String contentType = MIMETypeUtil.getInstance().getMIMETypeImage(ext);
+				TMPhoto tmp = new TMPhoto();
+				tmp.setId(idThumb);
+				tmp.setFilename(filename);
+				tmp.setData(data);
+				tmp.setContentType(contentType);
+				err = putPhoto(tmp, type.getValue());
+				if (err >= 0) {
+					String table = PhotoCommon.photoTable.get(type.getValue());
+					MStrSortSetI64DAO setPhoto = new MStrSortSetI64DAO(table, MSortType.DESC);
+					setPhoto.add(table, idThumb);
+	
+					return idThumb;
+				}
+	        }
+		}
+
+		return -1;
 	}
 
 	public long uploadPhoto(FileItem file, PhotoType type) {

@@ -252,6 +252,23 @@ public class ColorDAO extends CommonDAO {
 		return color;
 	}
 	
+	public Color getByCode(String code) {
+		Color color = null;
+		if (dbSource != null) {
+			try {
+				Document filter = new Document("code", code);
+				Document doc = dbSource.getCollection(TABLE_NAME).find(filter).first();
+				if (doc != null) {
+					color = new MongoMapper().parseObject(doc);
+				}
+			} catch (final Exception e) {
+				_logger.error("getByCode ", e);
+			}
+		}
+		
+		return color;
+	}
+	
 	public int updateView(long id) {
 		int rs = MongoErrorCode.NOT_CONNECT;
 		if (dbSource != null) {
