@@ -77,15 +77,15 @@ public class ColorModel {
 		return rs;
 	}
 	
-	public Map<String, Object> getListFeature(int count, int from) {
+	public Map<String, Object> getListFeature(int count) {
 		Map<String, Object> rs = new HashMap<>();
 		int err = ModelError.SUCCESS;
 		boolean hasMore = false;
-		List<Color> colors = ColorDAO.getInstance().getFeatureSlice(count + 1, from, "views", false);
-		if (colors != null && colors.size() > count) {
-			colors = colors.subList(0, count);
-			hasMore = true;
-		}
+		List<Color> colors = ColorDAO.getInstance().getListFeature(count);
+//		if (colors != null && colors.size() > count) {
+//			colors = colors.subList(0, count);
+//			hasMore = true;
+//		}
 		rs.put("err", err);
 		rs.put("hasMore", hasMore);
 		rs.put("colors", Color.buildListColorView(colors));

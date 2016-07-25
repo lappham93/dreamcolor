@@ -5,10 +5,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.mit.dao.notification.NewsDAO;
 import com.mit.dao.notification.UserNewsDAO;
 import com.mit.entities.notification.News;
 import com.mit.entities.notification.UserNews;
+import com.mit.luv.kafka.producer.ProducerPush;
+import com.mit.luv.kafka.producer.ProducerTopic;
 
 public class NewsModel {
 	public static final NewsModel Instance = new NewsModel();
@@ -50,8 +54,9 @@ public class NewsModel {
 		return rs;
 	}
 	
-	public void viewNews(int userId, List<Long> newsIds) {
-		UserNewsDAO.getInstance().updateView(userId, newsIds);
+	public void viewNews(String imei, List<Long> newsIds) {
+		ProducerPush.send(ProducerTopic.VIEW_NEWS, 
+				System.currentTimeMillis() + "\t" + imei + "\t" + StringUtils.join(newsIds, ","));
 	}
 
 

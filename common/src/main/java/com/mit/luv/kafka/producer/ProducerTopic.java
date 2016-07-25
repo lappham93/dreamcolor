@@ -19,5 +19,6 @@ public class ProducerTopic {
 	public static final String NOTIFICATION_IOS_MULTI_DEST = "dmau_notif_ios_multi_dest";
 
 	public static final String NEW_COLOR = "dmau_new_color";
+	public static final String VIEW_NEWS = "dmau_news_view";
     
 }

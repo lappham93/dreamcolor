@@ -192,6 +192,24 @@ public class ColorDAO extends CommonDAO {
 		return colors;
 	}
 	
+	public List<Color> getListFeature(int count) {
+		List<Color> colors = null;
+		if(dbSource != null) {
+			try {
+				Document filter = new Document("status", new Document("$gt", 0));
+				Document sort = new Document("views", -1);
+				FindIterable<Document> doc = dbSource.getCollection(TABLE_NAME).find(filter).sort(sort).limit(count);
+				if(doc != null) {
+					colors = new MongoMapper().parseList(doc);
+				}
+			} catch(final Exception e) {
+				_logger.error("getListFeature ", e);
+			}
+		}
+
+		return colors;
+	}
+	
 	public List<Color> getSearchSlice(String code, int count, int from, String fieldSort, boolean ascOrder) {
 		List<Color> colors = null;
 		if(dbSource != null) {

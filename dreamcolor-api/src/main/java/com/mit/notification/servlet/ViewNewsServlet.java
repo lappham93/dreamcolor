@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mit.api.ApiError;
 import com.mit.api.ApiMessage;
-import com.mit.dao.user.DeviceTokenDAO;
-import com.mit.entities.user.DeviceToken;
 import com.mit.models.NewsModel;
 import com.mit.servlet.ServletWrapper;
 import com.mit.utils.StringUtils;
@@ -20,19 +18,19 @@ public class ViewNewsServlet extends ServletWrapper {
 	private final List<String> paramRequire = Arrays.asList("imei", "ids");
 
 	@Override
-	protected void doProcess(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException {
+	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		Map<String, Object> params = getParameter(req);
 		ApiMessage msg = new ApiMessage();
-		if(params != null && checkEmptyParameter(params, paramRequire)) {		
+		if (params != null && checkEmptyParameter(params, paramRequire)) {
 			List<Long> ids = StringUtils.stringToLongList(String.valueOf(params.get("ids")), true);
 			String imei = String.valueOf(params.get("imei"));
-			DeviceToken device = DeviceTokenDAO.getInstance().getByImei(imei);
-			if (device != null) {
-				NewsModel.Instance.viewNews(device.getId(), ids);
-			} else {
-				msg.setErr(ApiError.PARAMS_INVALID.getValue());
-			}
+			// DeviceToken device =
+			// DeviceTokenDAO.getInstance().getByImei(imei);
+			// if (device != null) {
+			NewsModel.Instance.viewNews(imei, ids);
+			// } else {
+			// msg.setErr(ApiError.PARAMS_INVALID.getValue());
+			// }
 		} else {
 			msg.setErr(ApiError.MISSING_PARAM.getValue());
 		}
