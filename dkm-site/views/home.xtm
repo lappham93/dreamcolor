@@ -41,344 +41,657 @@
 </section>
 <!-- slider -->
 
-<section id="features" class="page-section" style="background-color: #2e2e2e;">
-    <div class="section-title white" data-animation="fadeInUp" style="margin-bottom: 20px;">
-        <h2 class="title">About Dreamau</h2>
-    </div>
-    <div class="section-title" data-animation="fadeInUp" style="height: 72px;">
-        <div class="col-md-12 text-center" data-animation="pulse">
-            <img src="{{static-domain}}/dc/imgs/Indicator_2.png" width="748" height="72" alt="" />
+<section id="about-us" class="page-section">
+    <div class="container">
+        <div class="section-title" data-animation="fadeInUp">
+            <h1 class="title">Welcome to Mist</h1>
         </div>
-    </div>
-    <div class="container white">
         <div class="row">
-            <div class="col-sm-4" data-animation="fadeInRight">
-                <p class="text-center">
-                    <a href="{{static-domain}}/dc/imgs/thumb1.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="{{static-domain}}/dc/imgs/thumb1.jpg" width="334" height="334" alt=""></a>
-                </p>
-                <!--<h5 class="bottom-margin-10"><a href="#" class="black">Creative Design</a></h5>-->
-                <p>DreaMau is the only machine in the world capable of producing what your imagination tell you to.</p>
+            <div class="col-md-8 bottom-pad-50 col-md-offset-2 text-center" data-animation="fadeInUp">
+                <!-- Text -->
+                <h4> Simple &amp; Clean Responsive HTML5 Template fit for all type of corporates. Use and explore it with simple way.</h4>
+                <a class="btn btn-default" href="#"> Download Now </a>
             </div>
-            <div class="col-sm-4" data-animation="fadeInUp">
-                <p class="text-center">
-                    <a href="{{static-domain}}/dc/imgs/thumb2.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="{{static-domain}}/dc/imgs/thumb2.jpg" width="334" height="334" alt=""></a>
-                </p>
-                <!--<h5 class="bottom-margin-10"><a href="#" class="black">Responsive</a></h5>-->
-                <p>Thousands of nail polish colors with a great variety of tones and textures like: Cream, Pearl, Metallic, Shadow, Glitter, and Neon.</p>
+        </div>
+        <div class="row">
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInLeft">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-perm-data-setting fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">Bootstrap 3.x</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
             </div>
-            <div class="col-sm-4" data-animation="fadeInLeft">
-                <p class="text-center">
-                    <a href="{{static-domain}}/dc/imgs/thumb3.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="{{static-domain}}/dc/imgs/thumb3.jpg" width="334" height="334" alt=""></a>
-                </p>
-                <!--<h5 class="bottom-margin-10"><a href="#" class="black">HMTL 5</a></h5>-->
-                <p>For the first time, you can choose and produce the color, right away.</p>
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInUp">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-mobile5 fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">100% Responsive</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
+            </div>
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInRight">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-html53 fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">HTML 5</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
+            </div>
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInLeft">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-css32 fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">CSS 3</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
+            </div>
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInUp">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-magic-wand fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">Great Animations</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
+            </div>
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInRight">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-add-shopping-cart fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">Shopping Cart</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
+            </div>
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInLeft">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-power-cord fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">Easy Options</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
+            </div>
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInUp">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-shrink fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">Multi-purpose</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
+            </div>
+            <div class="item-box icons-color col-sm-6 col-md-4" data-animation="fadeInRight">
+                <a href="#">
+                    <!-- Icon -->
+                    <i class="icon-microphone6 fa-2x"></i>
+                    <!-- Title -->
+                    <h5 class="title">Unlimited Support</h5>
+                    <!-- Text -->
+                    <div>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</div>
+                </a>
             </div>
         </div>
     </div>
 </section>
-<!-- About -->
-
+<!-- about-us -->
+<section id="who-we-are" class="page-section no-pad light-bg border-tb">
+    <div class="container-fluid who-we-are">
+        <div class="row">
+            <div class="col-md-6 pad-60">
+                <div class="section-title text-left" data-animation="fadeInUp">
+                    <!-- Title -->
+                    <h2 class="title">Who We Are</h2>
+                </div>
+                <div class="owl-carousel pagination-1 dark-switch" data-pagination="true" data-autoplay="true" data-navigation="false" data-singleitem="true">
+                    <div class="item">
+                        <div class="entry-content about-us">
+                            <!-- Progress Bar 1 -->
+                            <h6>Graphic Design</h6>
+                            <div class="progress">
+                                <div data-percentage="60" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar">
+                                    <span class="progress-label" style="left: 60%">60%</span>
+                                </div>
+                            </div>
+                            <!-- Progress Bar 2 -->
+                            <h6>HTML 5</h6>
+                            <div class="progress">
+                                <div data-percentage="65" aria-valuemax="100" aria-valuemin="0" aria-valuenow="65" role="progressbar" class="progress-bar">
+                                    <span class="progress-label" style="left: 65%">65%</span>
+                                </div>
+                            </div>
+                            <!-- Progress Bar 3 -->
+                            <h6>CSS 3</h6>
+                            <div class="progress">
+                                <div data-percentage="80" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar">
+                                    <span class="progress-label" style="left: 80%">80%</span>
+                                </div>
+                            </div>
+                            <!-- Progress Bar 4 -->
+                            <h6>Wordpress</h6>
+                            <div class="progress">
+                                <div data-percentage="70" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar" class="progress-bar">
+                                    <span class="progress-label" style="left: 70%">70%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <!-- Heading -->
+                        <h2 class="entry-title"><a href="#">Our philosophy</a></h2>
+                        <!-- Content -->
+                        <div class="entry-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi 
+                                laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti.
+                            </p>
+                            <p>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis 
+                                voluptate assumenda quidem eos explicabo rerum.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <!-- Heading -->
+                        <h2 class="entry-title"><a href="#">Our history</a></h2>
+                        <!-- Content -->
+                        <div class="entry-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi 
+                                laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti.
+                            </p>
+                            <p>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis 
+                                voluptate assumenda quidem eos explicabo rerum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 no-pad text-center">
+                <!-- Image -->
+                <img src="#" alt="" title="" width="850" height="560">
+                <!--<div class="image-bg" data-background="img/sections/bg/full-img3.jpg"></div>-->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- who-we-are -->
 <section id="additional" class="page-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-center bottom-xs-pad-30" data-animation="pulse">
-                <!-- Image -->
-                <img src="{{static-domain}}/dc/imgs/Group-5.png" width="280" height="440" alt="" />
-            </div>
-            <div class="col-md-4" data-animation="fadeInUp">
-                <div class="section-title text-left" data-animation="fadeInRight">
+            <div class="col-md-8">
+                <div class="section-title text-left" data-animation="fadeInUp">
                     <!-- Title -->
-                    <h2 class="title">Innovation</h2>
+                    <h2 class="title">Responsive & Mobile Ready</h2>
                 </div>
                 <!-- Content -->
-                <h5>Nail Polish & Gel Polish</h5>
-                <p>Not only can DreaMau create nail polish, it can also create gel polish. By adding CYOGEL mix to your nail polish and with the high-gloss, 
-                    strong Tougher Top Coat, it will extend the life of the wear to 2 weeks.</p>
-                <p>The possibilities are endless.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed 
+                    dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed 
+                    dolor tincidunt porttitor consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. porttitor consecteturadipiscing elit. Vestibulum nec odio 
+                    ipsum. Suspendisse cursus malesuada facilisis.
+                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed 
+                    dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                </p>
                 <!-- Features -->
-                <div class="row responsive-features top-pad-20 text-center">
+                <div class="row responsive-features top-pad-20">
                     <!-- Features 1 -->
-                    <div class="col-md-6 col-xs-6">
+                    <div class="col-md-4" data-animation="fadeInUp">
                         <!-- Title And Content -->
-                        <!--<span class="icon-refresh2 text-color"></span>-->
-                        <h5>1. Machine</h5>
-                        <p><img src="{{static-domain}}/dc/imgs/machine.png" width="95" height="105" alt="" /></p>
+                        <span class="icon-refresh2 text-color"></span>
+                        <h5>updates</h5>
+                        <p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
                     </div>
                     <!-- Features 1 -->
                     <!-- Features 2 -->
-                    <div class="col-md-6 col-xs-6">
+                    <div class="col-md-4" data-animation="fadeInDown">
                         <!-- Title And Content -->
-                        <!--<span class="icon-settings3 text-color"></span>-->
-                        <h5>2. Wonders</h5>
-                        <p><img src="{{static-domain}}/dc/imgs/wonders.png" width="91" height="104" alt="" /></p>
+                        <span class="icon-settings3 text-color"></span>
+                        <h5>flexible</h5>
+                        <p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
                     </div>
                     <!-- Features 2 -->
+                    <!-- Features 3 -->
+                    <div class="col-md-4" data-animation="fadeInUp">
+                        <!-- Title And Content -->
+                        <span class="icon-invert-colors text-color"></span>
+                        <h5>custom colors</h5>
+                        <p>Lorem ipsum dolor sit amet elit. consectetur Vest</p>
+                    </div>
+                    <!-- Features 3 -->
                 </div>
                 <!-- Features -->
             </div>
             <div class="col-md-4 text-center bottom-xs-pad-30" data-animation="pulse">
                 <!-- Image -->
-                <img src="{{static-domain}}/dc/imgs/Group-6.png" width="280" height="440" alt="" />
+                <img src="img/sections/iphone-img.png" width="280" height="440" alt="">
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
 </section>
 <!-- additional -->
-
-<section id="who-we-are" class="page-section no-pad black-bg border-tb">
-    <div class="container-fluid who-we-are">
-        <div class="row">
-            <div class="col-md-6 no-pad" data-animation="fadeInLeft">
-                <section>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-12 no-pad">
-                                <iframe id="cyogel-video" class="embed-responsive-item col-sm-12 no-pad"
-                                        src="//www.youtube.com/embed/cUg8yaIbo0o?rel=0&amp;autoplay=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;autohide=1"
-                                        allowfullscreen="" style="height: 560px; width: 100%;">
-                                </iframe>
-                            </div>
-                        </div>
-<!--                        <div class="clearfix">
-                            <div class="col-xs-6" style="text-align: center;margin-top: 10px;">
-                                <a href="https://www.youtube.com/watch?v=cl4Xrx4RPs0" onclick="event.preventDefault();
-                        $('#cyogel-video').attr('src', '//www.youtube.com/embed/cl4Xrx4RPs0?rel=0&amp;autoplay=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;autohide=1')"
-                                   style="color:#0ba4c6">
-                                    Portuguese Version
-                                </a>
-                            </div>
-                            <div class="col-xs-6" style="text-align: center;margin-top: 10px;">
-                                <a href="https://www.youtube.com/watch?v=dpZq8mfU4a0" onclick="event.preventDefault();
-                        $('#cyogel-video').attr('src', '//www.youtube.com/embed/dpZq8mfU4a0?rel=0&amp;autoplay=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;autohide=1')"
-                                   style="color:#0ba4c6">
-                                    Spanish Version
-                                </a>
-                            </div>
-                        </div>-->
-                    </div>
-                </section>
+<section id="fun-factor" class="page-section">
+    <div class="image-bg content-in fixed" data-background="img/sections/bg/bg-11.jpg"></div>
+    <div class="container white">
+        <div class="row text-center fact-counter">
+            <div class="col-sm-4 col-md-3" data-animation="pulse">
+                <!-- Icon -->
+                <div class="count-number circle border-color" data-count="550">
+                    <span class="counter"></span>
+                </div>
+                <!-- Title -->
+                <h5>Wordpress</h5>
             </div>
-            <div class="col-md-6 no-pad text-center" data-animation="fadeInRight">
-                <img src="{{static-domain}}/dc/imgs/DreaMau-Machine.png" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" style="width: 100%;"/>
-                <!--<div class="image-bg" data-background="{{static-domain}}/dc/imgs/DreaMau-Machine.png"></div>-->
+            <div class="col-sm-4 col-md-3" data-animation="pulse">
+                <!-- Icon -->
+                <div class="count-number circle border-color" data-count="1223">
+                    <span class="counter"></span>
+                </div>
+                <!-- Title -->
+                <h5>HTML</h5>
+            </div>
+            <div class="col-sm-4 col-md-3" data-animation="pulse">
+                <!-- Icon -->
+                <div class="count-number circle border-color" data-count="925">
+                    <span class="counter"></span>
+                </div>
+                <!-- Title -->
+                <h5>E-commerce</h5>
+            </div>
+            <div class="col-sm-4 col-md-3" data-animation="pulse">
+                <!-- Icon -->
+                <div class="count-number circle border-color" data-count="1910">
+                    <span class="counter"></span>
+                </div>
+                <!-- Title -->
+                <h5>Great Support</h5>
             </div>
         </div>
     </div>
 </section>
-<!-- who-we-are -->
-
-<section id="service" class="page-section">
+<!-- fun-factor -->
+<section id="features" class="page-section">
+     <div class="section-title" data-animation="fadeInUp">
+        <!-- Heading -->
+        <h2 class="title">We provides Amazing Solutions</h2>
+    </div>
     <div class="container">
-        <div class="section-title" data-animation="fadeInUp" style="margin-bottom: 20px;">
-            <!-- Heading -->
-            <h2 class="title">How does it work?</h2>
-        </div>
-        <div class="section-title" data-animation="fadeInUp" style="height: 72px; margin-bottom: 20px;">
-            <div class="col-md-12 text-center" data-animation="pulse">
-                <img src="{{static-domain}}/dc/imgs/Indicator.png" width="748" height="72" alt="" />
-            </div>
-        </div>
-        <div class="section-title text-center" data-animation="pulse" style="margin-bottom: 20px;">
-            <!-- Heading -->
-            <h4 class="title">In 5 short step, you'll have the color of your dreams.</h4>
-        </div>
         <div class="row">
-            <div class="col-md-4 text-center" data-animation="fadeInLeft">
-                <ul class="features-list features-list-left">
-                    <li class="features-list-item" data-animation="fadeInLeft">
-                        <div class="features-content text-left">
-                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_21.jpg" alt="" />
-                        </div>
-                    </li>
-                    <li class="features-list-item" data-animation="fadeInUp">
-                        <div class="features-content text-left">
-                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_24.jpg" alt="" />
-                        </div>
-                    </li>
-                </ul>
+            <div class="col-sm-4" data-animation="fadeInRight">
+                <p class="text-center">
+                    <a href="img/sections/big-1.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="img/sections/big-1.jpg" width="370" height="185" alt=""></a>
+                </p>
+                <h5 class="bottom-margin-10"><a href="#" class="black">Creative Design</a></h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id pariatur molestiae illum cum facere deserunt a enim harum eaque fugit.</p>
             </div>
-            <div class="col-md-4 text-center" data-animation="pulse" style="">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_19.jpg" width="350" height="480" alt="" />
+            <div class="col-sm-4" data-animation="fadeInUp">
+                <p class="text-center">
+                    <a href="img/sections/big-2.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="img/sections/big-2.jpg" width="370" height="185" alt=""></a>
+                </p>
+                <h5 class="bottom-margin-10"><a href="#" class="black">Responsive</a></h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id pariatur molestiae illum cum facere deserunt a enim harum eaque fugit.</p>
             </div>
-            <div class="col-md-4" data-animation="fadeInRight">
-                <ul class="features-list features-list-left">
-                    <li class="features-list-item" data-animation="fadeInRight">
-                        <div class="features-content">
-                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_28.jpg" alt="" />
-                        </div>
-                    </li>
-                    <li class="features-list-item" data-animation="fadeInRight">
-                        <div class="features-content">
-                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_22.jpg" alt="" />
-                        </div>
-                    </li>
-<!--                    <li class="features-list-item" data-animation="fadeInUp">
-                        <div class="features-content">
-                            <img src="{{static-domain}}/dc/imgs/Dreamau-Web_27.jpg" alt="" />
-                        </div>
-                    </li>-->
-                </ul>
-            </div>
-            <div class="col-md-12 text-center" data-animation="pulse">
-                <img src="{{static-domain}}/dc/imgs/Dreamau-Web_27.jpg" alt="" />
+            <div class="col-sm-4" data-animation="fadeInLeft">
+                <p class="text-center">
+                    <a href="img/sections/big-3.jpg" class="opacity" data-rel="prettyPhoto[portfolio]"><img src="img/sections/big-3.jpg" width="370" height="185" alt=""></a>
+                </p>
+                <h5 class="bottom-margin-10"><a href="#" class="black">HMTL 5</a></h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id pariatur molestiae illum cum facere deserunt a enim harum eaque fugit.</p>
             </div>
         </div>
     </div>
 </section>
-<!-- What-We-Do -->
-
-<section id="works" class="page-section light-bg">
+<!-- other-features -->
+<section id="works" class="page-section">
+    <div class="image-bg content-in fixed" data-background="img/sections/bg/bg-13.jpg">
+        <div class="overlay"></div>
+    </div>
     <div class="container work-section">
-        <div class="section-title" data-animation="fadeInUp">
+        <div class="section-title white" data-animation="fadeInUp">
             <!-- Heading -->
             <h2 class="title">Latest Works</h2>
         </div>
+        <div id="options" class="filter-menu">
+            <ul class="option-set nav nav-pills">
+                <li class="filter active" data-filter="all">Show All</li>
+                <li class="filter" data-filter=".web">web design</li>
+                <li class="filter" data-filter=".html">landing pages</li>
+                <li class="filter" data-filter=".wp">personal blog</li>
+            </ul>
+        </div>
     </div>
     <!-- filter -->
-    <div class="masonry-grid grid-col-5" data-gutter="0" data-animation="fadeInUp">
-        <div class="grid-sizer"></div>
+    <div id="mix-container" class="portfolio-grid" data-animation="fadeInLeft">
         <!-- Item 1 -->
-        <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Group_8.png" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Group_8.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
-                <!--<div class="portfolio-title">Fashion</div>-->
-            </a>
+        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web">
+            <div class="grid">
+                <img src="img/sections/portfolio/1.jpg" width="400" height="273"  alt="Recent Work" class="img-responsive">
+                <div class="figcaption">
+                    <div class="caption-block">
+                        <h4>Name Of Work</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <!-- Image Popup-->
+                    <a href="img/sections/portfolio/1.jpg" data-rel="prettyPhoto[portfolio]">
+                    <i class="fa fa-search"></i>
+                    </a>
+                    <a href="portfolio-single.html">
+                    <i class="fa fa-link"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- Item 1 Ends-->
         <!-- Item 2 -->
-        <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Group_12.png" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Group_12.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
-                <!--<div class="portfolio-title">Style</div>-->
-            </a>
+        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web">
+            <div class="grid">
+                <img src="img/sections/portfolio/2.jpg" width="400" height="273"  alt="Recent Work" class="img-responsive">
+                <div class="figcaption">
+                    <div class="caption-block">
+                        <h4>Name Of Work</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <!-- Image Popup-->
+                    <a href="img/sections/portfolio/2.jpg" data-rel="prettyPhoto[portfolio]">
+                    <i class="fa fa-search"></i>
+                    </a>
+                    <a href="portfolio-single.html">
+                    <i class="fa fa-link"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- Item 2 Ends-->
         <!-- Item 3 -->
-        <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Group_10.png" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Group_10.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
-                <!--<div class="portfolio-title">Ritto</div>-->
-            </a>
+        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web">
+            <div class="grid">
+                <img src="img/sections/portfolio/3.jpg" width="400" height="273"  alt="Recent Work" class="img-responsive">
+                <div class="figcaption">
+                    <div class="caption-block">
+                        <h4>Name Of Work</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <!-- Image Popup-->
+                    <a href="img/sections/portfolio/3.jpg" data-rel="prettyPhoto[portfolio]">
+                    <i class="fa fa-search"></i>
+                    </a>
+                    <a href="portfolio-single.html">
+                    <i class="fa fa-link"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- Item 3 Ends-->
         <!-- Item 4 -->
-        <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Group_13.png" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Group_13.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
-                <!--<div class="portfolio-title">Black &amp; White</div>-->
-            </a>
+        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all html">
+            <div class="grid">
+                <img src="img/sections/portfolio/4.jpg" width="400" height="273"  alt="Recent Work" class="img-responsive">
+                <div class="figcaption">
+                    <div class="caption-block">
+                        <h4>Name Of Work</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <!-- Image Popup-->
+                    <a href="img/sections/portfolio/4.jpg" data-rel="prettyPhoto[portfolio]">
+                    <i class="fa fa-search"></i>
+                    </a>
+                    <a href="portfolio-single.html">
+                    <i class="fa fa-link"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- Item 4 Ends-->
         <!-- Item 5 -->
-        <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Group_15.jpg" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Group_15.jpg" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
-                <!--<div class="portfolio-title">walky</div>-->
-            </a>
+        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all wp web">
+            <div class="grid">
+                <img src="img/sections/portfolio/5.jpg" width="400" height="273"  alt="Recent Work" class="img-responsive">
+                <div class="figcaption">
+                    <div class="caption-block">
+                        <h4>Name Of Work</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <!-- Image Popup-->
+                    <a href="img/sections/portfolio/5.jpg" data-rel="prettyPhoto[portfolio]">
+                    <i class="fa fa-search"></i>
+                    </a>
+                    <a href="portfolio-single.html">
+                    <i class="fa fa-link"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- Item 5 Ends-->
         <!-- Item 6 -->
-        <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Group_11.png" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Group_11.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
-                <!--<div class="portfolio-title">Style</div>-->
-            </a>
+        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all html wp">
+            <div class="grid">
+                <img src="img/sections/portfolio/6.jpg" width="400" height="273"  alt="Recent Work" class="img-responsive">
+                <div class="figcaption">
+                    <div class="caption-block">
+                        <h4>Name Of Work</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <!-- Image Popup-->
+                    <a href="img/sections/portfolio/6.jpg" data-rel="prettyPhoto[portfolio]">
+                    <i class="fa fa-search"></i>
+                    </a>
+                    <a href="portfolio-single.html">
+                    <i class="fa fa-link"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- Item 6 Ends-->
         <!-- Item 7 -->
-        <div class="grid-item all web" style="padding: 5px;">
-            <a href="{{static-domain}}/dc/imgs/Group_14.png" data-rel="prettyPhoto[portfolio]">
-                <img src="{{static-domain}}/dc/imgs/Group_14.png" style="width: 100%; max-width: 100%;" alt="Recent Work" class="img-responsive" />
-                <!--<div class="portfolio-title">Superb</div>-->
-            </a>
+        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web wp">
+            <div class="grid">
+                <img src="img/sections/portfolio/7.jpg" width="400" height="273"  alt="Recent Work" class="img-responsive">
+                <div class="figcaption">
+                    <div class="caption-block">
+                        <h4>Name Of Work</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <!-- Image Popup-->
+                    <a href="img/sections/portfolio/7.jpg" data-rel="prettyPhoto[portfolio]">
+                    <i class="fa fa-search"></i>
+                    </a>
+                    <a href="portfolio-single.html">
+                    <i class="fa fa-link"></i>
+                    </a>
+                </div>
+            </div>
         </div>
         <!-- Item 7 Ends-->
+        <!-- Item 8 -->
+        <div class="grids col-xs-12 col-sm-6 col-md-3 mix all web">
+            <div class="grid">
+                <img src="img/sections/portfolio/8.jpg" width="400" height="273"  alt="Recent Work" class="img-responsive">
+                <div class="figcaption">
+                    <div class="caption-block">
+                        <h4>Name Of Work</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <!-- Image Popup-->
+                    <a href="img/sections/portfolio/8.jpg" data-rel="prettyPhoto[portfolio]">
+                    <i class="fa fa-search"></i>
+                    </a>
+                    <a href="portfolio-single.html">
+                    <i class="fa fa-link"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Item 8 Ends-->
     </div>
     <!-- Mix Container -->
 </section>
-<!-- works -->
-
-<section id="team" class="page-section">
-    <div class="image-bg content-in fixed" data-background="{{static-domain}}/dc/imgs/bg-black.jpg"></div>
-    <div class="container text-center white">
-        <div class="section-title" data-animation="fadeInUp">
-            <h1 class="title">Master Distributors</h1>
-        </div>
+<!-- works --> 
+<section id="testimonials" class="page-section testimonails">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInRight">
-                <div class="image">
-                    <a href="https://cyogel.com/" target="_blank"><img src="{{static-domain}}/dc/imgs/CYOGel_LOGO.png" alt="" title="" width="460" height="232" /></a>
+            <div class="col-md-12">
+                <div class="section-title" data-animation="fadeInUp">
+                    <!-- Heading -->
+                    <h2 class="title">What Clients Says</h2>
                 </div>
-                <div class="social-icon i-3x">
-                <a href="https://cyogel.com/" target="_blank">
-                    <i class="fa fa-link"></i>
-                </a> 
-                <a href="https://www.facebook.com/cyogelbest/" target="_blank">
-                    <i class="fa fa-facebook"></i>
-                </a> 
-                <a href="https://twitter.com/cyogel1" target="_blank">
-                    <i class="fa fa-twitter"></i>
-                </a> 
-                <a href="https://plus.google.com/101632725135656721370" target="_blank">
-                    <i class="fa fa-google"></i>
-                </a>
+                <div class="owl-carousel pagination-1 dark-switch text-center " data-pagination="true" data-autoplay="true" data-navigation="false" data-items="3">
+                    <div class="item">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ducimus eveniet distinctio amet quaerat maxime fugit nesciunt sunt ut quasi nulla.</p>
+                        <div class="star-rating text-center">
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star-half-o  text-color"></i>
+                        </div>
+                        <div class="client-image">
+                            <!-- Image -->
+                            <img class="img-circle" src="img/sections/testimonials/1.jpg" width="80" height="80" alt="">
+                        </div>
+                        <div class="client-details text-center">
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong class="text-color">John Doe</strong>
+                                <!-- Company -->
+                                <span>CEO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ducimus eveniet distinctio amet quaerat maxime fugit nesciunt sunt ut quasi nulla.</p>
+                        <div class="star-rating text-center">
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star-half-o  text-color"></i>
+                        </div>
+                        <div class="client-image">
+                            <!-- Image -->
+                            <img class="img-circle" src="img/sections/testimonials/2.jpg" width="80" height="80" alt="">
+                        </div>
+                        <div class="client-details text-center">
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong class="text-color">John Doe</strong>
+                                <!-- Company -->
+                                <span>CEO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ducimus eveniet distinctio amet quaerat maxime fugit nesciunt sunt ut quasi nulla.</p>
+                        <div class="star-rating text-center">
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star-half-o  text-color"></i>
+                        </div>
+                        <div class="client-image">
+                            <!-- Image -->
+                            <img class="img-circle" src="img/sections/testimonials/3.jpg" width="80" height="80" alt="">
+                        </div>
+                        <div class="client-details text-center">
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong class="text-color">John Doe</strong>
+                                <!-- Company -->
+                                <span>CEO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ducimus eveniet distinctio amet quaerat maxime fugit nesciunt sunt ut quasi nulla.</p>
+                        <div class="star-rating text-center">
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star-half-o  text-color"></i>
+                        </div>
+                        <div class="client-image">
+                            <!-- Image -->
+                            <img class="img-circle" src="img/sections/testimonials/1.jpg" width="80" height="80" alt="">
+                        </div>
+                        <div class="client-details text-center">
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong class="text-color">John Doe</strong>
+                                <!-- Company -->
+                                <span>CEO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ducimus eveniet distinctio amet quaerat maxime fugit nesciunt sunt ut quasi nulla.</p>
+                        <div class="star-rating text-center">
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star  text-color"></i>
+                            <i class="fa fa-star-half-o  text-color"></i>
+                        </div>
+                        <div class="client-image">
+                            <!-- Image -->
+                            <img class="img-circle" src="img/sections/testimonials/3.jpg" width="80" height="80" alt="">
+                        </div>
+                        <div class="client-details text-center">
+                            <div class="client-details">
+                                <!-- Name -->
+                                <strong class="text-color">John Doe</strong>
+                                <!-- Company -->
+                                <span>CEO</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
-                <div class="image">
-                    <a href="http://buynailsdirect.com/" target="_blank"><img src="{{static-domain}}/dc/imgs/Alfalfa-logo.png" alt="" title="" width="460" height="232" /></a>
-                </div>
-                <div class="social-icon i-3x">
-                <a href="http://buynailsdirect.com/" target="_blank">
-                    <i class="fa fa-link"></i>
-                </a> 
-                <a href="https://www.facebook.com/Alfalfans/" target="_blank">
-                    <i class="fa fa-facebook"></i>
-                </a> 
-                <a href="https://twitter.com/alfalfans" target="_blank">
-                    <i class="fa fa-twitter"></i>
-                </a> 
-                <a href="https://plus.google.com/100166882170602485580/posts" target="_blank">
-                    <i class="fa fa-google"></i>
-                </a> 
-                </div>
-            </div>
-<!--            <div class="col-sm-6 col-md-6 icons-hover-color bottom-xs-pad-20" data-animation="fadeInLeft">
-                <div class="image">
-                    <img src="{{static-domain}}/dc/imgs/Alfalfa-logo.png" alt="" title="" width="460" height="232" />
-                </div>
-                <div class="description">
-                    <h4 class="name text-color">Jorge Canaveral</h4>
-                    <div class="role">Event Manager</div>
-                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.</p>
-                </div>
-                <div class="social-icon i-3x">
-                <a href="#">
-                    <i class="fa fa-facebook"></i>
-                </a> 
-                <a href="#">
-                    <i class="fa fa-twitter"></i>
-                </a> 
-                <a href="#">
-                    <i class="fa fa-google"></i>
-                </a> 
-                <a href="#">
-                    <i class="fa fa-pinterest"></i>
-                </a></div>
-            </div>-->
         </div>
     </div>
 </section>
-<!-- team -->
+<!-- testimonials -->
 
-
-
-<div id="get-quote" class="bg-color get-a-quote black text-center">
-    <div class="container" data-animation="pulse">
+<section id="clients" class="page-section">
+    <div class="container">
+        <div class="section-title" data-animation="fadeInUp">
+            <!-- Heading -->
+            <h2 class="title">Our Best Clients</h2>
+        </div>
         <div class="row">
-            <div class="col-md-12">Get A Free Quote / Need a Help ? 
-            <a class="black" href="/web/site/contact">Contact Us</a></div>
+            <div class="col-md-12 text-center" data-animation="pulse">
+                <div class="owl-carousel navigation-1" data-pagination="false" data-items="6" data-autoplay="true" data-navigation="true">		
+                    <a href="#"><img src="img/sections/clients/1.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/2.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/3.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/4.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/5.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/6.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/1.png" width="170" height="170" alt=""></a>
+                    <a href="#"><img src="img/sections/clients/2.png" width="170" height="170" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- clients -->
+<div id="get-quote" class="bg-color get-a-quote black text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" data-animation="fadeInUp">
+                Get A Free Quote / Need a Help ? <a class="black" href="#">Contact Us </a>
+            </div>
         </div>
     </div>
 </div>

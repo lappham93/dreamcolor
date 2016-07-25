@@ -316,8 +316,8 @@
                         <br />
                         <!-- Terms Link -->
                          
-                        <a href="#">Terms of Use</a> / 
-                        <a href="#">Privacy Policy</a></div>
+                        <a href="/web/site/termsofuse">Terms of Use</a> | 
+                        <a href="/web/site/privacypolicy">Privacy Policy</a></div>
                         <div class="col-xs-2 col-sm-6 col-md-6 text-right page-scroll gray-bg icons-circle i-3x">
                             <!-- Goto Top -->
                             <a href="#page">

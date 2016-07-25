@@ -21,6 +21,7 @@ import com.mit.dc.site.handler.AboutUsHandler;
 import com.mit.dc.site.handler.ColorChartHandler;
 import com.mit.dc.site.handler.ContactHandler;
 import com.mit.dc.site.handler.HomeHandler;
+import com.mit.dc.site.handler.PolicyHandler;
 import com.mit.jetty.server.WebServers;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.handler.ContextHandler;
@@ -53,7 +54,8 @@ public class MainApp {
         handler.addServletWithMapping(ContactHandler.class, "/web/site/contact");
         handler.addServletWithMapping(AboutUsHandler.class, "/web/site/aboutus");
         handler.addServletWithMapping(ColorChartHandler.class, "/web/site/colorchart");
-        
+        handler.addServletWithMapping(PolicyHandler.class, "/web/site/termsofuse");
+        handler.addServletWithMapping(PolicyHandler.class, "/web/site/privacypolicy");
         
         //MAPPING ==============================================================
         
