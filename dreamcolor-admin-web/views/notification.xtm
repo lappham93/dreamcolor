@@ -4,7 +4,7 @@
     <form id="frmProduct" class="form-horizontal" role="form" action="/web/admin/notification" method="POST" target="if_notify">
     <div id="notify_alert_success" class="alert alert-success" style="display: none;"></div>
     <div id="notify_alert_err" class="alert alert-danger" style="display: none;"></div>
-        <div class="form-group">
+        <!--<div class="form-group">
             <label class="col-sm-3 control-label no-padding-right">Color: <span class="orange">(*)</span></label>
             <div class="col-xs-12 col-sm-9">
                 <select class="col-xs-12 col-sm-5" id="color" name="color">
@@ -14,7 +14,7 @@
                     {{/loop_option_color}}
                 </select>
             </div>
-        </div>
+        </div>-->
         <div class="form-group">
             <label class="col-sm-3 control-label no-padding-right">Message: <span class="orange">(*)</span></label>
             <div class="col-xs-12 col-sm-9">
@@ -87,10 +87,10 @@
     
     	function notifyColor(){
             var serr = "";
-           	var color = $('#color').val();
+           	/*var color = $('#color').val();
            	if (color == ""){
            		serr += "Color required. ";
-           	}
+           	}*/
            	var msg = $('#msg').val();
            	if (msg == ""){
            		serr += "Message required. ";

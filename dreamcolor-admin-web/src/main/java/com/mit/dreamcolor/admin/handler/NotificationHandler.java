@@ -17,9 +17,7 @@
 package com.mit.dreamcolor.admin.handler;
 
 import java.util.Arrays;
-import java.util.List;
 
-import javax.management.Notification;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
@@ -32,7 +30,6 @@ import com.eclipsesource.json.JsonObject;
 import com.mit.dao.color.ColorDAO;
 import com.mit.dreamcolor.admin.utils.HttpHelper;
 import com.mit.entities.color.Color;
-import com.mit.midutil.MIdNoise;
 import com.mit.models.NotificationModel;
 
 import hapax.TemplateDataDictionary;
@@ -94,31 +91,36 @@ public class NotificationHandler extends BaseHandler {
 
 	private void renderPageNotification(TemplateDataDictionary dic, HttpServletRequest req, HttpServletResponse resp) {
 
-		List<Color> colors = ColorDAO.getInstance().getSlice(10, 0, "createTime", false);
-		if (colors != null && !colors.isEmpty()) {
-			for (Color color : colors) {
-				TemplateDataDictionary colorDic = dic.addSection("loop_option_color");
-				colorDic.setVariable("COLOR_ID", MIdNoise.enNoiseLId(color.getId()));
-				colorDic.setVariable("COLOR_CODE", color.getCode());
-			}
-		}
+//		List<Color> colors = ColorDAO.getInstance().getSlice(10, 0, "createTime", false);
+//		if (colors != null && !colors.isEmpty()) {
+//			for (Color color : colors) {
+//				TemplateDataDictionary colorDic = dic.addSection("loop_option_color");
+//				colorDic.setVariable("COLOR_ID", MIdNoise.enNoiseLId(color.getId()));
+//				colorDic.setVariable("COLOR_CODE", color.getCode());
+//			}
+//		}
 	}
 
 	private void notifyColor(ServletRequest req, ServletResponse resp, JsonObject result) {
-		long colorId = 0;
-		String msg = "";
-		try {
-			colorId = MIdNoise.deNoiseLId(req.getParameter("color"));
-			msg = req.getParameter("msg");
-		} catch (Exception e) {
-			colorId = 0;
-		}
+//		long colorId = 0;
+		String msg = req.getParameter("msg");
+//		try {
+//			colorId = MIdNoise.deNoiseLId(req.getParameter("color"));
+//			msg = req.getParameter("msg");
+//		} catch (Exception e) {
+//			colorId = 0;
+//		}
 		
-		if (colorId > 0 && !msg.isEmpty()) {
-			Color color = ColorDAO.getInstance().getById(colorId);
-			NotificationModel.Instance.notifyColor(Arrays.asList(colorId), color.getPhoto(), msg);
-			result.set("err", 0);
-			result.set("msg", "Notify color successfully");
+		if (!msg.isEmpty()) {
+			Color color = ColorDAO.getInstance().getNewest();
+			if (color != null) {
+				NotificationModel.Instance.notifyColor(Arrays.asList(color.getId()), color.getPhoto(), msg);
+				result.set("err", 0);
+				result.set("msg", "Notify color successfully");
+			} else {
+				result.set("err", -1);
+				result.set("msg", "Notify color fail");
+			}
 		} else {
 			result.set("err", -1);
 			result.set("msg", "Param invalid");
