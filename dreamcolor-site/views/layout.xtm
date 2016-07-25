@@ -118,12 +118,12 @@
                                         <div class="col-sm-4 col-md-4">
                                             <div class="col-sm-6 col-md-6">
                                                 <span>
-                                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/app-store.png" style="width: 100%; max-width: 100%; height: 65px;" alt="app store" class="img-responsive" /></a>
+                                                    <a href="https://itunes.apple.com/app/id1136540984" target="_blank"><img src="{{static-domain}}/dc/imgs/app-store.png" style="width: 100%; max-width: 100%; height: 65px;" alt="app store" class="img-responsive" /></a>
                                                 </span>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
                                                 <span>
-                                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/google-play.png" style="width: 100%; max-width: 100%;  height: 65px;" alt="google play" class="img-responsive" /></a>
+                                                    <a href="https://play.google.com/store/apps/details?id=com.mit.dreamauf" target="_blank"><img src="{{static-domain}}/dc/imgs/google-play.png" style="width: 100%; max-width: 100%;  height: 65px;" alt="google play" class="img-responsive" /></a>
                                                 </span>
                                             </div>
                                         </div>
@@ -268,12 +268,12 @@
                             </div>
                             <div class="col-sm-6 col-md-6">
                                 <span>
-                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/app-store.png" style="width: 100%; max-width: 100%;" alt="app store" class="img-responsive" /></a>
+                                    <a href="https://itunes.apple.com/app/id1136540984" target="_blank"><img src="{{static-domain}}/dc/imgs/app-store.png" style="width: 100%; max-width: 100%;" alt="app store" class="img-responsive" /></a>
                                 </span>
                             </div>
                             <div class="col-sm-6 col-md-6">
                                 <span>
-                                    <a href="#" target="_blank"><img src="{{static-domain}}/dc/imgs/google-play.png" style="width: 100%; max-width: 100%;" alt="google play" class="img-responsive" /></a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.mit.dreamauf" target="_blank"><img src="{{static-domain}}/dc/imgs/google-play.png" style="width: 100%; max-width: 100%;" alt="google play" class="img-responsive" /></a>
                                 </span>
                             </div>
 <!--                            <nav>
