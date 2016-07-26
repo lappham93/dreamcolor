@@ -179,7 +179,14 @@ public class ColorHandler extends BaseHandler {
 				}
 			}
 		}
-
+		
+		String scode = req.getParameter("scode");
+		boolean isSearch = false;
+		if (scode != null && !scode.isEmpty()) {
+			isSearch = true;
+			scode = scode.trim();
+			dic.setVariable("COLOR_CODE", scode);
+		}
 		// render table.
 		Paging paging = new Paging();
 		String spage = req.getParameter("page");
@@ -188,18 +195,18 @@ public class ColorHandler extends BaseHandler {
 		paging.currPage = page;
 		paging.pageSize = Configuration.APP_PAGING_PAGE_SIZE;
 		paging.numDisplay = Configuration.APP_PAGING_NUM_DISPLAY;
-		paging.totalRecords = ColorDAO.getInstance().totalAllIgnoreStatus();
+		paging.totalRecords = isSearch ? ColorDAO.getInstance().totalSearchIgnoreStatus(scode) : ColorDAO.getInstance().totalAllIgnoreStatus();
 
 		if (paging.totalRecords <= 0) {
-			dic.addSection("empty");
+			dic.addSection("table_empty");
 			return;
 		}
 
 		int totalPages = paging.getTotalPages();
 		paging.currPage = Paging.clamp(paging.currPage, 1, totalPages);
 		int offset = (paging.currPage - 1) * paging.pageSize;
-		List<Color> colors = ColorDAO.getInstance().getSliceIgnoreStatus(paging.pageSize, offset, "updateTime", false);
-
+		List<Color> colors = isSearch ? ColorDAO.getInstance().getSliceSearchIgnoreStatus(scode, paging.pageSize, offset, "updateTime", false) : 
+			ColorDAO.getInstance().getSliceIgnoreStatus(paging.pageSize, offset, "updateTime", false);
 		if (colors != null && !colors.isEmpty()) {
 			dic.addSection("HAS_TABLE");
 			int i = offset + 1;
@@ -240,7 +247,8 @@ public class ColorHandler extends BaseHandler {
 		jsonPaging.set("totalRecord", paging.totalRecords);
 		jsonPaging.set("action", "/web/admin/color");
 		dic.setVariable("paging", jsonPaging.toString());
-		dic.setVariable("keyword", "option=color");
+		String param = "option=color" + (isSearch ? "&scode=" + scode : "");
+		dic.setVariable("keyword", param);
 	}
 
 	private void getCategory(HttpServletRequest req, HttpServletResponse resp, JsonObject result) {
