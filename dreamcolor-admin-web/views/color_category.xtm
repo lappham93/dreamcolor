@@ -101,7 +101,7 @@
                                 <td class="hidden-480">
                                     <ul class="ace-thumbnails">
                                         <li>
-                                            <a href="{{URI_TP}}" data-rel="colorbox">
+                                            <a href="{{URI_CP}}" data-rel="colorbox">
                                                 <img width="150" height="150" alt="150x150" src="{{URI_CP}}" />
                                                 <div class="text">
                                                     <div class="inner">Photo</div>

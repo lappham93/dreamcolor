@@ -136,7 +136,7 @@ public class DistributorHandler extends BaseHandler {
 		paging.totalRecords = DistributorDAO.getInstance().totalAllIgnoreStatus();
 
 		if (paging.totalRecords <= 0) {
-			dic.addSection("empty");
+			dic.addSection("table_empty");
 			return;
 		}
 

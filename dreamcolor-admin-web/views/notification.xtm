@@ -18,7 +18,7 @@
         <div class="form-group">
             <label class="col-sm-3 control-label no-padding-right">Message: <span class="orange">(*)</span></label>
             <div class="col-xs-12 col-sm-9">
-            	<input id="msg" name="msg" placeholder="message" class="col-xs-12 col-sm-5"/>
+            	<input type="text" id="msg" name="msg" placeholder="message" class="col-xs-12 col-sm-5"/>
             </div>
         </div>
         <div class="form-group">

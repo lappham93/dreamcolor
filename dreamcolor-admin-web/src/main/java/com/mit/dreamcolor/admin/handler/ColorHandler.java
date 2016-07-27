@@ -186,6 +186,7 @@ public class ColorHandler extends BaseHandler {
 			isSearch = true;
 			scode = scode.trim();
 			dic.setVariable("COLOR_CODE", scode);
+			dic.addSection("SEARCH_RESULT");
 		}
 		// render table.
 		Paging paging = new Paging();

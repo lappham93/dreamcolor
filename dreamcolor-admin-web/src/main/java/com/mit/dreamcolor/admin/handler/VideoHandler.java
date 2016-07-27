@@ -134,7 +134,7 @@ public class VideoHandler extends BaseHandler {
 		paging.totalRecords = VideoDAO.getInstance().totalAllIgnoreStatus();
 
 		if (paging.totalRecords <= 0) {
-			dic.addSection("empty");
+			dic.addSection("table_empty");
 			return;
 		}
 
