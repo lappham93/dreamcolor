@@ -28,7 +28,7 @@ public class SendEmailUtils {
 	private final String _contactEmailCCs = ConfigUtils.getConfig().getString("contact.email.cc");
 	 private final String _contactSubject = "Message from {}";
 	 private final String _contactEmailName = "DreaMau Contact";
-	private final String _contactMassage = "Name: %s	Email: %s	Phone: %s	Message: %s";
+	private final String _contactMassage = "Name: {}<br/>Email: {}<br/>Phone: {}<br/>Message: {}";
 	//
 	// private final String _orderSubject = "Your order with bConnect app";
 	// private final String _adminEmails =
@@ -65,7 +65,7 @@ public class SendEmailUtils {
 		String msg = StringUtils.join(Arrays.asList(System.currentTimeMillis(), _contactEmailTo, _feedbackEmailName,
 				_contactEmailCCs, subject, contactMessage), "\t\t");
 		logger.debug("lap " + msg);
-		ProducerPush.send(ProducerTopic.SEND_EMAIL, msg);
+		ProducerPush.send(ProducerTopic.SEND_EMAIL_CONTACT, msg);
 	}
 
 	// public void sendResetPassword(String emailTo, String password) {
@@ -77,10 +77,16 @@ public class SendEmailUtils {
 	// }
 	
     public void sendContact(String name, String email, String phone, String message) {
+        try {
         String subject = MessageFormatter.arrayFormat(_contactSubject, new Object[] {name}).getMessage();
         String contactMessage = MessageFormatter.arrayFormat(_contactMassage, new Object[] {name, email, phone, message}).getMessage();
-        String msg = StringUtils.join(Arrays.asList(System.currentTimeMillis(), _contactEmailTo, _contactEmailName, _contactEmailCCs, subject, contactMessage), "\t");
-        ProducerPush.send(ProducerTopic.SEND_EMAIL, msg);
+        String msg = StringUtils.join(Arrays.asList(System.currentTimeMillis(), _contactEmailTo, _contactEmailName, _contactEmailCCs, subject, contactMessage), "\t\t");
+
+        	ProducerPush.send(ProducerTopic.SEND_EMAIL_CONTACT, msg);
+        	logger.debug("send contact ok");
+        } catch (Exception e) {
+        	logger.error("send contact error", e);
+        }
     }
 
 	// private String getEmailCCs(boolean isDomestic) {
@@ -137,6 +143,12 @@ public class SendEmailUtils {
 	// }
 	//
 	public static void main(String[] args) {
-		System.out.println(ConfigUtils.getConfig().getString("contact.email.to"));
+		String _contactMassage = "Name: {}	Email: {}	Phone: {}	Message: {}";
+		String name = "abc";
+		String email = "abc";
+		String phone = "abc";
+		String message = "abc";
+		String contactMessage = MessageFormatter.arrayFormat(_contactMassage, new Object[] {name, email, phone, message}).getMessage();
+		System.out.println(contactMessage);
 	}
 }

@@ -8,6 +8,7 @@ public class ProducerTopic {
 	public static final String DELIVER_VOICE_STATUS = "dmau_voice_status_deliver";
 	
 	public static final String SEND_EMAIL = "dmau_email_send";
+	public static final String SEND_EMAIL_CONTACT = "dmau_email_contact";
     public static final String SEND_EMAIL_ORDER = "dmau_email_order";
     //public static final String SEND_EMAIL_REGISTER = "dmau_email_register";
     //public static final String SEND_EMAIL_RESET_PASS = "dmau_email_reset_pass";

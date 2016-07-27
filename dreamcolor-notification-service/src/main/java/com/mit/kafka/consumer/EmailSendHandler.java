@@ -20,7 +20,7 @@ public class EmailSendHandler extends ConsumerService {
 	private final String _defaultEmailPass = ConfigUtils.getConfig().getString("email.default.password");
 
 	public EmailSendHandler() {
-		super(ProducerTopic.SEND_EMAIL);
+		super(ProducerTopic.SEND_EMAIL_CONTACT);
 	}
 
 	@Override
@@ -66,5 +66,11 @@ public class EmailSendHandler extends ConsumerService {
 		} catch (Exception e) {
 			_logger.error("consumer error " + super.getTopic(), e);
 		}
+	}
+	
+	public static void main(String[] args) {
+		String msg = "1469616912033	congnghia0609@gmail.com	DreaMau Contact	pttoan88@gmail.com,lqhung88@gmail.com	Message from Test	Name: Test</br>Email: lqhung88@gmail.com</br>Phone: 987179781</br>Message: Test";
+		String[] dataArr = msg.split("\t");
+		System.out.println(dataArr.length);
 	}
 }

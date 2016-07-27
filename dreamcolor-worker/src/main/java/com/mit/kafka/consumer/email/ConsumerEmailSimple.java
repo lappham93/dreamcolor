@@ -33,7 +33,7 @@ import com.mit.utils.ConfigUtils;
  */
 public class ConsumerEmailSimple extends ConsumerService {
     private final Logger logger = LoggerFactory.getLogger(ConsumerEmailSimple.class);
-	private final static String topic = ProducerTopic.SEND_EMAIL;
+	private final static String topic = ProducerTopic.SEND_EMAIL_CONTACT;
 
     private final String _smtpHost = ConfigUtils.getConfig().getString("email.smtp.host");
 	private final int _smtpPort = ConfigUtils.getConfig().getInt("email.smtp.port");
